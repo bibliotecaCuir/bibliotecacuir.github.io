@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    background: #ffffff;
+}
+
+/* Eleva el contenido por encima de las capas de fondo */
+body > *:not(#fondoPresentacion):not(#capaRosada):not(#capaGranulado):not(#capaLogo) {
+    position: relative;
+    z-index: 2;
+}
+
+/* Oculta la navegación y el contenido de texto */
+.flex-container,
+.navegacion {
+    display: none;
+}
+
+/* ── Collage ── */
+.imagenCollage {
+    width: 18vw;
+    max-width: 260px;
+    min-width: 120px;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+    .imagenCollage {
+        width: 40vw;
+        min-width: 100px;
+    }
+
+    #capaLogo img {
+        width: 100% !important;
+    }
+
+    #panelMenu {
+        width: 300px !important;
+    }
+}
+
+/* ── Móvil ── */
+@media (max-width: 768px) {
+    .imagenCollage {
+        width: 60vw;
+        max-width: 220px;
+        min-width: 80px;
+    }
+
+    #capaLogo img {
+        width: 100% !important;
+        max-width: 420px !important;
+    }
+
+    #panelMenu {
+        width: 100vw !important;
+        padding-left: 10vw !important;
+    }
+
+    #panelMenu span {
+        font-size: 1.8rem !important;
+        margin-bottom: 1.4rem !important;
+    }
+
+    #botonMenu {
+        font-size: 2.2rem !important;
+        top: 16px !important;
+        right: 16px !important;
+    }
+}
