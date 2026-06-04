@@ -359,28 +359,19 @@ let navbar = `
 
 
     <div class="nav-section">
-        <h3><a href="/">inicio</a></h3>
+        <h3><a href="/">manifiesto</a></h3>
     </div>
 
      <div class="nav-section">
-        <h3><a href="/">archivo</a></h3>
+        <h3><a href="/">publicaciones</a></h3>
     </div>
 
          <div class="nav-section">
-        <h3><a href="/">proyectos</a></h3>
+        <h3><a href="/">portafolio</a></h3>
     </div>
 
          <div class="nav-section">
-        <h3><a href="/">participa</a></h3>
-    </div>
-
-
-    <div class="nav-section">
-        <h3><a href="/enlaces">acerca</a></h3>
-    </div>
-
-    <div class="nav-section">
-        <h3><a href="/contacto">contacto</a></h3>
+        <h3><a href="/">info</a></h3>
     </div>
 </nav>
 `;
