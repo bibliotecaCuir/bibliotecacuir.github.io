@@ -1,69 +1,148 @@
 body {
     margin: 0;
     background: #ffffff;
+    font-family: "Helvetica Neue", "Arial Nova", Arial, "Nimbus Sans", sans-serif;
 }
 
-/* Eleva el contenido por encima de las capas de fondo */
-body > *:not(#fondoPresentacion):not(#capaRosada):not(#capaGranulado):not(#capaLogo) {
+.site-header {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    z-index: 10;
+}
+
+.site-logo {
+    display: block;
+    width: clamp(0px, 20vw, 250px);
+}
+
+.site-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.color-slideshow {
     position: relative;
-    z-index: 2;
+    margin: 50px auto 0;
+    width: 100%;
 }
 
-/* Oculta la navegación y el contenido de texto */
-.flex-container,
-.navegacion {
-    display: none;
+.imagen-horizontal {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    animation: cambio-color 9s ease-in-out infinite;
 }
 
-/* ── Collage ── */
-.imagenCollage {
-    width: 18vw;
-    max-width: 260px;
-    min-width: 120px;
+.imagen-horizontal:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-/* ── Tablet ── */
-@media (max-width: 1024px) {
-    .imagenCollage {
-        width: 40vw;
-        min-width: 100px;
+.imagen-horizontal:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.imagen-horizontal:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes cambio-color {
+    0% {
+        opacity: 0;
     }
 
-    #capaLogo img {
-        width: 100% !important;
+    8%,
+    33% {
+        opacity: 1;
     }
 
-    #panelMenu {
-        width: 300px !important;
+    45%,
+    100% {
+        opacity: 0;
     }
 }
 
-/* ── Móvil ── */
-@media (max-width: 768px) {
-    .imagenCollage {
-        width: 60vw;
-        max-width: 220px;
-        min-width: 80px;
-    }
+.bottom-nav {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 1rem;
+    min-height: 150px;
+    padding: 72px 5vw 28px;
+    box-sizing: border-box;
+}
 
-    #capaLogo img {
-        width: 100% !important;
-        max-width: 420px !important;
-    }
+.bottom-nav::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background: linear-gradient(to top, rgba(255, 0, 195, 0.92), rgba(255, 0, 195, 0));
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
 
-    #panelMenu {
-        width: 100vw !important;
-        padding-left: 10vw !important;
-    }
+.bottom-nav a {
+    position: relative;
+    display: inline-block;
+    min-width: 9.5em;
+    padding: 18px 8px;
+    color: #ffffff;
+    font-size: clamp(1rem, 2.5vw, 1.55rem);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    white-space: nowrap;
+    transition:
+        color 0.2s ease,
+        filter 0.32s ease;
+}
 
-    #panelMenu span {
-        font-size: 1.8rem !important;
-        margin-bottom: 1.4rem !important;
-    }
+.bottom-nav a::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #ffffff;
+    content: attr(data-label);
+    opacity: 0;
+    letter-spacing: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%) rotate(2deg) scale(0.96, 1.04);
+    transition:
+        letter-spacing 0.32s ease,
+        opacity 0.2s ease,
+        transform 0.32s cubic-bezier(0.2, 1.6, 0.32, 1);
+}
 
-    #botonMenu {
-        font-size: 2.2rem !important;
-        top: 16px !important;
-        right: 16px !important;
+.bottom-nav a:hover {
+    color: transparent;
+    filter: blur(0.2px);
+}
+
+.bottom-nav a:hover::after {
+    opacity: 1;
+    letter-spacing: 0.08em;
+    transform: translate(-50%, -68%) rotate(-1deg) scale(1.08, 0.96);
+}
+
+@media (max-width: 700px) {
+    .bottom-nav {
+        flex-wrap: wrap;
+        align-content: flex-end;
+        justify-content: center;
+        min-height: 190px;
+        padding-right: 1.25rem;
+        padding-left: 1.25rem;
     }
 }
