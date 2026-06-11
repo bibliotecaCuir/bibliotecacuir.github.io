@@ -3,20 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css" />
     <title>Biblioteca Cuir</title>
 </head>
 <body>
+    <svg class="background-cordons" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+            <filter id="ink-roughen" x="-8%" y="-8%" width="116%" height="116%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.018 0.11" numOctaves="2" seed="7" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.42" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+        </defs>
 
-    <div class="flex-container">
-      <nav id="divMenu" class="left"></nav>
+        <path class="background-cordon-shadow cordon-left" data-cordon-shadow="left" d="" />
+        <path class="background-cordon cordon-left" data-cordon-path="left" d="" />
 
-        <h1>Bienvenide a la Biblioteca Cuir <3</h1>
-        <p>sitio en construcción</p>
-    </div>
+        <path class="background-cordon-shadow cordon-right" data-cordon-shadow="right" d="" />
+        <path class="background-cordon cordon-right" data-cordon-path="right" d="" />
 
-    <script src="/nav.js"></script>
+        <path class="background-cordon-shadow cordon-bottom" data-cordon-shadow="bottom" d="" />
+        <path class="background-cordon cordon-bottom" data-cordon-path="bottom" d="" />
+    </svg>
 
+    <header class="site-header" aria-label="Biblioteca Cuir">
+        <a class="site-logo" href="/">
+            <img src="/assets/logos/logoBiblioNegro.png" alt="Biblioteca Cuir">
+        </a>
+    </header>
+
+    <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Abrir menú</span>
+    </button>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+        <a href="/">manifiesto</a>
+        <a href="/">publicaciones</a>
+        <a href="/">portafolio</a>
+        <a href="/">info</a>
+    </nav>
+
+    <main>
+        <section class="color-slideshow" aria-label="Cuerpo fragmentado">
+            <img class="imagen-horizontal" src="/assets/imagenes/cuerpo-fragmentado/1.png" alt="">
+            <img class="imagen-horizontal" src="/assets/imagenes/cuerpo-fragmentado/2.png" alt="">
+            <img class="imagen-horizontal" src="/assets/imagenes/cuerpo-fragmentado/3.png" alt="">
+
+            <a class="hero-hotspot hotspot-centro" href="/" aria-label="Abrir corazón">
+                <img class="hotspot-frame" src="/assets/imagenes/cuerpo-fragmentado/centro_02.png" alt="">
+                <img class="hotspot-frame" src="/assets/imagenes/cuerpo-fragmentado/centro_03.png" alt="">
+                <img class="hotspot-frame" src="/assets/imagenes/cuerpo-fragmentado/centro_01.png" alt="">
+            </a>
+
+            <a class="hero-hotspot hotspot-patas" href="/" aria-label="Abrir pierna">
+                <img class="hotspot-frame" src="/assets/imagenes/cuerpo-fragmentado/patas_03.png.png" alt="">
+                <img class="hotspot-frame" src="/assets/imagenes/cuerpo-fragmentado/patas_02.png" alt="">
+                <img class="hotspot-frame" src="/assets/imagenes/cuerpo-fragmentado/patas_01.png" alt="">
+            </a>
+        </section>
+
+        <section class="book-cloud" aria-label="Galería de libros">
+            <article class="book-placeholder book-verde">libro</article>
+            <article class="book-placeholder book-azul book-small">libro</article>
+            <article class="book-placeholder book-rosado book-tall">libro</article>
+            <article class="book-placeholder book-amarillo book-wide">libro</article>
+            <article class="book-placeholder book-verde book-tilted">libro</article>
+            <article class="book-placeholder book-azul book-tall">libro</article>
+            <article class="book-placeholder book-rosado">libro</article>
+            <article class="book-placeholder book-amarillo book-small">libro</article>
+            <article class="book-placeholder book-verde book-wide">libro</article>
+            <article class="book-placeholder book-azul">libro</article>
+            <article class="book-placeholder book-rosado book-small">libro</article>
+            <article class="book-placeholder book-amarillo book-tall">libro</article>
+            <article class="book-placeholder book-verde">libro</article>
+            <article class="book-placeholder book-azul book-wide">libro</article>
+            <article class="book-placeholder book-rosado book-tilted">libro</article>
+            <article class="book-placeholder book-amarillo">libro</article>
+            <a class="book-collection-sticker" href="/">ver colección completa</a>
+        </section>
+
+        <section class="project-gallery" aria-label="Galería de proyectos">
+            <article class="project-card color-uno">
+                <a href="/">
+                    <figure>
+                        <img src="/assets/imagenes/placeholders/298E7282-A865-4A06-973C-A12E5C7D5854-458-0000000D62AEE563.jpg" alt="" loading="lazy" decoding="async">
+                        <h2>Titulo del proyecto</h2>
+                    </figure>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem nec justo.</p>
+                </a>
+            </article>
+
+            <article class="project-card color-dos">
+                <a href="/">
+                    <figure>
+                        <img src="/assets/imagenes/placeholders/7EFA4360-3C97-42A4-B189-951E62B01425-458-0000000DE96DBA70.jpg" alt="" loading="lazy" decoding="async">
+                        <h2>Titulo del proyecto</h2>
+                    </figure>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem nec justo.</p>
+                </a>
+            </article>
+
+            <article class="project-card color-tres">
+                <a href="/">
+                    <figure>
+                        <img src="/assets/imagenes/placeholders/6b4ada26-2405-4f33-b422-344e687f77b9.jpg" alt="" loading="lazy" decoding="async">
+                        <h2>Titulo del proyecto</h2>
+                    </figure>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem nec justo.</p>
+                </a>
+            </article>
+
+            <article class="project-card color-uno">
+                <a href="/">
+                    <figure>
+                        <img src="/assets/imagenes/placeholders/42f7e0f9-fc70-4b12-9615-1ac82b6d8185.jpg" alt="" loading="lazy" decoding="async">
+                        <h2>Titulo del proyecto</h2>
+                    </figure>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem nec justo.</p>
+                </a>
+            </article>
+
+            <article class="project-card color-dos">
+                <a href="/">
+                    <figure>
+                        <img src="/assets/imagenes/placeholders/c8e15996-6af2-4405-bc0c-0196aa9f6bf3.jpg" alt="" loading="lazy" decoding="async">
+                        <h2>Titulo del proyecto</h2>
+                    </figure>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem nec justo.</p>
+                </a>
+            </article>
+
+            <article class="project-card color-tres">
+                <a href="/">
+                    <figure>
+                        <img src="/assets/imagenes/placeholders/ca23fd02-b71b-4e47-ac8b-60265df1209b.jpg" alt="" loading="lazy" decoding="async">
+                        <h2>Titulo del proyecto</h2>
+                    </figure>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem nec justo.</p>
+                </a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Pie de página">
+        <div class="footer-follow">
+            <a class="footer-follow-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+                <span class="footer-follow-icon" aria-hidden="true">+</span>
+                <span>síguenos</span>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">@bibliotecacuir</a>
+        </div>
+
+        <div class="footer-main">
+            <h2>Refugio micropolítico y promiscuo para las memorias y archivos disidentes</h2>
+
+            <div class="footer-content">
+                <a class="footer-mark" href="/" aria-label="Biblioteca Cuir">
+                    <img src="/assets/logos/logoBiblioNegro.png" alt="">
+                </a>
+
+                <div class="footer-column">
+                    <h3>visítanos</h3>
+                    <p>archivo cuir en circulación</p>
+                    <p>Santiago, Chile</p>
+                </div>
+
+                <nav class="footer-column footer-links" aria-label="Explorar">
+                    <h3>explora</h3>
+                    <a href="/">manifiesto</a>
+                    <a href="/">publicaciones</a>
+                    <a href="/">portafolio</a>
+                    <a href="/">info</a>
+                </nav>
+
+                <nav class="footer-column footer-links" aria-label="Aprender">
+                    <h3>aprende</h3>
+                    <a href="/">proyectos</a>
+                    <a href="/">lecturas</a>
+                    <a href="/">archivo</a>
+                    <a href="/">faq</a>
+                </nav>
+
+                <div class="footer-column footer-contact">
+                    <h3>hablemos</h3>
+                    <p>preguntas, comentarios, colaboraciones:</p>
+                    <a href="mailto:hola@bibliotecacuir.cl">hola@bibliotecacuir.cl</a>
+                </div>
+
+                <form class="footer-newsletter" action="/" method="get">
+                    <label for="footer-email">recibe novedades y publicaciones nuevas.</label>
+                    <div class="footer-input-row">
+                        <input id="footer-email" type="email" name="email" placeholder="email" autocomplete="email">
+                        <button type="submit" aria-label="Enviar correo">→</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-legal">
+            <span>Biblioteca Cuir</span>
+            <nav aria-label="Legal">
+                <a href="/">privacidad</a>
+                <a href="/">términos</a>
+            </nav>
+            <span>instagram · correo</span>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="Menú principal">
+        <a href="/" data-label="manifiesto">manifiesto</a>
+        <a href="/" data-label="publicaciones">publicaciones</a>
+        <a href="/" data-label="portafolio">portafolio</a>
+        <a href="/" data-label="info">info</a>
+    </nav>
+
+    <script src="/js/cordones.js"></script>
 </body>
 
 </html>
