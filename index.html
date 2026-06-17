@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Cuir — Catálogos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <script src="./lib/js-yaml.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-title">
+      <p class="header-sub">Catálogo</p>
+      <h1>
+        <span class="h1-serif">Biblioteca</span>
+        <span class="h1-sans">Cuir</span>
+      </h1>
+    </div>
+    <div class="header-meta">
+      <p class="header-count" id="totalCount"></p>
+    </div>
+  </header>
+  <div id="divCatalogo">
+    <p class="loading">Cargando catálogo...</p>
+  </div>
+  <script src="./cargar-catalogo.js"></script>
+</body>
+</html>
