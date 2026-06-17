@@ -3,29 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biblioteca Cuir — Catálogos</title>
+  <meta name="description" content="Catálogo en línea de la Biblioteca Cuir.">
+  <title>Catálogo — Biblioteca Cuir</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fe62de'/><text x='50' y='62' text-anchor='middle' font-size='42' font-family='Arial' fill='%23111111'>BC</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://bibliotecacuir.github.io">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/estilo.css">
   <script src="./lib/js-yaml.min.js"></script>
 </head>
 <body>
-  <header>
-    <div class="header-title">
-      <p class="header-sub">Catálogo</p>
-      <h1>
-        <span class="h1-serif">Biblioteca</span>
-        <span class="h1-sans">Cuir</span>
-      </h1>
-    </div>
-    <div class="header-meta">
-      <p class="header-count" id="totalCount"></p>
-    </div>
+  <a class="skip-link" href="#divCatalogo">Saltar al catálogo</a>
+
+  <header class="site-header">
+    <a class="site-logo" href="https://bibliotecacuir.github.io/" aria-label="Volver a Biblioteca Cuir">
+      <img src="https://bibliotecacuir.github.io/assets/logos/logoBiblioNegro.png" alt="Biblioteca Cuir">
+    </a>
   </header>
-  <div id="divCatalogo">
-    <p class="loading">Cargando catálogo...</p>
-  </div>
+
+  <main>
+    <section class="catalogo-hero" aria-labelledby="catalogo-title">
+      <p class="eyebrow">archivo cuir en circulación · Santiago, Chile</p>
+      <h1 id="catalogo-title">Catálogo</h1>
+      <div class="catalogo-intro">
+        <p>Publicaciones, fanzines y memorias disidentes reunidas por Biblioteca Cuir.</p>
+        <div class="catalogo-controls">
+          <p class="header-count" id="totalCount" aria-live="polite">Cargando piezas…</p>
+          <div class="catalogo-filtros" id="catalogoFiltros" aria-label="Filtrar catálogo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalogo-section" aria-label="Piezas del catálogo">
+      <div id="divCatalogo">
+        <p class="loading">Cargando catálogo…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-follow">
+      <a href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">
+        <span class="footer-follow-icon" aria-hidden="true">+</span>
+        <span>síguenos</span>
+      </a>
+      <a href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">@bibliotecacuir</a>
+    </div>
+
+    <div class="footer-main">
+      <h2>Refugio micropolítico y promiscuo para las memorias y archivos disidentes</h2>
+      <div class="footer-content">
+        <a class="footer-mark" href="https://bibliotecacuir.github.io/" aria-label="Biblioteca Cuir">
+          <img src="https://bibliotecacuir.github.io/assets/logos/logoBiblioNegro.png" alt="">
+        </a>
+        <div>
+          <h3>visítanos</h3>
+          <p>archivo cuir en circulación</p>
+          <p>Santiago, Chile</p>
+        </div>
+        <nav aria-label="Explorar">
+          <h3>explora</h3>
+          <a href="https://bibliotecacuir.github.io/">inicio</a>
+          <a href="./">catálogo</a>
+        </nav>
+        <div>
+          <h3>hablemos</h3>
+          <a href="mailto:hola@bibliotecacuir.cl">hola@bibliotecacuir.cl</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <span>Biblioteca Cuir</span>
+      <span>catálogo en línea</span>
+    </div>
+  </footer>
+
+  <nav class="site-nav" aria-label="Navegación principal">
+    <a href="https://bibliotecacuir.github.io/" data-label="inicio">inicio</a>
+    <a href="./" data-label="catálogo" aria-current="page">catálogo</a>
+    <a href="https://www.instagram.com/bibliotecacuir/" data-label="instagram" target="_blank" rel="noreferrer">instagram</a>
+  </nav>
+
   <script src="./cargar-catalogo.js"></script>
 </body>
 </html>
