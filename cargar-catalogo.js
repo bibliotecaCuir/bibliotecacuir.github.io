@@ -60,6 +60,7 @@ fetch('./caja-01.yaml')
         const imgPath = article.dataset.imagen;
         if (!imgPath) return;
         previewImg.src = urlBaseCaja01 + imgPath;
+        console.log(previewImg.src);
         const rect = article.getBoundingClientRect();
         const centerY = rect.top + rect.height / 2;
         const half = preview.offsetHeight / 2;
