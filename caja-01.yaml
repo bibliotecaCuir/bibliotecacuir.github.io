@@ -5,7 +5,7 @@ catalogo:
   articulos:
     - imagen: ""
       codigo: "BC.010101.L"
-      titulo: ""
+      titulo: "A quienes queden"
       titulo-conjunto: "No aplica"
       autorx: ["Jota Elmes"]
       editorial: "Sur/Norte editoras"
@@ -25,7 +25,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010102.F"
-      titulo: ""
+      titulo: "Algunos apuntes sobre la menstruación"
       titulo-conjunto: "No aplica"
       autorx: ["Eroticas Fluidas", "Rebeldía Menstrual"]
       editorial: "Autopublicación independiente"
@@ -45,7 +45,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010103.L"
-      titulo: ""
+      titulo: "Abertura de Mar. Antología poética 2016-2021"
       titulo-conjunto: "No aplica"
       autorx: ["Esther Margaritas"]
       editorial: "Saraza Editorial"
@@ -65,7 +65,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010104"
-      titulo: ""
+      titulo: "Agenda Kuir 2023. 10 años"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Agenda Kuir"
@@ -85,7 +85,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010105.F"
-      titulo: ""
+      titulo: "A la luz de mi secreto"
       titulo-conjunto: "No aplica"
       autorx: ["Diamela Burboa"]
       editorial: "Autopublicación independiente"
@@ -105,7 +105,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010106.L"
-      titulo: ""
+      titulo: "Anarcografías del cuerpo. Performances de Cheril Linett (2015-2021)"
       titulo-conjunto: "No aplica"
       autorx: ["Rudy Pradenas", "Cheril Linett"]
       editorial: "Trío Editorial"
@@ -125,7 +125,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010107.F"
-      titulo: ""
+      titulo: "ACCIÓN GRÁFICA URGENTE"
       titulo-conjunto: "No aplica"
       autorx: ["Camila González", "Daniela Josefina"]
       editorial: "HAMBRE Editorial"
@@ -145,7 +145,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010108.L"
-      titulo: ""
+      titulo: "Aliento"
       titulo-conjunto: "No aplica"
       autorx: ["Espacio Queer"]
       editorial: "Corazón Cartonero"
@@ -165,7 +165,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010109.L"
-      titulo: ""
+      titulo: "A través del CIStema. Memorias y reflexiones de una travesti chica"
       titulo-conjunto: "No aplica"
       autorx: ["Shane Cienfuegos"]
       editorial: "Editorial Catalonia"
@@ -185,7 +185,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010110.L-1"
-      titulo: ""
+      titulo: "ASK; Archivo Serigrafistas Queer"
       titulo-conjunto: "No aplica"
       autorx: ["Serigrafistas Queer"]
       editorial: "Autopublicación independiente"
@@ -205,7 +205,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010110.L-2"
-      titulo: ""
+      titulo: "ASK; Archivo Serigrafistas Queer"
       titulo-conjunto: "No aplica"
       autorx: ["Serigrafistas Queer"]
       editorial: "Autopublicación independiente"
@@ -225,7 +225,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010111.F"
-      titulo: ""
+      titulo: "As duas maes de Neco [Las madres de Nico]"
       titulo-conjunto: "No aplica"
       autorx: ["Nádia Fonseca"]
       editorial: "Autopublicación independiente"
@@ -245,7 +245,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010112"
-      titulo: ""
+      titulo: "Agenda kuir 2024"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Trío Editorial"
@@ -265,7 +265,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010113.F"
-      titulo: ""
+      titulo: "Arder"
       titulo-conjunto: "No aplica"
       autorx: ["Echiza", "Errada"]
       editorial: "Autopublicación independiente"
@@ -285,7 +285,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010114.L"
-      titulo: ""
+      titulo: "Alguien muerde el extremo de su nombre: poemas lesbianos de salida del clóset"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Elemento Disruptivo Editorial"
@@ -305,7 +305,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010115.F-1"
-      titulo: ""
+      titulo: "Asi son nuestras formas"
       titulo-conjunto: "No aplica"
       autorx: ["Colectiva Brujas Libertarias Jornada 8M"]
       editorial: "Autopublicación independiente"
@@ -325,7 +325,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010115.F-2"
-      titulo: ""
+      titulo: "Asi son nuestras formas"
       titulo-conjunto: "No aplica"
       autorx: ["Colectiva Brujas Libertarias Jornada 8M"]
       editorial: "Autopublicación independiente"
@@ -345,7 +345,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010116.F"
-      titulo: ""
+      titulo: "AZULETA. IV. Ero-Pineal"
       titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
@@ -365,7 +365,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010117.F"
-      titulo: ""
+      titulo: "AZULETA. Trans-futurismo"
       titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
@@ -385,7 +385,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010118.F"
-      titulo: ""
+      titulo: "AZULETA. II. De la pupila, sangre y cambio"
       titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
@@ -405,7 +405,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010119.F-1"
-      titulo: ""
+      titulo: "AZULETA. I. Trans-Verberacion"
       titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
@@ -425,7 +425,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010119.F-2"
-      titulo: ""
+      titulo: "AZULETA. I. Trans-Verberacion"
       titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
@@ -445,7 +445,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010120-A"
-      titulo: ""
+      titulo: "Al cajón de los juguestes"
       titulo-conjunto: "No aplica"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
@@ -465,7 +465,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010120-B"
-      titulo: ""
+      titulo: "CÁRCEL"
       titulo-conjunto: "Al cajón de los juguetes"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
@@ -485,7 +485,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010120-C"
-      titulo: ""
+      titulo: "[Fanzine con ocho dobleces] "
       titulo-conjunto: "Al cajón de los juguetes"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
@@ -505,7 +505,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010120-D"
-      titulo: ""
+      titulo: "[Pieza de lego celeste]"
       titulo-conjunto: "Al cajón de los juguetes"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
@@ -525,7 +525,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010121.L"
-      titulo: ""
+      titulo: "Afectxs Ciudadanxs"
       titulo-conjunto: "No aplica"
       autorx: ["Lorena Wolfer"]
       editorial: "La Duplicadora"
@@ -545,7 +545,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010122.F"
-      titulo: ""
+      titulo: "A queer temporality fanzine"
       titulo-conjunto: "No aplica"
       autorx: ["Ed. Zoe claire; Eva Wilson"]
       editorial: "Autopublicación independiente"
@@ -565,7 +565,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010123.F"
-      titulo: ""
+      titulo: "Adaptación de Carta I, De cartas a un joven poeta, de Rainer Maria Rilke"
       titulo-conjunto: "No aplica"
       autorx: ["Dormida"]
       editorial: "Dormida"
@@ -585,7 +585,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010124.F"
-      titulo: ""
+      titulo: "ARDEN"
       titulo-conjunto: "No aplica"
       autorx: ["Rae del Cerro"]
       editorial: "Colección Cosas Escritas por Lesbianas; Lesbianidades"
@@ -605,7 +605,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010125.F"
-      titulo: ""
+      titulo: "Archivo Sensible"
       titulo-conjunto: "No aplica"
       autorx: ["Crear Sensible"]
       editorial: "Crear Sensible"
@@ -625,7 +625,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010126"
-      titulo: ""
+      titulo: "Ante la violencia machista: Yo tambien me defendería #Indultoparakathyhurtado"
       titulo-conjunto: "No aplica"
       autorx: ["Red Chilena Contra la Violencia Hacia las Mujeres"]
       editorial: "Autopublicación independiente"
@@ -645,7 +645,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010127.F"
-      titulo: ""
+      titulo: "Acerca de cómo la violencia Terf inspiró al camp(amento) trans"
       titulo-conjunto: "No aplica"
       autorx: ["Cristan Williams"]
       editorial: "Autopublicación independiente"
@@ -665,7 +665,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010128.F-1"
-      titulo: ""
+      titulo: "AMNISTÍA. Sala de Estar"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Pato de Vidrio"
@@ -685,7 +685,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010128.F-2"
-      titulo: ""
+      titulo: "AMNISTÍA. Sala de Estar"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Pato de Vidrio"
@@ -705,7 +705,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010129.F"
-      titulo: ""
+      titulo: "AKI ESTA LA RESISTENCIA TRANS"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Taller de fanzine Violeta Cereceda MEMCH"
@@ -725,7 +725,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010130.F"
-      titulo: ""
+      titulo: "Asfixia Fanzine"
       titulo-conjunto: "No aplica"
       autorx: ["Asfixia Fanzine"]
       editorial: "Autopublicación independiente"
@@ -745,7 +745,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010131.F"
-      titulo: ""
+      titulo: "A dónde se va lo que no decimos"
       titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "The sisterhood Zine"
@@ -765,7 +765,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010132-1"
-      titulo: ""
+      titulo: "ARDIENTE DISIDENTE. Feria de gráfica e historietas LGBTQA+"
       titulo-conjunto: "No aplica"
       autorx: ["Desobediencia visual"]
       editorial: "Desobediencia visual"
@@ -785,7 +785,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010132-2"
-      titulo: ""
+      titulo: "ARDIENTE DISIDENTE. Feria de gráfica e historietas LGBTQA+"
       titulo-conjunto: "No aplica"
       autorx: ["Desobediencia visual"]
       editorial: "Desobediencia visual"
@@ -805,7 +805,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010133.F"
-      titulo: ""
+      titulo: "Alianzas en momentos de crisis de adultocentrismo"
       titulo-conjunto: "No aplica"
       autorx: ["Lucio Valle Bardet"]
       editorial: "Autopublicación independiente"
@@ -825,7 +825,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010134.L"
-      titulo: ""
+      titulo: "Arte y Resistencia "
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Ediciones Necias (Los Pinos)"
@@ -845,7 +845,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010135"
-      titulo: ""
+      titulo: "Actos de Presencia"
       titulo-conjunto: "No aplica"
       autorx: ["Marie Bardet"]
       editorial: "Taller Aparatos mágicos para hacer burbujear el cuerpo BIBLIOCUIR X FAD"
@@ -865,7 +865,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010136.L"
-      titulo: ""
+      titulo: "Americón"
       titulo-conjunto: "No aplica"
       autorx: ["Nico Vela Page"]
       editorial: "Passage Series Wendy's Subway"
@@ -885,7 +885,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010137.L"
-      titulo: ""
+      titulo: "Antologia M(ai)s SadoMasoquista da literatura brasileira"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Annablume Editora"
@@ -905,7 +905,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010138.F"
-      titulo: ""
+      titulo: "Anomalina. na Heterolandia. #1"
       titulo-conjunto: "Anomalina"
       autorx: ["Desconocide"]
       editorial: "Fracassando. Edicoes precarias"
@@ -925,7 +925,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010139.F"
-      titulo: ""
+      titulo: "A mis (otras) marikonas"
       titulo-conjunto: "No aplica"
       autorx: ["Carli Prado"]
       editorial: "Autopublicación independiente"
@@ -945,7 +945,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010140.L"
-      titulo: ""
+      titulo: "ARES"
       titulo-conjunto: "No aplica"
       autorx: ["Luis Campos"]
       editorial: "Solo un rato aqui; cráter inventado"
@@ -965,7 +965,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-A"
-      titulo: ""
+      titulo: "Armá tu propia gincana cuir"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -985,7 +985,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-B"
-      titulo: ""
+      titulo: "[Antes de empezar...]"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir",  "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1005,7 +1005,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-C"
-      titulo: ""
+      titulo: "[Instrucciones]"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1025,7 +1025,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-D"
-      titulo: ""
+      titulo: "TuttiCuir (ejemplo)"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1045,7 +1045,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-E"
-      titulo: ""
+      titulo: "TuttiCuir"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1065,7 +1065,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-F"
-      titulo: ""
+      titulo: "IdentiCuir (ejemplos de collage)"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1085,7 +1085,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-G"
-      titulo: ""
+      titulo: "IdentiCuir"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1105,7 +1105,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-H"
-      titulo: ""
+      titulo: "División de equipos"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1125,7 +1125,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-I"
-      titulo: ""
+      titulo: "Digalo con mímica/dibujos"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1145,7 +1145,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-J"
-      titulo: ""
+      titulo: "Dígalo con mímica/dibujos"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1165,7 +1165,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-K"
-      titulo: ""
+      titulo: "Gincana Cuir"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1185,7 +1185,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010141-L"
-      titulo: ""
+      titulo: "Tarjetas"
       titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
@@ -1205,7 +1205,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010142.L"
-      titulo: ""
+      titulo: "Bajubá Odara. Resumo historico do nascimento do movimento de travestis do brasil"
       titulo-conjunto: "No aplica"
       autorx: ["Jovanna Baby; Cardoso da Silva"]
       editorial: "Fonatrans"
@@ -1225,7 +1225,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010143-1"
-      titulo: ""
+      titulo: "BEETLEJUICE BEETLEJUICE BEETLEJUICE"
       titulo-conjunto: "No aplica"
       autorx: ["Felipe Alvarez Parisi"]
       editorial: "Pato de Vidrio N5"
@@ -1245,7 +1245,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010143-2"
-      titulo: ""
+      titulo: "BEETLEJUICE BEETLEJUICE BEETLEJUICE"
       titulo-conjunto: "No aplica"
       autorx: ["Felipe Alvarez Parisi"]
       editorial: "Pato de Vidrio N5"
@@ -1265,7 +1265,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010144.F"
-      titulo: ""
+      titulo: "BEBOTEO PARA NADIE"
       titulo-conjunto: "No aplica"
       autorx: ["Gael Silva y Rocio Arozarena"]
       editorial: "Cometa Serigrafía"
@@ -1285,7 +1285,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010145.F"
-      titulo: ""
+      titulo: "buses"
       titulo-conjunto: "No aplica"
       autorx: ["Efe Tapia"]
       editorial: "Autopublicación independiente"
@@ -1305,7 +1305,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010146.F"
-      titulo: ""
+      titulo: "Bela Lugosi está muerto"
       titulo-conjunto: "No aplica"
       autorx: ["Emmamilwaukee"]
       editorial: "Ediciones Afines"
@@ -1325,7 +1325,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010147"
-      titulo: ""
+      titulo: "Bizarre Valparaiso"
       titulo-conjunto: "No aplica"
       autorx: ["Francisco Reed Alzérreca"]
       editorial: "Autopublicación independiente"
@@ -1345,7 +1345,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010148.F"
-      titulo: ""
+      titulo: "BORRADURAS SISTEMÁTICAS"
       titulo-conjunto: "No aplica"
       autorx: ["HAMBRE HAMBRE HAMBRE "]
       editorial: "HAMBRE Editorial"
@@ -1365,7 +1365,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010149.F"
-      titulo: ""
+      titulo: "BAJARSE DEL PONY: SEPARATISMO, ARROGANCIA Y CONSTRUCCIÓN DEL ENEMIGO"
       titulo-conjunto: "No aplica"
       autorx: ["Marsupial Editora"]
       editorial: "Marsupial Editora"
@@ -1385,7 +1385,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010150"
-      titulo: ""
+      titulo: "ALEGRIA ESTE NIÑO ES UNA TRAVESTI"
       titulo-conjunto: "No aplica"
       autorx: ["Diamela Burboa"]
       editorial: "Autopublicación independiente"
@@ -1405,7 +1405,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010151"
-      titulo: ""
+      titulo: "ARCHIVO FLUIDO"
       titulo-conjunto: "No aplica"
       autorx: ["Archivo y Museo Nacional Cuir"]
       editorial: "Autopublicación independiente"
@@ -1425,7 +1425,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010152"
-      titulo: ""
+      titulo: "Aún te espero"
       titulo-conjunto: "No aplica"
       autorx: ["Anaí Tirado Miranda"]
       editorial: "Miau ediciones"
@@ -1445,7 +1445,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010153.L"
-      titulo: ""
+      titulo: "Adumbraciones"
       titulo-conjunto: "No aplica"
       autorx: ["Daniel Fajardo Gómez"]
       editorial: "Autopublicación independiente"
@@ -1465,7 +1465,7 @@ catalogo:
       notas-registro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010154"
-      titulo: ""
+      titulo: "A 30 años de la invasión EEUU PANAMÁ 1989"
       titulo-conjunto: "No aplica"
       autorx: ["Revista de Arte del Barrio Santa Ana.  XX Festival Internacional de Teatro"]
       editorial: "Revista de Arte del Barrio Santa Ana"
@@ -1485,7 +1485,7 @@ catalogo:
       notas-registro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010155.F"
-      titulo: ""
+      titulo: "A vida do autor de BD"
       titulo-conjunto: "No aplica"
       autorx: ["Mosi"]
       editorial: "Sapata press"
@@ -1505,7 +1505,7 @@ catalogo:
       notas-registro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010155.G"
-      titulo: ""
+      titulo: "Acción Serigráfica"
       titulo-conjunto: "No aplica"
       autorx: ["Serigrafistas Queer"]
       editorial: "Autopublicación independiente"
@@ -1525,7 +1525,7 @@ catalogo:
       notas-registro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010155.F"
-      titulo: ""
+      titulo: "Aventuras en la ciudad fantasma"
       titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
@@ -1545,7 +1545,7 @@ catalogo:
       notas-registro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010156"
-      titulo: ""
+      titulo: "Alguien que amo es pansexual"
       titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
@@ -1565,7 +1565,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010157"
-      titulo: ""
+      titulo: "Amor Próprio"
       titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
@@ -1585,7 +1585,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010158.F"
-      titulo: ""
+      titulo: "Bienvenidos a la Chingada"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Mercado negro"
@@ -1605,7 +1605,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010159.L"
-      titulo: ""
+      titulo: "A produção patológica do antagonismo."
       titulo-conjunto: "No aplica"
       autorx: ["Cello Latini Pfeil", "Bruno Latini Pfeil"]
       editorial: "Monstro dos Mares"
@@ -1625,7 +1625,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010160"
-      titulo: ""
+      titulo: "Acervo digital trans-anarquista"
       titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
@@ -1645,7 +1645,7 @@ catalogo:
       notas-registro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010161"
-      titulo: ""
+      titulo: "Agenda Kuir 2025"
       titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Agenda Kuir"
@@ -1663,3 +1663,4 @@ catalogo:
       donante: "Cyn Shuffer"
       otros: "No aplica"
       notas-registro: "Cam Castro"
+      
