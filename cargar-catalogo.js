@@ -1,4 +1,4 @@
-fetch('./catalogo.yaml')
+fetch('./caja-01.yaml')
   .then(response => response.text())
   .then(yamlText => {
     const data = jsyaml.load(yamlText);
