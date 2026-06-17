@@ -53,9 +53,13 @@ fetch('./caja-01.yaml')
 
       // Mostrar preview grande al hacer hover
       article.addEventListener('mouseenter', () => {
+
+        const urlBaseCaja01 =
+  'https://raw.githubusercontent.com/bibliotecaCuir/caja-01/main/';
+
         const imgPath = article.dataset.imagen;
         if (!imgPath) return;
-        previewImg.src = `./imagenes/${imgPath}`;
+        previewImg.src = urlBaseCaja01 + imgPath;
         const rect = article.getBoundingClientRect();
         const centerY = rect.top + rect.height / 2;
         const half = preview.offsetHeight / 2;
