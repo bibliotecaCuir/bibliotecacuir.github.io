@@ -6,7 +6,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010101.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Jota Elmes"]
       editorial: "Sur/Norte editoras"
       agno: "2021"
@@ -26,7 +26,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010102.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Eroticas Fluidas", "Rebeldía Menstrual"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -46,7 +46,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010103.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Esther Margaritas"]
       editorial: "Saraza Editorial"
       agno: "2022"
@@ -66,7 +66,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010104"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Agenda Kuir"
       agno: "2023"
@@ -86,7 +86,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010105.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Diamela Burboa"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -106,7 +106,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010106.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Rudy Pradenas", "Cheril Linett"]
       editorial: "Trío Editorial"
       agno: "2021"
@@ -126,7 +126,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010107.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Camila González", "Daniela Josefina"]
       editorial: "HAMBRE Editorial"
       agno: "2022"
@@ -146,7 +146,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010108.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Espacio Queer"]
       editorial: "Corazón Cartonero"
       agno: "2015"
@@ -166,7 +166,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010109.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Shane Cienfuegos"]
       editorial: "Editorial Catalonia"
       agno: "2021"
@@ -186,7 +186,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010110.L-1"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Serigrafistas Queer"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -206,7 +206,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010110.L-2"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Serigrafistas Queer"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -226,7 +226,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010111.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Nádia Fonseca"]
       editorial: "Autopublicación independiente"
       agno: "2020"
@@ -246,7 +246,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010112"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Trío Editorial"
       agno: "2024"
@@ -266,7 +266,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010113.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Echiza", "Errada"]
       editorial: "Autopublicación independiente"
       agno: "2020"
@@ -286,7 +286,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010114.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Elemento Disruptivo Editorial"
       agno: "2022"
@@ -306,7 +306,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010115.F-1"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Colectiva Brujas Libertarias Jornada 8M"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -326,7 +326,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010115.F-2"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Colectiva Brujas Libertarias Jornada 8M"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -346,7 +346,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010116.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -366,7 +366,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010117.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -386,7 +386,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010118.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -406,7 +406,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010119.F-1"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -426,7 +426,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010119.F-2"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "AZULETA"
       autorx: ["Ramón y Leevittoria"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -446,7 +446,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010120-A"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
       agno: "2021; 2022"
@@ -466,7 +466,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010120-B"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Al cajón de los juguetes"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
       agno: "2021; 2022"
@@ -486,7 +486,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010120-C"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Al cajón de los juguetes"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
       agno: "2021; 2022"
@@ -506,7 +506,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010120-D"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Al cajón de los juguetes"
       autorx: ["Ariel Andrés"]
       editorial: "@i.conbototos"
       agno: "2021; 2022"
@@ -526,7 +526,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010121.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Lorena Wolfer"]
       editorial: "La Duplicadora"
       agno: "2018"
@@ -546,7 +546,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010122.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Ed. Zoe claire; Eva Wilson"]
       editorial: "Autopublicación independiente"
       agno: "2021"
@@ -566,7 +566,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010123.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Dormida"]
       editorial: "Dormida"
       agno: "2021"
@@ -586,7 +586,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010124.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Rae del Cerro"]
       editorial: "Colección Cosas Escritas por Lesbianas; Lesbianidades"
       agno: "2019"
@@ -606,7 +606,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010125.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Crear Sensible"]
       editorial: "Crear Sensible"
       agno: "2024"
@@ -626,7 +626,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010126"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Red Chilena Contra la Violencia Hacia las Mujeres"]
       editorial: "Autopublicación independiente"
       agno: "2024"
@@ -646,7 +646,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010127.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Cristan Williams"]
       editorial: "Autopublicación independiente"
       agno: "2017"
@@ -666,7 +666,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010128.F-1"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Pato de Vidrio"
       agno: "Desconocido"
@@ -686,7 +686,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010128.F-2"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Pato de Vidrio"
       agno: "Desconocido"
@@ -706,7 +706,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010129.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Taller de fanzine Violeta Cereceda MEMCH"
       agno: "2023"
@@ -726,7 +726,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010130.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Asfixia Fanzine"]
       editorial: "Autopublicación independiente"
       agno: "2018"
@@ -746,7 +746,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010131.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "The sisterhood Zine"
       agno: "Desconocido"
@@ -766,7 +766,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010132-1"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Desobediencia visual"]
       editorial: "Desobediencia visual"
       agno: "Desconocido"
@@ -786,7 +786,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010132-2"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Desobediencia visual"]
       editorial: "Desobediencia visual"
       agno: "Desconocido"
@@ -806,7 +806,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010133.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Lucio Valle Bardet"]
       editorial: "Autopublicación independiente"
       agno: "2024"
@@ -826,7 +826,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010134.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Ediciones Necias (Los Pinos)"
       agno: "2022"
@@ -846,7 +846,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010135"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Marie Bardet"]
       editorial: "Taller Aparatos mágicos para hacer burbujear el cuerpo BIBLIOCUIR X FAD"
       agno: "2024"
@@ -866,7 +866,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010136.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Nico Vela Page"]
       editorial: "Passage Series Wendy's Subway"
       agno: "2022"
@@ -886,7 +886,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010137.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Annablume Editora"
       agno: "2008"
@@ -906,7 +906,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010138.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Anomalina"
       autorx: ["Desconocide"]
       editorial: "Fracassando. Edicoes precarias"
       agno: "Desconocido"
@@ -926,7 +926,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010139.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Carli Prado"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -946,7 +946,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010140.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Luis Campos"]
       editorial: "Solo un rato aqui; cráter inventado"
       agno: "Desconocido"
@@ -966,7 +966,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-A"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -986,7 +986,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-B"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir",  "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1006,7 +1006,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-C"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1026,7 +1026,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-D"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1046,7 +1046,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-E"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1066,7 +1066,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1086,7 +1086,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-G"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1106,7 +1106,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-H"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1126,7 +1126,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-I"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1146,7 +1146,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-J"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1166,7 +1166,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-K"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1186,7 +1186,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010141-L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "Armá tu propia gincana cuir"
       autorx: ["Espacio Mediación Biblioteca Cuir", "Exposicion Giro Gráfico en el Espacio de Arte Contemporáneo"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1206,7 +1206,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010142.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Jovanna Baby; Cardoso da Silva"]
       editorial: "Fonatrans"
       agno: "2021"
@@ -1226,7 +1226,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010143-1"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Felipe Alvarez Parisi"]
       editorial: "Pato de Vidrio N5"
       agno: "Desconocido"
@@ -1246,7 +1246,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010143-2"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Felipe Alvarez Parisi"]
       editorial: "Pato de Vidrio N5"
       agno: "Desconocido"
@@ -1266,7 +1266,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010144.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Gael Silva y Rocio Arozarena"]
       editorial: "Cometa Serigrafía"
       agno: "2022"
@@ -1286,7 +1286,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010145.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Efe Tapia"]
       editorial: "Autopublicación independiente"
       agno: "2023"
@@ -1306,7 +1306,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010146.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Emmamilwaukee"]
       editorial: "Ediciones Afines"
       agno: "2019"
@@ -1326,7 +1326,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010147"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Francisco Reed Alzérreca"]
       editorial: "Autopublicación independiente"
       agno: "2016"
@@ -1346,7 +1346,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010148.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["HAMBRE HAMBRE HAMBRE "]
       editorial: "HAMBRE Editorial"
       agno: "2023"
@@ -1366,7 +1366,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010149.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Marsupial Editora"]
       editorial: "Marsupial Editora"
       agno: "Desconocido"
@@ -1386,7 +1386,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010150"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Diamela Burboa"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1406,7 +1406,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010151"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Archivo y Museo Nacional Cuir"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -1426,7 +1426,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010152"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Anaí Tirado Miranda"]
       editorial: "Miau ediciones"
       agno: "2022"
@@ -1446,7 +1446,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010153.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Daniel Fajardo Gómez"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -1466,7 +1466,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010154"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Revista de Arte del Barrio Santa Ana.  XX Festival Internacional de Teatro"]
       editorial: "Revista de Arte del Barrio Santa Ana"
       agno: "2019"
@@ -1486,7 +1486,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010155.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Mosi"]
       editorial: "Sapata press"
       agno: "2018"
@@ -1506,7 +1506,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010155.G"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Serigrafistas Queer"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -1526,7 +1526,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010155.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
       agno: "2020"
@@ -1546,7 +1546,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010156"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1566,7 +1566,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010157"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1586,7 +1586,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010158.F"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Mercado negro"
       agno: "2005"
@@ -1606,7 +1606,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010159.L"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Cello Latini Pfeil", "Bruno Latini Pfeil"]
       editorial: "Monstro dos Mares"
       agno: "2024"
@@ -1626,7 +1626,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010160"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["Desconocide"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
@@ -1646,7 +1646,7 @@ catalogo:
     - imagen: ""
       codigo: "BC.010161"
       titulo: ""
-      titulo-conjunto: ""
+      titulo-conjunto: "No aplica"
       autorx: ["VVAA"]
       editorial: "Agenda Kuir"
       agno: "2025"
