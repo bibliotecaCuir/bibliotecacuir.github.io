@@ -20,8 +20,8 @@ fetch('./caja-01.yaml')
       const article = document.createElement('article');
       article.className = 'item';
 
-      if (item.imagenes && item.imagenes.length > 0) {
-        article.dataset.imagen = item.imagenes[0];
+      if (item.imagen != "" ) {
+        article.dataset.imagen = item.imagen;
       }
 
       const codigo = item.codigo;
