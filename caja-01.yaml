@@ -4,7 +4,7 @@ coleccion:
 
   articulos:
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010101.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -24,7 +24,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010102.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -44,7 +44,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010103.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -64,7 +64,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010104"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -84,7 +84,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010105.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -104,7 +104,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010106.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -124,7 +124,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010107.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -144,7 +144,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010108.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -164,7 +164,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010109.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -184,7 +184,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010110.L-1"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -204,7 +204,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010110.L-2"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -224,7 +224,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010111.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -244,7 +244,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010112"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -264,7 +264,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010113.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -284,7 +284,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010114.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -304,7 +304,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010115.F-1"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -324,7 +324,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010115.F-2"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -344,7 +344,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010116.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -364,7 +364,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010117.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -384,7 +384,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010118.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -404,7 +404,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010119.F-1"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -424,7 +424,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010119.F-2"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -444,7 +444,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010120-A"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -464,7 +464,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010120-B"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -484,7 +484,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010120-C"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -504,7 +504,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010120-D"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -524,7 +524,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010121.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -544,7 +544,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010122.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -564,7 +564,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010123.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -584,7 +584,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010124.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -604,7 +604,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010125.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -624,7 +624,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010126"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -644,7 +644,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010127.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -664,7 +664,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010128.F-1"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -684,7 +684,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010128.F-2"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -704,7 +704,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010129.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -724,7 +724,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010130.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -744,7 +744,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010131.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -764,7 +764,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010132-1"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -784,7 +784,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010132-2"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -804,7 +804,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010133.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -824,7 +824,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010134.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -844,7 +844,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010135"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -864,7 +864,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010136.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -884,7 +884,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010137.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -904,7 +904,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010138.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -924,7 +924,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010139.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -944,7 +944,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010140.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -964,7 +964,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-A"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -984,7 +984,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-B"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1004,7 +1004,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-C"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1024,7 +1024,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-D"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1044,7 +1044,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-E"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1064,7 +1064,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1084,7 +1084,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-G"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1104,7 +1104,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-H"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1124,7 +1124,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-I"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1144,7 +1144,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-J"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1164,7 +1164,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-K"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1184,7 +1184,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010141-L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1204,7 +1204,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010142.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1224,7 +1224,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010143-1"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1244,7 +1244,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010143-2"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1264,7 +1264,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010144.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1284,7 +1284,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010145.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1304,7 +1304,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010146.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1324,7 +1324,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010147"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1344,7 +1344,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010148.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1364,7 +1364,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010149.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1384,7 +1384,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010150"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1404,7 +1404,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010151"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1424,7 +1424,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010152"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1444,7 +1444,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010153.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1464,7 +1464,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Milena Moena"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010154"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1484,7 +1484,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Milena Moena"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010155.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1504,7 +1504,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Milena Moena"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010155.G"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1524,7 +1524,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Milena Moena"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010155.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1544,7 +1544,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Milena Moena"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010156"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1564,7 +1564,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010157"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1584,7 +1584,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010158.F"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1604,7 +1604,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010159.L"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1624,7 +1624,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010160"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
@@ -1644,7 +1644,7 @@ coleccion:
       otros: "No aplica"
       notas-registro: "Cam Castro"
     - imagen: ""
-      codigo: ""
+      codigo: "BC.010161"
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
