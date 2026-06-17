@@ -54,7 +54,7 @@ fetch('./caja-01.yaml')
       // Mostrar preview grande al hacer hover
       article.addEventListener('mouseenter', () => {
 
-        const urlBaseCaja01 = 'https://raw.githubusercontent.com/bibliotecaCuir/caja-01/main/';
+        const urlBaseCaja01 = 'https://raw.githubusercontent.com/bibliotecaCuir/caja-01/main/imagenes/';
 
         const imgPath = article.dataset.imagen;
         if (!imgPath) return;
