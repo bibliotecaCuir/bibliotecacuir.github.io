@@ -88,7 +88,7 @@ header {
 
 /* INDEX NUMBER */
 
-.item-num {
+.item-codigo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.08em;
@@ -98,7 +98,7 @@ header {
   transition: color 0.2s ease;
 }
 
-.item:hover .item-num {
+.item:hover .item-codigo {
   color: var(--pink);
 }
 

@@ -24,12 +24,12 @@ fetch('./caja-01.yaml')
         article.dataset.imagen = item.imagenes[0];
       }
 
-      const num = String(index + 1).padStart(3, '0');
+      const codigo = item.codigo;
       const autorxs = item.autorxs ? item.autorxs.join(', ') : '';
       const editoriales = item.editoriales ? item.editoriales.join(', ') : '';
 
       article.innerHTML = `
-        <span class="item-num">${num}</span>
+        <span class="item-codigo">${codigo}</span>
         <div class="item-body">
           <h2 class="item-titulo">${item.titulo}</h2>
           <div class="item-meta-wrap">
