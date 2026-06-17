@@ -3,7 +3,7 @@ catalogo:
   sector: "caja-01"
 
   articulos:
-    - imagen: ""
+    - imagen: "caja-01/bc-010101-l.png"
       codigo: "BC.010101.L"
       titulo: "A quienes queden"
       titulo-conjunto: "No aplica"
