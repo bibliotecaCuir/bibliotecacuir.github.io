@@ -8,7 +8,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Sur/Norte editoras"
       agno: "2021"
       origen: "Santiago; Chile"
       tipologia: "Libro"
@@ -28,7 +28,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -48,7 +48,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Saraza Editorial"
       agno: "2022"
       origen: "Argentina"
       tipologia: "Libro"
@@ -68,7 +68,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Agenda Kuir"
       agno: "2023"
       origen: "Valparaíso; Chile"
       tipologia: "Agenda"
@@ -88,7 +88,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Chile"
       tipologia: "Fanzine"
@@ -108,7 +108,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Trío Editorial"
       agno: "2021"
       origen: "Valparaíso; Chile"
       tipologia: "Libro"
@@ -128,7 +128,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "HAMBRE Editorial"
       agno: "2022"
       origen: "Chile"
       tipologia: "Fanzine"
@@ -148,7 +148,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Corazón Cartonero"
       agno: "2015"
       origen: "La Plata; Argentina"
       tipologia: "Librillo"
@@ -168,7 +168,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Editorial Catalonia"
       agno: "2021"
       origen: "Santiago; Chile"
       tipologia: "Libro"
@@ -188,7 +188,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Buenos Aires; Argentina"
       tipologia: "Librilllo"
@@ -208,7 +208,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Buenos Aires; Argentina"
       tipologia: "Librilllo"
@@ -228,7 +228,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2020"
       origen: "Belo Horizonte; Brasil"
       tipologia: "Fanzine"
@@ -248,7 +248,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Trío Editorial"
       agno: "2024"
       origen: "Valparaíso; Chile"
       tipologia: "Agenda kuir 2024"
@@ -268,7 +268,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2020"
       origen: "Chile"
       tipologia: "Fanzine"
@@ -288,7 +288,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Elemento Disruptivo Editorial"
       agno: "2022"
       origen: "Argentina"
       tipologia: "Libro"
@@ -308,7 +308,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -328,7 +328,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -348,7 +348,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -368,7 +368,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -388,7 +388,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -408,7 +408,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -428,7 +428,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -448,7 +448,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "@i.conbototos"
       agno: "2021; 2022"
       origen: "Desconocido"
       tipologia: "Caja de cartón"
@@ -468,7 +468,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "@i.conbototos"
       agno: "2021; 2022"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -488,7 +488,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "@i.conbototos"
       agno: "2021; 2022"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -508,7 +508,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "@i.conbototos"
       agno: "2021; 2022"
       origen: "Desconocido"
       tipologia: "Pieza de Lego"
@@ -528,7 +528,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "La Duplicadora"
       agno: "2018"
       origen: "México"
       tipologia: "Libro"
@@ -548,7 +548,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2021"
       origen: "Ciudad de México; México"
       tipologia: "Fanzine"
@@ -568,7 +568,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Dormida"
       agno: "2021"
       origen: "Santiago; Chile"
       tipologia: "Fanzine"
@@ -588,7 +588,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Colección Cosas Escritas por Lesbianas; Lesbianidades"
       agno: "2019"
       origen: "Chile"
       tipologia: "Fanzine"
@@ -608,7 +608,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Crear Sensible"
       agno: "2024"
       origen: "Santiago; Chile"
       tipologia: "Fanzine"
@@ -628,7 +628,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2024"
       origen: "Santiago; Chile"
       tipologia: "Flyer pequeño"
@@ -648,7 +648,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2017"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -668,7 +668,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Pato de Vidrio"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -688,7 +688,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Pato de Vidrio"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -708,7 +708,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Taller de fanzine Violeta Cereceda MEMCH"
       agno: "2023"
       origen: "Independencia; Santiago; Chile"
       tipologia: "Fanzine"
@@ -728,7 +728,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2018"
       origen: "Argentina"
       tipologia: "Fanzine"
@@ -748,7 +748,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "The sisterhood Zine"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -768,7 +768,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Desobediencia visual"
       agno: "Desconocido"
       origen: "Chile"
       tipologia: "Flyer pequeño"
@@ -788,7 +788,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Desobediencia visual"
       agno: "Desconocido"
       origen: "Chile"
       tipologia: "Flyer pequeño"
@@ -808,7 +808,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2024"
       origen: "Lago Paimun; Chile"
       tipologia: "Fanzine"
@@ -828,7 +828,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Ediciones Necias (Los Pinos)"
       agno: "2022"
       origen: "Ciudad de México; México"
       tipologia: "Libro"
@@ -848,7 +848,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Taller Aparatos mágicos para hacer burbujear el cuerpo BIBLIOCUIR X FAD"
       agno: "2024"
       origen: "Santiago; Chile"
       tipologia: "Rompecabezas"
@@ -868,7 +868,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Passage Series Wendy's Subway"
       agno: "2022"
       origen: "Brooklyn; Nueva York"
       tipologia: "Libro"
@@ -888,7 +888,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Annablume Editora"
       agno: "2008"
       origen: "Sao Paulo, Brasil"
       tipologia: "Libro"
@@ -908,7 +908,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Fracassando. Edicoes precarias"
       agno: "Desconocido"
       origen: "Brasil"
       tipologia: "Fanzine"
@@ -928,7 +928,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -948,7 +948,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Solo un rato aqui; cráter inventado"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Libro"
@@ -968,7 +968,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -988,7 +988,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1008,7 +1008,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1028,7 +1028,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1048,7 +1048,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1068,7 +1068,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1088,7 +1088,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1108,7 +1108,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1128,7 +1128,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1148,7 +1148,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1168,7 +1168,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Fanzine, parte de la Gincana"
@@ -1188,7 +1188,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Uruguay"
       tipologia: "Gincana"
@@ -1208,7 +1208,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Fonatrans"
       agno: "2021"
       origen: "Brasil"
       tipologia: "Libro"
@@ -1228,7 +1228,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Pato de Vidrio N5"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -1248,7 +1248,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Pato de Vidrio N5"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -1268,7 +1268,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Cometa Serigrafía"
       agno: "2022"
       origen: "Buenos Aires; Argentina"
       tipologia: "Fanzine"
@@ -1288,7 +1288,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2023"
       origen: "Valparaíso; Chile"
       tipologia: "Fanzine"
@@ -1308,7 +1308,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Ediciones Afines"
       agno: "2019"
       origen: "La Plata; Argentina"
       tipologia: "Fanzine"
@@ -1328,7 +1328,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2016"
       origen: "Valparaíso; Chile"
       tipologia: "Fotolibro"
@@ -1348,7 +1348,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "HAMBRE Editorial"
       agno: "2023"
       origen: "Santiago; Chile"
       tipologia: "Fanzine"
@@ -1368,7 +1368,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Marsupial Editora"
       agno: "Desconocido"
       origen: "Río Negro; Argentina"
       tipologia: "Fanzine"
@@ -1388,7 +1388,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Flyer pequeño"
@@ -1408,7 +1408,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Santiago; Chile"
       tipologia: "Recompliación de archivo"
@@ -1428,7 +1428,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Miau ediciones"
       agno: "2022"
       origen: "México"
       tipologia: "Publicacion fotográfica"
@@ -1448,7 +1448,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "Chile"
       tipologia: "Libro"
@@ -1468,7 +1468,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Revista de Arte del Barrio Santa Ana"
       agno: "2019"
       origen: "Panamá"
       tipologia: "Revista"
@@ -1488,7 +1488,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Sapata press"
       agno: "2018"
       origen: "Brasil-Postugal"
       tipologia: "Cómic"
@@ -1508,7 +1508,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "México"
       tipologia: "Gráfica"
@@ -1528,7 +1528,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "2020"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -1548,7 +1548,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Sticker"
@@ -1568,7 +1568,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Postal"
@@ -1588,7 +1588,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Mercado negro"
       agno: "2005"
       origen: "México"
       tipologia: "Fanzine"
@@ -1608,7 +1608,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Monstro dos Mares"
       agno: "2024"
       origen: "Brasil"
       tipologia: "Libro"
@@ -1628,7 +1628,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Brasil"
       tipologia: "Sticker"
@@ -1648,7 +1648,7 @@ catalogo:
       titulo: ""
       titulo-conjunto: ""
       autorx: [""]
-      editorial: ""
+      editorial: "Agenda Kuir"
       agno: "2025"
       origen: "Chile"
       tipologia: "Agenda"
