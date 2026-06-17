@@ -59,7 +59,6 @@ fetch('./caja-01.yaml')
         const imgPath = article.dataset.imagen;
         if (!imgPath) return;
         previewImg.src = urlBaseCaja01 + imgPath;
-        console.log(previewImg.src);
         const rect = article.getBoundingClientRect();
         const centerY = rect.top + rect.height / 2;
         const half = preview.offsetHeight / 2;
@@ -72,20 +71,19 @@ fetch('./caja-01.yaml')
         preview.classList.remove('active');
       });
 
-      if (item.imagenes) {
+      if (item.imagen) {
         const imgWrap = article.querySelector('.item-imagen-wrap');
-        item.imagenes.slice(0, 1).forEach(imagen => {
-          const imgElement = document.createElement('img');
-          imgElement.src = `./imagenes/${imagen}`;
-          imgElement.alt = item.titulo;
-          imgElement.className = 'catalogo-imagen';
-          imgElement.loading = 'lazy';
-          imgElement.onload = () => {
-            const run = () => resizeImage(imgElement, 800, 0.6);
-            'requestIdleCallback' in window ? requestIdleCallback(run) : setTimeout(run, 200);
-          };
-          imgWrap.appendChild(imgElement);
-        });
+        const imgElement = document.createElement('img');
+        imgElement.src = imgPath;
+        imgElement.alt = item.titulo;
+        imgElement.className = 'catalogo-imagen';
+        imgElement.loading = 'lazy';
+        imgElement.onload = () => {
+          const run = () => resizeImage(imgElement, 800, 0.6);
+          'requestIdleCallback' in window ? requestIdleCallback(run) : setTimeout(run, 200);
+        };
+        imgWrap.appendChild(imgElement);
+
       }
     });
   })
