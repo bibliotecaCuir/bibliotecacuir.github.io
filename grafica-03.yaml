@@ -8,7 +8,7 @@ catalogo:
       titulo: "POR UN SISTEMA ACCESIBLE Y DIGNO"
       tituloConjunto: ""
       autorxs: ["Marco estuvo aquí"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -28,7 +28,7 @@ catalogo:
       titulo: "¿PONDRÁN MI CUERPA TRANS EN LOS LIBROS DE BIOLOGÍA DEL NUEVO CHILE?"
       tituloConjunto: ""
       autorxs: ["Amaru Alegría (Migra)"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -48,7 +48,7 @@ catalogo:
       titulo: "PODER AS PESSOAS TRANS E TRAVESTIS"
       tituloConjunto: ""
       autorxs: ["Vulcanica Pokaropa @vulknik"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -68,7 +68,7 @@ catalogo:
       titulo: "Para grabar un cuerpo sobre un cuerpo"
       tituloConjunto: ""
       autorxs: ["Matías Fuentes"]
-      editorial: ""
+      editorial: "Pedacito de Verdad"
       agno: ""
       origen: ""
       tipologia: ""
@@ -88,7 +88,7 @@ catalogo:
       titulo: "¡PÉGAME!"
       tituloConjunto: ""
       autorxs: ["Diana Morales Galicia"]
-      editorial: ""
+      editorial: "Saca la lengua colectivo"
       agno: ""
       origen: ""
       tipologia: ""
@@ -108,7 +108,7 @@ catalogo:
       titulo: "Quiero vivir sin miedo"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -128,7 +128,7 @@ catalogo:
       titulo: "RELÁMPAGO"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -148,7 +148,7 @@ catalogo:
       titulo: "Sexualidad de la mujer"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -168,7 +168,7 @@ catalogo:
       titulo: "Sin justicia no habrá paz"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -188,7 +188,7 @@ catalogo:
       titulo: "Soy encantadora (hija de perra)"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -208,7 +208,7 @@ catalogo:
       titulo: "SKATERATS Skateboarding is not un crimen"
       tituloConjunto: ""
       autorxs: ["Rachel Kats Taller"]
-      editorial: ""
+      editorial: "Rachel Kats Taller"
       agno: ""
       origen: ""
       tipologia: ""
@@ -228,7 +228,7 @@ catalogo:
       titulo: "Somos más que lo cotidiano. Abajo las estructuras (hija de perra)"
       tituloConjunto: ""
       autorxs: ["Wacha Taller", "Palo Gráfica"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -248,7 +248,7 @@ catalogo:
       titulo: "[Torticlasificados]"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -268,7 +268,7 @@ catalogo:
       titulo: "Todxs queremos ser reinas"
       tituloConjunto: ""
       autorxs: ["Pedro Juan Gonzalez"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -288,7 +288,7 @@ catalogo:
       titulo: "Transa marika Biblioteca Cuir"
       tituloConjunto: ""
       autorxs: ["Biblioteca Cuir", "Parquinho Grafico"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -308,7 +308,7 @@ catalogo:
       titulo: "TRAVESTI ARTISTA RESISTE"
       tituloConjunto: ""
       autorxs: ["Vulcanica Pokaropa @vulknik"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -328,7 +328,7 @@ catalogo:
       titulo: "UN MUNDO NUEVO"
       tituloConjunto: ""
       autorxs: ["David Alejandro", "Ausencia Nada"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -348,7 +348,7 @@ catalogo:
       titulo: "[Una silla]"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -368,7 +368,7 @@ catalogo:
       titulo: "Um corpo"
       tituloConjunto: ""
       autorxs: ["Laura Daviña", "Leticia Féres"]
-      editorial: ""
+      editorial: "Garupa edições"
       agno: ""
       origen: ""
       tipologia: ""
@@ -388,7 +388,7 @@ catalogo:
       titulo: "POLOLA VIRTUAL"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -403,3 +403,4 @@ catalogo:
       donante: ""
       otros: ""
       notasRegistro: ""
+
