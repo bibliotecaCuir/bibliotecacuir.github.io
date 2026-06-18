@@ -8,7 +8,7 @@ catalogo:
       titulo: "¡VIVA!"
       tituloConjunto: ""
       autorxs: ["Daniela del Mar", "Se imprime"]
-      editorial: ""
+      editorial: "Se imprime"
       agno: ""
       origen: ""
       tipologia: ""
@@ -28,7 +28,7 @@ catalogo:
       titulo: "VITORIA"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -48,7 +48,7 @@ catalogo:
       titulo: "[gran ruta] 8M"
       tituloConjunto: ""
       autorxs: ["@Somosunrostrocolectivo"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -68,7 +68,7 @@ catalogo:
       titulo: "1RO DE MAYO"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -88,7 +88,7 @@ catalogo:
       titulo: "Sin título"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -108,7 +108,7 @@ catalogo:
       titulo: "Sin título"
       tituloConjunto: ""
       autorxs: ["Paola Acebedo Rueda"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -128,7 +128,7 @@ catalogo:
       titulo: "Sin título"
       tituloConjunto: ""
       autorxs: ["Gelatina"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -148,7 +148,7 @@ catalogo:
       titulo: "Sin título"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
@@ -168,7 +168,7 @@ catalogo:
       titulo: "Sin título"
       tituloConjunto: ""
       autorxs: ["Desconocide"]
-      editorial: ""
+      editorial: "Autopublicación independiente"
       agno: ""
       origen: ""
       tipologia: ""
