@@ -9,7 +9,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Marco estuvo aquí"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -29,7 +29,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Amaru Alegría (Migra)"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -49,7 +49,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Vulcanica Pokaropa @vulknik"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -69,7 +69,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Matías Fuentes"]
       editorial: "Pedacito de Verdad"
-      agno: ""
+      agno: "2024"
       origen: ""
       tipologia: ""
       copias: ""
@@ -89,7 +89,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Diana Morales Galicia"]
       editorial: "Saca la lengua colectivo"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -109,7 +109,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desconocide"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -129,7 +129,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desconocide"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "2020"
       origen: ""
       tipologia: ""
       copias: ""
@@ -149,7 +149,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desconocide"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -169,7 +169,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "2025"
       origen: ""
       tipologia: ""
       copias: ""
@@ -189,7 +189,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -209,7 +209,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Rachel Kats Taller"]
       editorial: "Rachel Kats Taller"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -229,7 +229,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Wacha Taller", "Palo Gráfica"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "2022"
       origen: ""
       tipologia: ""
       copias: ""
@@ -249,7 +249,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desconocide"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -269,7 +269,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Pedro Juan Gonzalez"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "2024"
       origen: ""
       tipologia: ""
       copias: ""
@@ -289,7 +289,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Biblioteca Cuir", "Parquinho Grafico"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "2024"
       origen: ""
       tipologia: ""
       copias: ""
@@ -309,7 +309,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Vulcanica Pokaropa @vulknik"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -329,7 +329,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["David Alejandro", "Ausencia Nada"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -349,7 +349,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desconocide"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "Desconocido"
       origen: ""
       tipologia: ""
       copias: ""
@@ -369,7 +369,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Laura Daviña", "Leticia Féres"]
       editorial: "Garupa edições"
-      agno: ""
+      agno: "2020"
       origen: ""
       tipologia: ""
       copias: ""
@@ -389,7 +389,7 @@ catalogo:
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
       editorial: "Autopublicación independiente"
-      agno: ""
+      agno: "2024"
       origen: ""
       tipologia: ""
       copias: ""
@@ -403,4 +403,3 @@ catalogo:
       donante: ""
       otros: ""
       notasRegistro: ""
-
