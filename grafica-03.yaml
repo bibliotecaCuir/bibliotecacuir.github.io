@@ -5,9 +5,9 @@ catalogo:
   articulos:
     - imagen: ""
       codigo: "BC.0301.G"
-      titulo: ""
+      titulo: "POR UN SISTEMA ACCESIBLE Y DIGNO"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Marco estuvo aquí"]
       editorial: ""
       agno: ""
       origen: ""
@@ -25,9 +25,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0302.G"
-      titulo: ""
+      titulo: "¿PONDRÁN MI CUERPA TRANS EN LOS LIBROS DE BIOLOGÍA DEL NUEVO CHILE?"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Amaru Alegría (Migra)"]
       editorial: ""
       agno: ""
       origen: ""
@@ -45,9 +45,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0303.G"
-      titulo: ""
+      titulo: "PODER AS PESSOAS TRANS E TRAVESTIS"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Vulcanica Pokaropa @vulknik"]
       editorial: ""
       agno: ""
       origen: ""
@@ -65,9 +65,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0304.G"
-      titulo: ""
+      titulo: "Para grabar un cuerpo sobre un cuerpo"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Matías Fuentes"]
       editorial: ""
       agno: ""
       origen: ""
@@ -85,9 +85,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0305.G"
-      titulo: ""
+      titulo: "¡PÉGAME!"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Diana Morales Galicia"]
       editorial: ""
       agno: ""
       origen: ""
@@ -105,9 +105,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0306.G"
-      titulo: ""
+      titulo: "Quiero vivir sin miedo"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -125,9 +125,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0307.G"
-      titulo: ""
+      titulo: "RELÁMPAGO"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -145,9 +145,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0308.G"
-      titulo: ""
+      titulo: "Sexualidad de la mujer"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -165,9 +165,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0309.G"
-      titulo: ""
+      titulo: "Sin justicia no habrá paz"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desobediencia Visual"]
       editorial: ""
       agno: ""
       origen: ""
@@ -185,9 +185,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0310.G"
-      titulo: ""
+      titulo: "Soy encantadora (hija de perra)"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desobediencia Visual"]
       editorial: ""
       agno: ""
       origen: ""
@@ -205,9 +205,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0311.G"
-      titulo: ""
+      titulo: "SKATERATS Skateboarding is not un crimen"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Rachel Kats Taller"]
       editorial: ""
       agno: ""
       origen: ""
@@ -225,9 +225,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0312.G"
-      titulo: ""
+      titulo: "Somos más que lo cotidiano. Abajo las estructuras (hija de perra)"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Wacha Taller", "Palo Gráfica"]
       editorial: ""
       agno: ""
       origen: ""
@@ -245,9 +245,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0313.G"
-      titulo: ""
+      titulo: "[Torticlasificados]"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -265,9 +265,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0314.G"
-      titulo: ""
+      titulo: "Todxs queremos ser reinas"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Pedro Juan Gonzalez"]
       editorial: ""
       agno: ""
       origen: ""
@@ -285,9 +285,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0315.G"
-      titulo: ""
+      titulo: "Transa marika Biblioteca Cuir"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Biblioteca Cuir", "Parquinho Grafico"]
       editorial: ""
       agno: ""
       origen: ""
@@ -305,9 +305,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0316.G"
-      titulo: ""
+      titulo: "TRAVESTI ARTISTA RESISTE"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Vulcanica Pokaropa @vulknik"]
       editorial: ""
       agno: ""
       origen: ""
@@ -325,9 +325,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0317.G"
-      titulo: ""
+      titulo: "UN MUNDO NUEVO"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["David Alejandro", "Ausencia Nada"]
       editorial: ""
       agno: ""
       origen: ""
@@ -345,9 +345,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0318.G"
-      titulo: ""
+      titulo: "[Una silla]"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -365,9 +365,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0319.G"
-      titulo: ""
+      titulo: "Um corpo"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Laura Daviña", "Leticia Féres"]
       editorial: ""
       agno: ""
       origen: ""
@@ -385,9 +385,9 @@ catalogo:
       notasRegistro: ""
     - imagen: ""
       codigo: "BC.0320.G"
-      titulo: ""
+      titulo: "POLOLA VIRTUAL"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desobediencia Visual"]
       editorial: ""
       agno: ""
       origen: ""
@@ -403,3 +403,5 @@ catalogo:
       donante: ""
       otros: ""
       notasRegistro: ""
+
+
