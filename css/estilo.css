@@ -53,22 +53,22 @@ a {
 .site-header {
   position: relative;
   z-index: 10;
-  height: clamp(115px, 11vw, 150px);
+  height: clamp(72px, 6vw, 90px);
 }
 
 .site-logo {
   position: absolute;
   top: -0.8rem;
-  left: -0.8rem;
+  left: 50%;
   display: block;
   width: clamp(105px, 12vw, 155px);
-  transform: rotate(-1deg);
+  transform: translateX(-50%) rotate(-1deg);
   transition: transform 0.3s cubic-bezier(0.2, 1.2, 0.32, 1);
 }
 
 .site-logo:hover,
 .site-logo:focus-visible {
-  transform: rotate(1deg) scale(1.03);
+  transform: translateX(-50%) rotate(1deg) scale(1.03);
 }
 
 .site-logo img {
@@ -78,7 +78,7 @@ a {
 
 /* Introducción compacta, sin elementos decorativos de fondo. */
 .catalogo-hero {
-  padding: 0.5rem var(--page-gutter) clamp(1.6rem, 3vw, 2.5rem);
+  padding: 0 var(--page-gutter) clamp(1.6rem, 3vw, 2.5rem);
   border-bottom: 1px solid var(--borde);
 }
 
@@ -100,18 +100,19 @@ a {
 }
 
 .catalogo-intro {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 650px);
+  align-items: end;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: clamp(1rem, 2vw, 1.7rem);
 }
 
-.catalogo-intro > p:first-child {
+.catalogo-presentacion > p:last-child {
   max-width: 52ch;
-  margin: 0;
+  margin: clamp(1rem, 2vw, 1.7rem) 0 0;
   font-size: clamp(0.84rem, 1.2vw, 1rem);
   line-height: 1.4;
+  white-space: nowrap;
 }
 
 .catalogo-controls {
@@ -506,17 +507,17 @@ a {
 
 @media (max-width: 700px) {
   .site-header {
-    height: 92px;
+    height: 68px;
   }
 
   .site-logo {
     top: 0.3rem;
-    left: 0.3rem;
+    left: 50%;
     width: 105px;
   }
 
   .catalogo-hero {
-    padding-top: 0.75rem;
+    padding-top: 0;
   }
 
   .catalogo-hero h1 {
@@ -525,7 +526,7 @@ a {
 
   .catalogo-intro {
     align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
 
