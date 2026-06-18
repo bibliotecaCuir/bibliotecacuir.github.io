@@ -7,7 +7,7 @@ catalogo:
       codigo: "BC.0401.G"
       titulo: "¡VIVA!"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Daniela del Mar", "Se imprime"]
       editorial: ""
       agno: ""
       origen: ""
@@ -27,7 +27,7 @@ catalogo:
       codigo: "BC.0402.G"
       titulo: "VITORIA"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -47,7 +47,7 @@ catalogo:
       codigo: "BC.0403.G"
       titulo: "[gran ruta] 8M"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["@Somosunrostrocolectivo"]
       editorial: ""
       agno: ""
       origen: ""
@@ -67,7 +67,7 @@ catalogo:
       codigo: "BC.0404.G"
       titulo: "1RO DE MAYO"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -87,7 +87,7 @@ catalogo:
       codigo: "BC.0405.G"
       titulo: "Sin título"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
@@ -107,7 +107,7 @@ catalogo:
       codigo: "BC.0406.G"
       titulo: "Sin título"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Paola Acebedo Rueda"]
       editorial: ""
       agno: ""
       origen: ""
@@ -127,7 +127,7 @@ catalogo:
       codigo: "BC.0407.G"
       titulo: "Sin título"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Gelatina"]
       editorial: ""
       agno: ""
       origen: ""
@@ -147,7 +147,7 @@ catalogo:
       codigo: "BC.0408.G"
       titulo: "Sin título"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desobediencia Visual"]
       editorial: ""
       agno: ""
       origen: ""
@@ -167,7 +167,7 @@ catalogo:
       codigo: "BC.0409.G"
       titulo: "Sin título"
       tituloConjunto: ""
-      autorxs: [""]
+      autorxs: ["Desconocide"]
       editorial: ""
       agno: ""
       origen: ""
