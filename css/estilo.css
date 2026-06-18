@@ -115,6 +115,10 @@ a {
   white-space: nowrap;
 }
 
+.catalogo-descripcion span {
+  display: inline;
+}
+
 .catalogo-controls {
   display: grid;
   flex: 0 1 650px;
@@ -507,13 +511,13 @@ a {
 
 @media (max-width: 700px) {
   .site-header {
-    height: 68px;
+    height: 132px;
   }
 
   .site-logo {
-    top: 0.3rem;
+    top: 0.45rem;
     left: 50%;
-    width: 105px;
+    width: 112px;
   }
 
   .catalogo-hero {
@@ -522,6 +526,19 @@ a {
 
   .catalogo-hero h1 {
     font-size: clamp(2.65rem, 13vw, 3.7rem);
+  }
+
+  .catalogo-presentacion > .catalogo-descripcion {
+    max-width: none;
+    margin-top: 1.15rem;
+    font-size: clamp(0.9rem, 4.2vw, 1.05rem);
+    line-height: 1.45;
+    white-space: normal;
+  }
+
+  .catalogo-descripcion span {
+    display: block;
+    white-space: nowrap;
   }
 
   .catalogo-intro {
