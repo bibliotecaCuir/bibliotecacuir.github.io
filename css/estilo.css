@@ -1,7 +1,6 @@
 @font-face {
     font-family: "Caos Marika";
     src:
-        url("/assets/fonts/CAOSMARIKA.otf") format("opentype"),
         url("../assets/fonts/CAOSMARIKA.otf") format("opentype");
     font-style: normal;
     font-weight: 400;
