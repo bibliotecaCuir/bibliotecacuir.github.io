@@ -1,10 +1,10 @@
 const cola = document.getElementById("cola");
 
-let x = 100;
+let x = 50;
 let y = 100;
 
-let dx = 3;
-let dy = 2.5;
+let dx = 1;
+let dy = 3;
 
 function animate() {
 
@@ -15,11 +15,11 @@ function animate() {
     const h = cola.offsetHeight;
 
     if (x <= 0 || x + w >= window.innerWidth) {
-        dx *= -5;
+        dx *= -1;
     }
 
     if (y <= 0 || y + h >= window.innerHeight) {
-        dy *= -5;
+        dy *= -1;
     }
 
     cola.style.left = x + "px";
