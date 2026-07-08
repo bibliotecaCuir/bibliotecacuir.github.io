@@ -17,6 +17,7 @@
     --color-verde: #2aec57;
     --color-azul: #6858fd;
     --color-rosado: #fe62de;
+    --color-lettering: #e6007e;
     --color-rosado-claro: #f7a7df;
     --tinte-verde: rgba(42, 236, 87, 0.72);
     --tinte-azul: rgba(104, 88, 253, 0.72);
@@ -262,7 +263,7 @@ main > section:first-child {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(70px, 8vw, 112px);
+    width: clamp(82px, 9.2vw, 132px);
     aspect-ratio: 16 / 11;
     margin: 0;
     overflow: hidden;
@@ -1040,22 +1041,13 @@ body.is-at-footer .site-header {
 
 .book-placeholder {
     position: absolute;
-    display: grid;
-    place-items: center;
-    width: clamp(76px, 8.6vw, 142px);
-    aspect-ratio: 2 / 3;
-    color: #111111;
-    font-size: clamp(1rem, 1.8vw, 1.9rem);
-    font-weight: var(--peso-medio);
-    line-height: 1;
+    display: block;
+    width: clamp(96px, 9.6vw, 162px);
+    aspect-ratio: auto;
     text-decoration: none;
-    text-transform: lowercase;
     cursor: pointer;
-    background: var(--book-color);
-    border: 8px solid #ffffff;
-    box-shadow:
-        0 10px 14px rgba(0, 0, 0, 0.14),
-        0 2px 0 rgba(255, 255, 255, 0.65) inset;
+    background: transparent;
+    border: 0;
     transform:
         translate(-50%, -50%)
         rotate(0deg);
@@ -1063,20 +1055,36 @@ body.is-at-footer .site-header {
     animation-delay: var(--book-delay, 0s);
 }
 
+.book-placeholder img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.24));
+    transition:
+        filter 0.24s ease,
+        transform 0.24s ease;
+}
+
+.book-placeholder:hover img,
+.book-placeholder:focus-visible img {
+    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.32));
+    transform: translateY(-4px) scale(1.035);
+}
+
 .book-small {
-    width: clamp(60px, 6.4vw, 108px);
+    width: clamp(82px, 7.4vw, 126px);
 }
 
 .book-tall {
-    aspect-ratio: 1.7 / 3;
+    width: clamp(104px, 10.2vw, 174px);
 }
 
 .book-wide {
-    aspect-ratio: 2.5 / 3;
+    width: clamp(122px, 12vw, 202px);
 }
 
 .book-tilted {
-    aspect-ratio: 2.1 / 2.8;
+    width: clamp(108px, 10.6vw, 178px);
 }
 
 .book-verde {
@@ -1199,14 +1207,14 @@ body.is-at-footer .site-header {
     z-index: 3;
     display: grid;
     place-items: center;
-    width: clamp(130px, 11vw, 184px);
-    min-height: clamp(50px, 5.2vw, 70px);
-    padding: 0.58rem 1rem;
+    width: clamp(138px, 11.6vw, 188px);
+    min-height: clamp(62px, 5.9vw, 86px);
+    padding: 0.58rem 0.82rem;
     box-sizing: border-box;
     color: #111111;
     font-family: var(--font-proyecto);
-    font-size: clamp(0.94rem, 1.16vw, 1.34rem);
-    line-height: 0.95;
+    font-size: clamp(1.38rem, 1.9vw, 2.18rem);
+    line-height: 0.82;
     text-align: center;
     text-decoration: none;
     text-transform: lowercase;
@@ -1230,7 +1238,7 @@ body.is-at-footer .site-header {
 .image-constellation {
     position: relative;
     min-height: clamp(720px, 78vw, 1080px);
-    margin-top: clamp(2rem, 5vw, 4.5rem);
+    margin-top: clamp(6rem, 12vw, 11rem);
     overflow: visible;
     perspective: 1100px;
 }
@@ -1427,31 +1435,17 @@ body.is-at-footer .site-header {
     z-index: 1;
     margin-top: 0;
     overflow: hidden;
-    color: #111111;
-    background: var(--color-rosado-claro);
+    color: #ffffff;
+    background: var(--color-lettering);
 }
 
-.site-footer::before,
 .site-footer::after {
     position: absolute;
-    content: "";
-    pointer-events: none;
-}
-
-.site-footer::before {
-    inset: -25%;
-    background:
-        repeating-radial-gradient(ellipse at 22% 42%, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 7px),
-        repeating-radial-gradient(ellipse at 68% 48%, rgba(0, 0, 0, 0.14) 0 1px, transparent 1px 9px);
-    opacity: 0.16;
-    transform: rotate(-3deg) scale(1.08);
-    animation: footer-moire 20s ease-in-out infinite alternate;
-}
-
-.site-footer::after {
     inset: 0;
+    content: "";
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 55%);
     opacity: 0.55;
+    pointer-events: none;
 }
 
 .footer-follow,
@@ -1468,8 +1462,8 @@ body.is-at-footer .site-header {
     gap: 1.5rem;
     min-height: clamp(84px, 10vw, 130px);
     padding: 0 clamp(1rem, 5vw, 4.5rem);
-    border-top: 1px solid rgba(0, 0, 0, 0.34);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+    border-top: 1px solid rgba(255, 255, 255, 0.42);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.42);
     box-sizing: border-box;
 }
 
@@ -1477,7 +1471,7 @@ body.is-at-footer .site-header {
     display: inline-flex;
     align-items: center;
     gap: 0.9rem;
-    color: #111111;
+    color: #ffffff;
     font-size: clamp(1rem, 2vw, 1.45rem);
     font-weight: var(--peso-medio);
     line-height: 1;
@@ -1499,10 +1493,10 @@ body.is-at-footer .site-header {
     place-items: center;
     width: clamp(34px, 5vw, 52px);
     aspect-ratio: 1;
-    color: var(--color-rosado-claro);
+    color: var(--color-lettering);
     font-size: clamp(1.3rem, 2.4vw, 2rem);
     line-height: 1;
-    background: #111111;
+    background: #ffffff;
     border-radius: 48% 54% 46% 52%;
     transform: rotate(-8deg);
 }
@@ -1512,12 +1506,12 @@ body.is-at-footer .site-header {
 }
 
 .footer-main h2 {
-    max-width: 23ch;
+    max-width: min(100%, 1320px);
     margin: 0 0 clamp(1.6rem, 3vw, 2.8rem);
     font-family: var(--font-proyecto);
-    font-size: clamp(2rem, 4.9vw, 4.9rem);
+    font-size: clamp(2.4rem, 5.35vw, 5.35rem);
     font-weight: var(--peso-regular);
-    line-height: 0.92;
+    line-height: 0.9;
     text-transform: lowercase;
 }
 
@@ -1574,7 +1568,7 @@ body.is-at-footer .site-header {
 .footer-links a,
 .footer-contact a,
 .footer-legal a {
-    color: #111111;
+    color: #ffffff;
     font-size: clamp(0.76rem, 1vw, 0.92rem);
     line-height: 1.2;
     text-decoration: none;
@@ -1599,14 +1593,14 @@ body.is-at-footer .site-header {
     grid-template-columns: minmax(0, 1fr) 44px;
     width: 100%;
     margin-top: 0.35rem;
-    border: 1px solid rgba(0, 0, 0, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.82);
 }
 
 .footer-input-row input,
 .footer-input-row button {
     min-width: 0;
     min-height: 38px;
-    color: #111111;
+    color: #ffffff;
     font: inherit;
     background: transparent;
     border: 0;
@@ -1617,7 +1611,7 @@ body.is-at-footer .site-header {
 }
 
 .footer-input-row input::placeholder {
-    color: rgba(0, 0, 0, 0.58);
+    color: rgba(255, 255, 255, 0.68);
     opacity: 1;
     text-transform: lowercase;
 }
@@ -1628,7 +1622,7 @@ body.is-at-footer .site-header {
     padding: 0;
     font-size: 1.35rem;
     cursor: pointer;
-    border-left: 1px solid rgba(0, 0, 0, 0.42);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .footer-legal {
@@ -1638,7 +1632,7 @@ body.is-at-footer .site-header {
     gap: 1rem;
     min-height: 34px;
     padding: 0.42rem clamp(1rem, 5vw, 4.5rem);
-    border-top: 1px solid rgba(0, 0, 0, 0.34);
+    border-top: 1px solid rgba(255, 255, 255, 0.42);
     box-sizing: border-box;
     font-size: 0.68rem;
     line-height: 1.1;
@@ -1650,16 +1644,6 @@ body.is-at-footer .site-header {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-}
-
-@keyframes footer-moire {
-    0% {
-        transform: translate3d(-1.5%, -1%, 0) rotate(-3deg) scale(1.08);
-    }
-
-    100% {
-        transform: translate3d(1.5%, 1%, 0) rotate(3deg) scale(1.12);
-    }
 }
 
 .bottom-nav {
@@ -1965,7 +1949,7 @@ body.is-at-footer .bottom-nav:focus-within {
     }
 
     .oval-carousel-item {
-        width: clamp(70px, 21vw, 96px);
+        width: clamp(78px, 23vw, 108px);
     }
 
     .oval-carousel-item:nth-child(even) {
@@ -2018,7 +2002,7 @@ body.is-at-footer .bottom-nav:focus-within {
     }
 
     .book-placeholder {
-        width: clamp(62px, 22vw, 104px);
+        width: clamp(78px, 25vw, 122px);
         border-width: 6px;
         font-size: clamp(0.9rem, 5.2vw, 1.35rem);
     }
@@ -2082,10 +2066,10 @@ body.is-at-footer .bottom-nav:focus-within {
         right: 2rem;
         bottom: 3rem;
         left: auto;
-        width: clamp(92px, 28vw, 132px);
-        min-height: 54px;
-        padding: 1rem 0.62rem;
-        font-size: clamp(0.68rem, 3.9vw, 0.88rem);
+        width: clamp(118px, 32vw, 150px);
+        min-height: 62px;
+        padding: 0.68rem 0.58rem;
+        font-size: clamp(1.08rem, 5.8vw, 1.46rem);
         box-shadow: 0 4px 8px rgba(17, 17, 17, 0.14);
         transform: rotate(7deg);
     }
@@ -2097,7 +2081,7 @@ body.is-at-footer .bottom-nav:focus-within {
 
     .image-constellation {
         min-height: 680px;
-        margin-top: 2.5rem;
+        margin-top: 5.5rem;
     }
 
     .image-constellation-scene {
@@ -2148,7 +2132,7 @@ body.is-at-footer .bottom-nav:focus-within {
     }
 
     .footer-main h2 {
-        max-width: 26ch;
+        max-width: 100%;
         font-size: clamp(1rem, 6vw, 3.35rem);
     }
 
@@ -2247,7 +2231,6 @@ body.is-at-footer .bottom-nav:focus-within {
         animation: none;
     }
 
-    .site-footer::before,
     .site-footer::after {
         animation: none;
     }

@@ -139,8 +139,8 @@ function renderOvalCarousel(rotation) {
         const x = Math.cos(angle) * radiusX;
         const y = Math.sin(angle) * radiusY + verticalOffset;
         const z = -150 + depth * 300;
-        const activeScale = item.classList.contains("is-active") ? 1.5 : 1;
-        const scale = (0.58 + depth * 0.54) * activeScale;
+        const activeScale = item.classList.contains("is-active") ? 1.42 : 1;
+        const scale = (0.64 + depth * 0.58) * activeScale;
         const opacity = 0.58 + depth * 0.42;
         const brightness = 0.7 + depth * 0.3;
 
@@ -237,6 +237,12 @@ function moveOvalItemToCenter(item) {
     ovalAnimationFrame = window.requestAnimationFrame(updateOvalCarousel);
 }
 
+function pauseOvalCarousel() {
+    window.cancelAnimationFrame(ovalAnimationFrame);
+    ovalTargetRotation = undefined;
+    ovalLastTimestamp = undefined;
+}
+
 function resumeOvalCarousel() {
     if (reduceBackgroundMotion.matches) {
         return;
@@ -253,15 +259,15 @@ reduceBackgroundMotion.addEventListener("change", syncOvalCarouselMotion);
 ovalCarousel?.addEventListener("pointerover", (event) => {
     const activeItem = event.target.closest(".oval-carousel-item.is-front");
 
-    if (activeItem) {
-        window.clearTimeout(ovalHoverExitTimer);
+    if (!activeItem || activeItem.contains(event.relatedTarget)) {
+        return;
     }
 
-    if (activeItem && !activeItem.classList.contains("is-active")) {
-        ovalCarousel.querySelector(".oval-carousel-item.is-active")?.classList.remove("is-active");
-        activeItem.classList.add("is-active");
-        moveOvalItemToCenter(activeItem);
-    }
+    window.clearTimeout(ovalHoverExitTimer);
+    pauseOvalCarousel();
+    ovalCarousel.querySelector(".oval-carousel-item.is-active")?.classList.remove("is-active");
+    activeItem.classList.add("is-active");
+    renderOvalCarousel(ovalRotation);
 });
 ovalCarousel?.addEventListener("pointerout", (event) => {
     const activeItem = event.target.closest(".oval-carousel-item.is-active");
