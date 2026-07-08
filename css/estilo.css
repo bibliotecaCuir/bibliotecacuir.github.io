@@ -601,6 +601,16 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
 }
 
 @media (min-width: 701px) {
+    .landing-menu {
+        width: min(470px, 100%);
+        padding-right: clamp(1.4rem, 4vw, 3rem);
+    }
+
+    .landing-menu a {
+        gap: 0.55em;
+        font-size: clamp(1.12rem, 1.6vw, 1.58rem);
+    }
+
     body.has-compact-nav .site-header {
         top: 5px;
         left: 14px;
@@ -953,7 +963,9 @@ body.is-at-footer .site-header {
     font-size: clamp(1rem, 1.8vw, 1.9rem);
     font-weight: var(--peso-medio);
     line-height: 1;
+    text-decoration: none;
     text-transform: lowercase;
+    cursor: pointer;
     background: var(--book-color);
     border: 8px solid #ffffff;
     box-shadow:
