@@ -100,7 +100,7 @@ function fillOvalCarousel() {
     const originalItems = [...ovalCarousel.querySelectorAll(".oval-carousel-item")];
     let itemIndex = originalItems.length;
 
-    while (itemIndex < 20) {
+    while (itemIndex < 10) {
         originalItems.forEach((item) => {
             if (itemIndex < 20) {
                 ovalCarousel.append(item.cloneNode(true));
