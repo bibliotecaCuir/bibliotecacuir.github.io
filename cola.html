@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca Cuir</title>
+</head>
+<body>
+    <div class="landing-background" aria-hidden="true">
+        <style>
+            #cola {
+    position: absolute;
+    width: 100px;
+}
+        </style>
+    
+</div>
+<img id="cola" src="./assets/imagenes/cola.png" alt="Logo" width="100px">
+<script>
+    const cola = document.getElementById("cola");
+
+let x = 100;
+let y = 100;
+
+let dx = 3;
+let dy = 2.5;
+
+function animate() {
+
+    x += dx;
+    y += dy;
+
+    const w = cola.offsetWidth;
+    const h = cola.offsetHeight;
+
+    if (x <= 0 || x + w >= window.innerWidth) {
+        dx *= -1;
+    }
+
+    if (y <= 0 || y + h >= window.innerHeight) {
+        dy *= -1;
+    }
+
+    cola.style.left = x + "px";
+    cola.style.top = y + "px";
+cola
+    requestAnimationFrame(animate);
+}
+
+cola.onload = () => {
+    animate();
+};
+
+window.addEventListener("resize", () => {
+    x = Math.min(x, window.innerWidth - cola.offsetWidth);
+    y = Math.min(y, window.innerHeight - cola.offsetHeight);
+});
+</script>
+</body>
+</html>
