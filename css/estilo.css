@@ -2,7 +2,8 @@
     font-family: "Caos Marika";
     src:
         /* url("../assets/fonts/CAOSMARIKA.otf") format("opentype"); */
-        url("../assets/fonts/CAOSMARIKA-repaired.otf") format("opentype");
+        /* url("../assets/fonts/CAOSMARIKA-repaired.otf") format("opentype"); */
+        url("../assets/fonts/CAOSMARIKA-patched.otf") format("opentype");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
