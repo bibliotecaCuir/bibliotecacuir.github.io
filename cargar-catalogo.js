@@ -276,12 +276,12 @@ Promise.all(
     observarRevelado([...container.querySelectorAll(".item")]);
   })
   .catch((error) => {
-    console.error("Error al cargar el catálogo:", error);
+    console.error("Error al cargar la colección:", error);
     container.innerHTML = `
       <p class="catalogo-error">
-        No pudimos cargar el catálogo. Intenta recargar la página.
+        No pudimos cargar la colección. Intenta recargar la página.
       </p>
     `;
 
-    if (countEl) countEl.textContent = "Catálogo no disponible";
+    if (countEl) countEl.textContent = "colección no disponible";
   });
