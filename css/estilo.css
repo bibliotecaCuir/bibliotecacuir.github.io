@@ -94,6 +94,18 @@ body.is-background-hidden .landing-background-image {
     opacity: 0;
 }
 
+.cola-animation {
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    z-index: 3;
+    width: clamp(88px, 11vw, 156px);
+    height: auto;
+    pointer-events: none;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.28));
+    will-change: top, left;
+}
+
 main {
     position: relative;
     z-index: 1;
@@ -103,16 +115,9 @@ main {
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
     scroll-padding-top: 0;
     max-width: 100%;
     overflow-x: hidden;
-}
-
-main > section:not(:first-child),
-.site-footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
 }
 
 main > section {
@@ -121,16 +126,19 @@ main > section {
     box-sizing: border-box;
 }
 
-main > section:first-child {
-    scroll-snap-align: none;
-}
-
 .landing-presentation {
     position: relative;
+    z-index: 1;
     min-height: 100vh;
     min-height: 100svh;
     overflow: hidden;
-    background: #111111;
+    background: transparent;
+}
+
+main > section,
+.site-footer {
+    position: relative;
+    z-index: 2;
 }
 
 .presentation-slides,
@@ -139,6 +147,10 @@ main > section:first-child {
     inset: 0;
     width: 100%;
     height: 100%;
+}
+
+.presentation-scroll {
+    pointer-events: auto;
 }
 
 .presentation-slides::after {
@@ -281,6 +293,7 @@ main > section:first-child {
     opacity: var(--orbit-opacity, 1);
     filter: brightness(var(--orbit-brightness, 1));
     pointer-events: none;
+    outline: none;
     will-change: transform, opacity, filter;
     transition:
         filter 0.25s ease,
@@ -293,11 +306,24 @@ main > section:first-child {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
+    outline: none;
 }
 
 .oval-carousel-item.is-front {
+    cursor: default;
+}
+
+.oval-carousel-item.is-front img {
     pointer-events: auto;
     cursor: pointer;
+}
+
+.oval-carousel-item:focus,
+.oval-carousel-item:focus-visible,
+.oval-carousel-item img:focus,
+.oval-carousel-item img:focus-visible {
+    outline: none;
 }
 
 .oval-carousel-item.is-front.is-active,
@@ -674,20 +700,21 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
 
 @media (min-width: 701px) {
     .landing-menu {
-        gap: clamp(1.35rem, 2.4vw, 2.1rem);
-        width: min(540px, 100%);
-        padding-right: clamp(1.4rem, 4vw, 3rem);
+        gap: clamp(1.35rem, 2.35vw, 2rem);
+        width: min(420px, calc(100% - 1rem));
+        padding-right: clamp(1.1rem, 2.6vw, 2.2rem);
+        padding-left: clamp(0.85rem, 2vw, 1.4rem);
     }
 
     .landing-menu a {
-        gap: 0.62em;
-        font-size: clamp(1.35rem, 2.05vw, 2rem);
+        gap: 0.42em;
+        font-size: clamp(1.78rem, 2.65vw, 2.58rem);
     }
 
     .landing-menu a::before {
-        flex-basis: 1.22em;
-        width: 1.22em;
-        font-size: 0.78em;
+        flex-basis: 1em;
+        width: 1em;
+        font-size: 0.72em;
     }
 
     body.has-compact-nav .site-header {
@@ -2170,7 +2197,6 @@ body.is-at-footer .bottom-nav:focus-within {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
-        scroll-snap-type: none;
     }
 
     .presentation-slide {

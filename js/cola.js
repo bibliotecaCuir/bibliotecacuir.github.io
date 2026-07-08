@@ -1,38 +1,49 @@
 const cola = document.getElementById("cola");
 
-let x = 50;
-let y = 100;
+if (cola) {
+    let x = 64;
+    let y = 120;
+    let dx = 2.4;
+    let dy = 1.8;
 
-let dx = 1;
-let dy = 3;
-
-function animate() {
-
-    x += dx;
-    y += dy;
-
-    const w = cola.offsetWidth;
-    const h = cola.offsetHeight;
-
-    if (x <= 0 || x + w >= window.innerWidth) {
-        dx *= -1;
+    function keepColaInViewport() {
+        x = Math.min(Math.max(x, 0), window.innerWidth - cola.offsetWidth);
+        y = Math.min(Math.max(y, 0), window.innerHeight - cola.offsetHeight);
     }
 
-    if (y <= 0 || y + h >= window.innerHeight) {
-        dy *= -1;
+    function animateCola() {
+        x += dx;
+        y += dy;
+
+        const width = cola.offsetWidth;
+        const height = cola.offsetHeight;
+
+        if (x <= 0 || x + width >= window.innerWidth) {
+            dx *= -1;
+            x = Math.min(Math.max(x, 0), window.innerWidth - width);
+        }
+
+        if (y <= 0 || y + height >= window.innerHeight) {
+            dy *= -1;
+            y = Math.min(Math.max(y, 0), window.innerHeight - height);
+        }
+
+        cola.style.left = `${x}px`;
+        cola.style.top = `${y}px`;
+
+        window.requestAnimationFrame(animateCola);
     }
 
-    cola.style.left = x + "px";
-    logo.style.top = y + "px";
-cola
-    requestAnimationFrame(animate);
+    function startColaAnimation() {
+        keepColaInViewport();
+        animateCola();
+    }
+
+    if (cola.complete) {
+        startColaAnimation();
+    } else {
+        cola.addEventListener("load", startColaAnimation, { once: true });
+    }
+
+    window.addEventListener("resize", keepColaInViewport);
 }
-
-cola.onload = () => {
-    animate();
-};
-
-window.addEventListener("resize", () => {
-    x = Math.min(x, window.innerWidth - logo.offsetWidth);
-    y = Math.min(y, window.innerHeight - logo.offsetHeight);
-});

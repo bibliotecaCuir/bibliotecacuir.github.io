@@ -121,7 +121,7 @@ let ovalLastTimestamp;
 let ovalTargetRotation;
 let ovalTargetStartRotation;
 let ovalTargetStartTime;
-let ovalHoverExitTimer;
+let ovalHoveredItem;
 
 function renderOvalCarousel(rotation) {
     if (!ovalCarousel || ovalCarouselItems.length === 0) {
@@ -157,7 +157,7 @@ function renderOvalCarousel(rotation) {
     const frontItems = new Set(
         itemDepths
             .sort((first, second) => second.depth - first.depth)
-            .slice(0, 9)
+            .slice(0, 5)
             .map(({ item }) => item)
     );
 
@@ -254,34 +254,64 @@ function resumeOvalCarousel() {
     ovalAnimationFrame = window.requestAnimationFrame(updateOvalCarousel);
 }
 
-syncOvalCarouselMotion();
-reduceBackgroundMotion.addEventListener("change", syncOvalCarouselMotion);
-ovalCarousel?.addEventListener("pointerover", (event) => {
-    const activeItem = event.target.closest(".oval-carousel-item.is-front");
+function getOvalHoveredImageItem(event) {
+    if (!(event.target instanceof Element)) {
+        return null;
+    }
 
-    if (!activeItem || activeItem.contains(event.relatedTarget)) {
+    const image = event.target.closest(".oval-carousel-item.is-front img");
+
+    if (!image) {
+        return null;
+    }
+
+    const imageBounds = image.getBoundingClientRect();
+    const edgeInset = Math.min(6, imageBounds.width * 0.04, imageBounds.height * 0.04);
+    const isInsideImage =
+        event.clientX >= imageBounds.left + edgeInset
+        && event.clientX <= imageBounds.right - edgeInset
+        && event.clientY >= imageBounds.top + edgeInset
+        && event.clientY <= imageBounds.bottom - edgeInset;
+
+    if (!isInsideImage) {
+        return null;
+    }
+
+    return image.closest(".oval-carousel-item.is-front");
+}
+
+function clearOvalHoveredItem() {
+    if (!ovalHoveredItem) {
         return;
     }
 
-    window.clearTimeout(ovalHoverExitTimer);
-    pauseOvalCarousel();
+    ovalHoveredItem.classList.remove("is-active");
+    ovalHoveredItem = undefined;
+    resumeOvalCarousel();
+}
+
+syncOvalCarouselMotion();
+reduceBackgroundMotion.addEventListener("change", syncOvalCarouselMotion);
+ovalCarousel?.addEventListener("pointermove", (event) => {
+    const activeItem = getOvalHoveredImageItem(event);
+
+    if (activeItem === ovalHoveredItem) {
+        return;
+    }
+
     ovalCarousel.querySelector(".oval-carousel-item.is-active")?.classList.remove("is-active");
+    ovalHoveredItem = activeItem;
+
+    if (!activeItem) {
+        resumeOvalCarousel();
+        return;
+    }
+
+    pauseOvalCarousel();
     activeItem.classList.add("is-active");
     renderOvalCarousel(ovalRotation);
 });
-ovalCarousel?.addEventListener("pointerout", (event) => {
-    const activeItem = event.target.closest(".oval-carousel-item.is-active");
-
-    if (!activeItem || activeItem.contains(event.relatedTarget)) {
-        return;
-    }
-
-    window.clearTimeout(ovalHoverExitTimer);
-    ovalHoverExitTimer = window.setTimeout(() => {
-        activeItem.classList.remove("is-active");
-        resumeOvalCarousel();
-    }, 520);
-});
+ovalCarousel?.addEventListener("pointerleave", clearOvalHoveredItem);
 ovalCarousel?.addEventListener("focusin", (event) => {
     const activeItem = event.target.closest(".oval-carousel-item.is-front");
 
