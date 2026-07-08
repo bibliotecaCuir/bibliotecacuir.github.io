@@ -1,17 +1,42 @@
-const landingBackground = document.querySelector(".landing-background-image");
+const landingBackground = document.querySelector(".landing-background");
+const landingBackgroundImage = document.querySelector(".landing-background-image");
+const backgroundToggle = document.querySelector(".background-toggle");
 const reduceBackgroundMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+function isTypingTarget(target) {
+    return Boolean(target?.closest("input, textarea, select, [contenteditable='true']"));
+}
+
+function toggleLandingLettering() {
+    document.body.classList.toggle("is-lettering-hidden");
+}
+
+function updateBackgroundToggle(isHidden) {
+    if (!backgroundToggle) {
+        return;
+    }
+
+    backgroundToggle.setAttribute("aria-pressed", String(isHidden));
+    backgroundToggle.textContent = isHidden ? "mostrar maqueta" : "ocultar maqueta";
+}
+
+function toggleLandingBackgroundVisibility() {
+    const isHidden = document.body.classList.toggle("is-background-hidden");
+
+    updateBackgroundToggle(isHidden);
+}
+
 function updateLandingBackground() {
-    if (!landingBackground) {
+    if (!landingBackground || !landingBackgroundImage) {
         return;
     }
 
     const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
     const scrollProgress = scrollRange > 0 ? window.scrollY / scrollRange : 0;
-    const backgroundTravel = Math.max(landingBackground.offsetWidth - window.innerHeight, 0);
+    const backgroundTravel = Math.max(landingBackgroundImage.offsetHeight - window.innerHeight, 0);
     const backgroundOffset = reduceBackgroundMotion.matches
-        ? backgroundTravel / 2
-        : (0.5 - Math.min(Math.max(scrollProgress, 0), 1)) * backgroundTravel;
+        ? -backgroundTravel / 2
+        : -Math.min(Math.max(scrollProgress, 0), 1) * backgroundTravel;
 
     landingBackground.style.setProperty("--background-offset", `${backgroundOffset}px`);
 }
@@ -36,6 +61,8 @@ updateLandingBackground();
 window.addEventListener("scroll", requestBackgroundUpdate, { passive: true });
 window.addEventListener("resize", requestBackgroundUpdate);
 reduceBackgroundMotion.addEventListener("change", requestBackgroundUpdate);
+backgroundToggle?.addEventListener("click", toggleLandingBackgroundVisibility);
+updateBackgroundToggle(document.body.classList.contains("is-background-hidden"));
 
 const ovalCarousel = document.querySelector(".oval-carousel");
 const ovalCarouselContent = [
@@ -379,6 +406,10 @@ landingMenu?.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
+    if (event.key.toLowerCase() === "x" && !event.repeat && !event.metaKey && !event.ctrlKey && !event.altKey && !isTypingTarget(event.target)) {
+        toggleLandingLettering();
+    }
+
     if (event.key === "Escape") {
         closeLandingMenu();
     }

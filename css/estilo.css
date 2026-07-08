@@ -44,26 +44,53 @@ body {
 .landing-background::after {
     position: absolute;
     inset: 0;
+    z-index: 3;
     content: "";
     background: rgba(0, 0, 0, 0.55);
+    opacity: 1;
+    transition: opacity 0.28s ease;
 }
 
 .landing-background-image {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: max(141.45vw, 100vh);
-    height: max(100vw, 70.71vh);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: max(120vh, 85vw);
     background-image: url("/assets/imagenes/maqueta-bc.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     background-size: cover;
-    transform:
-        translate(-50%, -50%)
-        rotate(90deg)
-        translateX(var(--background-offset, 0px));
-    transform-origin: center;
+    transform: translateY(var(--background-offset, 0px));
     will-change: transform;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.28s ease;
+}
+
+.landing-lettering-image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 4;
+    width: min(124vw, 1040px);
+    height: auto;
+    opacity: 0.88;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+    transform: translate(-50%, var(--background-offset, 0px));
+    transition: opacity 0.28s ease;
+    will-change: opacity, transform;
+}
+
+body.is-lettering-hidden .landing-lettering-image {
+    opacity: 0;
+    transform: translate(-50%, var(--background-offset, 0px)) scale(0.96);
+}
+
+body.is-background-hidden .landing-background::after,
+body.is-background-hidden .landing-background-image {
+    opacity: 0;
 }
 
 main {
@@ -430,6 +457,49 @@ body::after {
         transform 0.4s ease;
 }
 
+.background-toggle {
+    position: fixed;
+    top: calc(clamp(0.85rem, 1.5vw, 1.4rem) + 58px);
+    right: clamp(0.85rem, 1.5vw, 1.4rem);
+    z-index: 32;
+    min-width: 116px;
+    min-height: 34px;
+    padding: 0.45rem 0.7rem;
+    color: #ffffff;
+    font-family: var(--font-texto);
+    font-size: 0.68rem;
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-transform: lowercase;
+    cursor: pointer;
+    background: rgba(17, 17, 17, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+.background-toggle:hover,
+.background-toggle:focus-visible {
+    background: rgba(17, 17, 17, 0.5);
+}
+
+body.is-background-hidden .background-toggle {
+    color: #111111;
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(17, 17, 17, 0.25);
+}
+
+body.is-landing-menu-open .background-toggle {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+}
+
 .landing-menu-line {
     position: absolute;
     top: 50%;
@@ -603,13 +673,20 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
 
 @media (min-width: 701px) {
     .landing-menu {
-        width: min(470px, 100%);
+        gap: clamp(1.35rem, 2.4vw, 2.1rem);
+        width: min(540px, 100%);
         padding-right: clamp(1.4rem, 4vw, 3rem);
     }
 
     .landing-menu a {
-        gap: 0.55em;
-        font-size: clamp(1.12rem, 1.6vw, 1.58rem);
+        gap: 0.62em;
+        font-size: clamp(1.35rem, 2.05vw, 2rem);
+    }
+
+    .landing-menu a::before {
+        flex-basis: 1.22em;
+        width: 1.22em;
+        font-size: 0.78em;
     }
 
     body.has-compact-nav .site-header {
@@ -644,6 +721,13 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
         opacity: 0;
         pointer-events: none;
         transform: scale(0.75);
+    }
+
+    body.has-compact-nav .background-toggle {
+        top: 96px;
+        color: #111111;
+        background: rgba(255, 255, 255, 0.86);
+        border-color: rgba(17, 17, 17, 0.2);
     }
 
     body.has-compact-nav .landing-menu {
@@ -1720,6 +1804,15 @@ body.is-at-footer .bottom-nav:focus-within {
     }
 
     .landing-menu-line {
+        transition: none;
+    }
+
+    .background-toggle {
+        top: 3.9rem;
+        right: 0.75rem;
+        min-width: 106px;
+        min-height: 32px;
+        font-size: 0.62rem;
         transition: none;
     }
 
