@@ -66,12 +66,21 @@ updateBackgroundToggle(document.body.classList.contains("is-background-hidden"))
 
 const ovalCarousel = document.querySelector(".oval-carousel");
 const ovalCarouselContent = [
-    "Archivo colectivo",
-    "Mesa de trabajo",
-    "Publicación cuir",
-    "Escrituras",
-    "Taller abierto",
-    "Memoria viva",
+    "Animita",
+    "Archivo de besos",
+    "Buzo Mochi",
+    "Buzo Torta",
+    "Consigna",
+    "Coso CCLM",
+    "Glossy",
+    "Guantes",
+    "Kiki",
+    "Lentes Act",
+    "Marikarpa",
+    "MASP",
+    "Pierna",
+    "Poleras Consigna",
+    "Protocoso",
 ];
 
 function addOvalCarouselInfo() {
