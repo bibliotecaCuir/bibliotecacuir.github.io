@@ -427,7 +427,9 @@ function requestConstellationPointerUpdate(event) {
 }
 
 buildImageConstellation();
-window.addEventListener("pointermove", requestConstellationPointerUpdate, { passive: true });
+if (constellationScene) {
+    window.addEventListener("pointermove", requestConstellationPointerUpdate, { passive: true });
+}
 
 const landingMenuToggle = document.querySelector(".landing-menu-toggle");
 const landingMenu = document.querySelector(".landing-menu");
