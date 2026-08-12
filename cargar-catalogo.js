@@ -118,9 +118,9 @@ function crearArticulo(item, caja) {
         <img class="catalogo-imagen" src="${imagenUrl}" alt="" loading="lazy" decoding="async">
       ` : '<span class="item-sin-imagen" aria-hidden="true">BC</span>'}
       <span class="item-tinte" aria-hidden="true"></span>
-      <h2 class="item-titulo">${item.titulo || "Sin título"}</h2>
     </figure>
     <div class="item-body">
+      <h2 class="item-titulo">${item.titulo || "Sin título"}</h2>
       <div class="item-identificacion">
         <span class="item-codigo">${item.codigo || "s/c"}</span>
         <span class="item-agno">${item.agno || "s/f"}</span>

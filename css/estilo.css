@@ -243,18 +243,12 @@ a {
 }
 
 .item-titulo {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  left: 1rem;
-  z-index: 3;
-  margin: 0;
-  color: var(--blanco);
-  font-size: clamp(1rem, 1.75vw, 1.55rem);
+  margin: 0 0 0.55rem;
+  color: var(--negro);
+  font-size: clamp(0.98rem, 1.25vw, 1.28rem);
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.08;
   overflow-wrap: anywhere;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
   text-transform: lowercase;
 }
 
@@ -576,10 +570,7 @@ a {
   }
 
   .item-titulo {
-    right: 0.7rem;
-    bottom: 0.7rem;
-    left: 0.7rem;
-    font-size: clamp(0.9rem, 4.5vw, 1.2rem);
+    font-size: clamp(0.86rem, 4vw, 1.08rem);
   }
 
   .item-meta {
