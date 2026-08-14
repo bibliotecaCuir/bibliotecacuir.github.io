@@ -1,0 +1,10 @@
+proyecto: "Sopa de letras"
+categoria: "practicas"
+imagenes:
+  - orden: 1
+    archivo: "01.webp"
+    titulo: "Imagen 01"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "01.jpg"

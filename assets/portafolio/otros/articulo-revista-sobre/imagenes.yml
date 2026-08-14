@@ -1,0 +1,38 @@
+proyecto: "Articulo Revista Sobre"
+categoria: "otros"
+imagenes:
+  - orden: 1
+    archivo: "01.webp"
+    titulo: "Imagen 01"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "625438032_18558855544059113_8960955791482217405_n.webp"
+  - orden: 2
+    archivo: "02.webp"
+    titulo: "Imagen 02"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "625546147_18558855574059113_2611567675108013179_n.webp"
+  - orden: 3
+    archivo: "03.webp"
+    titulo: "Imagen 03"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "625649452_18558855511059113_9061096395550087490_n.webp"
+  - orden: 4
+    archivo: "04.webp"
+    titulo: "Imagen 04"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "625957458_18558855535059113_4124741654271517928_n.webp"
+  - orden: 5
+    archivo: "05.webp"
+    titulo: "Imagen 05"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "626633624_18558855553059113_5923903802048687152_n.webp"

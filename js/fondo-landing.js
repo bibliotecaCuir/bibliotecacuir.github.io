@@ -64,6 +64,108 @@ reduceBackgroundMotion.addEventListener("change", requestBackgroundUpdate);
 backgroundToggle?.addEventListener("click", toggleLandingBackgroundVisibility);
 updateBackgroundToggle(document.body.classList.contains("is-background-hidden"));
 
+const presentationSlides = [...document.querySelectorAll(".presentation-slide")];
+let presentationIndex = Math.max(0, presentationSlides.findIndex((slide) => slide.classList.contains("is-active")));
+let presentationTimer;
+let presentationCleanupTimer;
+
+function preparePresentationSlide(index) {
+    const slide = presentationSlides[index];
+
+    if (!slide) {
+        return;
+    }
+
+    if (slide.decode) {
+        slide.decode().catch(() => {});
+    }
+}
+
+function showPresentationSlide(nextIndex) {
+    if (
+        presentationSlides.length < 2
+        || reduceBackgroundMotion.matches
+        || document.hidden
+    ) {
+        return;
+    }
+
+    const currentSlide = presentationSlides[presentationIndex];
+    const nextSlide = presentationSlides[nextIndex % presentationSlides.length];
+
+    if (!currentSlide || !nextSlide || currentSlide === nextSlide) {
+        return;
+    }
+
+    window.clearTimeout(presentationCleanupTimer);
+    presentationSlides.forEach((slide) => {
+        if (slide !== currentSlide && slide !== nextSlide) {
+            slide.classList.remove("is-active", "is-exiting");
+            slide.style.zIndex = "";
+        }
+    });
+
+    currentSlide.classList.remove("is-active");
+    currentSlide.classList.add("is-exiting");
+    currentSlide.style.zIndex = "1";
+
+    nextSlide.classList.remove("is-exiting");
+    nextSlide.style.zIndex = "2";
+
+    window.requestAnimationFrame(() => {
+        nextSlide.classList.add("is-active");
+    });
+
+    presentationIndex = presentationSlides.indexOf(nextSlide);
+    preparePresentationSlide((presentationIndex + 1) % presentationSlides.length);
+
+    presentationCleanupTimer = window.setTimeout(() => {
+        currentSlide.classList.remove("is-exiting");
+        currentSlide.style.zIndex = "";
+    }, 1500);
+}
+
+function startPresentationSlides() {
+    window.clearInterval(presentationTimer);
+
+    if (presentationSlides.length < 2 || reduceBackgroundMotion.matches || document.hidden) {
+        return;
+    }
+
+    presentationTimer = window.setInterval(() => {
+        showPresentationSlide(presentationIndex + 1);
+    }, 3000);
+}
+
+function syncPresentationMotion() {
+    window.clearInterval(presentationTimer);
+
+    if (presentationSlides.length === 0) {
+        return;
+    }
+
+    if (reduceBackgroundMotion.matches) {
+        presentationSlides.forEach((slide, index) => {
+            slide.classList.toggle("is-active", index === presentationIndex);
+            slide.classList.remove("is-exiting");
+            slide.style.zIndex = "";
+        });
+        return;
+    }
+
+    preparePresentationSlide((presentationIndex + 1) % presentationSlides.length);
+    startPresentationSlides();
+}
+
+if (presentationSlides.length > 0) {
+    presentationSlides[presentationIndex].classList.add("is-active");
+    preparePresentationSlide(presentationIndex);
+    preparePresentationSlide((presentationIndex + 1) % presentationSlides.length);
+    syncPresentationMotion();
+    document.addEventListener("visibilitychange", syncPresentationMotion);
+    reduceBackgroundMotion.addEventListener("change", syncPresentationMotion);
+}
+
 const ovalCarousel = document.querySelector(".oval-carousel");
 const ovalCarouselContent = [
     "Animita",
@@ -131,6 +233,11 @@ let ovalTargetRotation;
 let ovalTargetStartRotation;
 let ovalTargetStartTime;
 let ovalHoveredItem;
+let ovalCarouselIsVisible = !("IntersectionObserver" in window);
+
+function canAnimateOvalCarousel() {
+    return ovalCarouselIsVisible && !reduceBackgroundMotion.matches;
+}
 
 function renderOvalCarousel(rotation) {
     if (!ovalCarousel || ovalCarouselItems.length === 0) {
@@ -179,7 +286,7 @@ function renderOvalCarousel(rotation) {
 }
 
 function updateOvalCarousel(timestamp) {
-    if (!ovalCarousel || ovalCarouselItems.length === 0 || reduceBackgroundMotion.matches) {
+    if (!ovalCarousel || ovalCarouselItems.length === 0 || !canAnimateOvalCarousel()) {
         return;
     }
 
@@ -218,7 +325,7 @@ function syncOvalCarouselMotion() {
     ovalLastTimestamp = undefined;
     ovalTargetRotation = undefined;
 
-    if (!reduceBackgroundMotion.matches) {
+    if (canAnimateOvalCarousel()) {
         ovalAnimationFrame = window.requestAnimationFrame(updateOvalCarousel);
     } else {
         renderOvalCarousel(ovalRotation);
@@ -226,7 +333,7 @@ function syncOvalCarouselMotion() {
 }
 
 function moveOvalItemToCenter(item) {
-    if (!item || reduceBackgroundMotion.matches) {
+    if (!item || !canAnimateOvalCarousel()) {
         return;
     }
 
@@ -253,7 +360,7 @@ function pauseOvalCarousel() {
 }
 
 function resumeOvalCarousel() {
-    if (reduceBackgroundMotion.matches) {
+    if (!canAnimateOvalCarousel()) {
         return;
     }
 
@@ -299,6 +406,22 @@ function clearOvalHoveredItem() {
     resumeOvalCarousel();
 }
 
+if (ovalCarousel && "IntersectionObserver" in window) {
+    const ovalCarouselObserver = new IntersectionObserver((entries) => {
+        ovalCarouselIsVisible = entries.some((entry) => entry.isIntersecting);
+
+        if (!ovalCarouselIsVisible) {
+            pauseOvalCarousel();
+            renderOvalCarousel(ovalRotation);
+            return;
+        }
+
+        resumeOvalCarousel();
+    }, { threshold: 0.08 });
+
+    ovalCarouselObserver.observe(ovalCarousel);
+}
+
 syncOvalCarouselMotion();
 reduceBackgroundMotion.addEventListener("change", syncOvalCarouselMotion);
 ovalCarousel?.addEventListener("pointermove", (event) => {
@@ -341,77 +464,77 @@ const constellationScene = document.querySelector(".image-constellation-scene");
 const constellationItems = [
     {
         title: "Asambleas",
-        image: "/assets/portafolio/practicas/asambleas/01.jpg",
+        image: "/assets/portafolio/practicas/asambleas/01.webp",
         href: "/portafolio/practicas/asambleas.html",
     },
     {
         title: "Jornadas Hormigonas",
-        image: "/assets/portafolio/practicas/jornadas-hormigonas/01.jpg",
+        image: "/assets/portafolio/practicas/jornadas-hormigonas/01.webp",
         href: "/portafolio/practicas/jornadas-hormigonas.html",
     },
     {
         title: "Glossy",
-        image: "/assets/portafolio/practicas/glossy/01.jpg",
+        image: "/assets/portafolio/practicas/glossy/01.webp",
         href: "/portafolio/practicas/glossy.html",
     },
     {
         title: "Bachillerato marika para no olvidar",
-        image: "/assets/portafolio/practicas/bachillerato-marika-para-no-olvidar/01.jpg",
+        image: "/assets/portafolio/practicas/bachillerato-marika-para-no-olvidar/01.webp",
         href: "/portafolio/practicas/bachillerato-marika-para-no-olvidar.html",
     },
     {
         title: "Sopa de letras",
-        image: "/assets/portafolio/practicas/sopa-de-letras/01.jpg",
+        image: "/assets/portafolio/practicas/sopa-de-letras/01.webp",
         href: "/portafolio/practicas/sopa-de-letras.html",
     },
     {
         title: "Archivo de besos",
-        image: "/assets/portafolio/practicas/archivo-de-besos/01.jpg",
+        image: "/assets/portafolio/practicas/archivo-de-besos/01.webp",
         href: "/portafolio/practicas/archivo-de-besos.html",
     },
     {
         title: "Somos un cuerpo mutante - taller",
-        image: "/assets/portafolio/activaciones/somos-un-cuerpo-mutante/01.png",
+        image: "/assets/portafolio/activaciones/somos-un-cuerpo-mutante/01.webp",
         href: "/portafolio/activaciones/somos-un-cuerpo-mutante.html",
     },
     {
         title: "Contagio gráfico - encuentro gráfico",
-        image: "/assets/portafolio/activaciones/contagio-grafico/01.jpg",
+        image: "/assets/portafolio/activaciones/contagio-grafico/01.webp",
         href: "/portafolio/activaciones/contagio-grafico.html",
     },
     {
         title: "Bajubá a jerga marika chilena - taller",
-        image: "/assets/portafolio/activaciones/bajuba-a-jerga-marika-chilena/01.jpg",
+        image: "/assets/portafolio/activaciones/bajuba-a-jerga-marika-chilena/01.webp",
         href: "/portafolio/activaciones/bajuba-a-jerga-marika-chilena.html",
     },
     {
         title: "Convite marika - encuentro",
-        image: "/assets/portafolio/activaciones/convite-marika/01.jpg",
+        image: "/assets/portafolio/activaciones/convite-marika/01.webp",
         href: "/portafolio/activaciones/convite-marika.html",
     },
     {
         title: "Y la que soporte - taller",
-        image: "/assets/portafolio/activaciones/y-la-que-soporte/01.jpg",
+        image: "/assets/portafolio/activaciones/y-la-que-soporte/01.webp",
         href: "/portafolio/activaciones/y-la-que-soporte.html",
     },
     {
         title: "Cruising de lectura",
-        image: "/assets/portafolio/activaciones/cruising-de-lectura/01.jpg",
+        image: "/assets/portafolio/activaciones/cruising-de-lectura/01.webp",
         href: "/portafolio/activaciones/cruising-de-lectura.html",
     },
     {
         title: "ProtoCola",
-        image: "/assets/portafolio/obras/protocola/01.jpg",
+        image: "/assets/portafolio/obras/protocola/01.webp",
         href: "/portafolio/obras/protocola.html",
     },
     {
         title: "Biblioteca Cuir: imaginar otros archivos posibles - Sesiones Arde",
-        image: "/assets/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde/01.jpg",
+        image: "/assets/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde/01.webp",
         href: "/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde.html",
     },
     {
         title: "MARIKARPA Vol. 1",
-        image: "/assets/portafolio/obras/marikarpa-vol-1/01.jpg",
+        image: "/assets/portafolio/obras/marikarpa-vol-1/01.webp",
         href: "/portafolio/obras/marikarpa-vol-1.html",
     },
     {
@@ -421,32 +544,32 @@ const constellationItems = [
     },
     {
         title: "Historias LGBTQI+ - MASP",
-        image: "/assets/portafolio/obras/historias-lgbtqi-masp/01.png",
+        image: "/assets/portafolio/obras/historias-lgbtqi-masp/01.webp",
         href: "/portafolio/obras/historias-lgbtqi-masp.html",
     },
     {
         title: "Somos una maniobra marika para resistir - CCE",
-        image: "/assets/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce/01.jpg",
+        image: "/assets/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce/01.webp",
         href: "/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce.html",
     },
     {
         title: "Re vueltas Gráficas. Multitudes para cambiar la vida - CCLM",
-        image: "/assets/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm/01.jpg",
+        image: "/assets/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm/01.webp",
         href: "/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm.html",
     },
     {
         title: "Bachillerato marika para no olvidar",
-        image: "/assets/portafolio/obras/bachillerato-marika-para-no-olvidar/01.jpg",
+        image: "/assets/portafolio/obras/bachillerato-marika-para-no-olvidar/01.webp",
         href: "/portafolio/obras/bachillerato-marika-para-no-olvidar.html",
     },
     {
         title: "Archivar para encontrarnos, ¿como construir archivos comunitarios? - encuentro",
-        image: "/assets/portafolio/otros/archivar-para-encontrarnos-como-construir-archivos-comunitarios/01.jpg",
+        image: "/assets/portafolio/otros/archivar-para-encontrarnos-como-construir-archivos-comunitarios/01.webp",
         href: "/portafolio/otros/archivar-para-encontrarnos-como-construir-archivos-comunitarios.html",
     },
     {
         title: "Primer Laboratorio Nacional de Archivos de Arte - Redes y Enlaces de Arte Latinoamericano",
-        image: "/assets/portafolio/otros/primer-laboratorio-nacional-de-archivos-de-arte/01.jpg",
+        image: "/assets/portafolio/otros/primer-laboratorio-nacional-de-archivos-de-arte/01.webp",
         href: "/portafolio/otros/primer-laboratorio-nacional-de-archivos-de-arte.html",
     },
     {
@@ -456,17 +579,17 @@ const constellationItems = [
     },
     {
         title: "Simbiosis - coloquio",
-        image: "/assets/portafolio/otros/simbiosis-coloquio/01.jpg",
+        image: "/assets/portafolio/otros/simbiosis-coloquio/01.webp",
         href: "/portafolio/otros/simbiosis-coloquio.html",
     },
     {
         title: "Piensa en mi como soy - seminario visibilidad artística",
-        image: "/assets/portafolio/otros/piensa-en-mi-como-soy-seminario-visibilidad-artistica/01.png",
+        image: "/assets/portafolio/otros/piensa-en-mi-como-soy-seminario-visibilidad-artistica/01.webp",
         href: "/portafolio/otros/piensa-en-mi-como-soy-seminario-visibilidad-artistica.html",
     },
     {
         title: "Armarios Abiertos - CCE",
-        image: "/assets/portafolio/otros/armarios-abiertos-cce/01.png",
+        image: "/assets/portafolio/otros/armarios-abiertos-cce/01.webp",
         href: "/portafolio/otros/armarios-abiertos-cce.html",
     },
 ];
