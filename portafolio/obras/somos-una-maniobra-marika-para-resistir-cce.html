@@ -7,42 +7,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css">
-    <title>Portafolio | Biblioteca Cuir</title>
+    <title>Somos una maniobra marika para resistir - CCE | Biblioteca Cuir</title>
 </head>
-<body class="portfolio-page">
+<body class="portfolio-page portfolio-section portfolio-obras portfolio-project-page">
     <header class="portfolio-header" aria-label="Biblioteca Cuir">
+        <a class="portfolio-back" href="/obras.html">← obras</a>
         <a class="portfolio-logo" href="/">
-            <img src="/assets/logos/logoBiblioNegro.png" alt="Biblioteca Cuir">
+            <img src="/assets/logos/logoBiblioBlanco.png" alt="Biblioteca Cuir">
         </a>
     </header>
 
-    <main class="portfolio-index">
-        <section class="portfolio-hero" aria-labelledby="portfolio-title">
-            <h1 id="portfolio-title">portafolio</h1>
-            <div class="portfolio-hero-strip" aria-hidden="true">
-                <img src="/assets/obras/webp/glossy.webp" alt="">
-                <img src="/assets/obras/webp/marikarpa.webp" alt="">
-                <img src="/assets/obras/webp/archivo-de-besos.webp" alt="">
-            </div>
+    <main class="portfolio-detail portfolio-project-detail">
+        <section class="portfolio-detail-hero" aria-labelledby="page-title">
+            <h1 id="page-title">obras</h1>
         </section>
 
-        <section class="portfolio-links" aria-label="Secciones del portafolio">
-            <a class="portfolio-link-card portfolio-card-practicas" href="/practicas.html">
-                <span>practicas</span>
-                <p>Metodologías, juegos y espacios de trabajo colectivo.</p>
-            </a>
-            <a class="portfolio-link-card portfolio-card-activaciones" href="/activaciones.html">
-                <span>activaciones</span>
-                <p>Talleres, encuentros y ejercicios públicos de activación.</p>
-            </a>
-            <a class="portfolio-link-card portfolio-card-obras" href="/obras.html">
-                <span>obras</span>
-                <p>Instalaciones, publicaciones, registros sonoros y acciones.</p>
-            </a>
-            <a class="portfolio-link-card portfolio-card-otros" href="/otros.html">
-                <span>otros</span>
-                <p>Encuentros, laboratorios, seminarios y publicaciones.</p>
-            </a>
+        <section class="portfolio-content">
+            <article class="portfolio-entry portfolio-entry-single" id="somos-una-maniobra-marika-para-resistir-cce">
+                <h2>Somos una maniobra marika<br>para resistir - CCE</h2>
+                <p>Exposición de cierre de la residencia de investigación y creación realizada en el Centro Cultural de España de Santiago. La muestra reunió procesos, metodologías, dispositivos, publicaciones y registros desarrollados por la Biblioteca Cuir durante la residencia, compartiendo el recorrido del colectivo y las distintas formas de construir un archivo vivo desde la colaboración, el cuidado y la memoria.</p>
+                <div class="portfolio-media" aria-label="Registro visual de Somos una maniobra marika para resistir">
+                    <img src="/assets/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce/01.jpg" alt="">
+                    <img src="/assets/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce/02.jpg" alt="">
+                </div>
+            </article>
         </section>
     </main>
 
@@ -97,9 +85,9 @@
                 </div>
 
                 <form class="footer-newsletter" action="/" method="get">
-                    <label for="footer-email-portafolio">recibe novedades y publicaciones nuevas.</label>
+                    <label for="footer-email-obras">recibe novedades y publicaciones nuevas.</label>
                     <div class="footer-input-row">
-                        <input id="footer-email-portafolio" type="email" name="email" placeholder="email" autocomplete="email">
+                        <input id="footer-email-obras" type="email" name="email" placeholder="email" autocomplete="email">
                         <button type="submit" aria-label="Enviar correo">→</button>
                     </div>
                 </form>
@@ -115,5 +103,6 @@
             <span>instagram · correo</span>
         </div>
     </footer>
+    <script src="/js/portfolio.js" defer></script>
 </body>
 </html>

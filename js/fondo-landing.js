@@ -338,20 +338,144 @@ ovalCarousel?.addEventListener("focusout", (event) => {
 });
 
 const constellationScene = document.querySelector(".image-constellation-scene");
-const constellationImages = [
-    "/assets/imagenes/placeholders/298E7282-A865-4A06-973C-A12E5C7D5854-458-0000000D62AEE563.jpg",
-    "/assets/imagenes/placeholders/7EFA4360-3C97-42A4-B189-951E62B01425-458-0000000DE96DBA70.jpg",
-    "/assets/imagenes/placeholders/6b4ada26-2405-4f33-b422-344e687f77b9.jpg",
-    "/assets/imagenes/placeholders/42f7e0f9-fc70-4b12-9615-1ac82b6d8185.jpg",
-    "/assets/imagenes/placeholders/c8e15996-6af2-4405-bc0c-0196aa9f6bf3.jpg",
-    "/assets/imagenes/placeholders/ca23fd02-b71b-4e47-ac8b-60265df1209b.jpg",
+const constellationItems = [
+    {
+        title: "Asambleas",
+        image: "/assets/portafolio/practicas/asambleas/01.jpg",
+        href: "/portafolio/practicas/asambleas.html",
+    },
+    {
+        title: "Jornadas Hormigonas",
+        image: "/assets/portafolio/practicas/jornadas-hormigonas/01.jpg",
+        href: "/portafolio/practicas/jornadas-hormigonas.html",
+    },
+    {
+        title: "Glossy",
+        image: "/assets/portafolio/practicas/glossy/01.jpg",
+        href: "/portafolio/practicas/glossy.html",
+    },
+    {
+        title: "Bachillerato marika para no olvidar",
+        image: "/assets/portafolio/practicas/bachillerato-marika-para-no-olvidar/01.jpg",
+        href: "/portafolio/practicas/bachillerato-marika-para-no-olvidar.html",
+    },
+    {
+        title: "Sopa de letras",
+        image: "/assets/portafolio/practicas/sopa-de-letras/01.jpg",
+        href: "/portafolio/practicas/sopa-de-letras.html",
+    },
+    {
+        title: "Archivo de besos",
+        image: "/assets/portafolio/practicas/archivo-de-besos/01.jpg",
+        href: "/portafolio/practicas/archivo-de-besos.html",
+    },
+    {
+        title: "Somos un cuerpo mutante - taller",
+        image: "/assets/portafolio/activaciones/somos-un-cuerpo-mutante/01.png",
+        href: "/portafolio/activaciones/somos-un-cuerpo-mutante.html",
+    },
+    {
+        title: "Contagio gráfico - encuentro gráfico",
+        image: "/assets/portafolio/activaciones/contagio-grafico/01.jpg",
+        href: "/portafolio/activaciones/contagio-grafico.html",
+    },
+    {
+        title: "Bajubá a jerga marika chilena - taller",
+        image: "/assets/portafolio/activaciones/bajuba-a-jerga-marika-chilena/01.jpg",
+        href: "/portafolio/activaciones/bajuba-a-jerga-marika-chilena.html",
+    },
+    {
+        title: "Convite marika - encuentro",
+        image: "/assets/portafolio/activaciones/convite-marika/01.jpg",
+        href: "/portafolio/activaciones/convite-marika.html",
+    },
+    {
+        title: "Y la que soporte - taller",
+        image: "/assets/portafolio/activaciones/y-la-que-soporte/01.jpg",
+        href: "/portafolio/activaciones/y-la-que-soporte.html",
+    },
+    {
+        title: "Cruising de lectura",
+        image: "/assets/portafolio/activaciones/cruising-de-lectura/01.jpg",
+        href: "/portafolio/activaciones/cruising-de-lectura.html",
+    },
+    {
+        title: "ProtoCola",
+        image: "/assets/portafolio/obras/protocola/01.jpg",
+        href: "/portafolio/obras/protocola.html",
+    },
+    {
+        title: "Biblioteca Cuir: imaginar otros archivos posibles - Sesiones Arde",
+        image: "/assets/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde/01.jpg",
+        href: "/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde.html",
+    },
+    {
+        title: "MARIKARPA Vol. 1",
+        image: "/assets/portafolio/obras/marikarpa-vol-1/01.jpg",
+        href: "/portafolio/obras/marikarpa-vol-1.html",
+    },
+    {
+        title: "Otro delirio de la Biblioteca Cuir",
+        image: "/assets/imagenes/maqueta-bc.jpg",
+        href: "/portafolio/obras/otro-delirio-de-la-biblioteca-cuir.html",
+    },
+    {
+        title: "Historias LGBTQI+ - MASP",
+        image: "/assets/portafolio/obras/historias-lgbtqi-masp/01.png",
+        href: "/portafolio/obras/historias-lgbtqi-masp.html",
+    },
+    {
+        title: "Somos una maniobra marika para resistir - CCE",
+        image: "/assets/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce/01.jpg",
+        href: "/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce.html",
+    },
+    {
+        title: "Re vueltas Gráficas. Multitudes para cambiar la vida - CCLM",
+        image: "/assets/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm/01.jpg",
+        href: "/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm.html",
+    },
+    {
+        title: "Bachillerato marika para no olvidar",
+        image: "/assets/portafolio/obras/bachillerato-marika-para-no-olvidar/01.jpg",
+        href: "/portafolio/obras/bachillerato-marika-para-no-olvidar.html",
+    },
+    {
+        title: "Archivar para encontrarnos, ¿como construir archivos comunitarios? - encuentro",
+        image: "/assets/portafolio/otros/archivar-para-encontrarnos-como-construir-archivos-comunitarios/01.jpg",
+        href: "/portafolio/otros/archivar-para-encontrarnos-como-construir-archivos-comunitarios.html",
+    },
+    {
+        title: "Primer Laboratorio Nacional de Archivos de Arte - Redes y Enlaces de Arte Latinoamericano",
+        image: "/assets/portafolio/otros/primer-laboratorio-nacional-de-archivos-de-arte/01.jpg",
+        href: "/portafolio/otros/primer-laboratorio-nacional-de-archivos-de-arte.html",
+    },
+    {
+        title: "Artículo Revista Sobre",
+        image: "/assets/portafolio/otros/articulo-revista-sobre/01.webp",
+        href: "/portafolio/otros/articulo-revista-sobre.html",
+    },
+    {
+        title: "Simbiosis - coloquio",
+        image: "/assets/portafolio/otros/simbiosis-coloquio/01.jpg",
+        href: "/portafolio/otros/simbiosis-coloquio.html",
+    },
+    {
+        title: "Piensa en mi como soy - seminario visibilidad artística",
+        image: "/assets/portafolio/otros/piensa-en-mi-como-soy-seminario-visibilidad-artistica/01.png",
+        href: "/portafolio/otros/piensa-en-mi-como-soy-seminario-visibilidad-artistica.html",
+    },
+    {
+        title: "Armarios Abiertos - CCE",
+        image: "/assets/portafolio/otros/armarios-abiertos-cce/01.png",
+        href: "/portafolio/otros/armarios-abiertos-cce.html",
+    },
 ];
 const constellationLayout = [
-    [-3, 18, 7.2], [10, 8, 6.6], [24, 18, 5.4], [38, 8, 6.2], [54, 5, 5.2], [70, 9, 6.1], [86, 13, 7.4], [101, 8, 5.8],
-    [4, 36, 5.2], [16, 31, 6.8], [28, 39, 5.8], [40, 28, 5.1], [49, 38, 9.8], [61, 29, 5.6], [74, 31, 11.8], [89, 35, 6.2], [99, 29, 5.4],
-    [8, 55, 9.4], [22, 52, 5.1], [34, 57, 6.5], [44, 53, 10.6], [56, 58, 6.2], [68, 51, 5.7], [80, 57, 7.1], [94, 53, 5.2],
-    [-2, 77, 7.5], [13, 82, 5.8], [29, 76, 6.3], [43, 82, 5.1], [57, 76, 6.7], [72, 82, 10.2], [88, 76, 6.4], [102, 84, 7.2],
-    [7, 96, 5.1], [24, 94, 7.6], [41, 98, 5.8], [63, 95, 6.4], [82, 96, 5.3], [96, 94, 7.5],
+    [4, 13, 8.6], [19, 9, 7.8], [35, 15, 7.2], [53, 8, 8.1], [70, 14, 7.4], [88, 10, 8.6],
+    [11, 31, 7.4], [28, 35, 8.8], [45, 28, 7.5], [62, 34, 10.6], [81, 30, 8.2], [96, 36, 7.4],
+    [3, 52, 8.9], [20, 58, 7.2], [38, 51, 9.5], [56, 58, 7.7], [73, 52, 8.4], [91, 57, 7.1],
+    [10, 77, 7.8], [27, 73, 8.5], [44, 80, 7.3], [61, 74, 8.7], [78, 79, 7.5], [94, 75, 8.4],
+    [34, 88, 7.4], [68, 87, 8.2],
 ];
 
 function buildImageConstellation() {
@@ -360,40 +484,40 @@ function buildImageConstellation() {
     }
 
     const fragment = document.createDocumentFragment();
-    const columns = 8;
-    const rows = 5;
-    const randomizedCells = constellationLayout
-        .map((_, index) => index)
+    const visibleConstellationItems = constellationItems
+        .slice(0, constellationLayout.length)
         .sort(() => Math.random() - 0.5);
 
-    constellationLayout.forEach(([, , size], index) => {
-        const figure = document.createElement("figure");
+    visibleConstellationItems.forEach((item, index) => {
+        const [layoutX, layoutY, size] = constellationLayout[index];
+        const link = document.createElement("a");
         const image = document.createElement("img");
-        const cell = randomizedCells[index];
-        const column = cell % columns;
-        const row = Math.floor(cell / columns) % rows;
-        const x = 7 + column * (86 / (columns - 1)) + (Math.random() - 0.5) * 4;
-        const y = 8 + row * (84 / (rows - 1)) + (Math.random() - 0.5) * 6;
+        const title = document.createElement("span");
+        const x = layoutX + (Math.random() - 0.5) * 3.2;
+        const y = layoutY + (Math.random() - 0.5) * 3;
         const depth = Math.round(Math.random() * 320 - 150);
         const layer = Math.round(depth + 180);
         const randomizedSize = size * (0.86 + Math.random() * 0.3);
 
-        figure.className = "constellation-image";
-        figure.style.setProperty("--image-x", `${x.toFixed(2)}%`);
-        figure.style.setProperty("--image-y", `${y.toFixed(2)}%`);
-        figure.style.setProperty("--image-size", `${randomizedSize.toFixed(2)}vw`);
-        figure.style.setProperty("--image-depth", `${depth}px`);
-        figure.style.setProperty("--image-layer", String(layer));
-        figure.style.setProperty("--image-ratio", Math.random() > 0.72 ? "4 / 5" : "16 / 11");
-        figure.style.setProperty("--image-shadow", (Math.random() * 0.18).toFixed(2));
+        link.className = "constellation-image";
+        link.href = item.href;
+        link.style.setProperty("--image-x", `${x.toFixed(2)}%`);
+        link.style.setProperty("--image-y", `${y.toFixed(2)}%`);
+        link.style.setProperty("--image-size", `${randomizedSize.toFixed(2)}vw`);
+        link.style.setProperty("--image-depth", `${depth}px`);
+        link.style.setProperty("--image-layer", String(layer));
+        link.style.setProperty("--image-ratio", Math.random() > 0.72 ? "4 / 5" : "16 / 11");
+        link.style.setProperty("--image-shadow", (Math.random() * 0.18).toFixed(2));
 
-        image.src = constellationImages[index % constellationImages.length];
-        image.alt = "";
+        image.src = item.image;
+        image.alt = item.title;
         image.loading = "lazy";
         image.decoding = "async";
+        title.className = "constellation-image-title";
+        title.textContent = item.title;
 
-        figure.append(image);
-        fragment.append(figure);
+        link.append(image, title);
+        fragment.append(link);
     });
 
     constellationScene.append(fragment);

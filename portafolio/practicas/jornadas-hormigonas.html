@@ -7,42 +7,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css">
-    <title>Portafolio | Biblioteca Cuir</title>
+    <title>Jornadas Hormigonas | Biblioteca Cuir</title>
 </head>
-<body class="portfolio-page">
+<body class="portfolio-page portfolio-section portfolio-practicas portfolio-project-page">
     <header class="portfolio-header" aria-label="Biblioteca Cuir">
+        <a class="portfolio-back" href="/practicas.html">← practicas</a>
         <a class="portfolio-logo" href="/">
-            <img src="/assets/logos/logoBiblioNegro.png" alt="Biblioteca Cuir">
+            <img src="/assets/logos/logoBiblioBlanco.png" alt="Biblioteca Cuir">
         </a>
     </header>
 
-    <main class="portfolio-index">
-        <section class="portfolio-hero" aria-labelledby="portfolio-title">
-            <h1 id="portfolio-title">portafolio</h1>
-            <div class="portfolio-hero-strip" aria-hidden="true">
-                <img src="/assets/obras/webp/glossy.webp" alt="">
-                <img src="/assets/obras/webp/marikarpa.webp" alt="">
-                <img src="/assets/obras/webp/archivo-de-besos.webp" alt="">
-            </div>
+    <main class="portfolio-detail portfolio-project-detail">
+        <section class="portfolio-detail-hero" aria-labelledby="page-title">
+            <h1 id="page-title">practicas</h1>
         </section>
 
-        <section class="portfolio-links" aria-label="Secciones del portafolio">
-            <a class="portfolio-link-card portfolio-card-practicas" href="/practicas.html">
-                <span>practicas</span>
-                <p>Metodologías, juegos y espacios de trabajo colectivo.</p>
-            </a>
-            <a class="portfolio-link-card portfolio-card-activaciones" href="/activaciones.html">
-                <span>activaciones</span>
-                <p>Talleres, encuentros y ejercicios públicos de activación.</p>
-            </a>
-            <a class="portfolio-link-card portfolio-card-obras" href="/obras.html">
-                <span>obras</span>
-                <p>Instalaciones, publicaciones, registros sonoros y acciones.</p>
-            </a>
-            <a class="portfolio-link-card portfolio-card-otros" href="/otros.html">
-                <span>otros</span>
-                <p>Encuentros, laboratorios, seminarios y publicaciones.</p>
-            </a>
+        <section class="portfolio-content">
+            <article class="portfolio-entry portfolio-entry-single" id="jornadas-hormigonas">
+                <h2>Jornadas Hormigonas</h2>
+                <p>Las Jornadas Hormigonas fueron sesiones interdisciplinarias de trabajo colaborativo que reunieron a quienes integran la Biblioteca Cuir, durante la residencia de investigación y creación realizada en el Centro Cultural de España en 2024.</p>
+                <p>Estos espacios fueron concebidos como instancias abiertas a personas que participaron del proyecto y a nuevas incorporaciones para desarrollar procesos de investigación, creación y experimentación en torno al proyecto, favoreciendo la construcción de una comunidad diversa y en permanente expansión.</p>
+                <p>A través de dinámicas de planificación, prototipado y discusión colectiva, estas jornadas buscaron desarrollar metodologías de activación, diseñar y construir dispositivos que cuestionan las lógicas tradicionales de conservación y acceso, categorías para la catalogación de las memorias disidentes. Estos encuentros además, fueron un espacio para ensayar materialidades, activar procesos creativos y proyectar las futuras acciones públicas del colectivo Biblioteca Cuir.</p>
+                <div class="portfolio-media" aria-label="Registro visual de Jornadas Hormigonas">
+                    <img src="/assets/portafolio/practicas/jornadas-hormigonas/01.jpg" alt="">
+                    <img src="/assets/portafolio/practicas/jornadas-hormigonas/01.png" alt="">
+                    <img src="/assets/portafolio/practicas/jornadas-hormigonas/02.jpg" alt="">
+                </div>
+            </article>
         </section>
     </main>
 
@@ -97,9 +88,9 @@
                 </div>
 
                 <form class="footer-newsletter" action="/" method="get">
-                    <label for="footer-email-portafolio">recibe novedades y publicaciones nuevas.</label>
+                    <label for="footer-email-practicas">recibe novedades y publicaciones nuevas.</label>
                     <div class="footer-input-row">
-                        <input id="footer-email-portafolio" type="email" name="email" placeholder="email" autocomplete="email">
+                        <input id="footer-email-practicas" type="email" name="email" placeholder="email" autocomplete="email">
                         <button type="submit" aria-label="Enviar correo">→</button>
                     </div>
                 </form>
@@ -115,5 +106,6 @@
             <span>instagram · correo</span>
         </div>
     </footer>
+    <script src="/js/portfolio.js" defer></script>
 </body>
 </html>
