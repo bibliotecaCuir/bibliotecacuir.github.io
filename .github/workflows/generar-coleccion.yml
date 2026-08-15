@@ -1,0 +1,40 @@
+name: Generar fichas de la colección
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "coleccion/yaml/**"
+      - "coleccion/generar-html-libros.js"
+      - "scripts/lib/plantillas-sitio.js"
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generar coleccion/html/*.html desde coleccion/yaml/*.yaml
+        run: node generar-html-libros.js
+        working-directory: coleccion
+
+      - name: Commitear páginas generadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add coleccion/html
+          if git diff --cached --quiet; then
+            echo "Sin cambios que commitear."
+          else
+            git commit -m "Generar fichas de la colección automáticamente"
+            git push
+          fi

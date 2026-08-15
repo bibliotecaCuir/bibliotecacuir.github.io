@@ -47,20 +47,20 @@ agregar, editar o eliminar una pieza.
 2. Si la pieza tiene una imagen nueva, subirla al repo
    `bibliotecaCuir/coleccion-imagenes`, dentro de la carpeta de esa caja
    (`<caja>/`) con el mismo nombre de archivo que se puso en `imagen`.
-3. Regenerar las fichas:
+3. Commitear y hacer push del YAML editado a `main`.
 
-   ```sh
-   node generar-html-libros.js
-   ```
-
-4. Commitear tanto el YAML editado como los cambios en `html/`.
+Al hacer push, un GitHub Action (`.github/workflows/generar-coleccion.yml`)
+corre `node generar-html-libros.js` y commitea las fichas generadas en
+`html/` — no hace falta correr el generador a mano ni commitear ese
+directorio vos mismx. También se dispara si cambia
+`scripts/lib/plantillas-sitio.js` (el encabezado/pie compartido), así se
+regeneran las ~140 fichas cuando cambia esa plantilla.
 
 `index.html` (el catálogo) no necesita regeneración — carga el YAML en vivo.
 
 ## A diferencia del portafolio
 
-El portafolio (`/portafolio/<sección>/`, ver el README raíz) tiene un
-formulario de GitHub Issues y una GitHub Action que corre el generador y
-commitea automáticamente. La colección todavía no tiene esa automatización:
-el paso 3 de arriba (`node generar-html-libros.js`) hay que correrlo a mano
-y commitear el resultado.
+El portafolio (`/portafolio/<sección>/`, ver el README raíz) tiene además un
+formulario de GitHub Issues que arma el YAML por vos; acá el YAML todavía se
+edita a mano. Pero la regeneración y el commit de las páginas generadas
+funcionan igual en ambos: los hace el GitHub Action al hacer push a `main`.
