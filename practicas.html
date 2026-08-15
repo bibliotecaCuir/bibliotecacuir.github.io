@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css">
+    <script src="/lib/js-yaml.min.js"></script>
     <title>Prácticas | Biblioteca Cuir</title>
 </head>
 <body class="portfolio-page portfolio-section portfolio-practicas">
@@ -29,49 +30,7 @@
             </div>
         </section>
 
-        <section class="portfolio-content portfolio-project-index" aria-label="Proyectos de practicas">
-            <a class="portfolio-project-card" href="/portafolio/practicas/asambleas.html">
-                <figure><img src="/assets/portafolio/practicas/asambleas/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Asambleas</h2>
-                    <p>Las Asambleas fueron el principal espacio de encuentro, deliberación, construcción colectiva de la Biblioteca Cuir. A través de una metodología abierta y participativa, convocamos ...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/practicas/jornadas-hormigonas.html">
-                <figure><img src="/assets/portafolio/practicas/jornadas-hormigonas/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Jornadas Hormigonas</h2>
-                    <p>Las Jornadas Hormigonas fueron sesiones interdisciplinarias de trabajo colaborativo que reunieron a quienes integran la Biblioteca Cuir, durante la residencia de investigación y cr...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/practicas/glossy.html">
-                <figure><img src="/assets/portafolio/practicas/glossy/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Glossy</h2>
-                    <p>Glossy Cuir es una metodología de creación colectiva con foco en el lenguaje. Surgió como un mecanismo para activar las publicaciones donadas a la colección. A partir de ejercicios...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/practicas/bachillerato-marika-para-no-olvidar.html">
-                <figure><img src="/assets/portafolio/practicas/bachillerato-marika-para-no-olvidar/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Bachillerato marika para no olvidar</h2>
-                    <p>Bachillerato marika para no olvidar fue una performance que buscaba recuperar el rito como práctica de memoria, denuncia y reparación simbólica. A través de una puesta en escena co...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/practicas/sopa-de-letras.html">
-                <figure><img src="/assets/portafolio/practicas/sopa-de-letras/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Sopa de letras</h2>
-                    <p>Esta es una metodología de juego o actividad participativa que se basa en la dinámica de una sopa de letras como herramienta para aproximarse a conceptos vinculados a las memorias,...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/practicas/archivo-de-besos.html">
-                <figure><img src="/assets/portafolio/practicas/archivo-de-besos/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Archivo de besos</h2>
-                    <p>Fue una metodología que surgió durante la residencia de investigación y creación del Centro Cultural de España, que invita a dejar un beso como una forma de compartir el cariño hac...</p>
-                </div>
-            </a>
+        <section class="portfolio-content portfolio-project-index" aria-label="Proyectos de practicas" id="practicasProyectos">
         </section>
     </main>
 
@@ -141,6 +100,7 @@
             <span>instagram · correo</span>
         </div>
     </footer>
+    <script src="/js/cargar-practicas.js"></script>
     <script src="/js/portfolio.js" defer></script>
     <script src="/js/site-motion.js" defer></script>
 </body>
