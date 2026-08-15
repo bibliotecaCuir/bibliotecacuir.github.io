@@ -13,6 +13,12 @@ function escaparHTML(valor) {
     .replace(/'/g, "&#039;");
 }
 
+// Umbral calibrado contra los títulos reales que ya usan portfolio-title-long en el sitio:
+// los de 47 caracteres o menos nunca la llevan, los de 61 o más siempre la llevan.
+function claseTitulo(titulo) {
+  return String(titulo || "").length > 50 ? "portfolio-title-long" : "";
+}
+
 function leerImagenes(carpetaImagenesCategoria, slug) {
   const carpeta = path.join(carpetaImagenesCategoria, slug);
   if (!fs.existsSync(carpeta)) return [];
@@ -110,6 +116,11 @@ function footer(categoria) {
 function pagina(categoria, proyecto, carpetaImagenesCategoria) {
   const imagenes = leerImagenes(carpetaImagenesCategoria, proyecto.slug);
   const titulo = proyecto.titulo || proyecto.slug;
+  const claseH2 = claseTitulo(titulo);
+
+  const linkHtml = proyecto.link_url
+    ? `                <p class="portfolio-registro">Link: <a href="${escaparHTML(proyecto.link_url)}" target="_blank" rel="noreferrer">${escaparHTML(proyecto.link_texto || proyecto.link_url)}</a></p>\n`
+    : "";
 
   const parrafosHtml = (proyecto.parrafos || [])
     .map((parrafo) => `                <p>${escaparHTML(parrafo)}</p>`)
@@ -148,8 +159,8 @@ ${headerGlobal(categoria)}
 
         <section class="portfolio-content">
             <article class="portfolio-entry portfolio-entry-single" id="${escaparHTML(proyecto.slug)}">
-                <h2>${escaparHTML(titulo)}</h2>
-${parrafosHtml}
+                <h2${claseH2 ? ` class="${claseH2}"` : ""}>${escaparHTML(titulo)}</h2>
+${linkHtml}${parrafosHtml}
                 <div class="${claseMedia}" aria-label="Registro visual de ${escaparHTML(titulo)}">
 ${imagenesHtml}
                 </div>

@@ -1,0 +1,50 @@
+- slug: "protocola"
+  titulo: "ProtoCola (2026)"
+  carpeta_imagenes: "/assets/portafolio/obras/protocola"
+  parrafos:
+    - "Este es un instrumento vivo que desarrollamos para cuidar los objetos que componen nuestra colección y también cuidar los afectos que sostienen este proyecto. El objetivo de este instrumento es organizar la colección, formalizar el traspaso de donaciones y seguir cuidando los aportes de la mejor manera posible."
+
+- slug: "biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde"
+  titulo: "Biblioteca Cuir: imaginar otros archivos posibles - Sesiones Arde"
+  carpeta_imagenes: "/assets/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde"
+  link_url: "https://youtu.be/qxmlpYtBV_U?si=mowvmGeDu_oLwL31"
+  parrafos:
+    - "Microdocumental realizado junto al Proyecto ARDE titulado “Biblioteca Cuir: imaginar otros archivos posibles” (2026). Las preguntas que intentamos responder fueron: ¿cuál es la perspectiva cuir en una biblioteca o un archivo? ¿En qué se diferencia de una biblioteca tradicional? Pero, sobre todo, ¿cómo se construye una biblioteca cuir?"
+
+- slug: "marikarpa-vol-1"
+  titulo: "MARIKARPA Vol. 1"
+  carpeta_imagenes: "/assets/portafolio/obras/marikarpa-vol-1"
+  parrafos:
+    - "MARIKARPA Vol. 1 (2025) es una publicación monumental que funciona al mismo tiempo como fanzine, refugio e instalación. Inspirada en el gesto de construir un escondite con mantas durante la infancia, invita a entrar, recorrer y habitar una publicación desde el cuerpo. Cosida completamente a mano, la obra despliega un espacio para el encuentro y revisar parte de la colección. Formó parte de la Bienal de Artes Mediales (2025), en Centro Perdido y luego se volvió a instalar, pero con algunas variaciones, en Vestigio Futuro, en Centro NAVE."
+
+- slug: "otro-delirio-de-la-biblioteca-cuir"
+  titulo: "Otro delirio de la Biblioteca Cuir"
+  carpeta_imagenes: "/assets/portafolio/obras/otro-delirio-de-la-biblioteca-cuir"
+  link_url: "https://open.spotify.com/show/3i3MQIoY8pV3ls0VinhDbT?si=kL2z3md3TpmpBt9lpTm1Tg&utm_source=copy-link"
+  link_texto: "escuchar en Spotify"
+  parrafos:
+    - "Dispositivo sonoro de cuatro episodios desarrollado durante la residencia de investigación y creación de la Biblioteca Cuir y forma parte de Radio Inventada. Este podcast explora el origen de Biblioteca Cuir, sus metodologías y las preguntas que atraviesan el proyecto hasta ese momento. A través de relatos de ficción, paisajes sonoros y testimonios, propone una forma de recorrer el archivo desde la escucha, entendiendo la memoria como una experiencia viva que se construye entre voces, afectos e historias compartidas, desafiando las formas de narrar."
+
+- slug: "historias-lgbtqi-masp"
+  titulo: "Historias LGBTQI+ - MASP"
+  carpeta_imagenes: "/assets/portafolio/obras/historias-lgbtqi-masp"
+  parrafos:
+    - "Como parte de la exposición Historias LGBTQIA+ (2025) del MASP, Biblioteca Cuir presentó publicaciones, objetos y materiales de su colección, contenidos en diversos soportes/dispositivos especialmente diseñado para ser recorrido, tocado y activado por quienes visitaban la muestra. La instalación propuso una forma cercana y participativa de aproximarse al archivo, invitando a descubrir nuestra memoria disidente."
+
+- slug: "somos-una-maniobra-marika-para-resistir-cce"
+  titulo: "Somos una maniobra marika para resistir - CCE"
+  carpeta_imagenes: "/assets/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce"
+  parrafos:
+    - "Exposición de cierre de la residencia de investigación y creación realizada en el Centro Cultural de España de Santiago. La muestra reunió procesos, metodologías, dispositivos, publicaciones y registros desarrollados por la Biblioteca Cuir durante la residencia, compartiendo el recorrido del colectivo y las distintas formas de construir un archivo vivo desde la colaboración, el cuidado y la memoria."
+
+- slug: "re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm"
+  titulo: "Re vueltas Gráficas. Multitudes para cambiar la vida - CCLM"
+  carpeta_imagenes: "/assets/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm"
+  parrafos:
+    - "Como parte de la exposición Re Vueltas Gráficas (2024), Biblioteca Cuir presentó una selección de su colección junto a una nueva versión del Coso, el dispositivo que resguarda y activa las publicaciones. La instalación invitó a acercarse al archivo proponiendo una experiencia abierta en torno a las memorias gráficas y las publicaciones disidentes."
+
+- slug: "bachillerato-marika-para-no-olvidar"
+  titulo: "Bachillerato marika para no olvidar"
+  carpeta_imagenes: "/assets/portafolio/obras/bachillerato-marika-para-no-olvidar"
+  parrafos:
+    - "Performance que recuerda a personas LGBTIQA+ víctimas de crímenes de odio en Chile y Latinoamérica, en donde se utilizó como soporte el popular juego “Bachilerato”. En esta acción colectiva de memoria disidente, realizada en el marco de la primera versión del festival de artes escénicas y disidencia sexual “Desviaciones”, se utilizaron tres columnas de papel en el que se transcribieron los nombres y mensajes de quienes se nombraron de manera aleatoria sobre un altar tipo animita hasta completar todas las letras del abecedario."

@@ -132,6 +132,8 @@ async function procesarFormulario(categoria, { nombreSingular }) {
   const titulo = extraerCampo(body, "Título");
   const parrafosTexto = extraerCampo(body, "Párrafos");
   const slugInput = extraerCampo(body, "Slug (opcional)");
+  const linkUrl = extraerCampo(body, "Link (opcional)");
+  const linkTexto = extraerCampo(body, "Texto del link (opcional)");
   const imagenesTexto = extraerCampo(body, "Imágenes");
 
   const parrafos = extraerParrafos(parrafosTexto);
@@ -164,6 +166,8 @@ async function procesarFormulario(categoria, { nombreSingular }) {
     slug,
     titulo,
     carpeta_imagenes: `/assets/portafolio/${categoria}/${slug}`,
+    ...(linkUrl && { link_url: linkUrl }),
+    ...(linkUrl && linkTexto && { link_texto: linkTexto }),
     parrafos,
   };
 

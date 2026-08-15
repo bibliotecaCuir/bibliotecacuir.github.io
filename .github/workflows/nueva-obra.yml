@@ -1,0 +1,40 @@
+name: Procesar formulario de nueva obra
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  procesar:
+    if: contains(github.event.issue.labels.*.name, 'nueva-obra')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Procesar issue y generar archivos
+        id: procesar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_AUTHOR_ASSOCIATION: ${{ github.event.issue.author_association }}
+        run: node scripts/procesar-nueva-obra.js
+
+      - name: Commitear cambios
+        if: steps.procesar.outputs.debe_commitear == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add datos/obras.yaml assets/portafolio/obras portafolio/obras
+          git commit -m "Agregar/editar obra vía formulario (issue #${{ github.event.issue.number }})"
+          git push

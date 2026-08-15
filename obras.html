@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css">
+    <script src="/lib/js-yaml.min.js"></script>
     <title>Obras | Biblioteca Cuir</title>
 </head>
 <body class="portfolio-page portfolio-section portfolio-obras">
@@ -30,63 +31,7 @@
             </div>
         </section>
 
-        <section class="portfolio-content portfolio-project-index" aria-label="Proyectos de obras">
-            <a class="portfolio-project-card" href="/portafolio/obras/protocola.html">
-                <figure><img src="/assets/portafolio/obras/protocola/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>ProtoCola</h2>
-                    <p>Este es un instrumento vivo que desarrollamos para cuidar los objetos que componen nuestra colección y también cuidar los afectos que sostienen este proyecto. El objetivo de este i...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde.html">
-                <figure><img src="/assets/portafolio/obras/biblioteca-cuir-imaginar-otros-archivos-posibles-sesiones-arde/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2 class="portfolio-title-long">Biblioteca Cuir: imaginar otros<br>archivos posibles - Sesiones Arde</h2>
-                    <p>Link: https://youtu.be/qxmlpYtBV_U?si=mowvmGeDu_oLwL31</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/obras/marikarpa-vol-1.html">
-                <figure><img src="/assets/portafolio/obras/marikarpa-vol-1/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>MARIKARPA Vol. 1</h2>
-                    <p>MARIKARPA Vol. 1 es una publicación monumental que funciona al mismo tiempo como fanzine, refugio e instalación. Inspirada en el gesto de construir un escondite con mantas durante ...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/obras/otro-delirio-de-la-biblioteca-cuir.html">
-                <figure><img src="/assets/imagenes/maqueta-bc.jpg" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Otro delirio de<br>la Biblioteca Cuir</h2>
-                    <p>Link: escuchar en Spotify</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/obras/historias-lgbtqi-masp.html">
-                <figure><img src="/assets/portafolio/obras/historias-lgbtqi-masp/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Historias LGBTQI+ - MASP</h2>
-                    <p>Como parte de la exposición Historias LGBTQIA+ del MASP, Biblioteca Cuir presentó publicaciones, objetos y materiales de su colección, contenidos en diversos soportes/dispositivos ...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce.html">
-                <figure><img src="/assets/portafolio/obras/somos-una-maniobra-marika-para-resistir-cce/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Somos una maniobra marika<br>para resistir - CCE</h2>
-                    <p>Exposición de cierre de la residencia de investigación y creación realizada en el Centro Cultural de España de Santiago. La muestra reunió procesos, metodologías, dispositivos, pub...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm.html">
-                <figure><img src="/assets/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2 class="portfolio-title-long">Re vueltas Graficas. Multitudes<br>para cambiar la vida - CCLM</h2>
-                    <p>Como parte de la exposición Re Vueltas Gráficas, Biblioteca Cuir presentó una selección de su colección junto a una nueva versión del Coso, el dispositivo que resguarda y activa la...</p>
-                </div>
-            </a>
-            <a class="portfolio-project-card" href="/portafolio/obras/bachillerato-marika-para-no-olvidar.html">
-                <figure><img src="/assets/portafolio/obras/bachillerato-marika-para-no-olvidar/01.webp" alt="" loading="lazy" decoding="async"></figure>
-                <div>
-                    <h2>Bachillerato marika<br>para no olvidar</h2>
-                    <p>Performance que recuerda a personas LGBTIQA+ víctimas de crímenes de odio en Chile y Latinoamérica, en donde se utilizó como soporte el popular juego “Bachilerato”. En esta acción ...</p>
-                </div>
-            </a>
+        <section class="portfolio-content portfolio-project-index" aria-label="Proyectos de obras" data-categoria="obras">
         </section>
     </main>
 
@@ -156,6 +101,7 @@
             <span>instagram · correo</span>
         </div>
     </footer>
+    <script src="/js/cargar-portafolio.js"></script>
     <script src="/js/portfolio.js" defer></script>
     <script src="/js/site-motion.js" defer></script>
 </body>

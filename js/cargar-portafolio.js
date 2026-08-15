@@ -21,6 +21,12 @@ function truncar(texto, limite = 190) {
   return `${limpio.slice(0, limite).replace(/\s+\S*$/, "")}...`;
 }
 
+// Mismo umbral que scripts/lib/generar-portafolio.js: calibrado contra los títulos
+// reales que ya usan portfolio-title-long en el sitio.
+function claseTitulo(titulo) {
+  return String(titulo || "").length > 50 ? " class=\"portfolio-title-long\"" : "";
+}
+
 function crearTarjeta(proyecto) {
   const resumen = truncar(proyecto.parrafos?.[0]);
   const imagen = `${proyecto.carpeta_imagenes}/01.webp`;
@@ -31,7 +37,7 @@ function crearTarjeta(proyecto) {
   enlace.innerHTML = `
     <figure><img src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async"></figure>
     <div>
-      <h2>${escaparHTML(proyecto.titulo)}</h2>
+      <h2${claseTitulo(proyecto.titulo)}>${escaparHTML(proyecto.titulo)}</h2>
       <p>${escaparHTML(resumen)}</p>
     </div>
   `;

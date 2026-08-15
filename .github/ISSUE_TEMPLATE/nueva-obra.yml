@@ -1,0 +1,80 @@
+name: Nueva obra (o edición de una existente)
+description: Agregá o editá una obra de la Biblioteca Cuir sin tocar código.
+title: "[obra] "
+labels: ["nueva-obra"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completá este formulario para agregar una obra nueva a
+        [bibliotecacuir.github.io/obras.html](https://bibliotecacuir.github.io/obras.html),
+        o para editar una que ya existe (usá el mismo "Slug" que tiene esa obra).
+        Un robot va a procesar este formulario automáticamente y te va a avisar acá mismo cuando esté listo.
+
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      description: El nombre de la obra, tal como se va a mostrar en el sitio.
+      placeholder: "MARIKARPA Vol. 1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: parrafos
+    attributes:
+      label: Párrafos
+      description: >
+        El texto que describe la obra. Escribí cada párrafo separado por una
+        línea en blanco (como en un documento normal).
+      placeholder: |
+        Primer párrafo...
+
+        Segundo párrafo...
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Slug (opcional)
+      description: >
+        Es la parte del link (ejemplo: "marikarpa-vol-1" en /portafolio/obras/marikarpa-vol-1.html).
+        Dejalo vacío si es una obra nueva y queremos generarlo automáticamente a partir del título.
+        Completalo con el slug existente si querés editar una obra que ya está publicada.
+      placeholder: "marikarpa-vol-1"
+    validations:
+      required: false
+
+  - type: input
+    id: link
+    attributes:
+      label: Link (opcional)
+      description: >
+        Si la obra tiene un video, podcast u otro link externo (ej. YouTube, Spotify),
+        pegalo acá. Se va a mostrar como "Link: ..." arriba del texto.
+      placeholder: "https://youtu.be/..."
+    validations:
+      required: false
+
+  - type: input
+    id: link_texto
+    attributes:
+      label: Texto del link (opcional)
+      description: >
+        Cómo se llama el link (ej. "escuchar en Spotify", "ver en YouTube").
+        Si lo dejás vacío, se muestra el link tal cual.
+      placeholder: "escuchar en Spotify"
+    validations:
+      required: false
+
+  - type: textarea
+    id: imagenes
+    attributes:
+      label: Imágenes
+      description: >
+        Arrastrá o pegá acá las fotos de la obra (podés soltar varios archivos a la vez).
+        Se van a agregar en el orden en que las sueltes. Si la obra no tiene fotos propias
+        (por ejemplo, un podcast), subí igual al menos una imagen para que tenga portada.
+    validations:
+      required: false
