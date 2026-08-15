@@ -88,7 +88,7 @@ tocar HTML a mano para agregar, editar o eliminar una pieza.
   desde los YAML en el navegador con `cargar-catalogo.js`, sin generar
   nada — por eso el catálogo siempre refleja el contenido actual de
   `yaml/` con solo recargar la página.
-- `coleccion/html/`: las ~140 fichas individuales (`bc-XXXX.html`), una
+- `coleccion/fichas/`: las ~140 fichas individuales (`bc-XXXX.html`), una
   por pieza. A diferencia del catálogo, estas sí son archivos estáticos
   generados — `generar-html-libros.js` los escribe a partir de `yaml/`.
 - `coleccion/generar-html-libros.js`: lee todos los `yaml/*.yaml`,
@@ -96,14 +96,15 @@ tocar HTML a mano para agregar, editar o eliminar una pieza.
   título/autorxs/editorial/año), arma un slug por pieza (a partir del
   código, o del título si no hay código), calcula "títulos relacionados"
   por categoría/autorxs/editorial, y escribe una página por pieza en
-  `html/`. También borra cualquier `.html` viejo en `html/` antes de
+  `fichas/`. También borra cualquier `.html` viejo en `fichas/` antes de
   escribir, así que una pieza eliminada del YAML desaparece del sitio al
   regenerar.
-- El encabezado (nav) y pie de página de cada ficha vienen de
-  `scripts/lib/plantillas-sitio.js`, la misma plantilla compartida que
-  usan `index.html`, `manifiesto/`, `dona/` y `portafolio/`. Un cambio ahí
-  (ej. el link de Instagram, un ítem del menú) se propaga a las ~140
-  fichas la próxima vez que se regenera — no hay que tocarlas una por una.
+- El encabezado (nav) y pie de página de cada ficha tienen su propia
+  plantilla dentro de `coleccion/generar-html-libros.js` (funciones
+  `headerGlobal`/`footer`) — a diferencia de `index.html`, `manifiesto/`,
+  `dona/` y `portafolio/`, que comparten `scripts/lib/plantillas-sitio.js`.
+  Un cambio de nav o pie ahí no se propaga a la colección; hay que
+  editarlo en `generar-html-libros.js` y regenerar.
 - Las imágenes **no viven en este repositorio**: `imagen` en el YAML es
   solo un nombre de archivo, y tanto `cargar-catalogo.js` como
   `generar-html-libros.js` arman la URL apuntando a
@@ -122,10 +123,8 @@ tocar HTML a mano para agregar, editar o eliminar una pieza.
 
 Al hacer push, un GitHub Action (`.github/workflows/generar-coleccion.yml`)
 corre `node generar-html-libros.js` y commitea las fichas generadas en
-`coleccion/html/` — no hace falta correr el generador a mano ni commitear
-ese directorio vos mismx. También se dispara si cambia
-`scripts/lib/plantillas-sitio.js` (el encabezado/pie compartido), así se
-regeneran las ~140 fichas cuando cambia esa plantilla.
+`coleccion/fichas/` — no hace falta correr el generador a mano ni commitear
+ese directorio vos mismx.
 
 `coleccion/index.html` (el catálogo) no necesita regeneración — carga el
 YAML en vivo.

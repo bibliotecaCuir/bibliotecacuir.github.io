@@ -36,9 +36,10 @@ ${enlaces}
     </nav>`;
 }
 
-// idCorreo se pasa explicito (no derivado) porque coleccion/index.html comparte el mismo
-// "pie-email" que usan las ~140 paginas generadas en coleccion/html/, mientras que
-// index.html/dona/portafolio siguen su propio esquema footer-email[-pagina].
+// idCorreo se pasa explicito (no derivado) porque cada seccion que usa este pie
+// (index.html, dona, portafolio) tiene su propio esquema de id para el input de email
+// (footer-email, footer-email-pagina, footer-email-<categoria>). coleccion/ no usa este
+// pie compartido — tiene su propio header/footer en coleccion/generar-html-libros.js.
 function piePagina({ idCorreo }) {
   return `    <footer class="sitio-pie" id="contacto" aria-label="Pie de página">
         <div class="pie-seguir">

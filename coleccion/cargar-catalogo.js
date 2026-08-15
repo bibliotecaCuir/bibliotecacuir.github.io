@@ -147,7 +147,7 @@ function crearArticulo(item, caja, index) {
   // Los YAML actuales usan "editorial"; se tolera "editoriales" para datos futuros.
   const editorial = valorLista(item.editorial || item.editoriales);
   const meta = [autorxs, editorial, item.estado || item.tipologia].filter(Boolean);
-  const urlDetalle = `./html/${crearSlug(item, caja, index)}.html`;
+  const urlDetalle = `./fichas/${crearSlug(item, caja, index)}.html`;
 
   article.innerHTML = `
     <a class="item-link" href="${urlDetalle}">

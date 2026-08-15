@@ -4,7 +4,7 @@ const yaml = require("./lib/js-yaml.min.js");
 
 const ROOT = __dirname;
 const YAML_DIR = path.join(ROOT, "yaml");
-const HTML_DIR = path.join(ROOT, "html");
+const FICHAS_DIR = path.join(ROOT, "fichas");
 
 const catalogosYaml = [
   "caja-01",
@@ -389,10 +389,10 @@ function pagina(publicacion, publicaciones) {
 }
 
 function limpiarHtmlGenerado() {
-  if (!fs.existsSync(HTML_DIR)) fs.mkdirSync(HTML_DIR);
-  fs.readdirSync(HTML_DIR)
+  if (!fs.existsSync(FICHAS_DIR)) fs.mkdirSync(FICHAS_DIR);
+  fs.readdirSync(FICHAS_DIR)
     .filter((file) => file.endsWith(".html"))
-    .forEach((file) => fs.unlinkSync(path.join(HTML_DIR, file)));
+    .forEach((file) => fs.unlinkSync(path.join(FICHAS_DIR, file)));
 }
 
 const publicaciones = leerCatalogos();
@@ -400,9 +400,9 @@ limpiarHtmlGenerado();
 
 publicaciones.forEach((publicacion) => {
   fs.writeFileSync(
-    path.join(HTML_DIR, `${publicacion.slug}.html`),
+    path.join(FICHAS_DIR, `${publicacion.slug}.html`),
     pagina(publicacion, publicaciones)
   );
 });
 
-console.log(`Generadas ${publicaciones.length} páginas en html/.`);
+console.log(`Generadas ${publicaciones.length} páginas en fichas/.`);
