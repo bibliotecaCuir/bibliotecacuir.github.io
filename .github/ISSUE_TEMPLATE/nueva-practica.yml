@@ -1,0 +1,57 @@
+name: Nueva práctica (o edición de una existente)
+description: Agregá o editá una práctica de la Biblioteca Cuir sin tocar código.
+title: "[práctica] "
+labels: ["nueva-practica"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completá este formulario para agregar una práctica nueva a
+        [bibliotecacuir.github.io/practicas.html](https://bibliotecacuir.github.io/practicas.html),
+        o para editar una que ya existe (usá el mismo "Slug" que tiene esa práctica).
+        Un robot va a procesar este formulario automáticamente y te va a avisar acá mismo cuando esté listo.
+
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      description: El nombre de la práctica, tal como se va a mostrar en el sitio.
+      placeholder: "Asambleas"
+    validations:
+      required: true
+
+  - type: textarea
+    id: parrafos
+    attributes:
+      label: Párrafos
+      description: >
+        El texto que describe la práctica. Escribí cada párrafo separado por una
+        línea en blanco (como en un documento normal).
+      placeholder: |
+        Primer párrafo...
+
+        Segundo párrafo...
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Slug (opcional)
+      description: >
+        Es la parte del link (ejemplo: "asambleas" en /portafolio/practicas/asambleas.html).
+        Dejalo vacío si es una práctica nueva y queremos generarlo automáticamente a partir del título.
+        Completalo con el slug existente si querés editar una práctica que ya está publicada.
+      placeholder: "asambleas"
+    validations:
+      required: false
+
+  - type: textarea
+    id: imagenes
+    attributes:
+      label: Imágenes
+      description: >
+        Arrastrá o pegá acá las fotos de la práctica (podés soltar varios archivos a la vez).
+        Se van a agregar en el orden en que las sueltes.
+    validations:
+      required: false
