@@ -232,9 +232,9 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
 
     <nav class="landing-menu" id="landing-menu" aria-label="Menú principal">
       <a href="/#contacto">contacto</a>
-      <a href="/#manifiesto">manifiesto</a>
+      <a href="/manifiesto/">manifiesto</a>
       <a href="/#sobre-nosotres">sobre nosotres</a>
-      <a href="/portafolio.html">portafolio</a>
+      <a href="/portafolio/">portafolio</a>
       <a href="${rutaColeccion}">coleccion</a>
     </nav>
   `;
@@ -244,11 +244,11 @@ function footer() {
   return `
     <footer class="site-footer" id="contacto" aria-label="Pie de página">
       <div class="footer-follow">
-        <a class="footer-follow-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+        <a class="footer-follow-link" href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">
           <span class="footer-follow-icon" aria-hidden="true">+</span>
           <span>síguenos</span>
         </a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">@bibliotecacuir</a>
+        <a href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">@bibliotecacuir</a>
       </div>
 
       <div class="footer-main">
@@ -270,18 +270,16 @@ function footer() {
 
           <nav class="footer-column footer-links" aria-label="Explorar">
             <h3>explora</h3>
-            <a href="/manifiesto.html">manifiesto</a>
+            <a href="/manifiesto/">manifiesto</a>
             <a href="/coleccion/">publicaciones</a>
-            <a href="/portafolio.html">portafolio</a>
-            <a href="/#info">info</a>
+            <a href="/portafolio/">portafolio</a>
           </nav>
 
           <nav class="footer-column footer-links" aria-label="Aprender">
             <h3>aprende</h3>
-            <a href="/">proyectos</a>
-            <a href="/">lecturas</a>
-            <a href="/coleccion/">archivo</a>
-            <a href="/">faq</a>
+            <a href="/dona/">protocola</a>
+            <a href="/#sobre-nosotres">sobre nosotres</a>
+            <a href="/#contacto">contacto</a>
           </nav>
 
           <div class="footer-column footer-contact">
