@@ -245,7 +245,7 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
       <a href="/#sobre-nosotres">sobre nosotres</a>
       <a href="/portafolio/">portafolio</a>
       <a href="${rutaColeccion}" data-compact-label="colección">coleccion</a>
-      <a href="/dona.html" data-compact-label="dona aquí">dona aqui</a>
+      <a href="/dona/" data-compact-label="dona aquí">dona aqui</a>
     </nav>
   `;
 }
@@ -287,7 +287,7 @@ function footer() {
 
           <nav class="pie-columna pie-enlaces" aria-label="Aprender">
             <h3>aprende</h3>
-            <a href="/dona.html">protocola</a>
+            <a href="/dona/">protocola</a>
             <a href="/#sobre-nosotres">sobre nosotres</a>
             <a href="/#contacto">contacto</a>
           </nav>
