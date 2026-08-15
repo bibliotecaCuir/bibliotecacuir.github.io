@@ -1,0 +1,44 @@
+- slug: "asambleas"
+  titulo: "Asambleas"
+  carpeta_imagenes: "/assets/portafolio/practicas/asambleas"
+  parrafos:
+    - "Las Asambleas fueron el principal espacio de encuentro, deliberación, construcción colectiva de la Biblioteca Cuir. A través de una metodología abierta y participativa, convocamos a personas, organizaciones y colectividades interesadxs en reflexionar sobre las memorias disidentes, las prácticas archivísticas y las posibilidades de imaginar formas alternativas de resguardo, circulación y activación de estos saberes."
+    - "Durante 2023, en una fase inicial del colectivo, se realizaron 10 asambleas en espacios que se fueron alternando como Casa Taller Teatro Sur, en barrio Yungay y Casa Palacio en barrio Brasil. En cada sesión se desarrollaron ejercicios de observación, discusión y trabajo colaborativo orientados a definir modos de organización del catálogo o colección, revisar procesos de donación, así como proyectar el diseño de dispositivos para contener a los objetos recibidos."
+    - "Estas Asambleas funcionaron también como un espacio permanente de incorporación de nuevos materiales y participantes, fortaleciendo una red de colaboración, experimentación y la construcción compartida de memorias disidentes."
+
+- slug: "jornadas-hormigonas"
+  titulo: "Jornadas Hormigonas"
+  carpeta_imagenes: "/assets/portafolio/practicas/jornadas-hormigonas"
+  parrafos:
+    - "Las Jornadas Hormigonas fueron sesiones interdisciplinarias de trabajo colaborativo que reunieron a quienes integran la Biblioteca Cuir, durante la residencia de investigación y creación realizada en el Centro Cultural de España en 2024."
+    - "Estos espacios fueron concebidos como instancias abiertas a personas que participaron del proyecto y a nuevas incorporaciones para desarrollar procesos de investigación, creación y experimentación en torno al proyecto, favoreciendo la construcción de una comunidad diversa y en permanente expansión."
+    - "A través de dinámicas de planificación, prototipado y discusión colectiva, estas jornadas buscaron desarrollar metodologías de activación, diseñar y construir dispositivos que cuestionan las lógicas tradicionales de conservación y acceso, categorías para la catalogación de las memorias disidentes. Estos encuentros además, fueron un espacio para ensayar materialidades, activar procesos creativos y proyectar las futuras acciones públicas del colectivo Biblioteca Cuir."
+
+- slug: "glossy"
+  titulo: "Glossy"
+  carpeta_imagenes: "/assets/portafolio/practicas/glossy"
+  parrafos:
+    - "Glossy Cuir es una metodología de creación colectiva con foco en el lenguaje. Surgió como un mecanismo para activar las publicaciones donadas a la colección. A partir de ejercicios de revisión y reconocimiento de materiales y asociación libre, lxs participantes elaboran un glosario compartido que reúne palabras y definiciones propias a partir de sus experiencias."
+    - "Se activó por primera vez en la exposición Re Vueltas Gráficas Multitudes para cambiar la vida (2024) en CCLM, luego se ha replicado en otras instancias y de distintas maneras. En esa primera instancia, se propuso la creación de un campo semántico y se dispusieron palabras y nuevos significados en una red al centro de la sala."
+    - "A partir de esta metodología se ha ido conformando un glosario de conceptos que resulta un archivo vivo de conceptos, afectos e imaginarios que da cuenta de las múltiples formas de nombrar las experiencias cuir y de construir sentidos de manera colectiva."
+
+- slug: "bachillerato-marika-para-no-olvidar"
+  titulo: "Bachillerato marika para no olvidar"
+  carpeta_imagenes: "/assets/portafolio/practicas/bachillerato-marika-para-no-olvidar"
+  parrafos:
+    - "Bachillerato marika para no olvidar (2024) fue una performance que buscaba recuperar el rito como práctica de memoria, denuncia y reparación simbólica. A través de una puesta en escena colectiva, realizada en el marco del Festival Desviaciones, se emulaba el juego del bachillerato con categorías nuevas."
+    - "El objetivo era recordar y honrar a quienes han sido expulsadxs, violentadxs o borradxs por las estructuras cisheteropatriarcales, transformando el espacio público en un lugar de encuentro, duelo y resistencia. Esta performance fue un ejercicio de memoria activa que reivindicó la presencia de las comunidades sexo-disidentes y sus vivencias."
+
+- slug: "sopa-de-letras"
+  titulo: "Sopa de letras"
+  carpeta_imagenes: "/assets/portafolio/practicas/sopa-de-letras"
+  parrafos:
+    - "Esta es una metodología de juego o actividad participativa que se basa en la dinámica de una sopa de letras como herramienta para aproximarse a conceptos vinculados a las memorias, identidades y experiencias cuir."
+    - "Mediante un formato lúdico y accesible, se invita a lxs participantes a descubrir palabras que actúan como detonantes para la conversación, el reconocimiento y la construcción colectiva de significados."
+
+- slug: "archivo-de-besos"
+  titulo: "Archivo de besos"
+  carpeta_imagenes: "/assets/portafolio/practicas/archivo-de-besos"
+  parrafos:
+    - "Fue una metodología que surgió durante la residencia de investigación y creación del Centro Cultural de España, que invita a dejar un beso como una forma de compartir el cariño hacia alguien o algo. El gesto del beso entendido como una práctica marika, suele estar presente en los afectos cuir."
+    - "En este juego cada persona toma un labial, deja la huella de su beso en una ficha y escribe de quién es y a quién está dirigido. Luego, esos besos pasan a formar parte del Archivo de besos, una pequeña colección que el colectivo resguarda como un registro de vínculos afectivos."
