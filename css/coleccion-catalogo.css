@@ -1,0 +1,267 @@
+/* ============================================================
+   coleccion-catalogo.css — indice de la coleccion
+   (coleccion/index.html)
+   ------------------------------------------------------------
+   La intro con el conteo de piezas y los filtros por categoria,
+   y la grilla de tarjetas del catalogo (#divCatalogo). Cada
+   tarjeta aparece con un fade-in al entrar en pantalla
+   (.revelar-elemento.esta-visible, activado por JS via
+   IntersectionObserver).
+   ============================================================ */
+
+/* Introducción compacta, sin elementos decorativos de fondo. */
+.catalogo-principal {
+  padding: clamp(8.8rem, 13vw, 12rem) var(--espacio-pagina) clamp(1.1rem, 2.4vw, 2rem);
+  border-bottom: 1px solid var(--borde);
+}
+
+.antetitulo {
+  margin: 0 0 0.65rem;
+  font-size: clamp(0.62rem, 0.9vw, 0.76rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.catalogo-principal h1 {
+  margin: 0;
+  font-family: var(--font-proyecto);
+  font-size: clamp(3.3rem, 6.4vw, 6.8rem);
+  font-weight: 400;
+  line-height: 0.84;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.catalogo-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 650px);
+  align-items: start;
+  justify-content: space-between;
+  gap: clamp(0.75rem, 1.4vw, 1.2rem);
+}
+
+.catalogo-presentacion > p:last-child {
+  max-width: none;
+  margin: clamp(0.3rem, 0.8vw, 0.7rem) 0 0;
+  font-size: clamp(0.82rem, 1.25vw, 1.12rem);
+  line-height: 1.32;
+  white-space: nowrap;
+}
+
+.catalogo-descripcion span {
+  display: inline;
+}
+
+.catalogo-controles {
+  display: grid;
+  flex: 0 1 650px;
+  justify-items: end;
+  gap: 0.75rem;
+  margin-top: 0;
+}
+
+.cabecera-conteo {
+  flex: none;
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--negro);
+}
+
+.catalogo-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  order: -1;
+}
+
+.filtro-boton {
+  padding: 0.42rem 0.65rem;
+  color: var(--negro);
+  font: inherit;
+  font-size: 0.66rem;
+  line-height: 1;
+  text-transform: lowercase;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filtro-boton span {
+  margin-left: 0.2rem;
+  opacity: 0.55;
+}
+
+.filtro-boton:hover,
+.filtro-boton:focus-visible {
+  border-color: var(--negro);
+  transform: translateY(-1px);
+}
+
+.filtro-boton.activo {
+  background: var(--rosado-claro);
+  border-color: var(--negro);
+}
+
+
+/* --- Grilla del catalogo -----------------------------------------
+   Grilla de 4 columnas (se reduce en coleccion-adaptable.css) con
+   las fichas de cada pieza: imagen, titulo, codigo/año y
+   metadatos. .previsualizacion-global* son clases que ya no se
+   usan (la grilla dejó de tener una vista previa flotante) pero
+   se dejan apagadas por compatibilidad en vez de borrarlas. */
+
+/* Grilla de la colección inspirada en project-gallery del landing. */
+.catalogo-seccion {
+  padding: clamp(2rem, 4vw, 4rem) var(--espacio-pagina) clamp(6rem, 10vw, 9rem);
+}
+
+#divCatalogo {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem);
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.elemento {
+  min-width: 0;
+}
+
+.elemento-enlace {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.revelar-elemento {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.revelar-elemento.esta-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.elemento[hidden] {
+  display: none;
+}
+
+.elemento-imagen-contenedor {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  margin: 0 0 0.85rem;
+  overflow: hidden;
+  background: var(--gris);
+  isolation: isolate;
+}
+
+.catalogo-imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+  transition: transform 0.42s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.elemento-sin-imagen {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: rgba(17, 17, 17, 0.28);
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+.elemento-tinte {
+  display: none;
+}
+
+.elemento-titulo {
+  margin: 0 0 0.55rem;
+  color: var(--negro);
+  font-size: clamp(0.98rem, 1.25vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+  text-transform: lowercase;
+}
+
+.elemento:hover .catalogo-imagen,
+.elemento:focus-within .catalogo-imagen {
+  transform: scale(1.075);
+}
+
+.elemento-cuerpo {
+  min-width: 0;
+}
+
+.elemento-identificacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.elemento-codigo,
+.elemento-agno {
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.elemento-meta-contenedor {
+  display: grid;
+}
+
+.elemento-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.4rem;
+  color: rgba(17, 17, 17, 0.72);
+  font-size: clamp(0.7rem, 0.9vw, 0.84rem);
+  line-height: 1.35;
+}
+
+.elemento-separador {
+  opacity: 0.45;
+}
+
+/* Clases conservadas por compatibilidad; la grilla ya no usa preview flotante. */
+.previsualizacion-global,
+.previsualizacion-global.activo,
+.previsualizacion-global-img {
+  display: none;
+}
+
+.cargando,
+.catalogo-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 2rem 0;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.catalogo-error {
+  padding: 1rem;
+  background: var(--rosado-claro);
+}

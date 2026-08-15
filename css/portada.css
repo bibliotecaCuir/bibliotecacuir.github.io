@@ -1,0 +1,953 @@
+/* ============================================================
+   portada.css — pagina de inicio (index.html)
+   ------------------------------------------------------------
+   Todo lo decorativo/interactivo de la portada: el fondo fijo
+   con el lettering, el carrusel de slides de presentacion, la
+   "vitrina ovalada" de libros, los cordones animados de fondo,
+   el principal con puntos, la nube de libros flotantes y la
+   constelacion de imagenes, y las tarjetas de proyecto.
+   ============================================================ */
+
+
+/* --- Fondo fijo de la portada -------------------------------
+   Capa fija detras de todo el contenido con el lettering
+   "biblioteca cuir" en marca de agua, y la cola animada que
+   sigue el cursor (controlada por js/cola.js). */
+
+.portada-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.portada-fondo::after {
+    display: none;
+    content: "";
+}
+
+.portada-fondo-imagen {
+    display: none;
+}
+
+.portada-lettering-imagen {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 4;
+    width: min(124vw, 1040px);
+    height: auto;
+    opacity: 0.66;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+    transform: translate(-50%, var(--background-offset, 0px));
+    transition: opacity 0.28s ease;
+    will-change: opacity, transform;
+}
+
+body.esta-lettering-oculto .portada-lettering-imagen {
+    opacity: 0;
+    transform: translate(-50%, var(--background-offset, 0px)) scale(0.96);
+}
+
+body.esta-fondo-oculto .portada-fondo::after,
+body.esta-fondo-oculto .portada-fondo-imagen {
+    opacity: 0;
+}
+
+.cola-animacion {
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    z-index: 3;
+    width: clamp(88px, 11vw, 156px);
+    height: auto;
+    pointer-events: none;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.28));
+    will-change: top, left;
+}
+
+
+/* --- Carrusel de slides de presentacion ---------------------
+   Pantalla completa al abrir la pagina: fotos a pantalla
+   completa que se cruzan con un fundido, mas el aviso de
+   "scroll" con flecha animada. */
+
+.portada-presentacion {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Todas las secciones y el pie quedan por encima del fondo
+   fijo (z-index: 0) para que el contenido siempre sea visible. */
+main > section,
+.sitio-pie {
+    position: relative;
+    z-index: 2;
+}
+
+.presentacion-diapositivas,
+.presentacion-diapositiva {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.presentacion-diapositivas {
+    overflow: hidden;
+    background: #111111;
+}
+
+.presentacion-desplazamiento {
+    pointer-events: auto;
+}
+
+.presentacion-diapositivas::after {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    content: "";
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 32%),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.36), transparent 36%);
+    pointer-events: none;
+}
+
+.presentacion-diapositiva {
+    --slide-enter-x: 4%;
+    --slide-exit-x: -4%;
+    object-fit: cover;
+    opacity: 0;
+    filter: contrast(1.035) saturate(1.04);
+    transform: translate3d(var(--slide-enter-x), 0, 0) scale(1.035);
+    transform-origin: center;
+    backface-visibility: hidden;
+    transition:
+        opacity 920ms ease,
+        transform 1450ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+    pointer-events: none;
+}
+
+.presentacion-diapositiva.esta-activo {
+    z-index: 1;
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1.012);
+}
+
+.presentacion-diapositiva.esta-saliendo {
+    z-index: 0;
+    opacity: 0;
+    transform: translate3d(var(--slide-exit-x), 0, 0) scale(1.04);
+}
+
+.presentacion-diapositiva-cuadrada {
+    object-position: center 42%;
+}
+
+/* Cada slide entra/sale desde un lado distinto para que el
+   carrusel no se sienta repetitivo (4 variantes que se repiten
+   segun la posicion del slide). */
+.presentacion-diapositiva:nth-child(4n + 2) {
+    --slide-enter-x: 0%;
+    --slide-exit-x: 0%;
+}
+
+.presentacion-diapositiva:nth-child(4n + 3) {
+    --slide-enter-x: -4%;
+    --slide-exit-x: 4%;
+}
+
+.presentacion-diapositiva:nth-child(4n) {
+    --slide-enter-x: 0%;
+    --slide-exit-x: 0%;
+}
+
+.presentacion-desplazamiento {
+    position: absolute;
+    right: clamp(1.2rem, 3vw, 3rem);
+    bottom: clamp(1.2rem, 3vw, 2.4rem);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: #ffffff;
+    font-size: clamp(0.72rem, 1vw, 0.92rem);
+    font-weight: var(--peso-medio);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.presentacion-desplazamiento span:last-child {
+    font-size: 1.35em;
+    animation: presentacion-flecha 1.4s ease-in-out infinite;
+}
+
+@keyframes presentacion-flecha {
+    0%,
+    100% {
+        transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+
+/* --- Vitrina ovalada (carrusel de libros en orbita) ---------
+   Grupo de portadas que orbitan en 3D alrededor de un centro;
+   la portada al frente ("esta-frontal") es la interactiva y muestra
+   su titulo al pasar el mouse o enfocarla con teclado. */
+
+.ovalo-vitrina {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: clamp(500px, 62vw, 790px);
+    padding: 0 clamp(1rem, 4vw, 4rem);
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.ovalo-vitrina-fotograma {
+    position: relative;
+    width: min(1120px, calc(100% - clamp(2rem, 7vw, 6rem)));
+    min-height: clamp(390px, 51vw, 650px);
+    overflow: visible;
+    perspective: 1100px;
+}
+
+.ovalo-carrusel {
+    --oval-mobile-offset: 0px;
+    position: absolute;
+    inset: 0;
+}
+
+.ovalo-carrusel-elemento {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: clamp(126px, 14vw, 220px);
+    aspect-ratio: 1;
+    margin: 0;
+    overflow: visible;
+    transform-origin: center;
+    transform:
+        translate(-50%, -50%)
+        translate(
+            calc(var(--orbit-x, 0) * 1px),
+            calc((var(--orbit-y, 0) * 1px) + var(--oval-mobile-offset))
+        )
+        translateZ(calc(var(--orbit-depth, 0) * 1px))
+        scale(var(--orbit-scale, 1));
+    opacity: var(--orbit-opacity, 1);
+    filter: brightness(var(--orbit-brightness, 1));
+    pointer-events: none;
+    outline: none;
+    will-change: transform, opacity, filter;
+    transition:
+        filter 0.25s ease,
+        opacity 0.25s ease,
+        transform 0.32s cubic-bezier(0.2, 0.9, 0.25, 1);
+}
+
+.ovalo-carrusel-elemento img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.36));
+    pointer-events: none;
+    outline: none;
+}
+
+.ovalo-carrusel-elemento.esta-frontal {
+    cursor: default;
+}
+
+.ovalo-carrusel-elemento.esta-frontal img {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.ovalo-carrusel-elemento:focus,
+.ovalo-carrusel-elemento:focus-visible,
+.ovalo-carrusel-elemento img:focus,
+.ovalo-carrusel-elemento img:focus-visible {
+    outline: none;
+}
+
+.ovalo-carrusel-elemento.esta-frontal.esta-activo,
+.ovalo-carrusel-elemento.esta-frontal:focus-within {
+    z-index: 200 !important;
+    filter: brightness(1.05);
+    opacity: 1;
+}
+
+.ovalo-carrusel-info {
+    position: absolute;
+    right: 50%;
+    bottom: -1.35rem;
+    display: grid;
+    gap: 0.15rem;
+    width: max-content;
+    max-width: 150%;
+    padding: 0;
+    color: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.78);
+    transform: translate(50%, 20%);
+    transition:
+        opacity 0.25s ease,
+        transform 0.3s ease;
+}
+
+.ovalo-carrusel-info strong {
+    font-size: clamp(0.58rem, 0.8vw, 0.76rem);
+    font-weight: var(--peso-medio);
+    line-height: 1.05;
+}
+
+.ovalo-carrusel-elemento.esta-frontal.esta-activo .ovalo-carrusel-info,
+.ovalo-carrusel-elemento.esta-frontal:focus-within .ovalo-carrusel-info {
+    opacity: 1;
+    transform: translate(50%, 0);
+}
+
+
+/* --- Cordones animados de fondo ------------------------------
+   Trazos SVG fijos que dibujan cordones/cintas detras del
+   contenido; cambian de color en loop y se mueven segun el
+   scroll (variables --cordon-progress y --cordon-visibility,
+   fijadas por JS). */
+
+.fondo-cordones {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    opacity: var(--cordon-visibility, 0);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    transition: opacity 0.28s ease;
+}
+
+.fondo-cordon,
+.fondo-cordon-sombra {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform:
+        translate(var(--cordon-x, 0), var(--cordon-y, 0))
+        translateX(var(--cordon-drift, 0));
+    vector-effect: non-scaling-stroke;
+}
+
+.fondo-cordon {
+    stroke: var(--color-azul);
+    stroke-width: 5px;
+    opacity: 0.48;
+    filter: url("#ink-roughen") drop-shadow(0 0 4px rgba(255, 255, 255, 0.55));
+    animation: cordon-color 9s ease-in-out infinite;
+}
+
+.fondo-cordon-sombra {
+    stroke: rgba(78, 53, 74, 0.08);
+    stroke-width: 7.2px;
+    opacity: 0.7;
+}
+
+.cordon-izquierda {
+    --cordon-x: -12px;
+    --cordon-drift: calc((1 - var(--cordon-progress, 0)) * -22px);
+}
+
+.cordon-derecha {
+    --cordon-x: 10px;
+    --cordon-drift: calc((1 - var(--cordon-progress, 0)) * 22px);
+}
+
+.cordon-inferior {
+    --cordon-y: 8px;
+    --cordon-drift: calc((1 - var(--cordon-progress, 0)) * -14px);
+}
+
+
+/* --- Principal con puntos y diapositivas de color -------------------
+   Ilustracion principal que hace crossfade entre 3 variantes de
+   color (el patron de crossfade y la posicion de los puntos
+   "centro"/"patas" son compartidos con manifiesto.css — ver
+   compartido.css), con dos zonas clicables que enlazan a otras
+   secciones del sitio. */
+
+.color-diapositivas {
+    position: relative;
+    margin: 50px auto 0;
+    width: 100%;
+}
+
+.principal-punto {
+    position: absolute;
+    z-index: 5;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    transform-origin: center;
+    transition:
+        filter 0.28s ease,
+        transform 0.36s cubic-bezier(0.2, 1.5, 0.32, 1);
+}
+
+.principal-punto::after {
+    position: absolute;
+    inset: -6%;
+    content: "";
+    border: 2px solid transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.principal-punto:hover,
+.principal-punto:focus-visible {
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.8)) contrast(1.12);
+}
+
+.principal-punto:focus-visible::after {
+    border-color: #ffffff;
+    opacity: 1;
+}
+
+/* Estados interactivos de los puntos "centro"/"patas": la
+   posicion base de ambos vive en compartido.css (se comparte
+   con manifiesto.css), pero solo aca responden al mouse/teclado
+   porque en la portada son enlaces reales. */
+.punto-centro:hover,
+.punto-centro:focus-visible {
+    transform: translate(-50%, -50%) rotate(2deg) scale(1.12);
+}
+
+.punto-patas:hover,
+.punto-patas:focus-visible {
+    transform: rotate(-1.5deg) scale(1.08);
+}
+
+@keyframes cordon-color {
+    0% {
+        stroke: var(--color-azul);
+    }
+
+    33% {
+        stroke: var(--color-verde);
+    }
+
+    66% {
+        stroke: var(--color-rosado);
+    }
+
+    100% {
+        stroke: var(--color-azul);
+    }
+}
+
+
+/* --- Nube de libros flotantes + constelacion de imagenes -----
+   Seccion con portadas flotando en posiciones fijas (16 libros,
+   cada uno con su propia posicion/retraso via nth-child), un
+   sticker que enlaza a la coleccion completa, y una "constelacion"
+   de fotos en 3D que se acercan al pasar el mouse. */
+
+.libro-nube {
+    position: relative;
+    z-index: 1;
+    min-height: clamp(620px, 76vw, 980px);
+    margin: clamp(2rem, 5vw, 4.5rem) 0 0;
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
+.libro-marcador {
+    position: absolute;
+    display: block;
+    width: clamp(96px, 9.6vw, 162px);
+    aspect-ratio: auto;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    transform:
+        translate(-50%, -50%)
+        rotate(var(--book-rotation, 0deg));
+    animation: libro-flotar 7.5s ease-in-out infinite alternate;
+    animation-delay: var(--book-delay, 0s);
+}
+
+.libro-marcador img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.24));
+    transition:
+        filter 0.24s ease,
+        transform 0.24s ease;
+}
+
+.libro-marcador:hover img,
+.libro-marcador:focus-visible img {
+    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.32));
+    transform: translateY(-4px) scale(1.035);
+}
+
+.libro-pequeno {
+    width: clamp(82px, 7.4vw, 126px);
+}
+
+.libro-alto {
+    width: clamp(104px, 10.2vw, 174px);
+}
+
+.libro-ancho {
+    width: clamp(122px, 12vw, 202px);
+}
+
+.libro-inclinado {
+    width: clamp(108px, 10.6vw, 178px);
+}
+
+.libro-verde {
+    --book-color: rgba(42, 236, 87, 0.58);
+}
+
+.libro-azul {
+    --book-color: rgba(104, 88, 253, 0.56);
+}
+
+.libro-rosado {
+    --book-color: rgba(254, 98, 222, 0.56);
+}
+
+.libro-amarillo {
+    --book-color: rgba(246, 255, 0, 0.58);
+}
+
+/* Posicion (top/left) y retraso de animacion de cada uno de los
+   16 libros de la nube, en escritorio. Las posiciones equivalentes
+   para mobile estan en adaptable.css (@media max-width: 700px). */
+.libro-marcador:nth-child(1) {
+    top: 13%;
+    left: 10%;
+    --book-delay: -1.2s;
+}
+
+.libro-marcador:nth-child(2) {
+    top: 23%;
+    left: 24%;
+    --book-delay: -4.8s;
+}
+
+.libro-marcador:nth-child(3) {
+    top: 11%;
+    left: 38%;
+    --book-delay: -2.4s;
+}
+
+.libro-marcador:nth-child(4) {
+    top: 31%;
+    left: 53%;
+    --book-delay: -6s;
+}
+
+.libro-marcador:nth-child(5) {
+    top: 16%;
+    left: 68%;
+    --book-delay: -3.2s;
+}
+
+.libro-marcador:nth-child(6) {
+    top: 30%;
+    left: 84%;
+    --book-delay: -5.4s;
+}
+
+.libro-marcador:nth-child(7) {
+    top: 48%;
+    left: 14%;
+    --book-delay: -0.8s;
+}
+
+.libro-marcador:nth-child(8) {
+    top: 57%;
+    left: 29%;
+    --book-delay: -3.8s;
+}
+
+.libro-marcador:nth-child(9) {
+    top: 47%;
+    left: 43%;
+    --book-delay: -1.8s;
+}
+
+.libro-marcador:nth-child(10) {
+    top: 61%;
+    left: 59%;
+    --book-delay: -6.8s;
+}
+
+.libro-marcador:nth-child(11) {
+    top: 50%;
+    left: 74%;
+    --book-delay: -2.9s;
+}
+
+.libro-marcador:nth-child(12) {
+    top: 69%;
+    left: 88%;
+    --book-delay: -5.9s;
+}
+
+.libro-marcador:nth-child(13) {
+    top: 82%;
+    left: 18%;
+    --book-delay: -1.1s;
+}
+
+.libro-marcador:nth-child(14) {
+    top: 78%;
+    left: 36%;
+    --book-delay: -4.4s;
+}
+
+.libro-marcador:nth-child(15) {
+    top: 86%;
+    left: 56%;
+    --book-delay: -2s;
+}
+
+.libro-marcador:nth-child(16) {
+    top: 80%;
+    left: 76%;
+    --book-delay: -7.4s;
+}
+
+.libro-coleccion-adhesivo {
+    position: absolute;
+    top: 7%;
+    right: clamp(1rem, 5vw, 4rem);
+    left: auto;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: clamp(138px, 11.6vw, 188px);
+    min-height: clamp(62px, 5.9vw, 86px);
+    padding: 0.58rem 0.82rem;
+    box-sizing: border-box;
+    color: #111111;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.38rem, 1.9vw, 2.18rem);
+    line-height: 0.82;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    background: var(--color-rosado-claro);
+    border: 0;
+    border-radius: 56% 44% 54% 46% / 48% 56% 44% 52%;
+    box-shadow: 0 8px 16px rgba(17, 17, 17, 0.16);
+    transform: rotate(7deg);
+    transition:
+        box-shadow 0.22s ease,
+        transform 0.28s cubic-bezier(0.2, 1.4, 0.32, 1);
+}
+
+.libro-coleccion-adhesivo:hover,
+.libro-coleccion-adhesivo:focus-visible {
+    box-shadow:
+        0 5px 10px rgba(17, 17, 17, 0.2);
+    transform: rotate(4deg) scale(1.04);
+}
+
+.imagen-constelacion {
+    position: relative;
+    min-height: clamp(820px, 86vw, 1180px);
+    margin-top: clamp(6rem, 12vw, 11rem);
+    margin-bottom: clamp(3.5rem, 7vw, 6rem);
+    overflow: visible;
+    perspective: 1100px;
+}
+
+.imagen-constelacion-escena {
+    position: absolute;
+    inset: 0 -1% 12%;
+    transform: translate3d(
+        var(--constellation-move-x, 0px),
+        var(--constellation-move-y, 0px),
+        0
+    );
+    transform-style: preserve-3d;
+    transition: transform 0.32s cubic-bezier(0.2, 0.72, 0.25, 1);
+    will-change: transform;
+}
+
+.constelacion-imagen {
+    position: absolute;
+    top: var(--image-y);
+    left: var(--image-x);
+    z-index: var(--image-layer);
+    display: block;
+    width: clamp(132px, calc(var(--image-size) * 1.42), 360px);
+    aspect-ratio: var(--image-ratio);
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: visible;
+    transform:
+        translate(-50%, -50%)
+        translateZ(var(--image-depth));
+    transform-style: preserve-3d;
+    transition:
+        filter 0.35s ease,
+        transform 0.5s cubic-bezier(0.18, 0.9, 0.25, 1.35),
+        z-index 0s linear 0.18s;
+    will-change: transform, filter;
+}
+
+.constelacion-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, calc(0.14 + var(--image-shadow)));
+    transform: scale(var(--image-scale, 1));
+    transition:
+        box-shadow 0.35s ease,
+        transform 0.5s cubic-bezier(0.18, 0.9, 0.25, 1.35);
+    will-change: transform;
+}
+
+.constelacion-imagen-titulo {
+    position: absolute;
+    bottom: -0.35rem;
+    left: 50%;
+    z-index: 2;
+    width: max-content;
+    max-width: min(270px, 78vw);
+    padding: 0.5rem 0.68rem 0.48rem;
+    box-sizing: border-box;
+    color: #111111;
+    font-size: clamp(0.68rem, 0.9vw, 0.9rem);
+    font-weight: var(--peso-medio);
+    line-height: 1.08;
+    text-align: center;
+    text-wrap: balance;
+    background: var(--color-rosado-claro);
+    border: 1px solid rgba(17, 17, 17, 0.45);
+    border-radius: 48% 52% 46% 54% / 58% 42% 56% 44%;
+    box-shadow:
+        0 10px 22px rgba(17, 17, 17, 0.2),
+        0 0 0 4px rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 95%) rotate(-2deg) scale(0.82);
+    transform-origin: top center;
+    transition:
+        opacity 0.22s ease,
+        transform 0.28s ease;
+}
+
+.constelacion-imagen-titulo::after {
+    content: "↗";
+    display: inline-block;
+    margin-left: 0.35em;
+    font-size: 0.88em;
+    transform: translateY(-0.04em);
+}
+
+.constelacion-imagen:hover,
+.constelacion-imagen:focus-visible {
+    --image-scale: 2.05;
+    z-index: 600;
+    filter: brightness(1.08) saturate(1.08);
+    transition-delay: 0s;
+}
+
+.constelacion-imagen:hover img,
+.constelacion-imagen:focus-visible img {
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+}
+
+.constelacion-imagen:hover .constelacion-imagen-titulo,
+.constelacion-imagen:focus-visible .constelacion-imagen-titulo {
+    opacity: 1;
+    transform: translate(-50%, 96%) rotate(-2deg) scale(1);
+}
+
+.constelacion-imagen:focus-visible {
+    outline: none;
+}
+
+.constelacion-imagen:focus-visible img {
+    outline: 2px solid var(--color-rosado);
+    outline-offset: 5px;
+}
+
+@keyframes libro-flotar {
+    0% {
+        transform:
+            translate(-50%, -50%)
+            translate3d(-5px, 8px, 0)
+            rotate(var(--book-rotation, 0deg));
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            translate3d(7px, -10px, 0)
+            rotate(var(--book-rotation, 0deg));
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            translate3d(2px, 6px, 0)
+            rotate(var(--book-rotation, 0deg));
+    }
+}
+
+
+/* --- Tarjetas de proyecto -------------------------------------
+   Grilla de 3 tarjetas con imagen en blanco y negro que se
+   revela a color con una franja diagonal al pasar el mouse.
+   Cada tarjeta usa una de las 3 variantes de color del proyecto
+   (.color-uno/dos/tres) definidas via variables CSS. */
+
+.proyecto-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 2rem;
+    width: min(1180px, calc(100% - 4rem));
+    margin: 5rem auto 10rem;
+}
+
+.proyecto-tarjeta a {
+    display: block;
+    color: #000000;
+    text-decoration: none;
+}
+
+.proyecto-tarjeta figure {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    margin: 0 0 1rem;
+    overflow: hidden;
+    background: #f3f3f3;
+    isolation: isolate;
+}
+
+.proyecto-tarjeta figure::before,
+.proyecto-tarjeta figure::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+}
+
+.proyecto-tarjeta figure::before {
+    z-index: 1;
+    background: var(--card-tint);
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:
+        opacity 0.18s ease,
+        transform 0.42s cubic-bezier(0.68, 0, 0.22, 1);
+}
+
+.proyecto-tarjeta figure::after {
+    z-index: 2;
+    background: var(--card-color);
+    opacity: 0.78;
+    transform: translateX(-115%) skewX(-12deg);
+    transition: transform 0.48s cubic-bezier(0.68, 0, 0.22, 1);
+}
+
+.proyecto-tarjeta img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transform: scale(1.04);
+    transition: transform 0.42s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.proyecto-tarjeta h2 {
+    position: absolute;
+    left: clamp(1rem, 5vw, 1.45rem);
+    bottom: clamp(1rem, 5vw, 1.45rem);
+    z-index: 3;
+    max-width: calc(100% - 2rem);
+    margin: 0;
+    color: #ffffff;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.25rem, 2.3vw, 1.9rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.98;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+    text-transform: lowercase;
+}
+
+.proyecto-tarjeta p {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    font-size: 0.98rem;
+    line-height: 1.35;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.proyecto-tarjeta.color-uno {
+    --card-color: var(--color-verde);
+    --card-tint: var(--tinte-verde);
+}
+
+.proyecto-tarjeta.color-dos {
+    --card-color: var(--color-azul);
+    --card-tint: var(--tinte-azul);
+}
+
+.proyecto-tarjeta.color-tres {
+    --card-color: var(--color-rosado);
+    --card-tint: var(--tinte-rosado);
+}
+
+.proyecto-tarjeta a:hover figure::before,
+.proyecto-tarjeta a:focus-visible figure::before {
+    opacity: 0.88;
+    transform: scaleX(1);
+}
+
+.proyecto-tarjeta a:hover figure::after,
+.proyecto-tarjeta a:focus-visible figure::after {
+    transform: translateX(115%) skewX(-12deg);
+}
+
+.proyecto-tarjeta a:hover img,
+.proyecto-tarjeta a:focus-visible img {
+    transform: scale(1.075);
+}

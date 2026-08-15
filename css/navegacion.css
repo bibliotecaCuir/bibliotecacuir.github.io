@@ -1,0 +1,512 @@
+/* ============================================================
+   navegacion.css — cabecera, menu y navegacion global
+   ------------------------------------------------------------
+   El logo/marca en la esquina superior izquierda, el boton de
+   menu circular y el panel de menu de pantalla completa que se
+   usan en todas las paginas, el comportamiento de la cabecera al
+   hacer scroll (se encoge / desaparece cerca del pie), y la
+   barra de navegacion inferior de la portada.
+
+   Nota: las versiones "compactas" de este menu para pantallas
+   anchas (>= 701px, cuando aparece como barra horizontal fija
+   arriba) viven en adaptable.css junto con el resto de los
+   media queries, para mantener todos los breakpoints juntos.
+   ============================================================ */
+
+
+/* --- Logo y boton de menu -------------------------------------
+   El logo tiene dos versiones superpuestas (blanca y negra) que
+   se cruzan con opacidad segun el fondo de la pagina. */
+
+.sitio-cabecera {
+    position: fixed;
+    top: clamp(0.75rem, 1.5vw, 1.4rem);
+    left: clamp(0.75rem, 1.5vw, 1.4rem);
+    z-index: 10;
+    transform-origin: top left;
+    transition:
+        opacity 0.32s ease,
+        transform 0.42s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.sitio-logo {
+    position: relative;
+    display: block;
+    width: clamp(90px, 14vw, 170px);
+    transition: width 0.4s ease;
+}
+
+.sitio-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.sitio-logo-negro {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.portada-menu-interruptor {
+    position: fixed;
+    top: clamp(0.85rem, 1.5vw, 1.4rem);
+    right: clamp(0.85rem, 1.5vw, 1.4rem);
+    z-index: 32;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    color: #ffffff;
+    cursor: pointer;
+    background: rgba(17, 17, 17, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+/* Boton para mostrar/ocultar el fondo decorativo de la portada
+   (ver .portada-fondo en portada.css). Oculto por defecto,
+   solo se activa desde JS en las paginas que lo necesitan. */
+.fondo-interruptor {
+    display: none;
+    position: fixed;
+    top: calc(clamp(0.85rem, 1.5vw, 1.4rem) + 58px);
+    right: clamp(0.85rem, 1.5vw, 1.4rem);
+    z-index: 32;
+    min-width: 116px;
+    min-height: 34px;
+    padding: 0.45rem 0.7rem;
+    color: #ffffff;
+    font-family: var(--font-texto);
+    font-size: 0.68rem;
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-transform: lowercase;
+    cursor: pointer;
+    background: rgba(17, 17, 17, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+.fondo-interruptor:hover,
+.fondo-interruptor:focus-visible {
+    background: rgba(17, 17, 17, 0.5);
+}
+
+body.esta-fondo-oculto .fondo-interruptor {
+    color: #111111;
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(17, 17, 17, 0.25);
+}
+
+body.esta-portada-menu-abierto .fondo-interruptor {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+}
+
+
+/* --- Menu de pantalla completa ---------------------------------
+   Las 3 lineas del icono "hamburguesa" se transforman en una X,
+   y el panel de menu entra deslizandose desde la derecha con
+   los links apareciendo uno a uno (transition-delay escalonado). */
+
+.portada-menu-linea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: currentColor;
+    transform-origin: center;
+    transition:
+        opacity 0.25s ease,
+        transform 0.35s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
+.portada-menu-linea:nth-child(1) {
+    transform: translate(-50%, -8px);
+}
+
+.portada-menu-linea:nth-child(2) {
+    transform: translate(-50%, -50%);
+}
+
+.portada-menu-linea:nth-child(3) {
+    transform: translate(-50%, 6px);
+}
+
+body.esta-portada-menu-abierto .portada-menu-linea:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+body.esta-portada-menu-abierto .portada-menu-linea:nth-child(2) {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+body.esta-portada-menu-abierto .portada-menu-linea:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.portada-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 31;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(1.15rem, 2.2vw, 1.9rem);
+    width: min(430px, 100%);
+    height: 100vh;
+    height: 100svh;
+    padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 6vw, 4.5rem);
+    padding-left: clamp(1rem, 3vw, 2rem);
+    box-sizing: border-box;
+    background: rgba(17, 17, 17, 0.94);
+    backdrop-filter: blur(18px);
+    transform: translateX(102%);
+    transition:
+        width 0.45s ease,
+        height 0.45s ease,
+        padding 0.45s ease,
+        background 0.35s ease,
+        transform 0.5s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
+.portada-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    color: #ffffff;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.65rem, 3.4vw, 2.9rem);
+    line-height: 1;
+    text-decoration: none;
+    text-transform: lowercase;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(1rem);
+    transition:
+        color 0.2s ease,
+        opacity 0.28s ease,
+        transform 0.38s cubic-bezier(0.2, 0.8, 0.25, 1);
+}
+
+/* Retraso de entrada de cada link mientras el menu esta cerrado
+   (usado en la transicion de cierre) */
+.portada-menu a:nth-child(1) {
+    transition-delay: 0.16s;
+}
+
+.portada-menu a:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.portada-menu a:nth-child(3) {
+    transition-delay: 0.08s;
+}
+
+.portada-menu a:nth-child(4) {
+    transition-delay: 0.04s;
+}
+
+.portada-menu a:nth-child(5) {
+    transition-delay: 0s;
+}
+
+.portada-menu a:nth-child(6) {
+    transition-delay: 0s;
+}
+
+.portada-menu a::before {
+    content: "→";
+    display: inline-block;
+    flex: 0 0 1.15em;
+    width: 1.15em;
+    font-family: var(--font-texto);
+    font-size: 0.72em;
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-0.45em);
+    transition:
+        opacity 0.25s ease,
+        transform 0.3s ease,
+        width 0.3s ease;
+}
+
+.portada-menu a:hover,
+.portada-menu a:focus-visible {
+    color: var(--color-rosado-claro);
+    transform: translateX(0.18em);
+}
+
+.portada-menu a:hover::before,
+.portada-menu a:focus-visible::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+body.esta-portada-menu-abierto {
+    overflow: hidden;
+}
+
+body.esta-portada-menu-abierto .portada-menu {
+    transform: translateX(0);
+}
+
+body.esta-portada-menu-abierto .portada-menu a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Con el menu abierto, cada link aparece en cascada (retraso
+   creciente del primero al ultimo). */
+body.esta-portada-menu-abierto .portada-menu a:nth-child(1) {
+    transition-delay: 0.18s;
+}
+
+body.esta-portada-menu-abierto .portada-menu a:nth-child(2) {
+    transition-delay: 0.23s;
+}
+
+body.esta-portada-menu-abierto .portada-menu a:nth-child(3) {
+    transition-delay: 0.28s;
+}
+
+body.esta-portada-menu-abierto .portada-menu a:nth-child(4) {
+    transition-delay: 0.33s;
+}
+
+body.esta-portada-menu-abierto .portada-menu a:nth-child(5) {
+    transition-delay: 0.38s;
+}
+
+body.esta-portada-menu-abierto .portada-menu a:nth-child(6) {
+    transition-delay: 0.43s;
+}
+
+body.esta-portada-menu-abierto .portada-menu a:hover,
+body.esta-portada-menu-abierto .portada-menu a:focus-visible {
+    transform: translateX(0.18em);
+}
+
+
+/* --- Animaciones del menu compacto de escritorio ---------------
+   Usadas por la barra horizontal que reemplaza la cabecera al
+   pasar los 701px de ancho (ver body.tiene-compacta-navegacion en
+   adaptable.css). */
+
+@keyframes navegacion-compacta-entrar {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes navegacion-compacta-salir {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+@keyframes enlace-compacto-entrar {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes enlace-compacto-salir {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+
+/* --- Cabecera al hacer scroll -------------------------------------
+   El logo se encoge al bajar la pagina y desaparece del todo
+   cerca del pie (las clases esta-desplazado/esta-en-pie las
+   pone JS segun la posicion de scroll). */
+
+body.esta-desplazado .sitio-cabecera {
+    opacity: 0.78;
+    transform: translate(8px, 8px) scale(0.58);
+}
+
+body.esta-en-pie .sitio-cabecera {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-18px, -18px) scale(0.5);
+}
+
+/* Menu movil alternativo: apagado por defecto, se activa solo
+   en pantallas chicas (ver @media max-width: 700px en
+   adaptable.css). */
+.movil-menu-interruptor,
+.movil-menu {
+    display: none;
+}
+
+
+/* --- Barra de navegacion inferior (portada) ---------------------
+   Fila de links fijos abajo, con un texto que aparece en mayus-
+   culas al pasar el mouse sobre cada link. Se encoge al hacer
+   scroll y se esconde cerca del pie. */
+
+.inferior-navegacion {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 1rem;
+    min-height: 112px;
+    padding: 48px 5vw 20px;
+    box-sizing: border-box;
+    transition:
+        opacity 0.34s ease,
+        padding 0.34s ease,
+        min-height 0.34s ease,
+        transform 0.34s ease;
+}
+
+.inferior-navegacion::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    background: linear-gradient(to top, rgba(255, 0, 195, 0.68), rgba(255, 0, 195, 0));
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    transition: opacity 0.34s ease;
+}
+
+.inferior-navegacion a {
+    position: relative;
+    display: inline-block;
+    min-width: 8.4em;
+    padding: 12px 8px;
+    color: #ffffff;
+    font-size: clamp(0.84rem, 1.55vw, 1.08rem);
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    white-space: nowrap;
+    transition:
+        color 0.2s ease,
+        filter 0.32s ease,
+        font-size 0.34s ease,
+        opacity 0.34s ease,
+        padding 0.34s ease;
+}
+
+.inferior-navegacion a::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #ffffff;
+    content: attr(data-label);
+    opacity: 0;
+    letter-spacing: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%) rotate(2deg) scale(0.96, 1.04);
+    transition:
+        letter-spacing 0.32s ease,
+        opacity 0.2s ease,
+        transform 0.32s cubic-bezier(0.2, 1.6, 0.32, 1);
+}
+
+.inferior-navegacion a:hover {
+    color: transparent;
+    filter: blur(0.2px);
+}
+
+.inferior-navegacion a:hover::after {
+    opacity: 1;
+    letter-spacing: 0.08em;
+    transform: translate(-50%, -68%) rotate(-1deg) scale(1.08, 0.96);
+}
+
+body.esta-desplazado .inferior-navegacion {
+    min-height: 72px;
+    padding-top: 26px;
+    padding-bottom: 10px;
+    opacity: 0.68;
+    transform: translateY(10px);
+}
+
+body.esta-desplazado .inferior-navegacion::before {
+    opacity: 0.42;
+}
+
+body.esta-desplazado .inferior-navegacion a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: clamp(0.76rem, 1.15vw, 0.9rem);
+    opacity: 0.72;
+}
+
+body.esta-desplazado .inferior-navegacion:hover,
+body.esta-desplazado .inferior-navegacion:focus-within {
+    opacity: 1;
+}
+
+body.esta-desplazado .inferior-navegacion:hover::before,
+body.esta-desplazado .inferior-navegacion:focus-within::before {
+    opacity: 0.62;
+}
+
+body.esta-desplazado .inferior-navegacion:hover a,
+body.esta-desplazado .inferior-navegacion:focus-within a {
+    opacity: 1;
+}
+
+body.esta-en-pie .inferior-navegacion,
+body.esta-en-pie .inferior-navegacion:hover,
+body.esta-en-pie .inferior-navegacion:focus-within {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(105%);
+}

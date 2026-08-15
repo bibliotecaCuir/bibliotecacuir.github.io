@@ -1,10 +1,10 @@
 const donationNavQuery = window.matchMedia("(min-width: 701px)");
-const donationMenuToggle = document.querySelector(".landing-menu-toggle");
+const donationMenuToggle = document.querySelector(".portada-menu-interruptor");
 let donationNavFrame = null;
 let donationNavExitTimer = null;
 
 function closeDonationMenu() {
-    document.body.classList.remove("is-landing-menu-open");
+    document.body.classList.remove("esta-portada-menu-abierto");
     donationMenuToggle?.setAttribute("aria-expanded", "false");
 }
 
@@ -18,12 +18,12 @@ function clearDonationNavExit() {
 }
 
 function setDonationCompactNav(shouldShow) {
-    const isShowing = document.body.classList.contains("has-compact-nav");
+    const isShowing = document.body.classList.contains("tiene-compacta-navegacion");
 
     if (shouldShow) {
         clearDonationNavExit();
-        document.body.classList.remove("is-compact-nav-leaving");
-        document.body.classList.add("has-compact-nav");
+        document.body.classList.remove("esta-compacta-navegacion-saliendo");
+        document.body.classList.add("tiene-compacta-navegacion");
         closeDonationMenu();
         return;
     }
@@ -32,10 +32,10 @@ function setDonationCompactNav(shouldShow) {
         return;
     }
 
-    document.body.classList.add("is-compact-nav-leaving");
+    document.body.classList.add("esta-compacta-navegacion-saliendo");
     clearDonationNavExit();
     donationNavExitTimer = window.setTimeout(() => {
-        document.body.classList.remove("has-compact-nav", "is-compact-nav-leaving");
+        document.body.classList.remove("tiene-compacta-navegacion", "esta-compacta-navegacion-saliendo");
         donationNavExitTimer = null;
     }, 220);
 }
@@ -45,7 +45,7 @@ function updateDonationCompactNav() {
 
     if (!donationNavQuery.matches) {
         clearDonationNavExit();
-        document.body.classList.remove("has-compact-nav", "is-compact-nav-leaving");
+        document.body.classList.remove("tiene-compacta-navegacion", "esta-compacta-navegacion-saliendo");
         return;
     }
 

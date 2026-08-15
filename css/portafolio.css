@@ -1,0 +1,753 @@
+/* ============================================================
+   portafolio.css — paginas de portafolio (portafolio.html,
+   obras/practicas/activaciones/otros.html y sus detalles)
+   ------------------------------------------------------------
+   Este archivo cubre tanto el indice general del portafolio
+   (portafolio-indice, portafolio-enlace-tarjeta) como las 4 secciones
+   tematicas con su propio color (portafolio-seccion: obras,
+   practicas, activaciones, otros — cada una define sus propias
+   variables --portafolio-fondo/--portafolio-texto/--portafolio-linea), y
+   las paginas de detalle de un proyecto individual.
+   ============================================================ */
+
+
+/* --- Contenedor general y cabecera del portafolio ---------------- */
+
+.portafolio-pagina {
+    min-height: 100vh;
+    color: #111111;
+    background: #ffffff;
+    font-family: var(--font-texto);
+}
+
+.portafolio-pagina a {
+    color: inherit;
+}
+
+.portafolio-pagina .portada-menu a {
+    color: #ffffff;
+}
+
+.portafolio-pagina:not(.portafolio-propuesta-pagina) .sitio-cabecera {
+    z-index: 30;
+}
+
+.portafolio-pagina:not(.portafolio-propuesta-pagina) .portada-menu-interruptor {
+    color: #111111;
+    background: rgba(255, 255, 255, 0.78);
+    border-color: rgba(17, 17, 17, 0.32);
+}
+
+.portafolio-pagina:not(.portafolio-propuesta-pagina).esta-portada-menu-abierto .portada-menu-interruptor {
+    color: #ffffff;
+    background: rgba(17, 17, 17, 0.36);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.portafolio-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 4rem);
+}
+
+.portafolio-pagina .portafolio-cabecera {
+    padding-bottom: clamp(0.35rem, 1.2vw, 0.9rem);
+}
+
+.portafolio-seccion .portafolio-cabecera {
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: clamp(0.5rem, 1.1vw, 0.8rem);
+    padding-bottom: 0;
+}
+
+.portafolio-logo {
+    display: block;
+    width: clamp(86px, 10vw, 132px);
+    transform: rotate(-2deg);
+}
+
+.portafolio-seccion .portafolio-logo {
+    width: clamp(86px, 9vw, 126px);
+    transform: rotate(-9deg);
+}
+
+.portafolio-logo img {
+    display: block;
+    width: 100%;
+}
+
+.portafolio-superior-navegacion,
+.portafolio-seccion-navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.55rem;
+    font-size: clamp(0.72rem, 1vw, 0.9rem);
+    font-weight: var(--peso-medio);
+    text-transform: lowercase;
+}
+
+.portafolio-superior-navegacion a,
+.portafolio-seccion-navegacion a,
+.portafolio-volver,
+.portafolio-registro a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+}
+
+.portafolio-superior-navegacion a {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(17, 17, 17, 0.26);
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.portafolio-superior-navegacion a[aria-current="page"],
+.portafolio-superior-navegacion a:hover,
+.portafolio-superior-navegacion a:focus-visible {
+    background: var(--color-rosado-claro);
+    border-color: #111111;
+}
+
+
+/* --- Indice del portafolio (grilla de tarjetas) ----------------- */
+
+.portafolio-indice,
+.portafolio-detalle {
+    width: min(100% - clamp(2rem, 8vw, 8rem), 1480px);
+    margin: 0 auto;
+    padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.portafolio-pagina:not(.portafolio-seccion):not(.portafolio-propuesta-pagina) .portafolio-indice {
+    padding-top: clamp(5.8rem, 9vw, 8rem);
+}
+
+.portafolio-seccion .portafolio-detalle {
+    width: min(100% - clamp(2rem, 9vw, 6.5rem), 1320px);
+    margin-top: clamp(-1.6rem, -2vw, -0.8rem);
+    padding-top: 0;
+}
+
+.portafolio-principal,
+.portafolio-detalle-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.8fr);
+    align-items: end;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    min-height: clamp(260px, 44vh, 440px);
+    padding: 0 0 clamp(1rem, 2vw, 1.8rem);
+    border-top: 1px solid rgba(17, 17, 17, 0.22);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.22);
+}
+
+.portafolio-principal {
+    margin-top: clamp(-3.5rem, -4vw, -1.2rem);
+    border-top: 0;
+}
+
+.portafolio-seccion .portafolio-detalle-principal {
+    display: block;
+    min-height: 0;
+    padding: clamp(0.1rem, 0.8vw, 0.8rem) 0 clamp(1.6rem, 3vw, 2.5rem);
+    text-align: left;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.portafolio-principal h1,
+.portafolio-detalle-principal h1 {
+    margin: 0;
+    font-family: var(--font-proyecto);
+    font-size: clamp(4.4rem, 13vw, 13.5rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.76;
+    letter-spacing: 0;
+    text-transform: lowercase;
+}
+
+.portafolio-seccion .portafolio-detalle-principal h1 {
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 0;
+    color: var(--portafolio-texto);
+    font-size: clamp(4.2rem, 8vw, 8.8rem);
+}
+
+.portafolio-seccion .portafolio-imagen-franja {
+    display: none;
+}
+
+.portafolio-principal-franja,
+.portafolio-imagen-franja {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: clamp(0.5rem, 1.4vw, 1rem);
+}
+
+.portafolio-imagen-franja {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.portafolio-imagen-franja img:nth-child(3) {
+    display: none;
+}
+
+.portafolio-principal-franja img,
+.portafolio-imagen-franja img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #f2f2f2;
+}
+
+.portafolio-principal-franja img:nth-child(2),
+.portafolio-imagen-franja img:nth-child(2) {
+    transform: translateY(-10%);
+}
+
+.portafolio-enlaces {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-top: clamp(0.85rem, 2vw, 1.6rem);
+}
+
+.portafolio-enlace-tarjeta {
+    display: grid;
+    min-height: 220px;
+    padding: clamp(1rem, 2vw, 1.4rem);
+    color: #111111;
+    text-decoration: none;
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 17, 0.3);
+    box-shadow: 0 0 0 rgba(17, 17, 17, 0);
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.portafolio-enlace-tarjeta.portafolio-tarjeta-practicas,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-practicas span,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-practicas p,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-obras,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-obras span,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-obras p,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-otros,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-otros span,
+.portafolio-enlace-tarjeta.portafolio-tarjeta-otros p {
+    color: var(--portafolio-color-activaciones);
+}
+
+.portafolio-tarjeta-practicas:hover,
+.portafolio-tarjeta-practicas:focus-visible {
+    background: var(--portafolio-color-practicas);
+}
+
+.portafolio-tarjeta-activaciones:hover,
+.portafolio-tarjeta-activaciones:focus-visible {
+    background: var(--portafolio-color-activaciones);
+}
+
+.portafolio-tarjeta-obras:hover,
+.portafolio-tarjeta-obras:focus-visible {
+    background: var(--portafolio-color-obras);
+}
+
+.portafolio-tarjeta-otros:hover,
+.portafolio-tarjeta-otros:focus-visible {
+    background: var(--portafolio-color-otros);
+}
+
+.portafolio-enlace-tarjeta:hover,
+.portafolio-enlace-tarjeta:focus-visible {
+    box-shadow: 0 10px 22px rgba(17, 17, 17, 0.16);
+    transform: translateY(-4px);
+}
+
+.portafolio-enlace-tarjeta span {
+    align-self: start;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.6rem, 3vw, 2.8rem);
+    line-height: 0.9;
+    letter-spacing: 0;
+    text-transform: lowercase;
+}
+
+.portafolio-enlace-tarjeta p {
+    align-self: end;
+    max-width: 24ch;
+    margin: 0;
+    font-size: clamp(0.84rem, 1.1vw, 1rem);
+    line-height: 1.35;
+}
+
+.portafolio-volver {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: clamp(1.15rem, 1.8vw, 1.5rem) 0 0;
+    padding: 0.5rem 0.78rem;
+    color: var(--portafolio-texto);
+    font-size: 0.78rem;
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-decoration: none;
+    text-transform: lowercase;
+    border: 1px solid var(--portafolio-linea);
+    border-radius: 999px;
+}
+
+.portafolio-volver:hover,
+.portafolio-volver:focus-visible {
+    background: color-mix(in srgb, var(--portafolio-texto) 12%, transparent);
+}
+
+.portafolio-seccion-navegacion {
+    justify-content: flex-start;
+    margin: clamp(1.3rem, 2.8vw, 2rem) 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.portafolio-seccion-navegacion a {
+    padding: 0.45rem 0.75rem;
+    text-decoration: none;
+    border: 1px solid rgba(17, 17, 17, 0.3);
+    border-radius: 999px;
+}
+
+.portafolio-seccion-navegacion a:hover,
+.portafolio-seccion-navegacion a:focus-visible {
+    background: var(--color-verde);
+    border-color: #111111;
+}
+
+.portafolio-contenido {
+    display: grid;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    max-width: 980px;
+}
+
+.portafolio-entrada {
+    display: grid;
+    gap: 0.78rem;
+    scroll-margin-top: clamp(1.5rem, 5vw, 4rem);
+    padding-top: clamp(1.2rem, 2.4vw, 1.8rem);
+    border-top: 1px solid rgba(17, 17, 17, 0.26);
+}
+
+.portafolio-entrada h2 {
+    max-width: 22ch;
+    margin: 0;
+    font-size: clamp(1.35rem, 2.6vw, 2.35rem);
+    font-weight: var(--peso-medio);
+    line-height: 0.98;
+    text-transform: lowercase;
+}
+
+.portafolio-entrada p {
+    max-width: 76ch;
+    margin: 0;
+    font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+    line-height: 1.55;
+}
+
+.portafolio-registro {
+    font-size: clamp(0.78rem, 1vw, 0.88rem) !important;
+    font-weight: var(--peso-medio);
+    line-height: 1.35 !important;
+}
+
+
+/* --- Temas de color por seccion (obras/practicas/activaciones/otros)
+   Cada seccion redefine --portafolio-fondo/--portafolio-texto/--portafolio-linea;
+   el resto de las reglas de este archivo usan esas variables en vez
+   de colores fijos, por eso funcionan igual en las 4 secciones. */
+
+.portafolio-seccion {
+    --portafolio-fondo: #ffffff;
+    --portafolio-texto: #111111;
+    --portafolio-linea: rgba(17, 17, 17, 0.3);
+    color: var(--portafolio-texto);
+    background: var(--portafolio-fondo);
+}
+
+.portafolio-obras {
+    --portafolio-fondo: var(--portafolio-color-obras);
+    --portafolio-texto: var(--portafolio-color-activaciones);
+    --portafolio-linea: rgba(255, 255, 255, 0.32);
+}
+
+.portafolio-practicas {
+    --portafolio-fondo: var(--portafolio-color-practicas);
+    --portafolio-texto: var(--portafolio-color-activaciones);
+    --portafolio-linea: rgba(255, 255, 255, 0.28);
+}
+
+.portafolio-activaciones {
+    --portafolio-fondo: var(--portafolio-color-activaciones);
+    --portafolio-texto: #202020;
+    --portafolio-linea: rgba(17, 17, 17, 0.32);
+}
+
+.portafolio-otros {
+    --portafolio-fondo: var(--portafolio-color-otros);
+    --portafolio-texto: var(--portafolio-color-activaciones);
+    --portafolio-linea: rgba(255, 255, 255, 0.32);
+}
+
+.portafolio-tarjeta-practicas {
+    background: var(--portafolio-color-practicas);
+    color: var(--portafolio-color-activaciones);
+}
+
+.portafolio-tarjeta-activaciones {
+    background: var(--portafolio-color-activaciones);
+    color: #202020;
+}
+
+.portafolio-tarjeta-obras {
+    background: var(--portafolio-color-obras);
+    color: var(--portafolio-color-activaciones);
+}
+
+.portafolio-tarjeta-otros {
+    background: var(--portafolio-color-otros);
+    color: var(--portafolio-color-activaciones);
+}
+
+
+/* --- Indice de proyectos dentro de una seccion ------------------ */
+
+.portafolio-seccion .portafolio-contenido {
+    gap: clamp(4rem, 8vw, 7.5rem);
+    max-width: 1240px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.portafolio-proyecto-indice {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2.4vw, 2rem);
+}
+
+.portafolio-proyecto-tarjeta {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-width: 0;
+    color: var(--portafolio-texto);
+    text-decoration: none;
+    border-top: 1px solid var(--portafolio-linea);
+    transition:
+        filter 0.2s ease,
+        transform 0.24s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.portafolio-proyecto-tarjeta:hover,
+.portafolio-proyecto-tarjeta:focus-visible {
+    filter: brightness(1.04);
+    transform: translateY(-5px);
+}
+
+.portafolio-proyecto-tarjeta figure {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    margin: 0 0 clamp(0.75rem, 1.3vw, 1rem);
+    overflow: hidden;
+    background: color-mix(in srgb, var(--portafolio-texto) 14%, transparent);
+}
+
+.portafolio-proyecto-tarjeta figure::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: color-mix(in srgb, var(--portafolio-fondo) 18%, transparent);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.portafolio-proyecto-tarjeta:hover figure::after,
+.portafolio-proyecto-tarjeta:focus-visible figure::after {
+    opacity: 1;
+}
+
+.portafolio-proyecto-tarjeta img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 0.36s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.portafolio-proyecto-tarjeta:hover img,
+.portafolio-proyecto-tarjeta:focus-visible img {
+    transform: scale(1.08);
+}
+
+.portafolio-proyecto-tarjeta div {
+    display: grid;
+    align-content: start;
+    gap: 0.55rem;
+    padding-right: clamp(0.25rem, 1vw, 0.8rem);
+}
+
+.portafolio-proyecto-tarjeta h2 {
+    margin: 0;
+    color: var(--portafolio-texto);
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.9rem, 3.1vw, 3.4rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.84;
+    letter-spacing: 0;
+    text-transform: lowercase;
+    text-wrap: balance;
+}
+
+.portafolio-proyecto-tarjeta p {
+    max-width: 48ch;
+    margin: 0;
+    color: var(--portafolio-texto);
+    font-size: clamp(0.78rem, 1vw, 0.92rem);
+    line-height: 1.4;
+}
+
+
+/* --- Detalle de un proyecto individual --------------------------- */
+
+.portafolio-proyecto-detalle .portafolio-contenido {
+    max-width: 1240px;
+}
+
+.portafolio-entrada-unico {
+    border-top: 1px solid var(--portafolio-linea);
+}
+
+.portafolio-seccion .portafolio-entrada {
+    justify-items: center;
+    text-align: left;
+    border-top-color: var(--portafolio-linea);
+}
+
+.portafolio-seccion .portafolio-entrada h2 {
+    width: min(100%, 920px);
+    max-width: none;
+    color: var(--portafolio-texto);
+    font-family: var(--font-proyecto);
+    font-size: clamp(2.65rem, 4.15vw, 5.35rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.82;
+    letter-spacing: 0;
+    text-align: left;
+    text-wrap: balance;
+    white-space: nowrap;
+}
+
+/* Pie del portafolio: usa los mismos colores de la seccion
+   activa (--portafolio-fondo/--portafolio-texto) en vez de los colores
+   fijos del pie global (ver pie.css). */
+.portafolio-pagina .sitio-pie {
+    color: var(--portafolio-texto, #111111);
+    background: var(--portafolio-fondo, #ffffff);
+}
+
+.portafolio-pagina .sitio-pie::after {
+    display: none;
+}
+
+.portafolio-pagina .pie-seguir,
+.portafolio-pagina .pie-legal,
+.portafolio-pagina .pie-entrada-fila,
+.portafolio-pagina .pie-entrada-fila button {
+    border-color: color-mix(in srgb, var(--portafolio-texto, #111111) 42%, transparent);
+}
+
+.portafolio-pagina .pie-seguir a,
+.portafolio-pagina .pie-enlaces a,
+.portafolio-pagina .pie-contacto a,
+.portafolio-pagina .pie-legal a,
+.portafolio-pagina .pie-entrada-fila input,
+.portafolio-pagina .pie-entrada-fila button {
+    color: var(--portafolio-texto, #111111);
+}
+
+.portafolio-pagina .pie-entrada-fila input::placeholder {
+    color: color-mix(in srgb, var(--portafolio-texto, #111111) 62%, transparent);
+}
+
+.portafolio-pagina .pie-seguir-icono {
+    color: var(--portafolio-fondo, #ffffff);
+    background: var(--portafolio-texto, #111111);
+}
+
+.portafolio-pagina .pie-marca-blanco {
+    display: none;
+}
+
+.portafolio-seccion:not(.portafolio-activaciones) .pie-marca-blanco {
+    display: block;
+}
+
+.portafolio-seccion:not(.portafolio-activaciones) .pie-marca-negro {
+    display: none;
+}
+
+.portafolio-seccion .portafolio-entrada h2.portafolio-titulo-largo {
+    font-size: clamp(2.65rem, 4.15vw, 5.35rem);
+}
+
+.portafolio-seccion .portafolio-entrada h2.portafolio-titulo-extra-largo {
+    font-size: clamp(2.65rem, 4.15vw, 5.35rem);
+}
+
+.portafolio-seccion .portafolio-entrada p {
+    width: min(100%, 920px);
+    max-width: none;
+    color: var(--portafolio-texto);
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+}
+
+.portafolio-seccion .portafolio-registro a {
+    color: var(--portafolio-texto);
+}
+
+.portafolio-multimedia {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(0.85rem, 1.8vw, 1.45rem);
+    width: min(100%, 920px);
+    margin: clamp(1.2rem, 3vw, 2.5rem) auto 0;
+}
+
+.portafolio-multimedia-unico {
+    grid-template-columns: minmax(0, 1fr);
+    width: min(100%, 680px);
+}
+
+.portafolio-multimedia img {
+    display: block;
+    width: 100%;
+    height: clamp(260px, 38vw, 560px);
+    padding: clamp(0.6rem, 1.4vw, 1rem);
+    object-fit: contain;
+    background: color-mix(in srgb, var(--portafolio-fondo) 78%, var(--portafolio-texto) 12%);
+    border: 1px solid var(--portafolio-linea);
+}
+
+.portafolio-multimedia img:nth-child(2n) {
+    background: color-mix(in srgb, var(--portafolio-fondo) 88%, #ffffff 12%);
+}
+
+.portafolio-multimedia img:nth-child(3n) {
+    background: color-mix(in srgb, var(--portafolio-fondo) 72%, var(--portafolio-texto) 18%);
+}
+
+.portafolio-multimedia img.portafolio-imagen-retrato {
+    height: clamp(360px, 58vw, 760px);
+}
+
+.portafolio-multimedia-unico img {
+    height: clamp(300px, 44vw, 600px);
+}
+
+/* Links de "proyecto anterior / siguiente" al final del detalle,
+   con un fondo solido que barre de un lado al pasar el mouse. */
+.proyecto-vecinos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.8rem, 2vw, 1.4rem);
+    width: min(100%, 920px);
+    margin: clamp(2rem, 5vw, 4.5rem) auto 0;
+}
+
+.proyecto-vecino-enlace {
+    position: relative;
+    display: grid;
+    min-height: clamp(112px, 14vw, 168px);
+    padding: clamp(0.95rem, 2vw, 1.45rem);
+    overflow: hidden;
+    color: var(--portafolio-texto);
+    text-decoration: none;
+    border: 1px solid var(--portafolio-linea);
+}
+
+.proyecto-vecino-enlace::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    content: "";
+    background: var(--portafolio-texto);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.34s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.proyecto-vecino-enlace-siguiente::before {
+    transform-origin: right center;
+}
+
+.proyecto-vecino-enlace:hover::before,
+.proyecto-vecino-enlace:focus-visible::before {
+    transform: scaleX(1);
+}
+
+.proyecto-vecino-enlace span,
+.proyecto-vecino-enlace strong,
+.proyecto-vecino-enlace small {
+    position: relative;
+    z-index: 1;
+    transition: color 0.22s ease;
+}
+
+.proyecto-vecino-enlace span,
+.proyecto-vecino-enlace small {
+    font-size: clamp(0.68rem, 0.85vw, 0.78rem);
+    font-weight: var(--peso-medio);
+    line-height: 1.1;
+    text-transform: lowercase;
+}
+
+.proyecto-vecino-enlace strong {
+    align-self: end;
+    max-width: 15ch;
+    font-family: var(--font-texto);
+    font-size: clamp(1.2rem, 2.4vw, 2.4rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.96;
+    text-wrap: balance;
+}
+
+.proyecto-vecino-enlace small {
+    align-self: end;
+    color: color-mix(in srgb, var(--portafolio-texto) 62%, transparent);
+}
+
+.proyecto-vecino-enlace-siguiente {
+    text-align: right;
+}
+
+.proyecto-vecino-enlace-siguiente strong {
+    justify-self: end;
+}
+
+.proyecto-vecino-enlace:hover,
+.proyecto-vecino-enlace:focus-visible {
+    color: var(--portafolio-fondo);
+}
+
+.proyecto-vecino-enlace:hover small,
+.proyecto-vecino-enlace:focus-visible small {
+    color: color-mix(in srgb, var(--portafolio-fondo) 72%, transparent);
+}

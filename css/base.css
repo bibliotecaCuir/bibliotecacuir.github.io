@@ -1,0 +1,115 @@
+/* ============================================================
+   base.css — fundamentos del sitio
+   ------------------------------------------------------------
+   Se importa primero desde estilo.css. Contiene lo que usan
+   TODAS las paginas: la tipografia del proyecto, las variables
+   globales (colores, pesos de fuente) y el reset minimo del
+   body/html/main.
+   ============================================================ */
+
+/* Fuente dibujada a mano usada en los titulos grandes del sitio
+   (var(--font-proyecto)). Se dejan comentadas las versiones
+   anteriores del archivo por si hay que volver a probarlas. */
+@font-face {
+    font-family: "Caos Marika";
+    src:
+        /* url("../assets/fonts/CAOSMARIKA.otf") format("opentype"); */
+        /* url("../assets/fonts/CAOSMARIKA-repaired.otf") format("opentype"); */
+        url("../assets/fonts/CAOSMARIKA-patched.otf") format("opentype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+/* Variables globales: familias de fuente, pesos, y la paleta de
+   colores del proyecto (verde/azul/rosado/lettering) mas sus
+   versiones semitransparentes ("tinte-*") usadas en overlays. */
+:root {
+    --font-texto: "Montserrat", "Helvetica Neue", "Arial Nova", Arial, "Nimbus Sans", sans-serif;
+    --font-proyecto: "Caos Marika", var(--font-texto);
+    --peso-regular: 400;
+    --peso-medio: 500;
+    --color-verde: #2aec57;
+    --color-azul: #6858fd;
+    --color-rosado: #fe62de;
+    --color-lettering: #e6007e;
+    --color-rosado-claro: #f7a7df;
+    --portafolio-color-activaciones: #f1f1f1;
+    --portafolio-color-obras: #463bf9;
+    --portafolio-color-practicas: #302f2f;
+    --portafolio-color-otros: #f857dc;
+    --tinte-verde: rgba(42, 236, 87, 0.72);
+    --tinte-azul: rgba(104, 88, 253, 0.72);
+    --tinte-rosado: rgba(254, 98, 222, 0.72);
+}
+
+/* El body ocupa todo el ancho sin permitir scroll horizontal
+   (el sitio tiene elementos decorativos que se salen del
+   viewport a proposito), y aparece con un fade-in suave. */
+body {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #ffffff;
+    font-family: var(--font-texto);
+    font-weight: var(--peso-regular);
+    animation: pagina-aparecer 0.45s ease both;
+}
+
+@keyframes pagina-aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contenedor principal de cada pagina: se mantiene por encima
+   de los fondos fijos (z-index: 1) gracias al stacking context
+   que crean sus secciones directas mas abajo. */
+main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main > section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Elemento vacio, no se usa actualmente: se deja apagado
+   (display: none) en vez de eliminarse por si algun script lo
+   vuelve a activar. */
+body::after {
+    display: none;
+    height: 0;
+    content: "";
+}
+
+/* Utilidad de accesibilidad: oculta visualmente un elemento sin
+   quitarlo del arbol (sigue siendo leido por lectores de
+   pantalla). */
+.visualmente-solo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

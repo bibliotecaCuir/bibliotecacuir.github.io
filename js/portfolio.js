@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const portfolioImages = document.querySelectorAll('.portfolio-media img');
-    const singleLineTitlePages = document.body.classList.contains('portfolio-practicas') ||
-        document.body.classList.contains('portfolio-activaciones');
+    const portfolioImages = document.querySelectorAll('.portafolio-multimedia img');
+    const singleLineTitlePages = document.body.classList.contains('portafolio-practicas') ||
+        document.body.classList.contains('portafolio-activaciones');
     const singleLineTitles = singleLineTitlePages ?
-        Array.from(document.querySelectorAll('.portfolio-content .portfolio-entry h2')) :
+        Array.from(document.querySelectorAll('.portafolio-contenido .portafolio-entrada h2')) :
         [];
-    const pageTitle = document.querySelector('.portfolio-section .portfolio-detail-hero h1');
+    const pageTitle = document.querySelector('.portafolio-seccion .portafolio-detalle-principal h1');
     const fittedTitles = pageTitle ? [...singleLineTitles, pageTitle] : singleLineTitles;
-    const isProjectPage = document.body.classList.contains('portfolio-project-page');
-    const projectEntry = document.querySelector('.portfolio-entry-single[id]');
+    const isProjectPage = document.body.classList.contains('portafolio-proyecto-pagina');
+    const projectEntry = document.querySelector('.portafolio-entrada-unico[id]');
 
     const categoryColorBases = {
         practicas: { hue: 258, saturation: 10, lightness: 18, foreground: '#f1f1f1', lineAlpha: 0.28 },
@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const getProjectCategory = () => {
-        const match = Array.from(document.body.classList).find((className) => className.startsWith('portfolio-') &&
-            Object.prototype.hasOwnProperty.call(categoryColorBases, className.replace('portfolio-', '')));
+        const match = Array.from(document.body.classList).find((className) => className.startsWith('portafolio-') &&
+            Object.prototype.hasOwnProperty.call(categoryColorBases, className.replace('portafolio-', '')));
 
-        return match ? match.replace('portfolio-', '') : null;
+        return match ? match.replace('portafolio-', '') : null;
     };
 
     const getProjectHueOffset = (value) => {
@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ? `hsla(${hue} ${Math.max(base.saturation - 8, 0)}% 20% / ${base.lineAlpha})`
             : `hsla(${hue} ${Math.min(base.saturation + 10, 100)}% 96% / ${base.lineAlpha})`;
 
-        document.body.style.setProperty('--portfolio-bg', background);
-        document.body.style.setProperty('--portfolio-fg', base.foreground);
-        document.body.style.setProperty('--portfolio-line', line);
+        document.body.style.setProperty('--portafolio-fondo', background);
+        document.body.style.setProperty('--portafolio-texto', base.foreground);
+        document.body.style.setProperty('--portafolio-linea', line);
         document.body.style.setProperty('--project-accent', `hsl(${(hue + 22) % 360} ${base.saturation}% ${base.lightness}%)`);
     };
 
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        image.classList.toggle('portfolio-image-portrait', image.naturalHeight > image.naturalWidth);
-        image.classList.toggle('portfolio-image-landscape', image.naturalWidth >= image.naturalHeight);
+        image.classList.toggle('portafolio-imagen-retrato', image.naturalHeight > image.naturalWidth);
+        image.classList.toggle('portafolio-imagen-apaisado', image.naturalWidth >= image.naturalHeight);
     };
 
     portfolioImages.forEach((image) => {
@@ -106,9 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = document.createElement('strong');
         const category = document.createElement('small');
 
-        link.className = `project-neighbor-link project-neighbor-link-${direction}`;
+        link.className = `proyecto-vecino-enlace proyecto-vecino-enlace-${direction}`;
         link.href = project.href;
-        label.textContent = direction === 'previous' ? 'proyecto anterior' : 'siguiente proyecto';
+        label.textContent = direction === 'anterior' ? 'proyecto anterior' : 'siguiente proyecto';
         title.textContent = project.title;
         category.textContent = project.category;
 
@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const detail = document.querySelector('.portfolio-project-detail');
-        const content = document.querySelector('.portfolio-project-detail .portfolio-content');
+        const detail = document.querySelector('.portafolio-proyecto-detalle');
+        const content = document.querySelector('.portafolio-proyecto-detalle .portafolio-contenido');
 
         if (!detail || !content) {
             return;
@@ -156,11 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextProject = projects[(currentIndex + 1) % projects.length];
             const nav = document.createElement('nav');
 
-            nav.className = 'project-neighbors';
+            nav.className = 'proyecto-vecinos';
             nav.setAttribute('aria-label', 'Navegacion entre proyectos');
             nav.append(
-                createProjectNeighborLink(previousProject, 'previous'),
-                createProjectNeighborLink(nextProject, 'next')
+                createProjectNeighborLink(previousProject, 'anterior'),
+                createProjectNeighborLink(nextProject, 'siguiente')
             );
             content.insertAdjacentElement('afterend', nav);
         } catch (error) {

@@ -1,0 +1,320 @@
+/* ============================================================
+   donacion.css — pagina de donaciones (dona.html)
+   ------------------------------------------------------------
+   El formulario para donar/registrar material a la coleccion:
+   la intro con la nota de "protocolo", y el formulario en si
+   (campos, checkboxes de opciones, subida de archivos). Tambien
+   redefine el pie para usar el color --color-lettering en
+   vez de los colores de seccion del portafolio.
+   ============================================================ */
+
+.donacion-pagina {
+    --portafolio-fondo: var(--color-lettering);
+    --portafolio-texto: #ffffff;
+    color: #111111;
+    background:
+        linear-gradient(180deg, rgba(247, 167, 223, 0.18), rgba(255, 255, 255, 0) 30rem),
+        #ffffff;
+}
+
+.donacion-pagina *,
+.donacion-pagina *::before,
+.donacion-pagina *::after {
+    box-sizing: border-box;
+}
+
+.donacion-pagina .sitio-logo-blanco {
+    opacity: 0;
+}
+
+.donacion-pagina .sitio-logo-negro {
+    opacity: 1;
+}
+
+.donacion-contenedor {
+    position: relative;
+    z-index: 1;
+    padding: clamp(8.5rem, 12vw, 11rem) clamp(1rem, 5vw, 4.5rem) clamp(5rem, 8vw, 7rem);
+}
+
+.donacion-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+    gap: clamp(1rem, 2.5vw, 2rem);
+    align-items: end;
+    width: min(100%, 1180px);
+    margin: 0 auto clamp(1.5rem, 3.6vw, 3rem);
+}
+
+.donacion-principal h1 {
+    max-width: none;
+    margin: 0;
+    font-family: var(--font-proyecto);
+    font-size: clamp(3.8rem, 8vw, 7.6rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.78;
+    letter-spacing: 0;
+    text-transform: lowercase;
+    white-space: nowrap;
+}
+
+.donacion-principal p {
+    max-width: 58rem;
+    margin: clamp(0.65rem, 1.2vw, 0.9rem) 0 0;
+    font-size: clamp(0.86rem, 1vw, 1rem);
+    line-height: 1.34;
+}
+
+.donacion-protocolo-nota {
+    display: grid;
+    gap: 0.48rem;
+    align-self: end;
+    width: min(100%, 360px);
+    min-height: 0;
+    padding: clamp(0.75rem, 1.35vw, 1rem) clamp(0.8rem, 1.5vw, 1.1rem);
+    border: 1px solid rgba(17, 17, 17, 0.22);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.donacion-protocolo-nota strong {
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.85rem, 2.7vw, 2.55rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.86;
+    text-transform: lowercase;
+}
+
+.donacion-protocolo-nota span {
+    font-size: 0.78rem;
+    line-height: 1.34;
+}
+
+.donacion-formulario {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.6rem);
+    width: min(100%, 1180px);
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.donacion-campos {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.4rem);
+    min-width: 0;
+    margin: 0;
+    padding: clamp(1rem, 2.2vw, 1.7rem);
+    border: 1px solid rgba(17, 17, 17, 0.24);
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.donacion-campos legend {
+    padding: 0 0.35rem;
+    font-family: var(--font-proyecto);
+    font-size: clamp(2rem, 4.2vw, 4.3rem);
+    line-height: 0.86;
+    text-transform: lowercase;
+}
+
+.donacion-grilla {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    min-width: 0;
+}
+
+.donacion-grilla-tres {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.donacion-campo {
+    display: grid;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.donacion-campo-completo {
+    grid-column: 1 / -1;
+}
+
+.donacion-campo label,
+.donacion-opcion-grupo > span,
+.donacion-subida span {
+    font-size: 0.74rem;
+    font-weight: var(--peso-medio);
+    line-height: 1.12;
+    text-transform: uppercase;
+}
+
+.donacion-campo small,
+.donacion-subida small,
+.donacion-formulario-nota {
+    color: rgba(17, 17, 17, 0.7);
+    font-size: 0.76rem;
+    line-height: 1.35;
+}
+
+.donacion-campo input,
+.donacion-campo select,
+.donacion-campo textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.72rem 0.8rem;
+    color: #111111;
+    font: inherit;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 17, 0.28);
+    border-radius: 0;
+}
+
+.donacion-campo textarea {
+    min-height: 124px;
+    resize: vertical;
+}
+
+.donacion-opcion-grilla {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.donacion-opcion-grupo {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.donacion-opcion {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 0.55rem;
+    align-items: start;
+    padding: 0.72rem;
+    border: 1px solid rgba(17, 17, 17, 0.22);
+    background: #ffffff;
+}
+
+.donacion-opcion input {
+    width: 18px;
+    height: 18px;
+    margin: 0.08rem 0 0;
+    accent-color: var(--color-rosado);
+}
+
+.donacion-opcion strong {
+    display: block;
+    margin-bottom: 0.16rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.donacion-opcion span {
+    display: block;
+    color: rgba(17, 17, 17, 0.72);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.donacion-subida-grilla {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.donacion-subida {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 17, 0.22);
+}
+
+.donacion-subida input {
+    width: 100%;
+    min-width: 0;
+    font: inherit;
+    font-size: 0.78rem;
+}
+
+.donacion-enviar-fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.4rem;
+}
+
+.donacion-enviar-fila button {
+    min-height: 48px;
+    padding: 0.85rem 1.15rem;
+    color: #ffffff;
+    font: inherit;
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-transform: lowercase;
+    cursor: pointer;
+    background: #111111;
+    border: 1px solid #111111;
+    border-radius: 0;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.24s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.donacion-enviar-fila button:hover,
+.donacion-enviar-fila button:focus-visible {
+    color: #111111;
+    background: var(--color-rosado-claro);
+    transform: translateY(-2px);
+}
+
+/* Pie propio de dona.html: usa el color solido
+   --color-lettering en vez de los colores por seccion que usa
+   el resto del portafolio (ver portafolio.css). */
+.donacion-pagina .sitio-pie {
+    color: #ffffff;
+    background: var(--color-lettering);
+}
+
+.donacion-pagina .sitio-pie::after {
+    display: block;
+}
+
+.donacion-pagina .pie-seguir,
+.donacion-pagina .pie-legal,
+.donacion-pagina .pie-entrada-fila,
+.donacion-pagina .pie-entrada-fila button {
+    border-color: rgba(255, 255, 255, 0.42);
+}
+
+.donacion-pagina .pie-seguir a,
+.donacion-pagina .pie-enlaces a,
+.donacion-pagina .pie-contacto a,
+.donacion-pagina .pie-legal a,
+.donacion-pagina .pie-entrada-fila input,
+.donacion-pagina .pie-entrada-fila button {
+    color: #ffffff;
+}
+
+.donacion-pagina .pie-entrada-fila input::placeholder {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.donacion-pagina .pie-seguir-icono {
+    color: var(--color-lettering);
+    background: #ffffff;
+}
+
+.donacion-pagina .pie-marca-blanco {
+    display: block;
+}
+
+.donacion-pagina .pie-marca-negro {
+    display: none;
+}

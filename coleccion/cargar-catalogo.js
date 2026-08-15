@@ -27,9 +27,9 @@ container.innerHTML = "";
 
 // Se conserva el preview global como contrato de clase, pero la imagen vive en cada tarjeta.
 const preview = document.createElement("div");
-preview.className = "preview-global";
+preview.className = "previsualizacion-global";
 preview.setAttribute("aria-hidden", "true");
-preview.innerHTML = '<img class="preview-global-img" alt="" />';
+preview.innerHTML = '<img class="previsualizacion-global-img" alt="" />';
 document.body.appendChild(preview);
 
 let totalArticulos = 0;
@@ -87,23 +87,23 @@ function escaparHTML(valor) {
     .replace(/'/g, "&#039;");
 }
 
-function crearSlug(item, caja, index) {
-  const codigo = String(item.codigo || "").trim();
+function crearSlug(elemento, caja, index) {
+  const codigo = String(elemento.codigo || "").trim();
   const base = codigo && normalizar(codigo) !== "no aplica"
     ? `${codigo}-${index + 1}`
-    : `${item.titulo || "pieza"}-${caja}-${index + 1}`;
+    : `${elemento.titulo || "pieza"}-${caja}-${index + 1}`;
 
   return normalizar(base)
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "") || `pieza-${caja}-${index + 1}`;
 }
 
-function clavePublicacion(item) {
+function clavePublicacion(elemento) {
   return [
-    item.titulo,
-    valorLista(item.autorxs),
-    item.editorial || item.editoriales,
-    item.agno,
+    elemento.titulo,
+    valorLista(elemento.autorxs),
+    elemento.editorial || elemento.editoriales,
+    elemento.agno,
   ]
     .map((valor) => normalizar(valor).replace(/[^a-z0-9]+/g, " "))
     .join("|");
@@ -112,10 +112,10 @@ function clavePublicacion(item) {
 function quitarDuplicados(articulos) {
   const publicaciones = new Map();
 
-  articulos.forEach(({ item, caja, index }) => {
-    if (!String(item.titulo || item.codigo || "").trim()) return;
-    const clave = clavePublicacion(item);
-    if (!publicaciones.has(clave)) publicaciones.set(clave, { item, caja, index });
+  articulos.forEach(({ elemento, caja, index }) => {
+    if (!String(elemento.titulo || elemento.codigo || "").trim()) return;
+    const clave = clavePublicacion(elemento);
+    if (!publicaciones.has(clave)) publicaciones.set(clave, { elemento, caja, index });
   });
 
   return [...publicaciones.values()];
@@ -132,41 +132,41 @@ function valorLista(valor) {
   return valor || "";
 }
 
-function crearArticulo(item, caja, index) {
+function crearArticulo(elemento, caja, index) {
   const article = document.createElement("article");
-  article.className = "item reveal-item";
-  article.dataset.categoria = obtenerCategoria(item.tipologia);
+  article.className = "elemento revelar-elemento";
+  article.dataset.categoria = obtenerCategoria(elemento.tipologia);
 
-  const imagenUrl = item.imagen
-    ? `https://raw.githubusercontent.com/bibliotecaCuir/${caja}/main/imagenes/${item.imagen}`
+  const imagenUrl = elemento.imagen
+    ? `https://raw.githubusercontent.com/bibliotecaCuir/${caja}/main/imagenes/${elemento.imagen}`
     : "";
 
   if (imagenUrl) article.dataset.imagen = imagenUrl;
 
-  const autorxs = valorLista(item.autorxs);
+  const autorxs = valorLista(elemento.autorxs);
   // Los YAML actuales usan "editorial"; se tolera "editoriales" para datos futuros.
-  const editorial = valorLista(item.editorial || item.editoriales);
-  const meta = [autorxs, editorial, item.estado || item.tipologia].filter(Boolean);
-  const urlDetalle = `./html/${crearSlug(item, caja, index)}.html`;
+  const editorial = valorLista(elemento.editorial || elemento.editoriales);
+  const meta = [autorxs, editorial, elemento.estado || elemento.tipologia].filter(Boolean);
+  const urlDetalle = `./html/${crearSlug(elemento, caja, index)}.html`;
 
   article.innerHTML = `
-    <a class="item-link" href="${urlDetalle}">
-      <figure class="item-imagen-wrap">
+    <a class="elemento-enlace" href="${urlDetalle}">
+      <figure class="elemento-imagen-contenedor">
         ${imagenUrl ? `
-          <img class="catalogo-imagen" src="${escaparHTML(imagenUrl)}" alt="" loading="lazy" decoding="async">
-        ` : '<span class="item-sin-imagen" aria-hidden="true">BC</span>'}
-        <span class="item-tinte" aria-hidden="true"></span>
+          <img class="catalogo-imagen" src="${escaparHTML(imagenUrl)}" alt="" cargando="lazy" decoding="async">
+        ` : '<span class="elemento-sin-imagen" aria-hidden="true">BC</span>'}
+        <span class="elemento-tinte" aria-hidden="true"></span>
       </figure>
-      <div class="item-body">
-        <h2 class="item-titulo">${escaparHTML(item.titulo || "Sin título")}</h2>
-        <div class="item-identificacion">
-          <span class="item-codigo">${escaparHTML(item.codigo || "s/c")}</span>
-          <span class="item-agno">${escaparHTML(item.agno || "s/f")}</span>
+      <div class="elemento-cuerpo">
+        <h2 class="elemento-titulo">${escaparHTML(elemento.titulo || "Sin título")}</h2>
+        <div class="elemento-identificacion">
+          <span class="elemento-codigo">${escaparHTML(elemento.codigo || "s/c")}</span>
+          <span class="elemento-agno">${escaparHTML(elemento.agno || "s/f")}</span>
         </div>
-        <div class="item-meta-wrap">
-          <div class="item-meta">
+        <div class="elemento-meta-contenedor">
+          <div class="elemento-meta">
             ${meta.map((dato, index) => `
-              ${index ? '<span class="item-sep" aria-hidden="true">·</span>' : ""}
+              ${index ? '<span class="elemento-separador" aria-hidden="true">·</span>' : ""}
               <span>${escaparHTML(dato)}</span>
             `).join("")}
           </div>
@@ -180,7 +180,7 @@ function crearArticulo(item, caja, index) {
 
 function observarRevelado(elementos) {
   if (!("IntersectionObserver" in window)) {
-    elementos.forEach((elemento) => elemento.classList.add("is-visible"));
+    elementos.forEach((elemento) => elemento.classList.add("esta-visible"));
     return;
   }
 
@@ -189,7 +189,7 @@ function observarRevelado(elementos) {
       (entradas, observer) => {
         entradas.forEach((entrada) => {
           if (!entrada.isIntersecting) return;
-          entrada.target.classList.add("is-visible");
+          entrada.target.classList.add("esta-visible");
           observer.unobserve(entrada.target);
         });
       },
@@ -198,7 +198,7 @@ function observarRevelado(elementos) {
   }
 
   elementos.forEach((elemento) => {
-    if (!elemento.hidden && !elemento.classList.contains("is-visible")) {
+    if (!elemento.hidden && !elemento.classList.contains("esta-visible")) {
       revealObserver.observe(elemento);
     }
   });
@@ -217,7 +217,7 @@ function filtrarCatalogo(categoria) {
   let visibles = 0;
   const articulosVisibles = [];
 
-  container.querySelectorAll(".item").forEach((article) => {
+  container.querySelectorAll(".elemento").forEach((article) => {
     const mostrar = categoria === "todas" || article.dataset.categoria === categoria;
     article.hidden = !mostrar;
     if (mostrar) {
@@ -228,7 +228,7 @@ function filtrarCatalogo(categoria) {
 
   filtrosEl?.querySelectorAll(".filtro-boton").forEach((boton) => {
     const activo = boton.dataset.filtro === categoria;
-    boton.classList.toggle("active", activo);
+    boton.classList.toggle("activo", activo);
     boton.setAttribute("aria-pressed", String(activo));
   });
 
@@ -240,7 +240,7 @@ function crearFiltros() {
   if (!filtrosEl) return;
 
   const conteos = {};
-  container.querySelectorAll(".item").forEach((article) => {
+  container.querySelectorAll(".elemento").forEach((article) => {
     const categoria = article.dataset.categoria;
     conteos[categoria] = (conteos[categoria] || 0) + 1;
   });
@@ -259,7 +259,7 @@ function crearFiltros() {
     .map(
       ({ id, nombre, cantidad }) => `
         <button
-          class="filtro-boton${id === "todas" ? " active" : ""}"
+          class="filtro-boton${id === "todas" ? " activo" : ""}"
           type="button"
           data-filtro="${id}"
           aria-pressed="${id === "todas"}"
@@ -300,19 +300,19 @@ Promise.all(
     const fragment = document.createDocumentFragment();
     const publicaciones = quitarDuplicados(
       catalogos.flatMap(({ caja, articulos }) =>
-        articulos.map((item, index) => ({ item, caja, index }))
+        articulos.map((elemento, index) => ({ elemento, caja, index }))
       )
     );
 
     totalArticulos = publicaciones.length;
-    publicaciones.forEach(({ item, caja, index }) => {
-      fragment.appendChild(crearArticulo(item, caja, index));
+    publicaciones.forEach(({ elemento, caja, index }) => {
+      fragment.appendChild(crearArticulo(elemento, caja, index));
     });
 
     container.appendChild(fragment);
     actualizarConteo(totalArticulos);
     crearFiltros();
-    observarRevelado([...container.querySelectorAll(".item")]);
+    observarRevelado([...container.querySelectorAll(".elemento")]);
   })
   .catch((error) => {
     console.error("Error al cargar la colección:", error);

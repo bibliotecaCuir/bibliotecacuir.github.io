@@ -1,6 +1,6 @@
-const landingBackground = document.querySelector(".landing-background");
-const landingBackgroundImage = document.querySelector(".landing-background-image");
-const backgroundToggle = document.querySelector(".background-toggle");
+const landingBackground = document.querySelector(".portada-fondo");
+const landingBackgroundImage = document.querySelector(".portada-fondo-imagen");
+const backgroundToggle = document.querySelector(".fondo-interruptor");
 const reduceBackgroundMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function isTypingTarget(target) {
@@ -8,7 +8,7 @@ function isTypingTarget(target) {
 }
 
 function toggleLandingLettering() {
-    document.body.classList.toggle("is-lettering-hidden");
+    document.body.classList.toggle("esta-lettering-oculto");
 }
 
 function updateBackgroundToggle(isHidden) {
@@ -21,7 +21,7 @@ function updateBackgroundToggle(isHidden) {
 }
 
 function toggleLandingBackgroundVisibility() {
-    const isHidden = document.body.classList.toggle("is-background-hidden");
+    const isHidden = document.body.classList.toggle("esta-fondo-oculto");
 
     updateBackgroundToggle(isHidden);
 }
@@ -62,10 +62,10 @@ window.addEventListener("scroll", requestBackgroundUpdate, { passive: true });
 window.addEventListener("resize", requestBackgroundUpdate);
 reduceBackgroundMotion.addEventListener("change", requestBackgroundUpdate);
 backgroundToggle?.addEventListener("click", toggleLandingBackgroundVisibility);
-updateBackgroundToggle(document.body.classList.contains("is-background-hidden"));
+updateBackgroundToggle(document.body.classList.contains("esta-fondo-oculto"));
 
-const presentationSlides = [...document.querySelectorAll(".presentation-slide")];
-let presentationIndex = Math.max(0, presentationSlides.findIndex((slide) => slide.classList.contains("is-active")));
+const presentationSlides = [...document.querySelectorAll(".presentacion-diapositiva")];
+let presentationIndex = Math.max(0, presentationSlides.findIndex((slide) => slide.classList.contains("esta-activo")));
 let presentationTimer;
 let presentationCleanupTimer;
 
@@ -100,27 +100,27 @@ function showPresentationSlide(nextIndex) {
     window.clearTimeout(presentationCleanupTimer);
     presentationSlides.forEach((slide) => {
         if (slide !== currentSlide && slide !== nextSlide) {
-            slide.classList.remove("is-active", "is-exiting");
+            slide.classList.remove("esta-activo", "esta-saliendo");
             slide.style.zIndex = "";
         }
     });
 
-    currentSlide.classList.remove("is-active");
-    currentSlide.classList.add("is-exiting");
+    currentSlide.classList.remove("esta-activo");
+    currentSlide.classList.add("esta-saliendo");
     currentSlide.style.zIndex = "1";
 
-    nextSlide.classList.remove("is-exiting");
+    nextSlide.classList.remove("esta-saliendo");
     nextSlide.style.zIndex = "2";
 
     window.requestAnimationFrame(() => {
-        nextSlide.classList.add("is-active");
+        nextSlide.classList.add("esta-activo");
     });
 
     presentationIndex = presentationSlides.indexOf(nextSlide);
     preparePresentationSlide((presentationIndex + 1) % presentationSlides.length);
 
     presentationCleanupTimer = window.setTimeout(() => {
-        currentSlide.classList.remove("is-exiting");
+        currentSlide.classList.remove("esta-saliendo");
         currentSlide.style.zIndex = "";
     }, 1500);
 }
@@ -146,8 +146,8 @@ function syncPresentationMotion() {
 
     if (reduceBackgroundMotion.matches) {
         presentationSlides.forEach((slide, index) => {
-            slide.classList.toggle("is-active", index === presentationIndex);
-            slide.classList.remove("is-exiting");
+            slide.classList.toggle("esta-activo", index === presentationIndex);
+            slide.classList.remove("esta-saliendo");
             slide.style.zIndex = "";
         });
         return;
@@ -158,7 +158,7 @@ function syncPresentationMotion() {
 }
 
 if (presentationSlides.length > 0) {
-    presentationSlides[presentationIndex].classList.add("is-active");
+    presentationSlides[presentationIndex].classList.add("esta-activo");
     preparePresentationSlide(presentationIndex);
     preparePresentationSlide((presentationIndex + 1) % presentationSlides.length);
     syncPresentationMotion();
@@ -166,7 +166,7 @@ if (presentationSlides.length > 0) {
     reduceBackgroundMotion.addEventListener("change", syncPresentationMotion);
 }
 
-const ovalCarousel = document.querySelector(".oval-carousel");
+const ovalCarousel = document.querySelector(".ovalo-carrusel");
 const ovalCarouselContent = [
     "Animita",
     "Archivo de besos",
@@ -190,11 +190,11 @@ function addOvalCarouselInfo() {
         return;
     }
 
-    [...ovalCarousel.querySelectorAll(".oval-carousel-item")].forEach((item, index) => {
+    [...ovalCarousel.querySelectorAll(".ovalo-carrusel-elemento")].forEach((item, index) => {
         const title = ovalCarouselContent[index % ovalCarouselContent.length];
         const caption = document.createElement("figcaption");
 
-        caption.className = "oval-carousel-info";
+        caption.className = "ovalo-carrusel-info";
         caption.innerHTML = `<strong>${title}</strong>`;
         item.tabIndex = -1;
         item.append(caption);
@@ -208,7 +208,7 @@ function fillOvalCarousel() {
         return;
     }
 
-    const originalItems = [...ovalCarousel.querySelectorAll(".oval-carousel-item")];
+    const originalItems = [...ovalCarousel.querySelectorAll(".ovalo-carrusel-elemento")];
     let itemIndex = originalItems.length;
 
     while (itemIndex < 10) {
@@ -223,7 +223,7 @@ function fillOvalCarousel() {
 
 fillOvalCarousel();
 
-const ovalCarouselItems = [...document.querySelectorAll(".oval-carousel-item")];
+const ovalCarouselItems = [...document.querySelectorAll(".ovalo-carrusel-elemento")];
 const fullRotation = Math.PI * 2;
 const ovalRotationSpeed = fullRotation / 24000;
 let ovalAnimationFrame;
@@ -255,7 +255,7 @@ function renderOvalCarousel(rotation) {
         const x = Math.cos(angle) * radiusX;
         const y = Math.sin(angle) * radiusY + verticalOffset;
         const z = -150 + depth * 300;
-        const activeScale = item.classList.contains("is-active") ? 1.42 : 1;
+        const activeScale = item.classList.contains("esta-activo") ? 1.42 : 1;
         const scale = (0.64 + depth * 0.58) * activeScale;
         const opacity = 0.58 + depth * 0.42;
         const brightness = 0.7 + depth * 0.3;
@@ -280,7 +280,7 @@ function renderOvalCarousel(rotation) {
     ovalCarouselItems.forEach((item) => {
         const isFront = frontItems.has(item);
 
-        item.classList.toggle("is-front", isFront);
+        item.classList.toggle("esta-frontal", isFront);
         item.tabIndex = isFront ? 0 : -1;
     });
 }
@@ -375,7 +375,7 @@ function getOvalHoveredImageItem(event) {
         return null;
     }
 
-    const image = event.target.closest(".oval-carousel-item.is-front img");
+    const image = event.target.closest(".ovalo-carrusel-elemento.esta-frontal img");
 
     if (!image) {
         return null;
@@ -393,7 +393,7 @@ function getOvalHoveredImageItem(event) {
         return null;
     }
 
-    return image.closest(".oval-carousel-item.is-front");
+    return image.closest(".ovalo-carrusel-elemento.esta-frontal");
 }
 
 function clearOvalHoveredItem() {
@@ -401,7 +401,7 @@ function clearOvalHoveredItem() {
         return;
     }
 
-    ovalHoveredItem.classList.remove("is-active");
+    ovalHoveredItem.classList.remove("esta-activo");
     ovalHoveredItem = undefined;
     resumeOvalCarousel();
 }
@@ -431,7 +431,7 @@ ovalCarousel?.addEventListener("pointermove", (event) => {
         return;
     }
 
-    ovalCarousel.querySelector(".oval-carousel-item.is-active")?.classList.remove("is-active");
+    ovalCarousel.querySelector(".ovalo-carrusel-elemento.esta-activo")?.classList.remove("esta-activo");
     ovalHoveredItem = activeItem;
 
     if (!activeItem) {
@@ -440,27 +440,27 @@ ovalCarousel?.addEventListener("pointermove", (event) => {
     }
 
     pauseOvalCarousel();
-    activeItem.classList.add("is-active");
+    activeItem.classList.add("esta-activo");
     renderOvalCarousel(ovalRotation);
 });
 ovalCarousel?.addEventListener("pointerleave", clearOvalHoveredItem);
 ovalCarousel?.addEventListener("focusin", (event) => {
-    const activeItem = event.target.closest(".oval-carousel-item.is-front");
+    const activeItem = event.target.closest(".ovalo-carrusel-elemento.esta-frontal");
 
-    if (activeItem && !activeItem.classList.contains("is-active")) {
-        ovalCarousel.querySelector(".oval-carousel-item.is-active")?.classList.remove("is-active");
-        activeItem.classList.add("is-active");
+    if (activeItem && !activeItem.classList.contains("esta-activo")) {
+        ovalCarousel.querySelector(".ovalo-carrusel-elemento.esta-activo")?.classList.remove("esta-activo");
+        activeItem.classList.add("esta-activo");
         moveOvalItemToCenter(activeItem);
     }
 });
 ovalCarousel?.addEventListener("focusout", (event) => {
     if (!ovalCarousel.contains(event.relatedTarget)) {
-        ovalCarousel.querySelector(".oval-carousel-item.is-active")?.classList.remove("is-active");
+        ovalCarousel.querySelector(".ovalo-carrusel-elemento.esta-activo")?.classList.remove("esta-activo");
         resumeOvalCarousel();
     }
 });
 
-const constellationScene = document.querySelector(".image-constellation-scene");
+const constellationScene = document.querySelector(".imagen-constelacion-escena");
 const constellationItems = [
     {
         title: "Asambleas",
@@ -622,7 +622,7 @@ function buildImageConstellation() {
         const layer = Math.round(depth + 180);
         const randomizedSize = size * (0.86 + Math.random() * 0.3);
 
-        link.className = "constellation-image";
+        link.className = "constelacion-imagen";
         link.href = item.href;
         link.style.setProperty("--image-x", `${x.toFixed(2)}%`);
         link.style.setProperty("--image-y", `${y.toFixed(2)}%`);
@@ -636,7 +636,7 @@ function buildImageConstellation() {
         image.alt = item.title;
         image.loading = "lazy";
         image.decoding = "async";
-        title.className = "constellation-image-title";
+        title.className = "constelacion-imagen-titulo";
         title.textContent = item.title;
 
         link.append(image, title);
@@ -678,16 +678,16 @@ if (constellationScene) {
     window.addEventListener("pointermove", requestConstellationPointerUpdate, { passive: true });
 }
 
-const landingMenuToggle = document.querySelector(".landing-menu-toggle");
-const landingMenu = document.querySelector(".landing-menu");
+const landingMenuToggle = document.querySelector(".portada-menu-interruptor");
+const landingMenu = document.querySelector(".portada-menu");
 
 function closeLandingMenu() {
-    document.body.classList.remove("is-landing-menu-open");
+    document.body.classList.remove("esta-portada-menu-abierto");
     landingMenuToggle?.setAttribute("aria-expanded", "false");
 }
 
 function toggleLandingMenu() {
-    const isOpen = document.body.classList.toggle("is-landing-menu-open");
+    const isOpen = document.body.classList.toggle("esta-portada-menu-abierto");
 
     landingMenuToggle?.setAttribute("aria-expanded", String(isOpen));
 }
@@ -709,7 +709,7 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-const landingPresentation = document.querySelector(".landing-presentation");
+const landingPresentation = document.querySelector(".portada-presentacion");
 const desktopNavigation = window.matchMedia("(min-width: 701px)");
 let compactNavigationFrame;
 let compactNavigationExitTimer;
@@ -717,7 +717,7 @@ let compactNavigationExitTimer;
 function updateCompactNavigation() {
     if (!landingPresentation || !desktopNavigation.matches) {
         window.clearTimeout(compactNavigationExitTimer);
-        document.body.classList.remove("has-compact-nav", "is-compact-nav-leaving");
+        document.body.classList.remove("tiene-compacta-navegacion", "esta-compacta-navegacion-saliendo");
         compactNavigationFrame = undefined;
         return;
     }
@@ -727,16 +727,16 @@ function updateCompactNavigation() {
 
     if (shouldUseCompactNavigation) {
         window.clearTimeout(compactNavigationExitTimer);
-        document.body.classList.remove("is-compact-nav-leaving");
-        document.body.classList.add("has-compact-nav");
+        document.body.classList.remove("esta-compacta-navegacion-saliendo");
+        document.body.classList.add("tiene-compacta-navegacion");
         closeLandingMenu();
     } else if (
-        document.body.classList.contains("has-compact-nav")
-        && !document.body.classList.contains("is-compact-nav-leaving")
+        document.body.classList.contains("tiene-compacta-navegacion")
+        && !document.body.classList.contains("esta-compacta-navegacion-saliendo")
     ) {
-        document.body.classList.add("is-compact-nav-leaving");
+        document.body.classList.add("esta-compacta-navegacion-saliendo");
         compactNavigationExitTimer = window.setTimeout(() => {
-            document.body.classList.remove("has-compact-nav", "is-compact-nav-leaving");
+            document.body.classList.remove("tiene-compacta-navegacion", "esta-compacta-navegacion-saliendo");
         }, 220);
     }
 

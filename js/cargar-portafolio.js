@@ -1,7 +1,7 @@
-const container = document.querySelector(".portfolio-project-index[data-categoria]");
+const container = document.querySelector(".portafolio-proyecto-indice[data-categoria]");
 
 if (!container) {
-  throw new Error("No se encontró el contenedor .portfolio-project-index[data-categoria].");
+  throw new Error("No se encontró el contenedor .portafolio-proyecto-indice[data-categoria].");
 }
 
 const categoria = container.dataset.categoria;
@@ -22,9 +22,9 @@ function truncar(texto, limite = 190) {
 }
 
 // Mismo umbral que scripts/lib/generar-portafolio.js: calibrado contra los títulos
-// reales que ya usan portfolio-title-long en el sitio.
+// reales que ya usan portafolio-titulo-largo en el sitio.
 function claseTitulo(titulo) {
-  return String(titulo || "").length > 50 ? " class=\"portfolio-title-long\"" : "";
+  return String(titulo || "").length > 50 ? " class=\"portafolio-titulo-largo\"" : "";
 }
 
 function crearTarjeta(proyecto) {
@@ -32,7 +32,7 @@ function crearTarjeta(proyecto) {
   const imagen = `${proyecto.carpeta_imagenes}/01.webp`;
 
   const enlace = document.createElement("a");
-  enlace.className = "portfolio-project-card";
+  enlace.className = "portafolio-proyecto-tarjeta";
   enlace.href = `/portafolio/${categoria}/${proyecto.slug}.html`;
   enlace.innerHTML = `
     <figure><img src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async"></figure>
@@ -66,7 +66,7 @@ fetch(`/datos/${categoria}.yaml`)
   .catch((error) => {
     console.error(`Error al cargar ${categoria}:`, error);
     container.innerHTML = `
-      <p class="portfolio-error">
+      <p class="portafolio-error">
         No pudimos cargar ${categoria}. Intenta recargar la página.
       </p>
     `;

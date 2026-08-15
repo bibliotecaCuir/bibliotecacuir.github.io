@@ -1,8 +1,8 @@
-const cordonLayer = document.querySelector(".background-cordons");
-const projectGallery = document.querySelector(".project-gallery");
-const siteFooter = document.querySelector(".site-footer");
-const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-const mobileMenu = document.querySelector(".mobile-menu");
+const cordonLayer = document.querySelector(".fondo-cordones");
+const projectGallery = document.querySelector(".proyecto-galeria");
+const siteFooter = document.querySelector(".sitio-pie");
+const mobileMenuToggle = document.querySelector(".movil-menu-interruptor");
+const mobileMenu = document.querySelector(".movil-menu");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const cordons = {};
 const svgNamespace = "http://www.w3.org/2000/svg";
@@ -196,7 +196,7 @@ function getChromeReductionStart() {
 }
 
 function updateScrolledState() {
-    document.body.classList.toggle("is-scrolled", window.scrollY > getChromeReductionStart());
+    document.body.classList.toggle("esta-desplazado", window.scrollY > getChromeReductionStart());
 
     if (!siteFooter) {
         return;
@@ -204,15 +204,15 @@ function updateScrolledState() {
 
     const footerTop = siteFooter.getBoundingClientRect().top;
 
-    document.body.classList.toggle("is-at-footer", footerTop <= window.innerHeight - 24);
+    document.body.classList.toggle("esta-en-pie", footerTop <= window.innerHeight - 24);
 
-    if (document.body.classList.contains("is-at-footer")) {
+    if (document.body.classList.contains("esta-en-pie")) {
         closeMobileMenu();
     }
 }
 
 function closeMobileMenu() {
-    document.body.classList.remove("is-menu-open");
+    document.body.classList.remove("esta-menu-abierto");
 
     if (mobileMenuToggle) {
         mobileMenuToggle.setAttribute("aria-expanded", "false");
@@ -220,7 +220,7 @@ function closeMobileMenu() {
 }
 
 function toggleMobileMenu() {
-    const isOpen = document.body.classList.toggle("is-menu-open");
+    const isOpen = document.body.classList.toggle("esta-menu-abierto");
 
     if (mobileMenuToggle) {
         mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));

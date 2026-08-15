@@ -1,0 +1,229 @@
+/* ============================================================
+   pie.css — pie de pagina global (sitio-pie)
+   ------------------------------------------------------------
+   Pie compartido por defecto por todas las paginas: fila de
+   redes sociales, titulo grande + columnas de links, formulario
+   de newsletter y linea legal. Las paginas de portafolio y
+   donaciones sobreescriben sus colores (ver portafolio.css y
+   donacion.css) pero reutilizan esta misma estructura.
+   ============================================================ */
+
+.sitio-pie {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    overflow: hidden;
+    color: #ffffff;
+    background: var(--color-lettering);
+}
+
+.sitio-pie::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 55%);
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.pie-seguir,
+.pie-contenedor,
+.pie-legal {
+    position: relative;
+    z-index: 1;
+}
+
+.pie-seguir {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: clamp(84px, 10vw, 130px);
+    padding: 0 clamp(1rem, 5vw, 4.5rem);
+    border-top: 1px solid rgba(255, 255, 255, 0.42);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+    box-sizing: border-box;
+}
+
+.pie-seguir a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    color: #ffffff;
+    font-size: clamp(1rem, 2vw, 1.45rem);
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition:
+        opacity 0.22s ease,
+        transform 0.28s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.pie-seguir a:hover,
+.pie-seguir a:focus-visible {
+    opacity: 0.62;
+    transform: translateY(-2px);
+}
+
+.pie-seguir-icono {
+    display: grid;
+    place-items: center;
+    width: clamp(34px, 5vw, 52px);
+    aspect-ratio: 1;
+    color: var(--color-lettering);
+    font-size: clamp(1.3rem, 2.4vw, 2rem);
+    line-height: 1;
+    background: #ffffff;
+    border-radius: 48% 54% 46% 52%;
+    transform: rotate(-8deg);
+}
+
+.pie-contenedor {
+    padding: clamp(1.4rem, 3vw, 2.4rem) clamp(1rem, 5vw, 4.5rem) clamp(2rem, 4vw, 3.4rem);
+}
+
+.pie-contenedor h2 {
+    max-width: min(100%, 1320px);
+    margin: 0 0 clamp(1.6rem, 3vw, 2.8rem);
+    font-family: var(--font-proyecto);
+    font-size: clamp(2.4rem, 5.35vw, 5.35rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.9;
+    text-transform: lowercase;
+}
+
+.pie-titulo-linea {
+    display: block;
+}
+
+.pie-contenido {
+    display: grid;
+    grid-template-columns:
+        minmax(82px, 0.62fr)
+        minmax(120px, 0.9fr)
+        minmax(110px, 0.8fr)
+        minmax(110px, 0.8fr)
+        minmax(160px, 1fr)
+        minmax(220px, 1.35fr);
+    gap: clamp(1.2rem, 3vw, 3rem);
+    align-items: start;
+}
+
+.pie-marca {
+    display: block;
+    width: min(100%, 116px);
+    transform: rotate(-4deg);
+    transform-origin: center;
+}
+
+.pie-marca img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.pie-columna,
+.pie-boletin {
+    display: grid;
+    gap: 0.34rem;
+    align-content: start;
+    min-width: 0;
+}
+
+.pie-columna h3 {
+    margin: 0 0 0.25rem;
+    font-size: 0.78rem;
+    font-weight: var(--peso-medio);
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.pie-columna p,
+.pie-boletin label {
+    max-width: 28ch;
+    margin: 0;
+    font-size: clamp(0.76rem, 1vw, 0.92rem);
+    line-height: 1.28;
+}
+
+.pie-enlaces a,
+.pie-contacto a,
+.pie-legal a {
+    color: #ffffff;
+    font-size: clamp(0.76rem, 1vw, 0.92rem);
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition:
+        opacity 0.22s ease,
+        transform 0.28s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.pie-enlaces a:hover,
+.pie-enlaces a:focus-visible,
+.pie-contacto a:hover,
+.pie-contacto a:focus-visible,
+.pie-legal a:hover,
+.pie-legal a:focus-visible {
+    opacity: 0.58;
+    transform: translateX(0.35em);
+}
+
+.pie-entrada-fila {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    width: 100%;
+    margin-top: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.82);
+}
+
+.pie-entrada-fila input,
+.pie-entrada-fila button {
+    min-width: 0;
+    min-height: 38px;
+    color: #ffffff;
+    font: inherit;
+    background: transparent;
+    border: 0;
+}
+
+.pie-entrada-fila input {
+    padding: 0 0.72rem;
+}
+
+.pie-entrada-fila input::placeholder {
+    color: rgba(255, 255, 255, 0.68);
+    opacity: 1;
+    text-transform: lowercase;
+}
+
+.pie-entrada-fila button {
+    display: grid;
+    place-items: center;
+    padding: 0;
+    font-size: 1.35rem;
+    cursor: pointer;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.pie-legal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 34px;
+    padding: 0.42rem clamp(1rem, 5vw, 4.5rem);
+    border-top: 1px solid rgba(255, 255, 255, 0.42);
+    box-sizing: border-box;
+    font-size: 0.68rem;
+    line-height: 1.1;
+    text-transform: lowercase;
+}
+
+.pie-legal nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}

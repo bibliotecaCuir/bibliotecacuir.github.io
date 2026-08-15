@@ -1,0 +1,461 @@
+/* ============================================================
+   propuesta.css — propuestas de portafolio (portafolio-01/02/03.html)
+   ------------------------------------------------------------
+   Tres layouts alternativos para mostrar la grilla de proyectos:
+   01 = mosaico tipo Pinterest (columnas), 02 = grilla de 4 con
+   overlay de color, 03 = grilla asimetrica de 12 columnas con
+   figuras "organicas" (border-radius irregular). Comparten el
+   cabecera/intro (.propuesta-cabecera, .propuesta-intro) y solo
+   cambian la grilla y las tarjetas.
+   ============================================================ */
+
+.portafolio-propuesta-pagina {
+    color: #111111;
+    background: #ffffff;
+}
+
+.portafolio-propuesta-pagina .propuesta-menu-interruptor {
+    color: #111111;
+    background: rgba(255, 255, 255, 0.78);
+    border-color: rgba(17, 17, 17, 0.32);
+}
+
+.portafolio-propuesta-pagina.esta-portada-menu-abierto .propuesta-menu-interruptor {
+    color: #ffffff;
+    background: rgba(17, 17, 17, 0.36);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.propuesta-cabecera {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: 0.85rem clamp(5rem, 7vw, 6rem) 0.85rem clamp(1rem, 3vw, 1.8rem);
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+    backdrop-filter: blur(12px);
+}
+
+.propuesta-marca,
+.propuesta-cabecera nav a {
+    color: inherit;
+    font-size: clamp(1rem, 1.4vw, 1.4rem);
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-decoration: none;
+}
+
+.propuesta-marca {
+    display: block;
+    width: clamp(88px, 10vw, 140px);
+}
+
+.propuesta-marca img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.propuesta-cabecera nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+.propuesta-cabecera nav a[aria-current="page"] {
+    color: var(--color-rosado);
+}
+
+.propuesta-contenedor {
+    width: min(100% - clamp(1rem, 3vw, 3rem), 1800px);
+    margin: 0 auto;
+}
+
+.propuesta-intro {
+    display: grid;
+    gap: 0.35rem;
+    padding: clamp(0.8rem, 1.7vw, 1.3rem) 0 clamp(1rem, 2vw, 1.5rem);
+}
+
+.propuesta-intro h1 {
+    margin: 0;
+    font-family: var(--font-proyecto);
+    font-size: clamp(2rem, 4.2vw, 4.4rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.82;
+    text-transform: lowercase;
+}
+
+.propuesta-intro p {
+    max-width: 46ch;
+    margin: 0;
+    font-size: clamp(0.78rem, 1vw, 0.92rem);
+    line-height: 1.35;
+}
+
+.propuesta-grilla {
+    display: grid;
+    padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.propuesta-tarjeta {
+    color: inherit;
+    text-decoration: none;
+}
+
+.propuesta-tarjeta figure {
+    margin: 0;
+    overflow: hidden;
+    background: #f2f2f2;
+}
+
+.propuesta-tarjeta img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* --- Propuesta 01: mosaico en columnas --------------------------- */
+
+.propuesta-grilla-01 {
+    display: block;
+    column-count: 3;
+    column-gap: clamp(0.75rem, 1.25vw, 1.15rem);
+    padding-top: clamp(0.3rem, 0.8vw, 0.75rem);
+}
+
+.propuesta-intro-01 h1 {
+    font-family: var(--font-texto);
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    font-weight: var(--peso-medio);
+    line-height: 1;
+}
+
+.propuesta-01-tarjeta {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 clamp(0.75rem, 1.25vw, 1.15rem);
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.propuesta-01-tarjeta figure {
+    position: relative;
+    aspect-ratio: var(--proposal-ratio, 4 / 3);
+    margin-bottom: 0.35rem;
+    isolation: isolate;
+}
+
+.propuesta-01-tarjeta:nth-child(3n + 1) figure {
+    --proposal-ratio: 4 / 5;
+}
+
+.propuesta-01-tarjeta:nth-child(4n + 2) figure {
+    --proposal-ratio: 16 / 11;
+}
+
+.propuesta-01-tarjeta figure::after {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    content: "";
+    background: var(--proposal-accent);
+    opacity: 1;
+    transform: translateX(-105%);
+    pointer-events: none;
+}
+
+/* Barrido de color solido que cruza la imagen al pasar el mouse
+   (entra por la izquierda, cubre la imagen, sale por la derecha). */
+.propuesta-01-tarjeta:hover figure::after,
+.propuesta-01-tarjeta:focus-visible figure::after {
+    animation: propuesta-barrido-solido 0.58s cubic-bezier(0.68, 0, 0.22, 1) both;
+}
+
+.propuesta-01-tarjeta img {
+    transition: transform 0.42s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.propuesta-01-tarjeta:hover img,
+.propuesta-01-tarjeta:focus-visible img {
+    transform: scale(1.06);
+}
+
+@keyframes propuesta-barrido-solido {
+    0% {
+        transform: translateX(-105%);
+    }
+
+    46%,
+    54% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(105%);
+    }
+}
+
+.propuesta-tarjeta-leyenda {
+    display: grid;
+    gap: 0.12rem;
+}
+
+.propuesta-tarjeta-leyenda h2 {
+    margin: 0;
+    color: color-mix(in srgb, var(--proposal-accent) 72%, #111111);
+    font-size: clamp(1rem, 1.45vw, 1.45rem);
+    font-weight: var(--peso-regular);
+    line-height: 1.06;
+}
+
+.propuesta-tarjeta-leyenda p {
+    margin: 0;
+    color: rgba(17, 17, 17, 0.68);
+    font-size: clamp(0.66rem, 0.8vw, 0.78rem);
+    line-height: 1.2;
+}
+
+
+/* --- Propuesta 02: grilla de 4 columnas con overlay -------------- */
+
+.propuesta-cabecera-02 {
+    border-bottom-color: rgba(17, 17, 17, 0.28);
+}
+
+.propuesta-intro-02 {
+    min-height: 0;
+    padding-top: clamp(0.4rem, 1vw, 0.8rem);
+    padding-bottom: clamp(0.55rem, 1.2vw, 0.95rem);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.28);
+}
+
+.propuesta-intro-02 h1 {
+    justify-self: start;
+    font-size: clamp(3.2rem, 8vw, 7.6rem);
+}
+
+.propuesta-grilla-02 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+}
+
+.propuesta-02-tarjeta {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    gap: 0.72rem;
+    min-height: 420px;
+    padding: clamp(0.85rem, 1.6vw, 1.3rem);
+    border-right: 1px solid rgba(17, 17, 17, 0.22);
+    border-bottom: 1px solid rgba(17, 17, 17, 0.22);
+}
+
+.propuesta-02-tarjeta::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: var(--proposal-accent);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+    pointer-events: none;
+}
+
+.propuesta-02-tarjeta:hover::before,
+.propuesta-02-tarjeta:focus-visible::before {
+    opacity: 0.12;
+}
+
+.propuesta-tarjeta-categoria,
+.propuesta-tarjeta-anio {
+    position: relative;
+    z-index: 1;
+    font-size: 0.68rem;
+    font-weight: var(--peso-medio);
+    text-transform: lowercase;
+}
+
+.propuesta-02-tarjeta h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.9rem, 3vw, 3.6rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.82;
+    text-transform: lowercase;
+}
+
+.propuesta-02-tarjeta figure {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 1;
+}
+
+.propuesta-02-tarjeta p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: clamp(0.74rem, 0.9vw, 0.84rem);
+    line-height: 1.42;
+}
+
+.propuesta-tarjeta-anio {
+    align-self: end;
+}
+
+
+/* --- Propuesta 03: grilla asimetrica de 12 columnas -------------- */
+
+.portafolio-propuesta-03 {
+    color: #111111;
+    background: #ffffff;
+}
+
+.portafolio-propuesta-03 .propuesta-menu-interruptor {
+    color: #111111;
+    background: rgba(255, 255, 255, 0.78);
+    border-color: rgba(17, 17, 17, 0.32);
+}
+
+.propuesta-cabecera-03 {
+    color: #111111;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom-color: rgba(17, 17, 17, 0.16);
+}
+
+.propuesta-03-contenedor {
+    width: min(100% - clamp(1.25rem, 4vw, 5rem), 1680px);
+}
+
+.propuesta-intro-03 {
+    position: relative;
+    min-height: 0;
+    place-items: start;
+    padding-top: clamp(1.2rem, 3vw, 3rem);
+    padding-bottom: clamp(1.1rem, 2.6vw, 2.4rem);
+    text-align: left;
+}
+
+.propuesta-intro-03 h1 {
+    max-width: none;
+    color: #111111;
+    font-size: clamp(3.6rem, 9.5vw, 9rem);
+}
+
+.propuesta-intro-03 p {
+    color: rgba(17, 17, 17, 0.68);
+}
+
+.propuesta-grilla-03 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    gap: clamp(1rem, 2vw, 2rem);
+    align-items: start;
+}
+
+.propuesta-03-tarjeta {
+    grid-column: span 4;
+    display: grid;
+    gap: 0.55rem;
+    transform: rotate(var(--proposal-tilt));
+    transition:
+        transform 0.28s cubic-bezier(0.2, 1, 0.32, 1),
+        color 0.2s ease;
+}
+
+.propuesta-03-tarjeta:hover,
+.propuesta-03-tarjeta:focus-visible {
+    color: var(--proposal-accent);
+    transform: rotate(0deg) scale(1.025);
+}
+
+.propuesta-03-tarjeta figure {
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(17, 17, 17, 0.24);
+    border-radius: 50% 44% 54% 46% / 44% 54% 46% 56%;
+}
+
+/* Anchos de columna variables segun la posicion de la tarjeta,
+   para que la grilla no se vea uniforme (mosaico irregular). */
+.propuesta-03-tarjeta:nth-child(8n + 1),
+.propuesta-03-tarjeta:nth-child(8n + 6) {
+    grid-column: span 5;
+}
+
+.propuesta-03-tarjeta:nth-child(8n + 3),
+.propuesta-03-tarjeta:nth-child(8n + 7) {
+    grid-column: span 3;
+}
+
+/* Cada figura tiene una forma "organica" distinta (border-radius
+   irregular + aspect-ratio propio) segun su posicion en la lista. */
+.propuesta-03-tarjeta:nth-child(6n + 2) figure {
+    aspect-ratio: 1 / 1;
+    border-radius: 58% 42% 48% 52% / 45% 58% 42% 55%;
+}
+
+.propuesta-03-tarjeta:nth-child(6n + 3) figure {
+    aspect-ratio: 5 / 4;
+    border-radius: 44% 56% 48% 52% / 58% 42% 58% 42%;
+}
+
+.propuesta-03-tarjeta:nth-child(6n + 4) figure {
+    aspect-ratio: 16 / 10;
+    border-radius: 52% 48% 42% 58% / 46% 50% 50% 54%;
+}
+
+.propuesta-03-tarjeta:nth-child(6n + 5) figure {
+    aspect-ratio: 3 / 4;
+    border-radius: 48% 52% 58% 42% / 52% 46% 54% 48%;
+}
+
+.propuesta-03-tarjeta:nth-child(6n) figure {
+    aspect-ratio: 11 / 8;
+    border-radius: 56% 44% 52% 48% / 50% 56% 44% 50%;
+}
+
+.propuesta-03-tarjeta:nth-last-child(2) {
+    grid-column: 3 / span 4;
+}
+
+.propuesta-03-tarjeta:last-child {
+    grid-column: 7 / span 4;
+}
+
+.propuesta-03-tarjeta img {
+    filter: grayscale(1) contrast(1.06);
+    transition:
+        filter 0.2s ease,
+        transform 0.35s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.propuesta-03-tarjeta:hover img,
+.propuesta-03-tarjeta:focus-visible img {
+    filter: grayscale(0) contrast(1);
+    transform: scale(1.08);
+}
+
+.propuesta-03-tarjeta span {
+    display: block;
+    margin-bottom: 0.16rem;
+    color: rgba(17, 17, 17, 0.62);
+    font-size: 0.66rem;
+}
+
+.propuesta-03-tarjeta h2 {
+    margin: 0;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.6rem, 2.7vw, 3rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.84;
+    text-transform: lowercase;
+}

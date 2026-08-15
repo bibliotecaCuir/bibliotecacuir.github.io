@@ -1,8 +1,8 @@
-const manifestArtwork = document.querySelector(".manifest-fragmented-body");
-const manifestLoupe = document.querySelector(".manifest-loupe");
-const manifestLoupeArt = document.querySelector(".manifest-loupe-art");
-const manifestMaskImage = document.querySelector(".manifest-fragmented-body > .manifest-body-layer");
-const manifestCursorDot = document.querySelector(".manifest-cursor-dot");
+const manifestArtwork = document.querySelector(".manifiesto-fragmentado-cuerpo");
+const manifestLoupe = document.querySelector(".manifiesto-lupa");
+const manifestLoupeArt = document.querySelector(".manifiesto-lupa-ilustracion");
+const manifestMaskImage = document.querySelector(".manifiesto-fragmentado-cuerpo > .manifiesto-cuerpo-capa");
+const manifestCursorDot = document.querySelector(".manifiesto-cursor-punto");
 
 if (manifestArtwork && manifestLoupe && manifestLoupeArt && manifestMaskImage) {
     const motion = {
@@ -44,7 +44,7 @@ if (manifestArtwork && manifestLoupe && manifestLoupeArt && manifestMaskImage) {
     }
 
     function pointTouchesHotspot(clientX, clientY) {
-        return [...manifestArtwork.querySelectorAll(":scope > .manifest-hotspot")].some((hotspot) => {
+        return [...manifestArtwork.querySelectorAll(":scope > .manifiesto-punto")].some((hotspot) => {
             const rect = hotspot.getBoundingClientRect();
 
             return clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom;
@@ -91,7 +91,7 @@ if (manifestArtwork && manifestLoupe && manifestLoupeArt && manifestMaskImage) {
 
     function setLoupeActive(isActive) {
         motion.active = isActive;
-        manifestArtwork.classList.toggle("is-loupe-active", isActive);
+        manifestArtwork.classList.toggle("esta-lupa-activo", isActive);
 
         if (isActive) {
             setCursorDotActive(false);
@@ -102,7 +102,7 @@ if (manifestArtwork && manifestLoupe && manifestLoupeArt && manifestMaskImage) {
     }
 
     function setCursorDotActive(isActive) {
-        manifestArtwork.classList.toggle("is-cursor-dot-active", isActive);
+        manifestArtwork.classList.toggle("esta-cursor-punto-activo", isActive);
     }
 
     function moveCursorDot(clientX, clientY) {

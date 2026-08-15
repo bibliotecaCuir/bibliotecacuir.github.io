@@ -1,0 +1,171 @@
+/* ============================================================
+   manifiesto.css — pagina del manifiesto (manifiesto.html)
+   ------------------------------------------------------------
+   Ilustracion a pantalla completa con una "lupa" que sigue el
+   cursor y amplia el detalle bajo el mouse (efecto vidrio de
+   aumento), mas dos zonas clicables que enlazan a otras
+   secciones (mismo patron que .principal-punto en portada.css,
+   pero con su propia lupa y punto de cursor personalizado).
+   ============================================================ */
+
+.manifiesto-pagina {
+    min-height: 100vh;
+    color: #111111;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.manifiesto-pagina .sitio-cabecera {
+    z-index: 30;
+}
+
+.manifiesto-pagina .portada-menu-interruptor {
+    color: #111111;
+    background: rgba(255, 255, 255, 0.78);
+    border-color: rgba(17, 17, 17, 0.32);
+}
+
+.manifiesto-pagina.esta-portada-menu-abierto .portada-menu-interruptor {
+    color: #ffffff;
+    background: rgba(17, 17, 17, 0.36);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.manifiesto-contenedor {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+.manifiesto-principal {
+    position: relative;
+    display: grid;
+    place-items: start center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.manifiesto-fragmentado-cuerpo {
+    position: relative;
+    width: min(88vw, calc(86svh * 1.691558));
+    height: min(86svh, calc(88vw / 1.691558));
+    margin-top: clamp(4.5rem, 8vh, 7rem);
+    overflow: hidden;
+    cursor: none;
+    --loupe-size: clamp(200px, 25vw, 380px);
+    --loupe-scale: 2.85;
+}
+
+/* Crossfade de 3 capas de la ilustracion: la animacion base y
+   los retrasos (0s/3s/6s) se comparten con portada.css via
+   compartido.css; aca solo se agrega la transicion propia del
+   difuminado de la lupa. */
+.manifiesto-cuerpo-capa {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition:
+        filter 0.35s ease,
+        transform 0.35s ease;
+}
+
+.manifiesto-punto {
+    position: absolute;
+    z-index: 4;
+    display: block;
+    cursor: none;
+    pointer-events: none;
+    transform-origin: center;
+    transition: filter 0.35s ease;
+}
+
+/* La posicion de .manifiesto-punto-centro/.manifiesto-punto-patas
+   y el crossfade de .manifiesto-punto .punto-fotograma viven en
+   compartido.css (son identicos a los de la portada, porque
+   ilustran la misma pieza). */
+
+/* Mientras la lupa esta activa, la ilustracion de fondo se
+   desenfoca un poco para resaltar el area ampliada. */
+.manifiesto-fragmentado-cuerpo.esta-lupa-activo > .manifiesto-cuerpo-capa,
+.manifiesto-fragmentado-cuerpo.esta-lupa-activo > .manifiesto-punto {
+    filter: blur(3.2px) saturate(0.72) contrast(0.92);
+}
+
+/* Circulo que sigue al cursor (posicion puesta por JS via
+   left/top) y muestra una copia ampliada de la ilustracion
+   dentro (.manifiesto-lupa-ilustracion). */
+.manifiesto-lupa {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 28;
+    width: var(--loupe-size);
+    height: var(--loupe-size);
+    overflow: hidden;
+    pointer-events: none;
+    border: 1px solid rgba(17, 17, 17, 0.7);
+    border-radius: 50%;
+    opacity: 0;
+    background: #ffffff;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.86) inset,
+        0 0 42px rgba(255, 255, 255, 0.95),
+        0 22px 54px rgba(17, 17, 17, 0.2);
+    transform: translate3d(-50%, -50%, 0) scale(0.78) rotate(-2deg);
+    transition:
+        opacity 0.28s ease,
+        transform 0.4s cubic-bezier(0.2, 1.4, 0.32, 1);
+    will-change: left, top, transform;
+}
+
+.manifiesto-fragmentado-cuerpo.esta-lupa-activo .manifiesto-lupa {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(1) rotate(0deg);
+}
+
+.manifiesto-lupa-ilustracion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--manifest-art-width, 100px);
+    height: var(--manifest-art-height, 100px);
+    transform-origin: top left;
+    will-change: transform;
+}
+
+.manifiesto-lupa-ilustracion .manifiesto-cuerpo-capa,
+.manifiesto-lupa-ilustracion .manifiesto-punto {
+    filter: contrast(1.12) saturate(1.18);
+}
+
+/* Punto pequeño que reemplaza al cursor del sistema (oculto por
+   defecto ya que .manifiesto-fragmentado-cuerpo usa cursor: none). */
+.manifiesto-cursor-punto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 27;
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+    background: #111111;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.62);
+    transform: translate3d(-50%, -50%, 0) scale(0.78);
+    transition:
+        opacity 0.16s ease,
+        transform 0.18s ease;
+}
+
+.manifiesto-fragmentado-cuerpo.esta-cursor-punto-activo:not(.esta-lupa-activo) .manifiesto-cursor-punto {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) scale(1);
+}

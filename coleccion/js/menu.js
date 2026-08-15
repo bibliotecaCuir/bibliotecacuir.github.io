@@ -1,5 +1,5 @@
-const landingMenuToggle = document.querySelector(".landing-menu-toggle");
-const landingMenu = document.querySelector(".landing-menu");
+const landingMenuToggle = document.querySelector(".portada-menu-interruptor");
+const landingMenu = document.querySelector(".portada-menu");
 const compactNavigationQuery = window.matchMedia("(min-width: 701px)");
 let compactNavigationFrame = null;
 let compactNavigationExitTimer = null;
@@ -27,17 +27,17 @@ function stripAccentsFromCaosElements() {
 }
 
 function closeLandingMenu() {
-  document.body.classList.remove("is-landing-menu-open");
+  document.body.classList.remove("esta-portada-menu-abierto");
   landingMenuToggle?.setAttribute("aria-expanded", "false");
 }
 
 function toggleLandingMenu() {
-  const isOpen = document.body.classList.toggle("is-landing-menu-open");
+  const isOpen = document.body.classList.toggle("esta-portada-menu-abierto");
   landingMenuToggle?.setAttribute("aria-expanded", String(isOpen));
 }
 
 function compactNavigationThreshold() {
-  const hero = document.querySelector(".catalogo-hero, .book-hero");
+  const hero = document.querySelector(".catalogo-principal, .libro-principal");
   if (!hero) return Math.max(window.innerHeight * 0.35, 220);
   return hero.offsetTop + Math.min(hero.offsetHeight * 0.45, window.innerHeight * 0.7);
 }
@@ -49,22 +49,22 @@ function clearCompactNavigationExit() {
 }
 
 function setCompactNavigation(shouldShow) {
-  const isShowing = document.body.classList.contains("has-compact-nav");
+  const isShowing = document.body.classList.contains("tiene-compacta-navegacion");
 
   if (shouldShow) {
     clearCompactNavigationExit();
-    document.body.classList.remove("is-compact-nav-leaving");
-    document.body.classList.add("has-compact-nav");
+    document.body.classList.remove("esta-compacta-navegacion-saliendo");
+    document.body.classList.add("tiene-compacta-navegacion");
     closeLandingMenu();
     return;
   }
 
   if (!isShowing) return;
 
-  document.body.classList.add("is-compact-nav-leaving");
+  document.body.classList.add("esta-compacta-navegacion-saliendo");
   clearCompactNavigationExit();
   compactNavigationExitTimer = window.setTimeout(() => {
-    document.body.classList.remove("has-compact-nav", "is-compact-nav-leaving");
+    document.body.classList.remove("tiene-compacta-navegacion", "esta-compacta-navegacion-saliendo");
     compactNavigationExitTimer = null;
   }, 460);
 }
@@ -74,7 +74,7 @@ function updateCompactNavigation() {
 
   if (!compactNavigationQuery.matches) {
     clearCompactNavigationExit();
-    document.body.classList.remove("has-compact-nav", "is-compact-nav-leaving");
+    document.body.classList.remove("tiene-compacta-navegacion", "esta-compacta-navegacion-saliendo");
     return;
   }
 

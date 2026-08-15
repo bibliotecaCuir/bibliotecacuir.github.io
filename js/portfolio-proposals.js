@@ -1,13 +1,13 @@
-const proposalMenuToggle = document.querySelector(".proposal-menu-toggle");
-const proposalMenu = document.querySelector(".proposal-menu");
+const proposalMenuToggle = document.querySelector(".propuesta-menu-interruptor");
+const proposalMenu = document.querySelector(".propuesta-menu");
 
 function closeProposalMenu() {
-    document.body.classList.remove("is-landing-menu-open");
+    document.body.classList.remove("esta-portada-menu-abierto");
     proposalMenuToggle?.setAttribute("aria-expanded", "false");
 }
 
 proposalMenuToggle?.addEventListener("click", () => {
-    const isOpen = document.body.classList.toggle("is-landing-menu-open");
+    const isOpen = document.body.classList.toggle("esta-portada-menu-abierto");
 
     proposalMenuToggle.setAttribute("aria-expanded", String(isOpen));
 });

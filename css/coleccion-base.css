@@ -1,0 +1,99 @@
+/* ============================================================
+   coleccion-base.css — fundamentos de las paginas de coleccion
+   ------------------------------------------------------------
+   Variables, reset y utilidades que usan tanto el catalogo
+   (coleccion/index.html) como cada ficha de libro
+   (coleccion/html/*.html). Es un sistema de variables propio,
+   independiente de base.css del sitio principal (mismos
+   colores, pero sin el prefijo "--color-").
+
+   --peso-regular/--peso-medio se definen aca (y no en un
+   coleccion-pie.css propio) porque coleccion.css reutiliza
+   directamente el pie.css del sitio principal en vez de duplicar
+   sus ~220 lineas: son identicas, asi que coleccion solo
+   necesita aportar estas dos variables que pie.css espera.
+   ============================================================ */
+
+:root {
+  --font-texto: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-proyecto: "Caos Marika", var(--font-texto);
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --negro: #111111;
+  --blanco: #ffffff;
+  --verde: #2aec57;
+  --azul: #6858fd;
+  --rosado: #fe62de;
+  --rosado-claro: #f7a7df;
+  --color-lettering: #e6007e;
+  --gris: #f2f2f2;
+  --borde: rgba(17, 17, 17, 0.28);
+  --espacio-pagina: clamp(1rem, 4vw, 4rem);
+}
+
+/* Misma fuente dibujada a mano que usa el resto del sitio, pero
+   cargada desde la URL absoluta de GitHub Pages en vez de una
+   ruta relativa (las fichas de libro y el catalogo se generan
+   como HTML estatico y no siempre viven junto a /assets/). */
+@font-face {
+  font-family: "Caos Marika";
+  src: url("https://bibliotecacuir.github.io/assets/fonts/CAOSMARIKA-patched.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Utilidad de accesibilidad: oculta visualmente un elemento sin
+   quitarlo del arbol (sigue siendo leido por lectores de
+   pantalla). */
+.visualmente-solo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--negro);
+  background: var(--blanco);
+  font-family: var(--font-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+/* Enlace "saltar al contenido": invisible hasta que se enfoca
+   con teclado (tab), pensado para lectores de pantalla y
+   navegacion por teclado. */
+.saltar-enlace {
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  z-index: 100;
+  padding: 0.7rem 1rem;
+  background: var(--verde);
+  text-decoration: none;
+  transform: translate(-50%, -180%);
+}
+
+.saltar-enlace:focus {
+  transform: translate(-50%, 0);
+}

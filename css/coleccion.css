@@ -1,0 +1,36 @@
+/* ============================================================
+   coleccion.css — punto de entrada de los estilos de coleccion
+   ------------------------------------------------------------
+   Enlazado por coleccion/index.html (el catalogo) y por cada
+   ficha de libro generada en coleccion/html/*.html (ver
+   coleccion/generar-html-libros.js). Vive junto al resto de los
+   estilos en /css/ — antes vivia en /coleccion/css/estilo.css,
+   como un sistema separado.
+
+   Organizacion:
+     coleccion-base.css        variables, tipografia, reset
+     coleccion-navegacion.css  cabecera, logo y menu (propios de
+                                coleccion, no compartidos: tienen
+                                su propio z-index y sus propios
+                                tiempos de animacion)
+     coleccion-catalogo.css    indice/grilla de la coleccion
+     coleccion-libro.css       ficha individual de un libro
+     pie.css                   el pie de pagina del sitio
+                                principal, reutilizado tal cual
+                                (es identico al que tenia
+                                coleccion, asi que no se duplica)
+     coleccion-adaptable.css   TODOS los media queries, al final
+
+   Nota: pie.css es del sitio principal (css/pie.css), no de
+   coleccion — se importa directamente porque coleccion-base.css
+   ya define las dos variables (--peso-regular/--peso-medio) que
+   necesita. Si el pie de pagina del sitio principal cambia,
+   coleccion lo hereda automaticamente.
+   ============================================================ */
+
+@import url("coleccion-base.css");
+@import url("coleccion-navegacion.css");
+@import url("coleccion-catalogo.css");
+@import url("coleccion-libro.css");
+@import url("pie.css");
+@import url("coleccion-adaptable.css");

@@ -1,0 +1,1092 @@
+/* ============================================================
+   adaptable.css — ajustes por tamaño de pantalla
+   ------------------------------------------------------------
+   Se importa AL FINAL desde estilo.css, despues de todos los
+   demas archivos, para que estos media queries puedan
+   sobreescribir los estilos "de escritorio" definidos en
+   base.css / portada.css / navegacion.css / portafolio.css /
+   propuesta.css / manifiesto.css / donacion.css / pie.css.
+
+   Los breakpoints estan en el mismo orden en que aparecian en
+   el archivo original (de mas ancho a mas angosto), agrupados
+   por la seccion del sitio que afectan.
+   ============================================================ */
+
+
+/* --- Propuestas de portafolio en pantallas medianas/chicas ------- */
+
+@media (max-width: 980px) {
+    .propuesta-grilla-02 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .propuesta-grilla-01 {
+        column-count: 2;
+    }
+
+    .propuesta-grilla-03 {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+
+    .propuesta-03-tarjeta,
+    .propuesta-03-tarjeta:nth-child(8n + 1),
+    .propuesta-03-tarjeta:nth-child(8n + 6),
+    .propuesta-03-tarjeta:nth-child(8n + 3),
+    .propuesta-03-tarjeta:nth-child(8n + 7) {
+        grid-column: span 4;
+    }
+
+    .propuesta-03-tarjeta:nth-last-child(2) {
+        grid-column: 1 / span 4;
+    }
+
+    .propuesta-03-tarjeta:last-child {
+        grid-column: 5 / span 4;
+    }
+}
+
+/* Propuestas de portafolio en 1 columna, y la lupa del manifiesto
+   se simplifica en pantallas mas chicas (sin cursor personalizado,
+   ya que en touch no hay hover). */
+@media (max-width: 680px) {
+    .propuesta-cabecera {
+        grid-template-columns: 1fr;
+        padding-right: 4.75rem;
+    }
+
+    .propuesta-grilla-02,
+    .propuesta-grilla-03 {
+        grid-template-columns: 1fr;
+    }
+
+    .propuesta-grilla-01 {
+        column-count: 1;
+    }
+
+    .propuesta-03-tarjeta,
+    .propuesta-03-tarjeta:nth-child(8n + 1),
+    .propuesta-03-tarjeta:nth-child(8n + 6),
+    .propuesta-03-tarjeta:nth-child(8n + 3),
+    .propuesta-03-tarjeta:nth-child(8n + 7),
+    .propuesta-03-tarjeta:nth-last-child(2),
+    .propuesta-03-tarjeta:last-child {
+        grid-column: 1;
+    }
+
+    .propuesta-intro-02 {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .propuesta-intro-02 h1 {
+        justify-self: start;
+    }
+
+    .manifiesto-fragmentado-cuerpo {
+        width: min(94vw, calc(82svh * 1.691558));
+        height: min(82svh, calc(94vw / 1.691558));
+        margin-top: clamp(4.5rem, 9vh, 6rem);
+        cursor: auto;
+        --loupe-size: clamp(156px, 44vw, 250px);
+    }
+
+    .manifiesto-lupa,
+    .manifiesto-cursor-punto {
+        display: none;
+    }
+}
+
+
+/* --- Portafolio en tablet -------------------------------------- */
+
+@media (max-width: 760px) {
+    .portafolio-cabecera {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .portafolio-seccion .portafolio-cabecera {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 0.75rem 1rem 0;
+    }
+
+    .portafolio-seccion .portafolio-logo {
+        width: clamp(78px, 22vw, 98px);
+        margin-left: auto;
+    }
+
+    .portafolio-superior-navegacion {
+        justify-content: flex-start;
+    }
+
+    .portafolio-indice,
+    .portafolio-detalle {
+        width: min(100% - 2rem, 1480px);
+    }
+
+    .portafolio-seccion .portafolio-detalle {
+        width: min(100% - 1.5rem, 760px);
+        margin-top: -0.35rem;
+    }
+
+    .portafolio-principal,
+    .portafolio-detalle-principal {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding: 0.6rem 0 1rem;
+    }
+
+    .portafolio-principal h1,
+    .portafolio-detalle-principal h1 {
+        font-size: clamp(4rem, 24vw, 7.2rem);
+    }
+
+    .portafolio-enlace-tarjeta span {
+        font-size: clamp(2.25rem, 14vw, 4.4rem);
+    }
+
+    .portafolio-seccion .portafolio-detalle-principal h1 {
+        font-size: clamp(5.1rem, 30vw, 8.2rem);
+        white-space: nowrap;
+    }
+
+    .portafolio-seccion .portafolio-contenido,
+    .portafolio-seccion .portafolio-entrada,
+    .portafolio-seccion .portafolio-entrada h2,
+    .portafolio-seccion .portafolio-entrada p {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .portafolio-proyecto-indice {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .portafolio-proyecto-tarjeta h2 {
+        font-size: clamp(2.05rem, 10vw, 3.4rem);
+    }
+
+    .portafolio-proyecto-tarjeta p {
+        max-width: none;
+    }
+
+    .portafolio-seccion .portafolio-entrada {
+        justify-items: stretch;
+    }
+
+    .portafolio-seccion .portafolio-entrada h2 {
+        font-size: clamp(2.15rem, 10vw, 3.4rem);
+        white-space: normal;
+    }
+
+    .portafolio-practicas .portafolio-entrada h2,
+    .portafolio-activaciones .portafolio-entrada h2 {
+        font-size: clamp(1.95rem, 8.8vw, 3.15rem);
+        white-space: nowrap;
+    }
+
+    .portafolio-seccion .portafolio-entrada p {
+        overflow-wrap: break-word;
+    }
+
+    .portafolio-principal-franja,
+    .portafolio-imagen-franja,
+    .portafolio-enlaces {
+        grid-template-columns: 1fr;
+    }
+
+    .portafolio-principal-franja {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .portafolio-imagen-franja img:nth-child(3) {
+        display: block;
+    }
+
+    .portafolio-principal-franja img,
+    .portafolio-imagen-franja img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .portafolio-principal-franja img:nth-child(2),
+    .portafolio-imagen-franja img:nth-child(2) {
+        transform: none;
+    }
+
+    .portafolio-enlace-tarjeta {
+        min-height: 150px;
+    }
+
+    .portafolio-multimedia,
+    .portafolio-multimedia-unico {
+        width: min(100%, 760px);
+    }
+
+    .portafolio-multimedia img {
+        height: clamp(260px, 78vw, 500px);
+    }
+
+    .portafolio-multimedia img.portafolio-imagen-retrato {
+        height: clamp(360px, 112vw, 680px);
+    }
+
+    .portafolio-multimedia-unico img {
+        height: clamp(300px, 92vw, 600px);
+    }
+
+    .proyecto-vecinos {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto-vecino-enlace {
+        min-height: 104px;
+    }
+
+    .proyecto-vecino-enlace-siguiente {
+        text-align: left;
+    }
+
+    .proyecto-vecino-enlace-siguiente::before {
+        transform-origin: left center;
+    }
+
+    .proyecto-vecino-enlace-siguiente strong {
+        justify-self: start;
+    }
+}
+
+
+/* --- Menu compacto de escritorio (>= 701px) ---------------------
+   En pantallas anchas, cuando JS agrega la clase
+   body.tiene-compacta-navegacion, la cabecera y el menu de pantalla completa
+   se reemplazan por una barra horizontal fija arriba (mismo
+   patron que un "sticky nav" que aparece al hacer scroll). */
+
+@media (min-width: 701px) {
+    .portada-menu {
+        gap: clamp(1.35rem, 2.35vw, 2rem);
+        width: min(420px, calc(100% - 1rem));
+        padding-right: clamp(1.1rem, 2.6vw, 2.2rem);
+        padding-left: clamp(0.85rem, 2vw, 1.4rem);
+    }
+
+    .portada-menu a {
+        gap: 0.42em;
+        font-size: clamp(1.78rem, 2.65vw, 2.58rem);
+    }
+
+    .portada-menu a::before {
+        flex-basis: 1em;
+        width: 1em;
+        font-size: 0.72em;
+    }
+
+    body.tiene-compacta-navegacion .sitio-cabecera {
+        top: 5px;
+        left: 14px;
+        z-index: 34;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    body.tiene-compacta-navegacion.esta-desplazado .sitio-cabecera,
+    body.tiene-compacta-navegacion.esta-en-pie .sitio-cabecera {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+    }
+
+    body.tiene-compacta-navegacion .sitio-logo {
+        width: 72px;
+    }
+
+    body.tiene-compacta-navegacion .sitio-logo-blanco {
+        opacity: 0;
+    }
+
+    body.tiene-compacta-navegacion .sitio-logo-negro {
+        opacity: 1;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu-interruptor {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.75);
+    }
+
+    body.tiene-compacta-navegacion .fondo-interruptor {
+        top: 96px;
+        color: #111111;
+        background: rgba(255, 255, 255, 0.86);
+        border-color: rgba(17, 17, 17, 0.2);
+    }
+
+    body.tiene-compacta-navegacion .portada-menu {
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 33;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: row;
+        gap: clamp(1rem, 2.6vw, 2.8rem);
+        width: 100%;
+        height: 82px;
+        padding: 0 clamp(1rem, 3vw, 2.6rem) 0 100px;
+        background: rgba(255, 255, 255, 0.94);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+        backdrop-filter: blur(14px);
+        transform: translate3d(0, 0, 0);
+        transition: none;
+        animation: navegacion-compacta-entrar 0.45s cubic-bezier(0.2, 0.8, 0.25, 1) both;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a {
+        gap: 0;
+        color: #111111;
+        font-family: var(--font-texto);
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
+        font-weight: var(--peso-medio);
+        letter-spacing: 0.02em;
+        opacity: 1;
+        transform: none;
+        animation: enlace-compacto-entrar 0.28s ease-out both;
+    }
+
+    /* Cuando el link define data-compact-label, se reemplaza el
+       texto original por esa etiqueta corta (pensada para caber
+       en la barra angosta). */
+    body.tiene-compacta-navegacion .portada-menu a[data-compact-label] {
+        font-size: 0;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a[data-compact-label]::after {
+        content: attr(data-compact-label);
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a:nth-child(1) {
+        animation-delay: 0.18s;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a:nth-child(2) {
+        animation-delay: 0.23s;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a:nth-child(3) {
+        animation-delay: 0.28s;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a:nth-child(4) {
+        animation-delay: 0.33s;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a:nth-child(5) {
+        animation-delay: 0.38s;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a:nth-child(6) {
+        animation-delay: 0.43s;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a::before {
+        display: none;
+    }
+
+    body.tiene-compacta-navegacion .portada-menu a:hover,
+    body.tiene-compacta-navegacion .portada-menu a:focus-visible {
+        color: var(--color-rosado);
+        transform: translateY(-2px);
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu {
+        animation-name: navegacion-compacta-salir;
+        animation-duration: 0.22s;
+        animation-timing-function: ease-in;
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu a {
+        animation: enlace-compacto-salir 0.1s ease-in both;
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu a:nth-child(1) {
+        animation-delay: 0.08s;
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu a:nth-child(2) {
+        animation-delay: 0.06s;
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu a:nth-child(3) {
+        animation-delay: 0.04s;
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu a:nth-child(4) {
+        animation-delay: 0.02s;
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu a:nth-child(5) {
+        animation-delay: 0s;
+    }
+
+    body.tiene-compacta-navegacion.esta-compacta-navegacion-saliendo .portada-menu a:nth-child(6) {
+        animation-delay: 0s;
+    }
+}
+
+
+/* --- Donaciones en tablet ---------------------------------------- */
+
+@media (max-width: 980px) {
+    .donacion-principal,
+    .donacion-grilla,
+    .donacion-grilla-tres,
+    .donacion-opcion-grilla,
+    .donacion-subida-grilla {
+        grid-template-columns: 1fr;
+    }
+
+    .donacion-principal {
+        align-items: start;
+    }
+
+    .donacion-protocolo-nota {
+        width: min(100%, 420px);
+    }
+}
+
+
+/* --- Mobile (<= 700px): cabecera, menu, portada y pie ------------
+   El breakpoint mas grande del sitio: reduce la cabecera y activa
+   el menu movil alternativo (.movil-menu-interruptor/.movil-menu en
+   vez de .portada-menu-interruptor/.portada-menu), reposiciona todos
+   los elementos decorativos de la portada (color-diapositivas,
+   puntos, vitrina ovalada, nube de libros, constelacion), y
+   apila el pie en menos columnas. */
+
+@media (max-width: 700px) {
+    .sitio-cabecera {
+        top: 0.85rem;
+        left: 0.85rem;
+        z-index: 24;
+    }
+
+    .sitio-logo {
+        width: clamp(86px, 28vw, 132px);
+    }
+
+    .portada-menu-interruptor {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 44px;
+        height: 44px;
+        transition: none;
+    }
+
+    .portada-menu-linea {
+        transition: none;
+    }
+
+    .fondo-interruptor {
+        top: 3.9rem;
+        right: 0.75rem;
+        min-width: 106px;
+        min-height: 32px;
+        font-size: 0.62rem;
+        transition: none;
+    }
+
+    .portada-menu {
+        gap: 1.55rem;
+    }
+
+    .portada-menu a {
+        font-size: clamp(2rem, 10vw, 3.15rem);
+    }
+
+    .donacion-contenedor {
+        padding-top: 8rem;
+    }
+
+    .donacion-principal h1 {
+        font-size: clamp(3rem, 16vw, 4.1rem);
+    }
+
+    body.esta-desplazado .sitio-cabecera {
+        opacity: 0.84;
+        transform: translate(0, 0) scale(0.72);
+    }
+
+    body.esta-en-pie .sitio-cabecera {
+        opacity: 0;
+        transform: translate(-10px, -10px) scale(0.62);
+    }
+
+    /* Menu movil alternativo (reemplaza a .portada-menu-interruptor /
+       .portada-menu en pantallas chicas): icono hamburguesa que
+       despliega un panel angosto arriba de la pantalla. */
+    .movil-menu-interruptor {
+        position: fixed;
+        top: 0.85rem;
+        right: 0.85rem;
+        z-index: 31;
+        display: grid;
+        place-content: center;
+        gap: 4px;
+        width: 44px;
+        aspect-ratio: 1;
+        padding: 0;
+        color: #111111;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(17, 17, 17, 0.62);
+        border-radius: 999px;
+        cursor: pointer;
+        backdrop-filter: blur(8px);
+        transition:
+            background 0.24s ease,
+            opacity 0.28s ease,
+            transform 0.28s ease;
+    }
+
+    .movil-menu-interruptor span:not(.visualmente-solo) {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: currentColor;
+        transform-origin: center;
+        transition:
+            opacity 0.22s ease,
+            transform 0.28s cubic-bezier(0.2, 1.2, 0.32, 1);
+    }
+
+    body.esta-menu-abierto .movil-menu-interruptor {
+        background: var(--color-rosado-claro);
+    }
+
+    body.esta-menu-abierto .movil-menu-interruptor span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    body.esta-menu-abierto .movil-menu-interruptor span:nth-child(2) {
+        opacity: 0;
+    }
+
+    body.esta-menu-abierto .movil-menu-interruptor span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    body.esta-en-pie .movil-menu-interruptor {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-12px);
+    }
+
+    .movil-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 30;
+        display: grid;
+        justify-items: center;
+        gap: 0.65rem;
+        padding: 5.4rem 1.1rem 1.65rem;
+        background: rgba(247, 167, 223, 0.94);
+        border-bottom: 1px solid rgba(17, 17, 17, 0.28);
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
+        transform: translateY(-105%);
+        transition: transform 0.34s cubic-bezier(0.2, 1, 0.32, 1);
+        backdrop-filter: blur(10px);
+    }
+
+    .movil-menu a {
+        color: #111111;
+        font-family: var(--font-proyecto);
+        font-size: clamp(1.35rem, 7.8vw, 2.25rem);
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+        text-transform: lowercase;
+    }
+
+    body.esta-menu-abierto .movil-menu {
+        transform: translateY(0);
+    }
+
+    body.esta-en-pie .movil-menu {
+        transform: translateY(-105%);
+    }
+
+    /* Portada: el diapositivas de color y los puntos rotan 90° y
+       se reacomodan para el formato vertical del celular; el
+       principal con puntos grandes se apaga y se usan los puntos
+       sobre el color-diapositivas en su lugar. */
+    .color-diapositivas {
+        width: 100%;
+        height: min(176vw, 100vh);
+        margin-top: 4.2rem;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .imagen-horizontal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: min(112vw, 70vh);
+        max-width: none;
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.06);
+        transform-origin: center;
+    }
+
+    .imagen-horizontal:not(:first-child) {
+        top: 50%;
+        left: 50%;
+    }
+
+    .principal-punto {
+        display: none;
+    }
+
+    .ovalo-vitrina {
+        min-height: 480px;
+        padding: 0 0.75rem;
+    }
+
+    .ovalo-vitrina-fotograma {
+        width: calc(100% - 1.5rem);
+        min-height: 420px;
+    }
+
+    .ovalo-carrusel-elemento {
+        width: clamp(118px, 34vw, 168px);
+    }
+
+    .ovalo-carrusel {
+        --oval-mobile-offset: 28px;
+    }
+
+    .ovalo-carrusel-info {
+        padding: 0.35rem;
+    }
+
+    .ovalo-carrusel-elemento.esta-frontal.esta-activo,
+    .ovalo-carrusel-elemento.esta-frontal:focus-within {
+        filter: brightness(1.05);
+    }
+
+    .punto-centro {
+        top: 51%;
+        left: 52%;
+        display: block;
+        width: clamp(104px, 35vw, 166px);
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .punto-centro:hover,
+    .punto-centro:focus-visible {
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.06);
+    }
+
+    .punto-patas {
+        top: 77%;
+        left: 76%;
+        display: block;
+        width: clamp(142px, 50vw, 235px);
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .punto-patas:hover,
+    .punto-patas:focus-visible {
+        transform: translate(-50%, -50%) rotate(90deg) scale(1.04);
+    }
+
+    /* Nube de libros: mismos 16 libros que en escritorio
+       (portada.css) pero con posiciones y rotaciones propias
+       para el formato vertical. */
+    .libro-nube {
+        min-height: 740px;
+        margin-top: 5rem;
+        overflow: visible;
+    }
+
+    .libro-marcador {
+        width: clamp(54px, 17vw, 82px);
+    }
+
+    .libro-pequeno {
+        width: clamp(46px, 14vw, 68px);
+    }
+
+    .libro-alto {
+        width: clamp(58px, 18vw, 88px);
+    }
+
+    .libro-ancho {
+        width: clamp(62px, 20vw, 96px);
+    }
+
+    .libro-inclinado {
+        width: clamp(58px, 18vw, 86px);
+    }
+
+    .libro-marcador:nth-child(1) {
+        top: 10%;
+        left: 18%;
+        --book-rotation: -11deg;
+    }
+
+    .libro-marcador:nth-child(2) {
+        top: 17%;
+        left: 48%;
+        --book-rotation: 7deg;
+    }
+
+    .libro-marcador:nth-child(3) {
+        top: 9%;
+        left: 80%;
+        --book-rotation: -5deg;
+    }
+
+    .libro-marcador:nth-child(4) {
+        top: 28%;
+        left: 28%;
+        --book-rotation: 12deg;
+    }
+
+    .libro-marcador:nth-child(5) {
+        top: 34%;
+        left: 68%;
+        --book-rotation: -9deg;
+    }
+
+    .libro-marcador:nth-child(6) {
+        top: 24%;
+        left: 91%;
+        --book-rotation: 6deg;
+    }
+
+    .libro-marcador:nth-child(7) {
+        top: 46%;
+        left: 12%;
+        --book-rotation: 9deg;
+    }
+
+    .libro-marcador:nth-child(8) {
+        top: 51%;
+        left: 42%;
+        --book-rotation: -13deg;
+    }
+
+    .libro-marcador:nth-child(9) {
+        top: 49%;
+        left: 78%;
+        --book-rotation: 4deg;
+    }
+
+    .libro-marcador:nth-child(10) {
+        top: 63%;
+        left: 24%;
+        --book-rotation: -7deg;
+    }
+
+    .libro-marcador:nth-child(11) {
+        top: 68%;
+        left: 58%;
+        --book-rotation: 11deg;
+    }
+
+    .libro-marcador:nth-child(12) {
+        top: 61%;
+        left: 92%;
+        --book-rotation: -4deg;
+    }
+
+    .libro-marcador:nth-child(13) {
+        top: 82%;
+        left: 14%;
+        --book-rotation: -12deg;
+    }
+
+    .libro-marcador:nth-child(14) {
+        top: 88%;
+        left: 46%;
+        --book-rotation: 5deg;
+    }
+
+    .libro-marcador:nth-child(15) {
+        top: 79%;
+        left: 74%;
+        --book-rotation: -8deg;
+    }
+
+    .libro-marcador:nth-child(16) {
+        top: 91%;
+        left: 91%;
+        --book-rotation: 10deg;
+    }
+
+    .libro-coleccion-adhesivo {
+        top: auto;
+        right: 2rem;
+        bottom: 3rem;
+        left: auto;
+        width: clamp(118px, 32vw, 150px);
+        min-height: 62px;
+        padding: 0.68rem 0.58rem;
+        font-size: clamp(1.08rem, 5.8vw, 1.46rem);
+        box-shadow: 0 4px 8px rgba(17, 17, 17, 0.14);
+        transform: rotate(7deg);
+    }
+
+    .libro-coleccion-adhesivo:hover,
+    .libro-coleccion-adhesivo:focus-visible {
+        transform: rotate(5deg) scale(1.03);
+    }
+
+    .imagen-constelacion {
+        min-height: 760px;
+        margin-top: 5.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .imagen-constelacion-escena {
+        inset: 0 -3% 14%;
+    }
+
+    /* En mobile solo se muestran 8 de las imagenes de la
+       constelacion (cada 3ra aprox.), para no saturar la
+       pantalla. */
+    .constelacion-imagen {
+        display: none;
+        width: clamp(118px, calc(var(--image-size) * 1.68), 248px);
+    }
+
+    .constelacion-imagen:nth-child(1),
+    .constelacion-imagen:nth-child(4),
+    .constelacion-imagen:nth-child(7),
+    .constelacion-imagen:nth-child(10),
+    .constelacion-imagen:nth-child(13),
+    .constelacion-imagen:nth-child(16),
+    .constelacion-imagen:nth-child(20),
+    .constelacion-imagen:nth-child(24) {
+        display: block;
+    }
+
+    .constelacion-imagen:hover,
+    .constelacion-imagen:focus-visible {
+        --image-scale: 1.4;
+    }
+
+    /* Pie: pasa de 6 columnas a 2, y la barra de navegacion
+       inferior de la portada se oculta (queda solo el menu). */
+    .sitio-pie {
+        margin-top: 1.5rem;
+    }
+
+    .pie-seguir {
+        align-items: center;
+        min-height: 72px;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0.7rem;
+    }
+
+    .pie-seguir a {
+        font-size: clamp(0.82rem, 3.6vw, 1rem);
+        white-space: nowrap;
+    }
+
+    .pie-seguir-icono {
+        width: clamp(30px, 8.5vw, 38px);
+    }
+
+    .pie-contenedor {
+        padding-right: 1.25rem;
+        padding-left: 1.25rem;
+    }
+
+    .pie-contenedor h2 {
+        max-width: 100%;
+        font-size: clamp(1.55rem, 9.2vw, 4.2rem);
+    }
+
+    .pie-titulo-linea {
+        white-space: nowrap;
+    }
+
+    .pie-visita p:first-of-type {
+        max-width: none;
+        white-space: nowrap;
+    }
+
+    .pie-contacto p {
+        max-width: 12ch;
+        white-space: normal;
+    }
+
+    .pie-contenido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.3rem 1.1rem;
+    }
+
+    .pie-marca {
+        grid-column: 1 / -1;
+        width: 96px;
+    }
+
+    .pie-contacto {
+        grid-column: auto;
+    }
+
+    .pie-enlaces[aria-label="Aprender"] {
+        transform: translateY(-0.45rem);
+    }
+
+    .pie-boletin {
+        grid-column: 1 / -1;
+    }
+
+    .pie-boletin label {
+        max-width: none;
+        font-size: clamp(0.68rem, 3.4vw, 0.82rem);
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .pie-legal {
+        align-items: center;
+        flex-direction: row;
+        gap: 0.45rem;
+        justify-content: space-between;
+        padding: 0.7rem 1.25rem 0.85rem;
+        font-size: clamp(0.48rem, 2.25vw, 0.62rem);
+        white-space: nowrap;
+    }
+
+    .pie-legal nav {
+        flex-wrap: nowrap;
+        gap: 0.45rem;
+    }
+
+    .proyecto-galeria {
+        grid-template-columns: 1fr;
+        width: min(100% - 2rem, 520px);
+        margin-top: 1rem;
+    }
+
+    .inferior-navegacion {
+        display: none;
+    }
+}
+
+
+/* --- Menos movimiento (accesibilidad) -----------------------------
+   Respeta prefers-reduced-motion: apaga animaciones/transiciones y
+   fija los elementos animados en una posicion estatica razonable
+   (por ejemplo, el carrusel ovalado queda en una sola disposicion
+   fija en vez de rotar). */
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .presentacion-diapositiva {
+        display: none;
+        transition: none;
+    }
+
+    .presentacion-diapositiva.esta-activo {
+        display: block;
+        opacity: 1;
+        transform: none;
+    }
+
+    .presentacion-desplazamiento span:last-child {
+        animation: none;
+    }
+
+    .portada-menu,
+    .portada-menu a,
+    .proyecto-vecino-enlace::before,
+    .proyecto-vecino-enlace span,
+    .proyecto-vecino-enlace strong,
+    .proyecto-vecino-enlace small {
+        transition: none;
+    }
+
+    .ovalo-carrusel-elemento:nth-child(1) {
+        z-index: 3;
+        transform: translate(-50%, -50%) translate(0, 80%);
+    }
+
+    .ovalo-carrusel-elemento:nth-child(2) {
+        z-index: 2;
+        transform: translate(-50%, -50%) translate(140%, 15%);
+    }
+
+    .ovalo-carrusel-elemento:nth-child(3) {
+        z-index: 1;
+        opacity: 1;
+        transform: translate(-50%, -50%) translate(55%, -115%);
+    }
+
+    .ovalo-carrusel-elemento:nth-child(4) {
+        z-index: 2;
+        transform: translate(-50%, -50%) translate(-140%, -20%);
+    }
+
+    .ovalo-carrusel-elemento:nth-child(n + 5) {
+        display: none;
+    }
+
+    .imagen-constelacion-escena {
+        transform: none;
+        transition: none;
+    }
+
+    .constelacion-imagen {
+        transform:
+            translate(-50%, -50%);
+    }
+
+    .libro-marcador {
+        animation: none;
+    }
+
+    .sitio-pie::after {
+        animation: none;
+    }
+}
+
+
+/* --- Anchos intermedios (tablet) ---------------------------------- */
+
+@media (min-width: 701px) and (max-width: 1100px) {
+    .pie-contenido {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pie-boletin {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 980px) {
+    .proyecto-galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

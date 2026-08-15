@@ -1,4 +1,4 @@
-const coverImage = document.querySelector(".book-cover-frame img[data-remove-white-bg]");
+const coverImage = document.querySelector(".libro-portada-marco img[data-remove-white-bg]");
 
 function isBackgroundPixel(data, index) {
   const red = data[index];
@@ -62,7 +62,7 @@ function removeEdgeWhiteBackground(img) {
 
   context.putImageData(imageData, 0, 0);
   img.src = canvas.toDataURL("image/png");
-  img.classList.add("is-background-removed");
+  img.classList.add("esta-fondo-removido");
 }
 
 if (coverImage) {
@@ -72,14 +72,14 @@ if (coverImage) {
     try {
       removeEdgeWhiteBackground(coverImage);
     } catch (error) {
-      coverImage.classList.add("is-background-kept");
+      coverImage.classList.add("esta-fondo-mantenido");
     }
   } else {
     coverImage.addEventListener("load", () => {
       try {
         removeEdgeWhiteBackground(coverImage);
       } catch (error) {
-        coverImage.classList.add("is-background-kept");
+        coverImage.classList.add("esta-fondo-mantenido");
       }
     }, { once: true });
   }

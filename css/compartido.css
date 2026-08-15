@@ -1,0 +1,85 @@
+/* ============================================================
+   compartido.css — patrones repetidos entre portada y manifiesto
+   ------------------------------------------------------------
+   La portada (portada.css) y el manifiesto (manifiesto.css)
+   ilustran la misma pieza central, asi que comparten dos
+   patrones exactos: el crossfade de 3 imagenes en loop, y la
+   posicion de los dos puntos "centro"/"patas" sobre la
+   ilustracion. Cada pagina agrega su propia interaccion encima
+   (la portada tiene estados :hover porque sus puntos son
+   enlaces; el manifiesto tiene el difuminado de la lupa).
+   ============================================================ */
+
+/* --- Crossfade de 3 imagenes en loop ---------------------------
+   Usado por .imagen-horizontal y .punto-fotograma (portada.css),
+   y por .manifiesto-cuerpo-capa y .manifiesto-punto .punto-fotograma
+   (manifiesto.css). Cada imagen aparece 9s despues de la
+   anterior (retrasos de 0s/3s/6s), dando la sensacion de que la
+   ilustracion cambia de color sola. */
+.imagen-horizontal,
+.punto-fotograma,
+.manifiesto-cuerpo-capa,
+.manifiesto-punto .punto-fotograma {
+    opacity: 0;
+    animation: cambio-color 9s ease-in-out infinite;
+}
+
+.imagen-horizontal:not(:first-child),
+.punto-fotograma:not(:first-child),
+.manifiesto-punto .punto-fotograma:not(:first-child) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imagen-horizontal:nth-child(2),
+.punto-fotograma:nth-child(2),
+.manifiesto-cuerpo-capa:nth-child(2),
+.manifiesto-punto .punto-fotograma:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.imagen-horizontal:nth-child(3),
+.punto-fotograma:nth-child(3),
+.manifiesto-cuerpo-capa:nth-child(3),
+.manifiesto-punto .punto-fotograma:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes cambio-color {
+    0% {
+        opacity: 0;
+    }
+
+    8%,
+    33% {
+        opacity: 1;
+    }
+
+    45%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* --- Posicion de los puntos "centro" y "patas" ------------------
+   Mismas coordenadas en portada.css (.punto-centro/.punto-patas,
+   clicables) y en manifiesto.css (.manifiesto-punto-centro/
+   .manifiesto-punto-patas, decorativos): ambas paginas ubican
+   los puntos sobre la misma ilustracion. */
+.punto-centro,
+.manifiesto-punto-centro {
+    top: 47.9%;
+    left: 51.98%;
+    width: 12.8%;
+    transform: translate(-50%, -50%) rotate(-1deg);
+}
+
+.punto-patas,
+.manifiesto-punto-patas {
+    top: 17.7%;
+    left: 62.7%;
+    width: 20%;
+    transform: rotate(1deg);
+}
