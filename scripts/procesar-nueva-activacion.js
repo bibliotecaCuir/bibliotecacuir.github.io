@@ -1,3 +1,3 @@
 const { ejecutar } = require("./lib/procesar-formulario.js");
 
-ejecutar("practicas", { nombreSingular: "práctica" });
+ejecutar("activaciones", { nombreSingular: "activación" });

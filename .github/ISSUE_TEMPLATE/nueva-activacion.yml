@@ -1,0 +1,57 @@
+name: Nueva activación (o edición de una existente)
+description: Agregá o editá una activación de la Biblioteca Cuir sin tocar código.
+title: "[activación] "
+labels: ["nueva-activacion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completá este formulario para agregar una activación nueva a
+        [bibliotecacuir.github.io/activaciones.html](https://bibliotecacuir.github.io/activaciones.html),
+        o para editar una que ya existe (usá el mismo "Slug" que tiene esa activación).
+        Un robot va a procesar este formulario automáticamente y te va a avisar acá mismo cuando esté listo.
+
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      description: El nombre de la activación, tal como se va a mostrar en el sitio.
+      placeholder: "Convite marika - encuentro"
+    validations:
+      required: true
+
+  - type: textarea
+    id: parrafos
+    attributes:
+      label: Párrafos
+      description: >
+        El texto que describe la activación. Escribí cada párrafo separado por una
+        línea en blanco (como en un documento normal).
+      placeholder: |
+        Primer párrafo...
+
+        Segundo párrafo...
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Slug (opcional)
+      description: >
+        Es la parte del link (ejemplo: "convite-marika" en /portafolio/activaciones/convite-marika.html).
+        Dejalo vacío si es una activación nueva y queremos generarlo automáticamente a partir del título.
+        Completalo con el slug existente si querés editar una activación que ya está publicada.
+      placeholder: "convite-marika"
+    validations:
+      required: false
+
+  - type: textarea
+    id: imagenes
+    attributes:
+      label: Imágenes
+      description: >
+        Arrastrá o pegá acá las fotos de la activación (podés soltar varios archivos a la vez).
+        Se van a agregar en el orden en que las sueltes.
+    validations:
+      required: false

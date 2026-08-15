@@ -1,7 +1,7 @@
 const { generarSeccion } = require("./lib/generar-portafolio.js");
 
 function generar() {
-  generarSeccion("practicas");
+  generarSeccion("activaciones");
 }
 
 module.exports = { generar };

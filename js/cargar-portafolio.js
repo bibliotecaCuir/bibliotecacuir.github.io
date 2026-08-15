@@ -1,8 +1,10 @@
-const container = document.querySelector("#practicasProyectos");
+const container = document.querySelector(".portfolio-project-index[data-categoria]");
 
 if (!container) {
-  throw new Error("No se encontró el contenedor #practicasProyectos.");
+  throw new Error("No se encontró el contenedor .portfolio-project-index[data-categoria].");
 }
+
+const categoria = container.dataset.categoria;
 
 function escaparHTML(valor) {
   return String(valor || "")
@@ -25,7 +27,7 @@ function crearTarjeta(proyecto) {
 
   const enlace = document.createElement("a");
   enlace.className = "portfolio-project-card";
-  enlace.href = `/portafolio/practicas/${proyecto.slug}.html`;
+  enlace.href = `/portafolio/${categoria}/${proyecto.slug}.html`;
   enlace.innerHTML = `
     <figure><img src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async"></figure>
     <div>
@@ -37,10 +39,10 @@ function crearTarjeta(proyecto) {
   return enlace;
 }
 
-fetch("/datos/practicas.yaml")
+fetch(`/datos/${categoria}.yaml`)
   .then((response) => {
     if (!response.ok) {
-      throw new Error(`No se pudo cargar datos/practicas.yaml (${response.status}).`);
+      throw new Error(`No se pudo cargar datos/${categoria}.yaml (${response.status}).`);
     }
     return response.text();
   })
@@ -48,7 +50,7 @@ fetch("/datos/practicas.yaml")
     const proyectos = jsyaml.load(yamlText);
 
     if (!Array.isArray(proyectos)) {
-      throw new Error("datos/practicas.yaml no contiene una lista de proyectos.");
+      throw new Error(`datos/${categoria}.yaml no contiene una lista de proyectos.`);
     }
 
     const fragment = document.createDocumentFragment();
@@ -56,10 +58,10 @@ fetch("/datos/practicas.yaml")
     container.appendChild(fragment);
   })
   .catch((error) => {
-    console.error("Error al cargar prácticas:", error);
+    console.error(`Error al cargar ${categoria}:`, error);
     container.innerHTML = `
       <p class="portfolio-error">
-        No pudimos cargar las prácticas. Intenta recargar la página.
+        No pudimos cargar ${categoria}. Intenta recargar la página.
       </p>
     `;
   });
