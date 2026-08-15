@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Completá este formulario para agregar una práctica nueva a
-        [bibliotecacuir.github.io/practicas.html](https://bibliotecacuir.github.io/practicas.html),
+        [bibliotecacuir.github.io/portafolio/practicas.html](https://bibliotecacuir.github.io/portafolio/practicas.html),
         o para editar una que ya existe (usá el mismo "Slug" que tiene esa práctica).
         Un robot va a procesar este formulario automáticamente y te va a avisar acá mismo cuando esté listo.
 

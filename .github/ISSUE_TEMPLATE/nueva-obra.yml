@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Completá este formulario para agregar una obra nueva a
-        [bibliotecacuir.github.io/obras.html](https://bibliotecacuir.github.io/obras.html),
+        [bibliotecacuir.github.io/portafolio/obras.html](https://bibliotecacuir.github.io/portafolio/obras.html),
         o para editar una que ya existe (usá el mismo "Slug" que tiene esa obra).
         Un robot va a procesar este formulario automáticamente y te va a avisar acá mismo cuando esté listo.
 

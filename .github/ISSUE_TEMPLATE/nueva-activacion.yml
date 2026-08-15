@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Completá este formulario para agregar una activación nueva a
-        [bibliotecacuir.github.io/activaciones.html](https://bibliotecacuir.github.io/activaciones.html),
+        [bibliotecacuir.github.io/portafolio/activaciones.html](https://bibliotecacuir.github.io/portafolio/activaciones.html),
         o para editar una que ya existe (usá el mismo "Slug" que tiene esa activación).
         Un robot va a procesar este formulario automáticamente y te va a avisar acá mismo cuando esté listo.
 

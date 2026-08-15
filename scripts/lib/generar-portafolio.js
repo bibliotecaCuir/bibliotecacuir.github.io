@@ -37,7 +37,7 @@ function headerGlobal(categoria) {
   const logo = CATEGORIAS_FONDO_CLARO.has(categoria) ? "logoBiblioNegro.png" : "logoBiblioBlanco.png";
 
   return `    <header class="portafolio-cabecera" aria-label="Biblioteca Cuir">
-        <a class="portafolio-volver" href="/${categoria}.html">← ${categoria}</a>
+        <a class="portafolio-volver" href="/portafolio/${categoria}.html">← ${categoria}</a>
         <a class="portafolio-logo" href="/">
             <img src="/assets/logos/${logo}" alt="Biblioteca Cuir">
         </a>
@@ -74,9 +74,9 @@ function footer(categoria) {
 
                                 <nav class="pie-columna pie-enlaces" aria-label="Explorar">
                     <h3>explora</h3>
-                    <a href="/manifiesto.html">manifiesto</a>
+                    <a href="/manifiesto/">manifiesto</a>
                     <a href="/coleccion/">colección</a>
-                    <a href="/portafolio.html">portafolio</a>
+                    <a href="/portafolio/">portafolio</a>
                 </nav>
 
                                 <nav class="pie-columna pie-enlaces" aria-label="Aprender">

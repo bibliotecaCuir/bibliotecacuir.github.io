@@ -10,28 +10,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/estilo.css">
-    <script src="/lib/js-yaml.min.js"></script>
-    <title>Obras | Biblioteca Cuir</title>
+    <title>Portafolio | Biblioteca Cuir</title>
 </head>
-<body class="portafolio-pagina portafolio-seccion portafolio-obras">
-    <header class="portafolio-cabecera" aria-label="Biblioteca Cuir">
-        <a class="portafolio-volver" href="/portafolio.html">← volver</a>
-        <a class="portafolio-logo" href="/">
-            <img src="/assets/logos/logoBiblioBlanco.png" alt="Biblioteca Cuir">
+<body class="portafolio-pagina">
+    <header class="sitio-cabecera" aria-label="Biblioteca Cuir">
+        <a class="sitio-logo" href="/">
+            <img src="/assets/logos/logoBiblioNegro.png" alt="Biblioteca Cuir">
         </a>
     </header>
 
-    <main class="portafolio-detalle">
-        <section class="portafolio-detalle-principal" aria-labelledby="page-title">
-            <h1 id="page-title">obras</h1>
-            <div class="portafolio-imagen-franja" aria-hidden="true">
-                <img src="/assets/obras/webp/protocoso.webp" alt="">
+    <button class="portada-menu-interruptor propuesta-menu-interruptor" type="button" aria-expanded="false" aria-controls="portafolio-menu">
+        <span class="portada-menu-linea"></span>
+        <span class="portada-menu-linea"></span>
+        <span class="portada-menu-linea"></span>
+        <span class="visualmente-solo">Abrir menu</span>
+    </button>
+
+    <nav class="portada-menu propuesta-menu" id="portafolio-menu" aria-label="Menu principal">
+        <a href="/#contacto">contacto</a>
+        <a href="/manifiesto/">manifiesto</a>
+        <a href="/#sobre-nosotres">sobre nosotres</a>
+        <a href="/portafolio/" aria-current="page">portafolio</a>
+        <a href="https://bibliotecacuir.github.io/coleccion/" data-compact-label="colección">coleccion</a>
+        <a href="/dona.html" data-compact-label="dona aquí">dona aqui</a>
+    </nav>
+
+    <main class="portafolio-indice">
+        <section class="portafolio-principal" aria-labelledby="portafolio-title">
+            <h1 id="portafolio-title">portafolio</h1>
+            <div class="portafolio-principal-franja" aria-hidden="true">
+                <img src="/assets/obras/webp/glossy.webp" alt="">
                 <img src="/assets/obras/webp/marikarpa.webp" alt="">
-                <img src="/assets/obras/webp/masp.webp" alt="">
+                <img src="/assets/obras/webp/archivo-de-besos.webp" alt="">
             </div>
         </section>
 
-        <section class="portafolio-contenido portafolio-proyecto-indice" aria-label="Proyectos de obras" data-categoria="obras">
+        <section class="portafolio-enlaces" aria-label="Secciones del portafolio">
+            <a class="portafolio-enlace-tarjeta portafolio-tarjeta-practicas" href="/portafolio/practicas.html">
+                <span>practicas</span>
+                <p>Metodologías, juegos y espacios de trabajo colectivo.</p>
+            </a>
+            <a class="portafolio-enlace-tarjeta portafolio-tarjeta-activaciones" href="/portafolio/activaciones.html">
+                <span>activaciones</span>
+                <p>Talleres, encuentros y ejercicios públicos de activación.</p>
+            </a>
+            <a class="portafolio-enlace-tarjeta portafolio-tarjeta-obras" href="/portafolio/obras.html">
+                <span>obras</span>
+                <p>Instalaciones, publicaciones, registros sonoros y acciones.</p>
+            </a>
+            <a class="portafolio-enlace-tarjeta portafolio-tarjeta-otros" href="/portafolio/otros.html">
+                <span>otros</span>
+                <p>Encuentros, laboratorios, seminarios y publicaciones.</p>
+            </a>
         </section>
     </main>
 
@@ -64,9 +94,9 @@
 
                                 <nav class="pie-columna pie-enlaces" aria-label="Explorar">
                     <h3>explora</h3>
-                    <a href="/manifiesto.html">manifiesto</a>
+                    <a href="/manifiesto/">manifiesto</a>
                     <a href="/coleccion/">colección</a>
-                    <a href="/portafolio.html">portafolio</a>
+                    <a href="/portafolio/">portafolio</a>
                 </nav>
 
                                 <nav class="pie-columna pie-enlaces" aria-label="Aprender">
@@ -83,9 +113,9 @@
                 </div>
 
                 <form class="pie-boletin" action="/" method="get">
-                    <label for="footer-email-obras">recibe novedades y publicaciones nuevas.</label>
+                    <label for="footer-email-portafolio">recibe novedades y publicaciones nuevas.</label>
                     <div class="pie-entrada-fila">
-                        <input id="footer-email-obras" type="email" name="email" placeholder="email" autocomplete="email">
+                        <input id="footer-email-portafolio" type="email" name="email" placeholder="email" autocomplete="email">
                         <button type="submit" aria-label="Enviar correo">→</button>
                     </div>
                 </form>
@@ -101,8 +131,7 @@
             <span>instagram · correo</span>
         </div>
     </footer>
-    <script src="/js/cargar-portafolio.js"></script>
-    <script src="/js/portfolio.js" defer></script>
+    <script src="/js/portfolio-proposals.js"></script>
     <script src="/js/site-motion.js" defer></script>
 </body>
 </html>
