@@ -86,7 +86,7 @@ function clavePublicacion(item) {
 
 function imageUrl(item, caja) {
   return item.imagen
-    ? `https://raw.githubusercontent.com/bibliotecaCuir/${caja}/main/imagenes/${item.imagen}`
+    ? `https://raw.githubusercontent.com/bibliotecaCuir/coleccion-imagenes/main/${caja}/${item.imagen}`
     : "";
 }
 
