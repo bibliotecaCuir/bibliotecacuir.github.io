@@ -117,12 +117,11 @@ function leerCatalogos() {
 
 function detalle(label, valor) {
   if (!esDato(valor)) return "";
-  return `
-    <div class="book-data-row">
+  return `    <div class="book-data-row">
       <dt>${escaparHTML(label)}</dt>
       <dd>${escaparHTML(valor)}</dd>
     </div>
-  `;
+`;
 }
 
 function camposFicha(item) {
@@ -137,12 +136,22 @@ function camposFicha(item) {
     detalle("Editorial", valorLista(item.editorial || item.editoriales)),
     detalle("Año", item.agno),
     detalle("Origen", item.origen),
+    detalle("Ubicación", item.ubicacionActual || item.ubicacionPreferente),
+    detalle("Donante", item.donante),
+  ].join("");
+}
+
+function camposFisicos(item) {
+  const dimensiones = [item.altura, item.ancho, item.profundidad]
+    .filter(esDato)
+    .join(" x ");
+  const dimensionesTexto = dimensiones ? `${dimensiones} cm` : "";
+
+  return [
     detalle("Tipología", item.tipologia),
     detalle("Material", item.material),
     detalle("Dimensiones", dimensionesTexto),
     detalle("Copias", item.copias),
-    detalle("Ubicación", item.ubicacionActual || item.ubicacionPreferente),
-    detalle("Donante", item.donante),
   ].join("");
 }
 
@@ -235,7 +244,8 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
       <a href="/#manifiesto">manifiesto</a>
       <a href="/#sobre-nosotres">sobre nosotres</a>
       <a href="/portafolio.html">portafolio</a>
-      <a href="${rutaColeccion}">coleccion</a>
+      <a href="${rutaColeccion}" data-compact-label="colección">coleccion</a>
+      <a href="/dona.html" data-compact-label="dona aquí">dona aqui</a>
     </nav>
   `;
 }
@@ -271,17 +281,15 @@ function footer() {
           <nav class="footer-column footer-links" aria-label="Explorar">
             <h3>explora</h3>
             <a href="/manifiesto.html">manifiesto</a>
-            <a href="/coleccion/">publicaciones</a>
+            <a href="/coleccion/">colección</a>
             <a href="/portafolio.html">portafolio</a>
-            <a href="/#info">info</a>
           </nav>
 
           <nav class="footer-column footer-links" aria-label="Aprender">
             <h3>aprende</h3>
-            <a href="/">proyectos</a>
-            <a href="/">lecturas</a>
-            <a href="/coleccion/">archivo</a>
-            <a href="/">faq</a>
+            <a href="/dona.html">protocola</a>
+            <a href="/#sobre-nosotres">sobre nosotres</a>
+            <a href="/#contacto">contacto</a>
           </nav>
 
           <div class="footer-column footer-contact">
@@ -329,7 +337,9 @@ function pagina(publicacion, publicaciones) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${escaparHTML(descripcion)}">
   <title>${escaparHTML(titulo)} — colección Biblioteca Cuir</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23fe62de'/><text x='50' y='62' text-anchor='middle' font-size='42' font-family='Arial' fill='%23111111'>BC</text></svg>">
+  <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
+  <link rel="shortcut icon" href="/assets/imagenes/cola.png">
+  <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://bibliotecacuir.github.io">
@@ -358,13 +368,24 @@ function pagina(publicacion, publicaciones) {
         <h1${titleClass ? ` class="${titleClass}"` : ""}>${escaparHTML(tituloCaos)}</h1>
         ${autorxs ? `<p class="book-authors">${escaparHTML(autorxs)}</p>` : ""}
 
+        <section class="book-physical" aria-label="Características físicas">
+          <h2>Caracteristicas fisicas</h2>
+          <dl class="book-data book-physical-data">
+${camposFisicos(item)}
+          </dl>
+        </section>
+
         <section class="book-description" aria-label="Descripción">
+          <h2>Descripcion</h2>
           <p>${escaparHTML(descripcion)}</p>
         </section>
 
-        <dl class="book-data">
-          ${camposFicha(item)}
-        </dl>
+        <section class="book-record" aria-label="Ficha de registro">
+          <h2>Ficha</h2>
+          <dl class="book-data">
+${camposFicha(item)}
+          </dl>
+        </section>
 
         ${textoSecundario(item)}
       </main>

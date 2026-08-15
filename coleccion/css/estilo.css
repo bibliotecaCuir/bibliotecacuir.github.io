@@ -255,6 +255,14 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   transition-delay: 0.33s;
 }
 
+body.is-landing-menu-open .landing-menu a:nth-child(5) {
+  transition-delay: 0.38s;
+}
+
+body.is-landing-menu-open .landing-menu a:nth-child(6) {
+  transition-delay: 0.43s;
+}
+
 @media (min-width: 701px) {
   body.has-compact-nav .site-header {
     top: 5px;
@@ -326,9 +334,18 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
     animation-delay: calc(0.12s + var(--compact-link-index, 0) * 0.045s);
   }
 
+  body.has-compact-nav .landing-menu a[data-compact-label] {
+    font-size: 0;
+  }
+
+  body.has-compact-nav .landing-menu a[data-compact-label]::after {
+    content: attr(data-compact-label);
+    font-size: clamp(0.74rem, 1.05vw, 0.92rem);
+  }
+
   body.has-compact-nav.is-compact-nav-leaving .landing-menu a {
     animation: compact-link-leave 0.28s ease both;
-    animation-delay: calc((4 - var(--compact-link-index, 0)) * 0.018s);
+    animation-delay: calc((5 - var(--compact-link-index, 0)) * 0.018s);
   }
 
   body.has-compact-nav .landing-menu a:nth-child(1) {
@@ -349,6 +366,10 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
 
   body.has-compact-nav .landing-menu a:nth-child(5) {
     --compact-link-index: 4;
+  }
+
+  body.has-compact-nav .landing-menu a:nth-child(6) {
+    --compact-link-index: 5;
   }
 
   body.has-compact-nav .landing-menu a::before {
@@ -1019,17 +1040,31 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   line-height: 1.06;
 }
 
-.book-description {
+.book-physical,
+.book-description,
+.book-record {
   max-width: 760px;
-  margin: clamp(2.4rem, 6vw, 6rem) 0 clamp(1.6rem, 4vw, 3rem);
+  margin: clamp(1.8rem, 4vw, 3.4rem) 0 0;
   padding-top: clamp(1rem, 2vw, 1.4rem);
   border-top: 3px solid var(--negro);
 }
 
+.book-physical h2,
+.book-description h2,
+.book-record h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-texto);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
 .book-description p {
   margin: 0;
-  font-size: clamp(1.1rem, 2.1vw, 1.75rem);
-  line-height: 1.28;
+  font-size: clamp(0.94rem, 1.4vw, 1.18rem);
+  line-height: 1.42;
 }
 
 .book-data {

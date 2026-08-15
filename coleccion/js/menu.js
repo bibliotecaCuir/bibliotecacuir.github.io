@@ -4,6 +4,28 @@ const compactNavigationQuery = window.matchMedia("(min-width: 701px)");
 let compactNavigationFrame = null;
 let compactNavigationExitTimer = null;
 
+function normalizeCaosText(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ñ/g, "n")
+    .replace(/Ñ/g, "N");
+}
+
+function stripAccentsFromCaosElements() {
+  document.querySelectorAll("body *").forEach((element) => {
+    const family = window.getComputedStyle(element).fontFamily.toLowerCase();
+
+    if (!family.includes("caosmarika")) return;
+
+    element.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent = normalizeCaosText(node.textContent);
+      }
+    });
+  });
+}
+
 function closeLandingMenu() {
   document.body.classList.remove("is-landing-menu-open");
   landingMenuToggle?.setAttribute("aria-expanded", "false");
@@ -77,4 +99,5 @@ document.addEventListener("keydown", (event) => {
 window.addEventListener("scroll", requestCompactNavigationUpdate, { passive: true });
 window.addEventListener("resize", requestCompactNavigationUpdate);
 compactNavigationQuery.addEventListener("change", requestCompactNavigationUpdate);
+stripAccentsFromCaosElements();
 requestCompactNavigationUpdate();

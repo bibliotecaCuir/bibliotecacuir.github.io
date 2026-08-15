@@ -631,6 +631,10 @@ body.is-landing-menu-open .landing-menu-line:nth-child(3) {
     transition-delay: 0s;
 }
 
+.landing-menu a:nth-child(6) {
+    transition-delay: 0s;
+}
+
 .landing-menu a::before {
     content: "→";
     display: inline-block;
@@ -691,6 +695,10 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
 
 body.is-landing-menu-open .landing-menu a:nth-child(5) {
     transition-delay: 0.38s;
+}
+
+body.is-landing-menu-open .landing-menu a:nth-child(6) {
+    transition-delay: 0.43s;
 }
 
 body.is-landing-menu-open .landing-menu a:hover,
@@ -1292,109 +1300,41 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
 
 .portfolio-media {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
-    width: min(76vw, 760px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(0.85rem, 1.8vw, 1.45rem);
+    width: min(100%, 920px);
     margin: clamp(1.2rem, 3vw, 2.5rem) auto 0;
 }
 
 .portfolio-media-single {
     grid-template-columns: minmax(0, 1fr);
-    width: min(56vw, 560px);
+    width: min(100%, 680px);
 }
 
 .portfolio-media img {
     display: block;
     width: 100%;
-    height: clamp(260px, 36vw, 500px);
+    height: clamp(260px, 38vw, 560px);
+    padding: clamp(0.6rem, 1.4vw, 1rem);
     object-fit: contain;
+    background: color-mix(in srgb, var(--portfolio-bg) 78%, var(--portfolio-fg) 12%);
+    border: 1px solid var(--portfolio-line);
+}
+
+.portfolio-media img:nth-child(2n) {
+    background: color-mix(in srgb, var(--portfolio-bg) 88%, #ffffff 12%);
+}
+
+.portfolio-media img:nth-child(3n) {
+    background: color-mix(in srgb, var(--portfolio-bg) 72%, var(--portfolio-fg) 18%);
 }
 
 .portfolio-media img.portfolio-image-portrait {
-    height: clamp(360px, 50vw, 680px);
+    height: clamp(360px, 58vw, 760px);
 }
 
 .portfolio-media-single img {
     height: clamp(300px, 44vw, 600px);
-}
-
-.portfolio-media.portfolio-carousel {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0;
-    overflow: visible;
-}
-
-.portfolio-carousel-track {
-    display: grid;
-    overflow: hidden;
-    background: transparent;
-}
-
-.portfolio-carousel-slide {
-    grid-area: 1 / 1;
-    display: grid;
-    justify-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.982) translateY(0.45rem);
-    transition:
-        opacity 1.05s ease,
-        transform 1.25s cubic-bezier(0.2, 1, 0.32, 1),
-        filter 1.05s ease;
-    filter: saturate(0.92) contrast(0.98);
-}
-
-.portfolio-carousel-slide:nth-child(2n) {
-    transform: scale(0.985) translateY(-0.35rem);
-}
-
-.portfolio-carousel-slide.is-active {
-    opacity: 1;
-    pointer-events: auto;
-    transform: scale(1) translateY(0);
-    filter: saturate(1) contrast(1);
-}
-
-.portfolio-carousel-slide img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.portfolio-carousel-slide img.portfolio-image-portrait {
-    width: auto;
-    height: clamp(360px, 50vw, 680px);
-}
-
-.portfolio-carousel-controls {
-    display: none;
-    justify-content: center;
-    gap: 0.3rem;
-}
-
-.portfolio-carousel-controls button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    padding: 0;
-    color: var(--portfolio-bg);
-    font: inherit;
-    font-size: 1rem;
-    line-height: 1;
-    cursor: pointer;
-    background: var(--portfolio-fg);
-    border: 1px solid var(--portfolio-fg);
-    border-radius: 999px;
-}
-
-.portfolio-carousel-controls button:hover,
-.portfolio-carousel-controls button:focus-visible {
-    color: var(--portfolio-fg);
-    background: var(--portfolio-bg);
 }
 
 .project-neighbors {
@@ -1963,9 +1903,9 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
 
 .manifest-fragmented-body {
     position: relative;
-    width: min(100vw, calc(100svh * 1.691558));
-    height: min(100svh, calc(100vw / 1.691558));
-    margin-top: 3vh;
+    width: min(88vw, calc(86svh * 1.691558));
+    height: min(86svh, calc(88vw / 1.691558));
+    margin-top: clamp(4.5rem, 8vh, 7rem);
     overflow: hidden;
     cursor: none;
     --loupe-size: clamp(200px, 25vw, 380px);
@@ -2178,9 +2118,9 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
     }
 
     .manifest-fragmented-body {
-        width: min(100vw, calc(100svh * 1.691558));
-        height: min(100svh, calc(100vw / 1.691558));
-        margin-top: 1.5vh;
+        width: min(94vw, calc(82svh * 1.691558));
+        height: min(82svh, calc(94vw / 1.691558));
+        margin-top: clamp(4.5rem, 9vh, 6rem);
         cursor: auto;
         --loupe-size: clamp(156px, 44vw, 250px);
     }
@@ -2326,10 +2266,6 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
         height: clamp(360px, 112vw, 680px);
     }
 
-    .portfolio-carousel-slide img.portfolio-image-portrait {
-        height: clamp(360px, 112vw, 680px);
-    }
-
     .portfolio-media-single img {
         height: clamp(300px, 92vw, 600px);
     }
@@ -2447,6 +2383,15 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
         animation: compact-link-enter 0.28s ease-out both;
     }
 
+    body.has-compact-nav .landing-menu a[data-compact-label] {
+        font-size: 0;
+    }
+
+    body.has-compact-nav .landing-menu a[data-compact-label]::after {
+        content: attr(data-compact-label);
+        font-size: clamp(0.7rem, 1vw, 0.9rem);
+    }
+
     body.has-compact-nav .landing-menu a:nth-child(1) {
         animation-delay: 0.18s;
     }
@@ -2465,6 +2410,10 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
 
     body.has-compact-nav .landing-menu a:nth-child(5) {
         animation-delay: 0.38s;
+    }
+
+    body.has-compact-nav .landing-menu a:nth-child(6) {
+        animation-delay: 0.43s;
     }
 
     body.has-compact-nav .landing-menu a::before {
@@ -2504,6 +2453,10 @@ body.is-landing-menu-open .landing-menu a:focus-visible {
     }
 
     body.has-compact-nav.is-compact-nav-leaving .landing-menu a:nth-child(5) {
+        animation-delay: 0s;
+    }
+
+    body.has-compact-nav.is-compact-nav-leaving .landing-menu a:nth-child(6) {
         animation-delay: 0s;
     }
 }
@@ -3185,6 +3138,314 @@ body.is-at-footer .site-header {
     transform: scale(1.075);
 }
 
+.donation-page {
+    --portfolio-bg: var(--color-lettering);
+    --portfolio-fg: #ffffff;
+    color: #111111;
+    background:
+        linear-gradient(180deg, rgba(247, 167, 223, 0.18), rgba(255, 255, 255, 0) 30rem),
+        #ffffff;
+}
+
+.donation-page *,
+.donation-page *::before,
+.donation-page *::after {
+    box-sizing: border-box;
+}
+
+.donation-page .site-logo-white {
+    opacity: 0;
+}
+
+.donation-page .site-logo-black {
+    opacity: 1;
+}
+
+.donation-main {
+    position: relative;
+    z-index: 1;
+    padding: clamp(8.5rem, 12vw, 11rem) clamp(1rem, 5vw, 4.5rem) clamp(5rem, 8vw, 7rem);
+}
+
+.donation-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 360px);
+    gap: clamp(1rem, 2.5vw, 2rem);
+    align-items: end;
+    width: min(100%, 1180px);
+    margin: 0 auto clamp(1.5rem, 3.6vw, 3rem);
+}
+
+.donation-hero h1 {
+    max-width: none;
+    margin: 0;
+    font-family: var(--font-proyecto);
+    font-size: clamp(3.8rem, 8vw, 7.6rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.78;
+    letter-spacing: 0;
+    text-transform: lowercase;
+    white-space: nowrap;
+}
+
+.donation-hero p {
+    max-width: 58rem;
+    margin: clamp(0.65rem, 1.2vw, 0.9rem) 0 0;
+    font-size: clamp(0.86rem, 1vw, 1rem);
+    line-height: 1.34;
+}
+
+.donation-protocol-note {
+    display: grid;
+    gap: 0.48rem;
+    align-self: end;
+    width: min(100%, 360px);
+    min-height: 0;
+    padding: clamp(0.75rem, 1.35vw, 1rem) clamp(0.8rem, 1.5vw, 1.1rem);
+    border: 1px solid rgba(17, 17, 17, 0.22);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.donation-protocol-note strong {
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.85rem, 2.7vw, 2.55rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.86;
+    text-transform: lowercase;
+}
+
+.donation-protocol-note span {
+    font-size: 0.78rem;
+    line-height: 1.34;
+}
+
+.donation-form {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.6rem);
+    width: min(100%, 1180px);
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.donation-fieldset {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.4rem);
+    min-width: 0;
+    margin: 0;
+    padding: clamp(1rem, 2.2vw, 1.7rem);
+    border: 1px solid rgba(17, 17, 17, 0.24);
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.donation-fieldset legend {
+    padding: 0 0.35rem;
+    font-family: var(--font-proyecto);
+    font-size: clamp(2rem, 4.2vw, 4.3rem);
+    line-height: 0.86;
+    text-transform: lowercase;
+}
+
+.donation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    min-width: 0;
+}
+
+.donation-grid-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.donation-field {
+    display: grid;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.donation-field-full {
+    grid-column: 1 / -1;
+}
+
+.donation-field label,
+.donation-choice-group > span,
+.donation-upload span {
+    font-size: 0.74rem;
+    font-weight: var(--peso-medio);
+    line-height: 1.12;
+    text-transform: uppercase;
+}
+
+.donation-field small,
+.donation-upload small,
+.donation-form-note {
+    color: rgba(17, 17, 17, 0.7);
+    font-size: 0.76rem;
+    line-height: 1.35;
+}
+
+.donation-field input,
+.donation-field select,
+.donation-field textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0.72rem 0.8rem;
+    color: #111111;
+    font: inherit;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 17, 0.28);
+    border-radius: 0;
+}
+
+.donation-field textarea {
+    min-height: 124px;
+    resize: vertical;
+}
+
+.donation-choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.donation-choice-group {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.donation-choice {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 0.55rem;
+    align-items: start;
+    padding: 0.72rem;
+    border: 1px solid rgba(17, 17, 17, 0.22);
+    background: #ffffff;
+}
+
+.donation-choice input {
+    width: 18px;
+    height: 18px;
+    margin: 0.08rem 0 0;
+    accent-color: var(--color-rosado);
+}
+
+.donation-choice strong {
+    display: block;
+    margin-bottom: 0.16rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.donation-choice span {
+    display: block;
+    color: rgba(17, 17, 17, 0.72);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.donation-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.donation-upload {
+    display: grid;
+    gap: 0.45rem;
+    min-width: 0;
+    padding: 0.85rem;
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 17, 0.22);
+}
+
+.donation-upload input {
+    width: 100%;
+    min-width: 0;
+    font: inherit;
+    font-size: 0.78rem;
+}
+
+.donation-submit-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.4rem;
+}
+
+.donation-submit-row button {
+    min-height: 48px;
+    padding: 0.85rem 1.15rem;
+    color: #ffffff;
+    font: inherit;
+    font-weight: var(--peso-medio);
+    line-height: 1;
+    text-transform: lowercase;
+    cursor: pointer;
+    background: #111111;
+    border: 1px solid #111111;
+    border-radius: 0;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.24s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.donation-submit-row button:hover,
+.donation-submit-row button:focus-visible {
+    color: #111111;
+    background: var(--color-rosado-claro);
+    transform: translateY(-2px);
+}
+
+.donation-page .site-footer {
+    color: #ffffff;
+    background: var(--color-lettering);
+}
+
+.donation-page .site-footer::after {
+    display: block;
+}
+
+.donation-page .footer-follow,
+.donation-page .footer-legal,
+.donation-page .footer-input-row,
+.donation-page .footer-input-row button {
+    border-color: rgba(255, 255, 255, 0.42);
+}
+
+.donation-page .footer-follow a,
+.donation-page .footer-links a,
+.donation-page .footer-contact a,
+.donation-page .footer-legal a,
+.donation-page .footer-input-row input,
+.donation-page .footer-input-row button {
+    color: #ffffff;
+}
+
+.donation-page .footer-input-row input::placeholder {
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.donation-page .footer-follow-icon {
+    color: var(--color-lettering);
+    background: #ffffff;
+}
+
+.donation-page .footer-mark-white {
+    display: block;
+}
+
+.donation-page .footer-mark-black {
+    display: none;
+}
+
 .site-footer {
     position: relative;
     z-index: 1;
@@ -3527,6 +3788,24 @@ body.is-at-footer .bottom-nav:focus-within {
     transform: translateY(105%);
 }
 
+@media (max-width: 980px) {
+    .donation-hero,
+    .donation-grid,
+    .donation-grid-three,
+    .donation-choice-grid,
+    .donation-upload-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donation-hero {
+        align-items: start;
+    }
+
+    .donation-protocol-note {
+        width: min(100%, 420px);
+    }
+}
+
 @media (max-width: 700px) {
     .site-header {
         top: 0.85rem;
@@ -3565,6 +3844,14 @@ body.is-at-footer .bottom-nav:focus-within {
 
     .landing-menu a {
         font-size: clamp(2rem, 10vw, 3.15rem);
+    }
+
+    .donation-main {
+        padding-top: 8rem;
+    }
+
+    .donation-hero h1 {
+        font-size: clamp(3rem, 16vw, 4.1rem);
     }
 
     body.is-scrolled .site-header {
@@ -4049,7 +4336,6 @@ body.is-at-footer .bottom-nav:focus-within {
 
     .landing-menu,
     .landing-menu a,
-    .portfolio-carousel-slide,
     .project-neighbor-link::before,
     .project-neighbor-link span,
     .project-neighbor-link strong,

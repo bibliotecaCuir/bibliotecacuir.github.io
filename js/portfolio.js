@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const portfolioImages = document.querySelectorAll('.portfolio-media img');
-    const mediaBlocks = document.querySelectorAll('.portfolio-media:not(.portfolio-media-single)');
     const singleLineTitlePages = document.body.classList.contains('portfolio-practicas') ||
         document.body.classList.contains('portfolio-activaciones');
     const singleLineTitles = singleLineTitlePages ?
@@ -95,71 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         image.addEventListener('load', () => setImageOrientation(image), { once: true });
-    });
-
-    mediaBlocks.forEach((media) => {
-        const slides = Array.from(media.querySelectorAll('img'));
-
-        if (slides.length < 2) {
-            return;
-        }
-
-        let currentSlide = 0;
-        let timer = null;
-        let firstTimer = null;
-
-        media.classList.add('portfolio-carousel');
-
-        const track = document.createElement('div');
-        track.className = 'portfolio-carousel-track';
-        const slideItems = slides.map((image) => {
-            const slide = document.createElement('div');
-            slide.className = 'portfolio-carousel-slide';
-            slide.append(image);
-            return slide;
-        });
-        track.append(...slideItems);
-
-        media.append(track);
-
-        const showSlide = (index) => {
-            currentSlide = (index + slides.length) % slides.length;
-            slideItems.forEach((slide, slideIndex) => {
-                slide.classList.toggle('is-active', slideIndex === currentSlide);
-            });
-        };
-
-        const stop = () => {
-            if (firstTimer) {
-                window.clearTimeout(firstTimer);
-                firstTimer = null;
-            }
-
-            if (timer) {
-                window.clearInterval(timer);
-                timer = null;
-            }
-        };
-
-        const start = (delay = 650) => {
-            if (prefersReducedMotion || timer || firstTimer) {
-                return;
-            }
-
-            firstTimer = window.setTimeout(() => {
-                showSlide(currentSlide + 1);
-                firstTimer = null;
-                timer = window.setInterval(() => showSlide(currentSlide + 1), 3000);
-            }, delay);
-        };
-
-        media.addEventListener('mouseenter', stop);
-        media.addEventListener('mouseleave', start);
-        media.addEventListener('focusin', stop);
-        media.addEventListener('focusout', start);
-
-        showSlide(currentSlide);
-        start();
     });
 
     const normalizePath = (path) => {
