@@ -138,7 +138,7 @@ function crearArticulo(elemento, caja, index) {
   article.dataset.categoria = obtenerCategoria(elemento.tipologia);
 
   const imagenUrl = elemento.imagen
-    ? `https://raw.githubusercontent.com/bibliotecaCuir/${caja}/main/imagenes/${elemento.imagen}`
+    ? `https://raw.githubusercontent.com/bibliotecaCuir/coleccion-imagenes/main/${caja}/${elemento.imagen}`
     : "";
 
   if (imagenUrl) article.dataset.imagen = imagenUrl;

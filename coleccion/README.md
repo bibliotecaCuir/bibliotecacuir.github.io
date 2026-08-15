@@ -36,16 +36,17 @@ agregar, editar o eliminar una pieza.
 - Las imágenes **no viven en este repositorio**: `imagen` en el YAML es solo
   un nombre de archivo, y tanto `cargar-catalogo.js` como
   `generar-html-libros.js` arman la URL apuntando a
-  `https://raw.githubusercontent.com/bibliotecaCuir/<caja>/main/imagenes/<imagen>`
-  (un repo aparte por caja, en la organización `bibliotecaCuir`).
+  `https://raw.githubusercontent.com/bibliotecaCuir/coleccion-imagenes/main/<caja>/<imagen>`
+  (un único repo, `bibliotecaCuir/coleccion-imagenes`, con una carpeta por
+  caja/sector).
 
 ## Agregar, editar o eliminar una pieza
 
 1. Editar el `yaml/<caja>.yaml` correspondiente (agregar, cambiar o borrar
    una entrada dentro de `catalogo.articulos`).
-2. Si la pieza tiene una imagen nueva, subirla al repo de imágenes de esa
-   caja (`bibliotecaCuir/<caja>`, carpeta `imagenes/`) con el mismo nombre
-   de archivo que se puso en `imagen`.
+2. Si la pieza tiene una imagen nueva, subirla al repo
+   `bibliotecaCuir/coleccion-imagenes`, dentro de la carpeta de esa caja
+   (`<caja>/`) con el mismo nombre de archivo que se puso en `imagen`.
 3. Regenerar las fichas:
 
    ```sh
