@@ -1,0 +1,35 @@
+- slug: "somos-un-cuerpo-mutante"
+  titulo: "Somos un cuerpo mutante - taller"
+  carpeta_imagenes: "/assets/portafolio/activaciones/somos-un-cuerpo-mutante"
+  parrafos:
+    - "Taller para encontrarnos desde nuestras experiencias y sensibilidades marikas, construyendo un cuerpo colectivo a partir del diálogo, la exploración y el trabajo en conjunto. La actividad combina la revisión de la colección de la Biblioteca Cuir y ejercicios creativos que invitan a imaginar un nuevo cuerpo colectivo. Se ensayó por primera vez en Maps (2024) y luego en la Bienal de Artes Mediales (2025)."
+
+- slug: "contagio-grafico"
+  titulo: "Contagio gráfico - encuentro gráfico"
+  carpeta_imagenes: "/assets/portafolio/activaciones/contagio-grafico"
+  parrafos:
+    - "Activación gráfica en la que distintas prácticas editoriales se combinaron para crear formas de traducción español-portugués. A través del juego y la creación colectiva exploramos cómo las imágenes y los lenguajes pueden expresar las urgencias, afectos e historias de nuestras comunidades."
+
+- slug: "bajuba-a-jerga-marika-chilena"
+  titulo: "Bajubá a jerga marika chilena - taller"
+  carpeta_imagenes: "/assets/portafolio/activaciones/bajuba-a-jerga-marika-chilena"
+  parrafos:
+    - "Taller de traducción colectiva que puso en diálogo el bajubá (lenguaje usado por travestis y mujeres trans en portugués) con la jerga marika chilena. Compartimos palabras, sus historias y los distintos significados que adquieren según los territorios y las comunidades, construyendo un glosario vivo desde la memoria y la experiencia compartida. Es una invitación a encontrarnos y seguir construyendo comunidad más allá del idioma."
+
+- slug: "convite-marika"
+  titulo: "Convite marika - encuentro"
+  carpeta_imagenes: "/assets/portafolio/activaciones/convite-marika"
+  parrafos:
+    - "Encuentro que surgió como un espacio para compartir, celebrar y fortalecer redes entre personas, colectivos y proyectos disidentes. El primero se tituló Transa marika (2023), el segundo y el tercero fueron hitos de apertura y cierre de la residencia del Centro Cultural de España. El último fue una edición especial denominada Confluencia de archivos (2024), dedicada a preguntarnos cómo guardamos aquello que decidimos conservar. Cada edición reúne distintas actividades como ferias de publicaciones, música en vivo, poesía, mercaditos, recepción de donaciones para la Biblioteca Cuir y espacios para conversar sobre memoria, archivo y creación colectiva."
+
+- slug: "y-la-que-soporte"
+  titulo: "Y la que soporte - taller"
+  carpeta_imagenes: "/assets/portafolio/activaciones/y-la-que-soporte"
+  parrafos:
+    - "Este taller se denominó “Y la que soporte: un taller de creación más allá de la hétero-objetualidad”, para imaginar otras formas de relacionarnos y sostener(nos) con las publicaciones. A partir de materiales cotidianos y objetos encontrados, diseñamos pequeños dispositivos que expanden la experiencia de leer, tocar y compartir."
+
+- slug: "cruising-de-lectura"
+  titulo: "Cruising de lectura"
+  carpeta_imagenes: "/assets/portafolio/activaciones/cruising-de-lectura"
+  parrafos:
+    - "Cruising de lectura es una metodología que propone encontrarnos para recorrer publicaciones en colectivo, leer en voz alta y compartir textos, poemas o escritos. Cada sesión transforma la lectura en una experiencia abierta, afectiva y compartida, donde las publicaciones se activan a través de quienes las leen."
