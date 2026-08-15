@@ -594,6 +594,10 @@
     display: none;
 }
 
+.portafolio-pagina .pie-marca-negro {
+    display: block;
+}
+
 .portafolio-seccion:not(.portafolio-activaciones) .pie-marca-blanco {
     display: block;
 }

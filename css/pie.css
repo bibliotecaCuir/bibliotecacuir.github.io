@@ -117,6 +117,10 @@
     transform-origin: center;
 }
 
+.pie-marca .pie-marca-negro {
+    display: none;
+}
+
 .pie-marca img {
     display: block;
     width: 100%;
