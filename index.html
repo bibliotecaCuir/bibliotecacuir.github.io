@@ -17,17 +17,32 @@
   <a class="skip-link" href="#divCatalogo">Saltar a la colección</a>
 
   <header class="site-header">
-    <a class="site-logo" href="https://bibliotecacuir.github.io/" aria-label="Volver a Biblioteca Cuir">
-      <img src="https://bibliotecacuir.github.io/assets/logos/logoBiblioNegro.png" alt="Biblioteca Cuir">
+    <a class="site-logo" href="/" aria-label="Volver a Biblioteca Cuir">
+      <img class="site-logo-white" src="https://bibliotecacuir.github.io/assets/logos/logoBiblioBlanco.png" alt="Biblioteca Cuir">
+      <img class="site-logo-black" src="https://bibliotecacuir.github.io/assets/logos/logoBiblioNegro.png" alt="">
     </a>
   </header>
+
+  <button class="landing-menu-toggle" type="button" aria-expanded="false" aria-controls="landing-menu">
+    <span class="landing-menu-line"></span>
+    <span class="landing-menu-line"></span>
+    <span class="landing-menu-line"></span>
+    <span class="sr-only">Abrir menú</span>
+  </button>
+
+  <nav class="landing-menu" id="landing-menu" aria-label="Menú principal">
+    <a href="/#contacto">contacto</a>
+    <a href="/#manifiesto">manifiesto</a>
+    <a href="/#sobre-nosotres">sobre nosotres</a>
+    <a href="/portafolio.html">portafolio</a>
+    <a href="/coleccion/">coleccion</a>
+  </nav>
 
   <main>
     <section class="catalogo-hero" aria-labelledby="catalogo-title">
       <div class="catalogo-intro">
         <div class="catalogo-presentacion">
-          <p class="eyebrow">archivo cuir en circulación · Santiago, Chile</p>
-          <h1 id="catalogo-title">colección</h1>
+          <h1 id="catalogo-title">coleccion</h1>
           <p class="catalogo-descripcion">
             <span>Publicaciones, fanzines y memorias</span>
             <span>disidentes reunidas por Biblioteca Cuir.</span>
@@ -47,50 +62,75 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" id="contacto" aria-label="Pie de página">
     <div class="footer-follow">
-      <a href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">
+      <a class="footer-follow-link" href="https://www.instagram.com/" target="_blank" rel="noreferrer">
         <span class="footer-follow-icon" aria-hidden="true">+</span>
         <span>síguenos</span>
       </a>
-      <a href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">@bibliotecacuir</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">@bibliotecacuir</a>
     </div>
 
     <div class="footer-main">
-      <h2>Refugio micropolítico y promiscuo para las memorias y archivos disidentes</h2>
+      <h2>
+        <span class="footer-title-line">Refugio micropolitico y promiscuo para</span>
+        <span class="footer-title-line">las memorias y archivos disidentes</span>
+      </h2>
+
       <div class="footer-content">
-        <a class="footer-mark" href="https://bibliotecacuir.github.io/" aria-label="Biblioteca Cuir">
-          <img src="https://bibliotecacuir.github.io/assets/logos/logoBiblioNegro.png" alt="">
+        <a class="footer-mark" href="/" aria-label="Biblioteca Cuir">
+          <img src="/assets/logos/logoBiblioBlanco.png" alt="">
         </a>
-        <div>
+
+        <div class="footer-column footer-visit">
           <h3>visítanos</h3>
           <p>archivo cuir en circulación</p>
           <p>Santiago, Chile</p>
         </div>
-        <nav aria-label="Explorar">
+
+        <nav class="footer-column footer-links" aria-label="Explorar">
           <h3>explora</h3>
-          <a href="https://bibliotecacuir.github.io/">inicio</a>
-          <a href="./">colección</a>
+          <a href="/manifiesto.html">manifiesto</a>
+          <a href="/coleccion/">publicaciones</a>
+          <a href="/portafolio.html">portafolio</a>
+          <a href="/#info">info</a>
         </nav>
-        <div>
+
+        <nav class="footer-column footer-links" aria-label="Aprender">
+          <h3>aprende</h3>
+          <a href="/">proyectos</a>
+          <a href="/">lecturas</a>
+          <a href="/coleccion/">archivo</a>
+          <a href="/">faq</a>
+        </nav>
+
+        <div class="footer-column footer-contact">
           <h3>hablemos</h3>
+          <p>preguntas, comentarios, colaboraciones:</p>
           <a href="mailto:hola@bibliotecacuir.cl">hola@bibliotecacuir.cl</a>
         </div>
+
+        <form class="footer-newsletter" action="/" method="get">
+          <label for="footer-email">recibe novedades y publicaciones nuevas.</label>
+          <div class="footer-input-row">
+            <input id="footer-email" type="email" name="email" placeholder="email" autocomplete="email">
+            <button type="submit" aria-label="Enviar correo">→</button>
+          </div>
+        </form>
       </div>
     </div>
 
     <div class="footer-legal">
       <span>Biblioteca Cuir</span>
-      <span>colección en línea</span>
+      <nav aria-label="Legal">
+        <a href="/">privacidad</a>
+        <a href="/">términos</a>
+      </nav>
+      <span>instagram · correo</span>
     </div>
   </footer>
 
-  <nav class="site-nav" aria-label="Navegación principal">
-    <a href="https://bibliotecacuir.github.io/" data-label="inicio">inicio</a>
-    <a href="./" data-label="colección" aria-current="page">colección</a>
-    <a href="https://www.instagram.com/bibliotecacuir/" data-label="instagram" target="_blank" rel="noreferrer">instagram</a>
-  </nav>
-
   <script src="./cargar-catalogo.js"></script>
+  <script src="./js/menu.js"></script>
 </body>
 </html>

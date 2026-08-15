@@ -1,4 +1,19 @@
-const cajas = ["caja-01"];
+const catalogosYaml = [
+  "caja-01",
+  "caja-02",
+  "caja-03",
+  "caja-04",
+  "caja-05",
+  "caja-06",
+  "caja-07",
+  "caja-08",
+  "caja-09",
+  "caja-10",
+  "grafica-01",
+  "grafica-02",
+  "grafica-03",
+  "grafica-04",
+];
 
 const container = document.querySelector("#divCatalogo");
 const countEl = document.querySelector("#totalCount");
@@ -63,6 +78,26 @@ function normalizar(valor) {
     .trim();
 }
 
+function escaparHTML(valor) {
+  return String(valor || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function crearSlug(item, caja, index) {
+  const codigo = String(item.codigo || "").trim();
+  const base = codigo && normalizar(codigo) !== "no aplica"
+    ? `${codigo}-${index + 1}`
+    : `${item.titulo || "pieza"}-${caja}-${index + 1}`;
+
+  return normalizar(base)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || `pieza-${caja}-${index + 1}`;
+}
+
 function clavePublicacion(item) {
   return [
     item.titulo,
@@ -77,9 +112,10 @@ function clavePublicacion(item) {
 function quitarDuplicados(articulos) {
   const publicaciones = new Map();
 
-  articulos.forEach(({ item, caja }) => {
+  articulos.forEach(({ item, caja, index }) => {
+    if (!String(item.titulo || item.codigo || "").trim()) return;
     const clave = clavePublicacion(item);
-    if (!publicaciones.has(clave)) publicaciones.set(clave, { item, caja });
+    if (!publicaciones.has(clave)) publicaciones.set(clave, { item, caja, index });
   });
 
   return [...publicaciones.values()];
@@ -96,7 +132,7 @@ function valorLista(valor) {
   return valor || "";
 }
 
-function crearArticulo(item, caja) {
+function crearArticulo(item, caja, index) {
   const article = document.createElement("article");
   article.className = "item reveal-item";
   article.dataset.categoria = obtenerCategoria(item.tipologia);
@@ -111,29 +147,32 @@ function crearArticulo(item, caja) {
   // Los YAML actuales usan "editorial"; se tolera "editoriales" para datos futuros.
   const editorial = valorLista(item.editorial || item.editoriales);
   const meta = [autorxs, editorial, item.estado || item.tipologia].filter(Boolean);
+  const urlDetalle = `./html/${crearSlug(item, caja, index)}.html`;
 
   article.innerHTML = `
-    <figure class="item-imagen-wrap">
-      ${imagenUrl ? `
-        <img class="catalogo-imagen" src="${imagenUrl}" alt="" loading="lazy" decoding="async">
-      ` : '<span class="item-sin-imagen" aria-hidden="true">BC</span>'}
-      <span class="item-tinte" aria-hidden="true"></span>
-    </figure>
-    <div class="item-body">
-      <h2 class="item-titulo">${item.titulo || "Sin título"}</h2>
-      <div class="item-identificacion">
-        <span class="item-codigo">${item.codigo || "s/c"}</span>
-        <span class="item-agno">${item.agno || "s/f"}</span>
-      </div>
-      <div class="item-meta-wrap">
-        <div class="item-meta">
-          ${meta.map((dato, index) => `
-            ${index ? '<span class="item-sep" aria-hidden="true">·</span>' : ""}
-            <span>${dato}</span>
-          `).join("")}
+    <a class="item-link" href="${urlDetalle}">
+      <figure class="item-imagen-wrap">
+        ${imagenUrl ? `
+          <img class="catalogo-imagen" src="${escaparHTML(imagenUrl)}" alt="" loading="lazy" decoding="async">
+        ` : '<span class="item-sin-imagen" aria-hidden="true">BC</span>'}
+        <span class="item-tinte" aria-hidden="true"></span>
+      </figure>
+      <div class="item-body">
+        <h2 class="item-titulo">${escaparHTML(item.titulo || "Sin título")}</h2>
+        <div class="item-identificacion">
+          <span class="item-codigo">${escaparHTML(item.codigo || "s/c")}</span>
+          <span class="item-agno">${escaparHTML(item.agno || "s/f")}</span>
+        </div>
+        <div class="item-meta-wrap">
+          <div class="item-meta">
+            ${meta.map((dato, index) => `
+              ${index ? '<span class="item-sep" aria-hidden="true">·</span>' : ""}
+              <span>${escaparHTML(dato)}</span>
+            `).join("")}
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   `;
 
   return article;
@@ -239,11 +278,11 @@ function crearFiltros() {
 }
 
 Promise.all(
-  cajas.map(async (caja) => {
-    const response = await fetch(`./${caja}.yaml`);
+  catalogosYaml.map(async (caja) => {
+    const response = await fetch(`./yaml/${caja}.yaml`);
 
     if (!response.ok) {
-      throw new Error(`No se pudo cargar ${caja}.yaml (${response.status}).`);
+      throw new Error(`No se pudo cargar yaml/${caja}.yaml (${response.status}).`);
     }
 
     const yamlText = await response.text();
@@ -261,13 +300,13 @@ Promise.all(
     const fragment = document.createDocumentFragment();
     const publicaciones = quitarDuplicados(
       catalogos.flatMap(({ caja, articulos }) =>
-        articulos.map((item) => ({ item, caja }))
+        articulos.map((item, index) => ({ item, caja, index }))
       )
     );
 
     totalArticulos = publicaciones.length;
-    publicaciones.forEach(({ item, caja }) => {
-      fragment.appendChild(crearArticulo(item, caja));
+    publicaciones.forEach(({ item, caja, index }) => {
+      fragment.appendChild(crearArticulo(item, caja, index));
     });
 
     container.appendChild(fragment);
