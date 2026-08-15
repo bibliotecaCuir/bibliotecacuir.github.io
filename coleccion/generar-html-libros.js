@@ -241,7 +241,7 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
 
     <nav class="portada-menu" id="portada-menu" aria-label="Menú principal">
       <a href="/#contacto">contacto</a>
-      <a href="/#manifiesto">manifiesto</a>
+      <a href="/manifiesto/">manifiesto</a>
       <a href="/#sobre-nosotres">sobre nosotres</a>
       <a href="/portafolio/">portafolio</a>
       <a href="${rutaColeccion}" data-compact-label="colección">coleccion</a>
