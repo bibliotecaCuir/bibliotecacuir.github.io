@@ -1,4 +1,4 @@
-proyecto: "Historias LGBTQI MASP"
+proyecto: "historias-lgbtqi-masp"
 categoria: "obras"
 imagenes:
   - orden: 1
@@ -7,25 +7,25 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "20241211 2.png"
+    archivo_original: "originales/20241211 2.png"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "470674068_18023946338560418_7326861893097931750_n.webp"
+    archivo_original: "originales/470674068_18023946338560418_7326861893097931750_n.webp"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "470797012_18023946365560418_1856139124708165934_n.webp"
+    archivo_original: "originales/470797012_18023946365560418_1856139124708165934_n.webp"
   - orden: 4
     archivo: "04.webp"
     titulo: "Imagen 04"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "656281579_18151978318456596_2921294659599513501_n.jpg"
+    archivo_original: "originales/656281579_18151978318456596_2921294659599513501_n.jpg"

@@ -1,4 +1,4 @@
-proyecto: "Bajubá a jerga marika chilena"
+proyecto: "bajuba-a-jerga-marika-chilena"
 categoria: "activaciones"
 imagenes:
   - orden: 1
@@ -7,11 +7,18 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "01.jpg"
+    archivo_original: "originales/652124269_17945601246128854_6405393478434446001_n.jpg"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "02.jpg"
+    archivo_original: "originales/656085960_18096682133092820_5014113101761302084_n.jpg"
+  - orden: 3
+    archivo: "03.webp"
+    titulo: "Imagen 03"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "originales/656617225_18064449935690145_1767054151817594049_n.jpg"

@@ -1,4 +1,4 @@
-proyecto: "Archivo de besos"
+proyecto: "archivo-de-besos"
 categoria: "practicas"
 imagenes:
   - orden: 1
@@ -7,32 +7,32 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "01.jpg"
+    archivo_original: "originales/img02.jpg"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "02.jpg"
+    archivo_original: "originales/img05.jpg"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "03.jpg"
+    archivo_original: "originales/img07.jpg"
   - orden: 4
     archivo: "04.webp"
     titulo: "Imagen 04"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "04.jpg"
+    archivo_original: "originales/img10.jpg"
   - orden: 5
     archivo: "05.webp"
     titulo: "Imagen 05"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "05.jpg"
+    archivo_original: "originales/img12.jpg"

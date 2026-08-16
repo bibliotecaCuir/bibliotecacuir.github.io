@@ -1,4 +1,4 @@
-proyecto: "MARIKARPA Vol 1"
+proyecto: "marikarpa-vol-1"
 categoria: "obras"
 imagenes:
   - orden: 1
@@ -7,32 +7,32 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "563396905_17948118507022014_2042171846707123920_n.jpg"
+    archivo_original: "originales/563396905_17948118507022014_2042171846707123920_n.jpg"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "563969060_17948118471022014_7232860150378083929_n.jpg"
+    archivo_original: "originales/563969060_17948118471022014_7232860150378083929_n.jpg"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "567101018_17948118381022014_2014614855107583537_n.jpg"
+    archivo_original: "originales/567101018_17948118381022014_2014614855107583537_n.jpg"
   - orden: 4
     archivo: "04.webp"
     titulo: "Imagen 04"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "575227237_17950450014022014_4538249077899946588_n.jpg"
+    archivo_original: "originales/575227237_17950450014022014_4538249077899946588_n.jpg"
   - orden: 5
     archivo: "05.webp"
     titulo: "Imagen 05"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "576095339_17950449999022014_2667925202180446379_n.jpg"
+    archivo_original: "originales/576095339_17950449999022014_2667925202180446379_n.jpg"

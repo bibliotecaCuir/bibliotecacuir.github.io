@@ -1,4 +1,4 @@
-proyecto: "Re vueltas Graficas Multitudes para cambiar la vida CCLM"
+proyecto: "re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm"
 categoria: "obras"
 imagenes:
   - orden: 1
@@ -7,25 +7,25 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "DSCF9978.JPG"
+    archivo_original: "originales/DSCF9978.JPG"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "DSCF9986.JPG"
+    archivo_original: "originales/DSCF9986.JPG"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "DSCF9989.JPG"
+    archivo_original: "originales/DSCF9989.JPG"
   - orden: 4
     archivo: "04.webp"
     titulo: "Imagen 04"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "DSCF9990.JPG"
+    archivo_original: "originales/DSCF9990.JPG"

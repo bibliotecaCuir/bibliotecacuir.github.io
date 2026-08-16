@@ -1,4 +1,4 @@
-proyecto: "Convite marika"
+proyecto: "convite-marika"
 categoria: "activaciones"
 imagenes:
   - orden: 1
@@ -7,11 +7,18 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "01.jpg"
+    archivo_original: "originales/480229CA-BC9C-4112-A930-FD45D354A02C-23675-00000502F0BD36E8.jpg"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "02.jpg"
+    archivo_original: "originales/6628965A-3D0E-409D-95DC-D7401DFFD881-2798-00000144E3113F87.JPG"
+  - orden: 3
+    archivo: "03.webp"
+    titulo: "Imagen 03"
+    descripcion: ""
+    credito: ""
+    anio: ""
+    archivo_original: "originales/F45541EF-2867-4BFE-8C0B-E45060388463-23675-00000503617D2D1B.jpg"

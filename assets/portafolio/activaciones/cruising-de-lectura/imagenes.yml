@@ -1,4 +1,4 @@
-proyecto: "Cruising de lectura"
+proyecto: "cruising-de-lectura"
 categoria: "activaciones"
 imagenes:
   - orden: 1
@@ -7,18 +7,18 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "655259208_18111092659767821_7099945410841490826_n.jpg"
+    archivo_original: "originales/655259208_18111092659767821_7099945410841490826_n.jpg"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "655890353_18059523524480490_3279344662294745545_n.jpg"
+    archivo_original: "originales/655890353_18059523524480490_3279344662294745545_n.jpg"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "656270595_18072626510213083_4761439858807884145_n.jpg"
+    archivo_original: "originales/656270595_18072626510213083_4761439858807884145_n.jpg"

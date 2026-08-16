@@ -1,4 +1,4 @@
-proyecto: "Simbiosis Coloquio"
+proyecto: "simbiosis-coloquio"
 categoria: "otros"
 imagenes:
   - orden: 1
@@ -7,25 +7,25 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "499261949_17932029012022014_7434182806832764259_n.jpg"
+    archivo_original: "originales/499261949_17932029012022014_7434182806832764259_n.jpg"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "499317827_17932029045022014_4565341308383705036_n.jpg"
+    archivo_original: "originales/499317827_17932029045022014_4565341308383705036_n.jpg"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "499878994_17932029057022014_7300428447323872984_n.jpg"
+    archivo_original: "originales/499878994_17932029057022014_7300428447323872984_n.jpg"
   - orden: 4
     archivo: "04.webp"
     titulo: "Imagen 04"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "500430859_17932029021022014_8835817941269951735_n.jpg"
+    archivo_original: "originales/500430859_17932029021022014_8835817941269951735_n.jpg"

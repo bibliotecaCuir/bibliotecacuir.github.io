@@ -1,4 +1,4 @@
-proyecto: "Somos un cuerpo mutante"
+proyecto: "somos-un-cuerpo-mutante"
 categoria: "activaciones"
 imagenes:
   - orden: 1
@@ -7,18 +7,18 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "20241214 2.png"
+    archivo_original: "originales/20241214 2.png"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "20241214.png"
+    archivo_original: "originales/20241214.png"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "20251018.png"
+    archivo_original: "originales/20251018.png"
