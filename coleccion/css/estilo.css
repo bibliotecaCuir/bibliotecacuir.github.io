@@ -25,6 +25,21 @@
   unicode-range: U+0-2F, U+3A-10FFFF;
 }
 
+@font-face {
+  /* Digits still resolve to Montserrat (see unicode-range above), but at a
+     shared font-size Montserrat's numerals read much bigger than Caos
+     Marika's loose hand-drawn letterforms. This second face, restricted to
+     0-9, reuses the same Montserrat outlines shrunk with size-adjust so
+     numbers sit visually level with the rest of a Caos Marika heading. */
+  font-family: "Caos Marika";
+  src: url("https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 72%;
+  unicode-range: U+30-39;
+}
+
 *,
 *::before,
 *::after {
@@ -853,6 +868,10 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
 /* Ficha de libro */
 .book-detail-body {
   min-height: 100vh;
+}
+
+.book-detail-body .site-logo {
+  width: clamp(52px, 8vw, 88px);
 }
 
 .book-page-shell {
