@@ -595,8 +595,7 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.03);
+  object-fit: contain;
   transition: transform 0.42s cubic-bezier(0.2, 1.2, 0.32, 1);
 }
 
@@ -625,7 +624,7 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
 
 .item:hover .catalogo-imagen,
 .item:focus-within .catalogo-imagen {
-  transform: scale(1.075);
+  transform: scale(1.03);
 }
 
 .item-body {
@@ -1118,7 +1117,7 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.35s cubic-bezier(0.2, 1.2, 0.32, 1);
 }
 
@@ -1130,7 +1129,7 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
 
 .related-card:hover img,
 .related-card:focus-visible img {
-  transform: scale(1.06);
+  transform: scale(1.03);
 }
 
 .related-card strong {
