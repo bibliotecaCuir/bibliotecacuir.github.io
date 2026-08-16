@@ -148,7 +148,7 @@ catalogo:
       titulo: "[Calendario] 2023"
       tituloConjunto: "No aplica"
       autorxs: ["HAMBRE HAMBRE HAMBRE"]
-      editorial: "HAMBRE HAMBRE HAMBRE"
+      editorial: "Hambre Hambre Hambre"
       agno: "2023"
       origen: "Chile"
       tipologia: "Calendario"
@@ -188,7 +188,7 @@ catalogo:
       titulo: "Sin titulo [Calendario de Postales. Mes de mayo]"
       tituloConjunto: "[Calendario de Postales]"
       autorxs: ["VVAA"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Postales"
@@ -208,7 +208,7 @@ catalogo:
       titulo: "Sin titulo [Calendario de Postales. Mes de Septiembre]"
       tituloConjunto: "[Calendario de Postales]"
       autorxs: ["VVAA"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Postales"
@@ -228,7 +228,7 @@ catalogo:
       titulo: "Sin titulo [Calendario de Postales. Mes de Julio]"
       tituloConjunto: "[Calendario de Postales]"
       autorxs: ["VVAA"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Postales"
@@ -248,7 +248,7 @@ catalogo:
       titulo: "Sin titulo [Calendario de Postales. Mes de Agosto]"
       tituloConjunto: "[Calendario de Postales]"
       autorxs: ["VVAA"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Postales"
@@ -268,7 +268,7 @@ catalogo:
       titulo: "Sin titulo [Calendario de Postales. Mes de Enero]"
       tituloConjunto: "[Calendario de Postales]"
       autorxs: ["VVAA"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Postales"
@@ -288,7 +288,7 @@ catalogo:
       titulo: "Sin Titulo"
       tituloConjunto: "No aplica"
       autorxs: ["Desobediencia Visual"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "2023"
       origen: "Chile"
       tipologia: "Flyer pequeño"
@@ -308,7 +308,7 @@ catalogo:
       titulo: "Sin Titulo"
       tituloConjunto: "No aplica"
       autorxs: ["Eliana Quilla"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "2022"
       origen: "La Plata; Argentina"
       tipologia: "Fanzine"
@@ -327,8 +327,8 @@ catalogo:
       codigo: "BC.011010.F"
       titulo: "Sin Titulo"
       tituloConjunto: "No aplica"
-      autorxs: ["Crear sensible"]
-      editorial: "Autopublicación Independiente"
+      autorxs: ["Crear Sensible"]
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -348,7 +348,7 @@ catalogo:
       titulo: "Sin Titulo [Persona tocandose]"
       tituloConjunto: "[Conjunto de fotografías]"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fotografía"
@@ -368,7 +368,7 @@ catalogo:
       titulo: "Sin Titulo [Persona desnuda colgando de una rama]"
       tituloConjunto: "[Conjunto de fotografías]"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fotografía"
@@ -388,7 +388,7 @@ catalogo:
       titulo: "Sin Titulo [Persona desnuda sentada en una banca]"
       tituloConjunto: "[Conjunto de fotografías]"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fotografía"
@@ -408,7 +408,7 @@ catalogo:
       titulo: "Sin Titulo [Persona atada con cuerdas rojas]"
       tituloConjunto: "No aplica"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fotografía"
@@ -428,7 +428,7 @@ catalogo:
       titulo: "Sin Titulo [Procura]"
       tituloConjunto: "No aplica"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -448,7 +448,7 @@ catalogo:
       titulo: "Sin Titulo [Perecer Desafio]"
       tituloConjunto: "No aplica"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -468,7 +468,7 @@ catalogo:
       titulo: "Sin Titulo [Unidad Vida Tiempo]"
       tituloConjunto: "No aplica"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -488,7 +488,7 @@ catalogo:
       titulo: "Sin Titulo [Cómo? Es un cuerpo trans por sí mismo una Irrupción]"
       tituloConjunto: "No aplica"
       autorxs: ["VVAA"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -508,7 +508,7 @@ catalogo:
       titulo: "Sin titulo"
       tituloConjunto: "No aplica"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fanzine"
@@ -528,7 +528,7 @@ catalogo:
       titulo: "Sin titulo"
       tituloConjunto: "No aplica"
       autorxs: ["Desconocide"]
-      editorial: "Autopublicación Independiente"
+      editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"
       tipologia: "Fotografía"
@@ -546,7 +546,7 @@ catalogo:
     - imagen: "bc-011019-f.png"
       codigo: "BC.011019.F"
       titulo: "Sin título"
-      tituloConjunto: "No Aplica"
+      tituloConjunto: "No aplica"
       autorxs: ["Jaime Enrique Barragán Antonio"]
       editorial: "Autopublicación independiente"
       agno: "2022"
@@ -566,7 +566,7 @@ catalogo:
     - imagen: "bc-011020.png"
       codigo: "BC.011020"
       titulo: "Sin titulo [Dos lesbianas adolescentes besandose]"
-      tituloConjunto: "No Aplica"
+      tituloConjunto: "No aplica"
       autorxs: ["Isonauta"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"

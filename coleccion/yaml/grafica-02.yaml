@@ -67,13 +67,13 @@ catalogo:
       codigo: "BC.0204.G"
       titulo: "La revolución depende de unos cuantos accesorios"
       tituloConjunto: ""
-      autorxs: ["La Libra Rosa"]
+      autorxs: ["La libra rosa"]
       editorial: "MUAC Museo Universitario de Arte Contemporáneo"
       agno: "2020"
       origen: "México; Colombia"
       tipologia: ""
       copias: "1"
-      material: "Papel imprenta"
+      material: "Papel Imprenta"
       altura: "70"
       ancho: "50"
       profundidad: ""
@@ -127,7 +127,7 @@ catalogo:
       codigo: "BC.0207.G"
       titulo: "Lesbianas visibles"
       tituloConjunto: ""
-      autorxs: ["Desobediencia visual"]
+      autorxs: ["Desobediencia Visual"]
       editorial: "Autopublicación independiente"
       agno: "2024"
       origen: "Chile"
@@ -147,7 +147,7 @@ catalogo:
       codigo: "BC.0208.G"
       titulo: "Las niñas que se enamoraron de Shakira"
       tituloConjunto: ""
-      autorxs: ["Desobediencia visual"]
+      autorxs: ["Desobediencia Visual"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Chile"
@@ -207,7 +207,7 @@ catalogo:
       codigo: "BC.0211.G"
       titulo: "Literal Front Bottoms"
       tituloConjunto: ""
-      autorxs: ["Desobediencia visual"]
+      autorxs: ["Desobediencia Visual"]
       editorial: "Autopublicación independiente"
       agno: "2024"
       origen: "Chile"

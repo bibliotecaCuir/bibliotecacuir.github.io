@@ -8,7 +8,7 @@ catalogo:
       titulo: "GO"
       tituloConjunto: "No aplica"
       autorxs: ["C Silveira"]
-      editorial: "Sapata PRESS"
+      editorial: "Sapata Press"
       agno: "2017"
       origen: "Desconocido"
       tipologia: "Librillo; Cómic"
@@ -28,7 +28,7 @@ catalogo:
       titulo: "GO"
       tituloConjunto: "No aplica"
       autorxs: ["C Silveira"]
-      editorial: "Sapata PRESS"
+      editorial: "Sapata Press"
       agno: "2017"
       origen: "Desconocido"
       tipologia: "Librillo; Cómic"
@@ -248,7 +248,7 @@ catalogo:
       titulo: "Hair"
       tituloConjunto: "No aplica"
       autorxs: ["Andreia Coutinho"]
-      editorial: "Sapata PRESS"
+      editorial: "Sapata Press"
       agno: "2018"
       origen: "Lisboa; Portugal"
       tipologia: "Fanzine"
@@ -427,7 +427,7 @@ catalogo:
       codigo: "BC.010420"
       titulo: "Ilusión y fracaso: en contra del conformismo afectivo"
       tituloConjunto: "No aplica"
-      autorxs: ["Ilusión y fracaso"]
+      autorxs: ["Ilusión y Fracaso"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Desconocido"

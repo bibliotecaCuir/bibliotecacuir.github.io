@@ -447,7 +447,7 @@ catalogo:
       codigo: "BC.010223.F"
       titulo: "Casa Propia"
       tituloConjunto: "No aplica"
-      autorxs: ["Crear sensible"]
+      autorxs: ["Crear Sensible"]
       editorial: "Autopublicación independiente"
       agno: "Desconocido"
       origen: "Santiago; Chile"
@@ -468,7 +468,7 @@ catalogo:
       titulo: "CALENDÁRIO DO NUNCA 2020"
       tituloConjunto: "No aplica"
       autorxs: ["Ostraliana"]
-      editorial: "SAPATA PRESS"
+      editorial: "Sapata Press"
       agno: "2020"
       origen: "Puerto Viejo; Portugal"
       tipologia: "Calendario"
@@ -488,7 +488,7 @@ catalogo:
       titulo: "CALENDÁRIO DO NUNCA 2020"
       tituloConjunto: "No aplica"
       autorxs: ["Ostraliana"]
-      editorial: "SAPATA PRESS"
+      editorial: "Sapata Press"
       agno: "2020"
       origen: "Puerto Viejo; Portugal"
       tipologia: "Calendario"
@@ -1217,7 +1217,7 @@ catalogo:
       material: "Papel"
       altura: "22"
       ancho: "16"
-      profundidad: "No Aplica"
+      profundidad: "No aplica"
       descripcion: "Revista de cómic de formato rectangular y disposición vertical. Cubierta de papel impreso a color. La portada presenta una ilustracion de una figura de grandes dimensiones, parecida a la figura selknam Kotaix, saludando a dos niños que se encuentran en el centro inferior de la imagen, detrás de una reja negra. En la parte central y superior, se encuentra el titulo de la publicacion, acompañado en sus costados de textos de distintos tipos. Su interior está compuesto por hojas impresas a color sobre papel imprenta."
       ubicacionPreferente: "Caja 02, Estante 01"
       ubicacionActual: "Caja 02"
