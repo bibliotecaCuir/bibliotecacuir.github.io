@@ -19,6 +19,10 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
+  /* The typeface only has drawn glyphs for 0, 1 and 3; excluding all digits
+     here lets every number fall through to var(--font-texto) instead of
+     mixing hand-drawn digits with the browser's default fallback font. */
+  unicode-range: U+0-2F, U+3A-10FFFF;
 }
 
 *,
