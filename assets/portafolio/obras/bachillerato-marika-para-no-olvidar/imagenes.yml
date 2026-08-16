@@ -1,5 +1,9 @@
 proyecto: "bachillerato-marika-para-no-olvidar"
 categoria: "obras"
+# Los originales de este proyecto son compartidos con practicas/ (mismo
+# proyecto, listado en ambas categorías) y viven una sola vez en
+# practicas/bachillerato-marika-para-no-olvidar/originales/ para no duplicar
+# ~54MB de fotos en el repo.
 imagenes:
   - orden: 1
     archivo: "01.webp"
@@ -7,25 +11,25 @@ imagenes:
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "originales/Copia de fila-1-columna-1 (1).png"
+    archivo_original: "../../practicas/bachillerato-marika-para-no-olvidar/originales/Copia de fila-1-columna-1 (1).png"
   - orden: 2
     archivo: "02.webp"
     titulo: "Imagen 02"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "originales/fila-1-columna-1.png"
+    archivo_original: "../../practicas/bachillerato-marika-para-no-olvidar/originales/fila-1-columna-1.png"
   - orden: 3
     archivo: "03.webp"
     titulo: "Imagen 03"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "originales/fila-1-columna-2.png"
+    archivo_original: "../../practicas/bachillerato-marika-para-no-olvidar/originales/fila-1-columna-2.png"
   - orden: 4
     archivo: "04.webp"
     titulo: "Imagen 04"
     descripcion: ""
     credito: ""
     anio: ""
-    archivo_original: "originales/fila-1-columna-3.png"
+    archivo_original: "../../practicas/bachillerato-marika-para-no-olvidar/originales/fila-1-columna-3.png"
