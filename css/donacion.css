@@ -287,23 +287,15 @@
 }
 
 .donacion-pagina .pie-seguir,
-.donacion-pagina .pie-legal,
-.donacion-pagina .pie-entrada-fila,
-.donacion-pagina .pie-entrada-fila button {
+.donacion-pagina .pie-legal {
     border-color: rgba(255, 255, 255, 0.42);
 }
 
 .donacion-pagina .pie-seguir a,
 .donacion-pagina .pie-enlaces a,
 .donacion-pagina .pie-contacto a,
-.donacion-pagina .pie-legal a,
-.donacion-pagina .pie-entrada-fila input,
-.donacion-pagina .pie-entrada-fila button {
+.donacion-pagina .pie-legal a {
     color: #ffffff;
-}
-
-.donacion-pagina .pie-entrada-fila input::placeholder {
-    color: rgba(255, 255, 255, 0.68);
 }
 
 .donacion-pagina .pie-seguir-icono {

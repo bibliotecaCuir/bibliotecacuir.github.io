@@ -566,23 +566,15 @@
 }
 
 .portafolio-pagina .pie-seguir,
-.portafolio-pagina .pie-legal,
-.portafolio-pagina .pie-entrada-fila,
-.portafolio-pagina .pie-entrada-fila button {
+.portafolio-pagina .pie-legal {
     border-color: color-mix(in srgb, var(--portafolio-texto, #111111) 42%, transparent);
 }
 
 .portafolio-pagina .pie-seguir a,
 .portafolio-pagina .pie-enlaces a,
 .portafolio-pagina .pie-contacto a,
-.portafolio-pagina .pie-legal a,
-.portafolio-pagina .pie-entrada-fila input,
-.portafolio-pagina .pie-entrada-fila button {
+.portafolio-pagina .pie-legal a {
     color: var(--portafolio-texto, #111111);
-}
-
-.portafolio-pagina .pie-entrada-fila input::placeholder {
-    color: color-mix(in srgb, var(--portafolio-texto, #111111) 62%, transparent);
 }
 
 .portafolio-pagina .pie-seguir-icono {

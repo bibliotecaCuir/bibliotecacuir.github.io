@@ -2,10 +2,10 @@
    pie.css — pie de pagina global (sitio-pie)
    ------------------------------------------------------------
    Pie compartido por defecto por todas las paginas: fila de
-   redes sociales, titulo grande + columnas de links, formulario
-   de newsletter y linea legal. Las paginas de portafolio y
-   donaciones sobreescriben sus colores (ver portafolio.css y
-   donacion.css) pero reutilizan esta misma estructura.
+   redes sociales, titulo grande + columnas de links y linea
+   legal. Las paginas de portafolio y donaciones sobreescriben
+   sus colores (ver portafolio.css y donacion.css) pero
+   reutilizan esta misma estructura.
    ============================================================ */
 
 .sitio-pie {
@@ -104,8 +104,7 @@
         minmax(120px, 0.9fr)
         minmax(110px, 0.8fr)
         minmax(110px, 0.8fr)
-        minmax(160px, 1fr)
-        minmax(220px, 1.35fr);
+        minmax(160px, 1fr);
     gap: clamp(1.2rem, 3vw, 3rem);
     align-items: start;
 }
@@ -127,8 +126,7 @@
     height: auto;
 }
 
-.pie-columna,
-.pie-boletin {
+.pie-columna {
     display: grid;
     gap: 0.34rem;
     align-content: start;
@@ -143,8 +141,7 @@
     text-transform: uppercase;
 }
 
-.pie-columna p,
-.pie-boletin label {
+.pie-columna p {
     max-width: 28ch;
     margin: 0;
     font-size: clamp(0.76rem, 1vw, 0.92rem);
@@ -172,43 +169,6 @@
 .pie-legal a:focus-visible {
     opacity: 0.58;
     transform: translateX(0.35em);
-}
-
-.pie-entrada-fila {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 44px;
-    width: 100%;
-    margin-top: 0.35rem;
-    border: 1px solid rgba(255, 255, 255, 0.82);
-}
-
-.pie-entrada-fila input,
-.pie-entrada-fila button {
-    min-width: 0;
-    min-height: 38px;
-    color: #ffffff;
-    font: inherit;
-    background: transparent;
-    border: 0;
-}
-
-.pie-entrada-fila input {
-    padding: 0 0.72rem;
-}
-
-.pie-entrada-fila input::placeholder {
-    color: rgba(255, 255, 255, 0.68);
-    opacity: 1;
-    text-transform: lowercase;
-}
-
-.pie-entrada-fila button {
-    display: grid;
-    place-items: center;
-    padding: 0;
-    font-size: 1.35rem;
-    cursor: pointer;
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .pie-legal {
