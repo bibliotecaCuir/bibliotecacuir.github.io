@@ -45,8 +45,8 @@ function headerGlobal(categoria) {
     </header>`;
 }
 
-function footer(categoria) {
-  return piePagina({ idCorreo: `footer-email-${categoria}` });
+function footer() {
+  return piePagina();
 }
 
 function pagina(categoria, proyecto, carpetaImagenesCategoria) {
@@ -104,7 +104,7 @@ ${imagenesHtml}
         </section>
     </main>
 
-${footer(categoria)}
+${footer()}
     <script src="/js/portfolio.js" defer></script>
     <script src="/js/site-motion.js" defer></script>
 </body>

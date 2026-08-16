@@ -36,11 +36,9 @@ ${enlaces}
     </nav>`;
 }
 
-// idCorreo se pasa explicito (no derivado) porque cada seccion que usa este pie
-// (index.html, dona, portafolio) tiene su propio esquema de id para el input de email
-// (footer-email, footer-email-pagina, footer-email-<categoria>). coleccion/ no usa este
-// pie compartido — tiene su propio header/footer en coleccion/generar-html-libros.js.
-function piePagina({ idCorreo }) {
+// coleccion/ no usa este pie compartido — tiene su propio header/footer en
+// coleccion/generar-html-libros.js.
+function piePagina() {
   return `    <footer class="sitio-pie" id="contacto" aria-label="Pie de página">
         <div class="pie-seguir">
             <a class="pie-seguir-enlace" href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">
@@ -87,14 +85,6 @@ function piePagina({ idCorreo }) {
                     <p>preguntas, comentarios, colaboraciones:</p>
                     <a href="mailto:hola@bibliotecacuir.cl">hola@bibliotecacuir.cl</a>
                 </div>
-
-                <form class="pie-boletin" action="/" method="get">
-                    <label for="${idCorreo}">recibe novedades y publicaciones nuevas.</label>
-                    <div class="pie-entrada-fila">
-                        <input id="${idCorreo}" type="email" name="email" placeholder="email" autocomplete="email">
-                        <button type="submit" aria-label="Enviar correo">→</button>
-                    </div>
-                </form>
             </div>
         </div>
 

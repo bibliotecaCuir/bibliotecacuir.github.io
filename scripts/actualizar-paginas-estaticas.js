@@ -14,27 +14,27 @@ const PAGINAS = [
   {
     archivo: "index.html",
     nav: { id: "portada-menu", activo: null, esInicio: true, propuesta: false },
-    pie: { idCorreo: "footer-email" },
+    pie: true,
   },
   {
     archivo: "manifiesto/index.html",
     nav: { id: "manifest-menu", activo: "manifiesto", esInicio: false, propuesta: true },
-    pie: null,
+    pie: false,
   },
   {
     archivo: "dona/index.html",
     nav: { id: "donation-menu", activo: "dona", esInicio: false, propuesta: true },
-    pie: { idCorreo: "footer-email-dona" },
+    pie: true,
   },
   {
     archivo: "portafolio/index.html",
     nav: { id: "portafolio-menu", activo: "portafolio", esInicio: false, propuesta: true },
-    pie: { idCorreo: "footer-email-portafolio" },
+    pie: true,
   },
   {
     archivo: "coleccion/index.html",
     nav: { id: "portada-menu", activo: "coleccion", esInicio: false, propuesta: false },
-    pie: { idCorreo: "pie-email" },
+    pie: true,
   },
 ];
 
@@ -58,7 +58,7 @@ function actualizar() {
     contenido = reemplazarEntreMarcadores(contenido, "nav-principal", botonYNavPrincipal(nav));
 
     if (pie) {
-      contenido = reemplazarEntreMarcadores(contenido, "pie-pagina", piePagina(pie));
+      contenido = reemplazarEntreMarcadores(contenido, "pie-pagina", piePagina());
     }
 
     fs.writeFileSync(rutaArchivo, contenido);
