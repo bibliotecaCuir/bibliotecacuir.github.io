@@ -305,6 +305,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.0216.G"
+      privado: true
       titulo: "Mi casa está llena de mariposas"
       tituloConjunto: ""
       autorxs: ["Diamela Burboa"]

@@ -645,6 +645,7 @@ catalogo:
       notasRegistro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010818-A"
+      privado: true
       titulo: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -665,6 +666,7 @@ catalogo:
       notasRegistro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010818-B"
+      privado: true
       titulo: "N 3"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -685,6 +687,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010818-C"
+      privado: true
       titulo: "N 4"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -705,6 +708,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010818-D"
+      privado: true
       titulo: "N 5"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -725,6 +729,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010818-E"
+      privado: true
       titulo: "N 6 - 7 - 8 - 9 - 10 - 11"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -745,6 +750,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010818-F"
+      privado: true
       titulo: "N 12"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -765,6 +771,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010818-G"
+      privado: true
       titulo: "N 13"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -785,6 +792,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010818-H"
+      privado: true
       titulo: "N 14"
       tituloConjunto: "Un día empezamos a recoger la loza rota que encontrábamos en la basura"
       autorxs: ["Diamela Burboa y Matías Fuentes"]
@@ -1425,6 +1433,7 @@ catalogo:
       notasRegistro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010844.F"
+      privado: true
       titulo: "Travo Equivocado"
       tituloConjunto: "No Aplica"
       autorxs: ["Jotaelmes Ramírez"]

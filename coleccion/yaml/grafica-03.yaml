@@ -65,6 +65,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.0304.G"
+      privado: true
       titulo: "Para grabar un cuerpo sobre un cuerpo"
       tituloConjunto: ""
       autorxs: ["Matías Fuentes", "Diamela Burboa"]

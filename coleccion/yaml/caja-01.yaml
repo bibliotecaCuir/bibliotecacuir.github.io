@@ -5,6 +5,7 @@ catalogo:
   articulos:
     - imagen: ""
       codigo: "BC.010101.L"
+      privado: true
       titulo: "A quienes queden"
       tituloConjunto: "No aplica"
       autorxs: ["Jota Elmes"]

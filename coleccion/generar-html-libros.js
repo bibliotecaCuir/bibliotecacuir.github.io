@@ -100,6 +100,7 @@ function leerCatalogos() {
 
     articulos.forEach((item, index) => {
       if (!String(item?.titulo || item?.codigo || "").trim()) return;
+      if (item?.privado === true) return;
       const clave = clavePublicacion(item);
       if (!publicaciones.has(clave)) {
         publicaciones.set(clave, {

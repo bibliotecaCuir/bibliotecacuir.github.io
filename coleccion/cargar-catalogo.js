@@ -300,7 +300,9 @@ Promise.all(
     const fragment = document.createDocumentFragment();
     const publicaciones = quitarDuplicados(
       catalogos.flatMap(({ caja, articulos }) =>
-        articulos.map((item, index) => ({ item, caja, index }))
+        articulos
+          .map((item, index) => ({ item, caja, index }))
+          .filter(({ item }) => item?.privado !== true)
       )
     );
 

@@ -645,6 +645,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010728.F"
+      privado: true
       titulo: "Retrato transitorio"
       tituloConjunto: "No aplica"
       autorxs: ["Jotaelmes R."]

@@ -1545,6 +1545,7 @@ catalogo:
       notasRegistro: "Milena Moena"
     - imagen: ""
       codigo: "BC.010538.L"
+      privado: true
       titulo: "Les chiques: infancias y adolescentes desobedientes"
       tituloConjunto: "No Aplica"
       autorxs: ["VVAA"]

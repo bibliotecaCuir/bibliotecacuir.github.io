@@ -585,6 +585,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010229.F"
+      privado: true
       titulo: "Cada día, al levantarnos, hacemos una foto de la cama en que dormimos juntes"
       tituloConjunto: "No aplica"
       autorxs: ["Diamela Burboa", "Matías Fuentes"]

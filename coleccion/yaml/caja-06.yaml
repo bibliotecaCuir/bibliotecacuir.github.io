@@ -1845,6 +1845,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-A"
+      privado: true
       titulo: "[Sobre contenedor]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
@@ -1865,6 +1866,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-B"
+      privado: true
       titulo: "[Tarjeta 1]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
@@ -1885,6 +1887,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-C"
+      privado: true
       titulo: "[Tarjeta 2]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
@@ -1905,6 +1908,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-D"
+      privado: true
       titulo: "[Tarjeta 3]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
@@ -1925,6 +1929,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-E"
+      privado: true
       titulo: "[Tarjeta 4]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
@@ -1945,6 +1950,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-F"
+      privado: true
       titulo: "[Tarjeta 5]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
@@ -1965,6 +1971,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-G"
+      privado: true
       titulo: "[Tarjeta 6]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
@@ -1985,6 +1992,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: ""
       codigo: "BC.010653-H"
+      privado: true
       titulo: "[Tarjeta 7]"
       tituloConjunto: "Otras formas de hacer sentir conocer acompañar y emocionarnos por la vida"
       autorxs: ["VVAA"]
