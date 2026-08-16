@@ -137,8 +137,9 @@ function crearArticulo(item, caja, index) {
   article.className = "item reveal-item";
   article.dataset.categoria = obtenerCategoria(item.tipologia);
 
-  const imagenUrl = item.imagen
-    ? `https://raw.githubusercontent.com/bibliotecaCuir/coleccion-imagenes/main/${caja}/${item.imagen}`
+  const nombreWebp = item.imagen ? item.imagen.replace(/\.[^.]+$/, ".webp") : "";
+  const imagenUrl = nombreWebp
+    ? `https://raw.githubusercontent.com/bibliotecaCuir/coleccion-imagenes/main/webp/${caja}/${nombreWebp}`
     : "";
 
   if (imagenUrl) article.dataset.imagen = imagenUrl;

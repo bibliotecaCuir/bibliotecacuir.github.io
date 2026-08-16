@@ -90,6 +90,12 @@ function imageUrl(item, caja) {
     : "";
 }
 
+function imageUrlPreview(item, caja) {
+  if (!item.imagen) return "";
+  const nombreWebp = item.imagen.replace(/\.[^.]+$/, ".webp");
+  return `https://raw.githubusercontent.com/bibliotecaCuir/coleccion-imagenes/main/webp/${caja}/${nombreWebp}`;
+}
+
 function leerCatalogos() {
   const publicaciones = new Map();
 
@@ -194,7 +200,7 @@ function obtenerRelacionados(publicacion, publicaciones) {
 }
 
 function relatedCard(pub) {
-  const imagen = imageUrl(pub.item, pub.caja);
+  const imagen = imageUrlPreview(pub.item, pub.caja);
   return `
     <a class="related-card" href="./${pub.slug}.html">
       <figure class="related-cover">
