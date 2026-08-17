@@ -1,16 +1,16 @@
 const ENLACES_NAV_PRINCIPAL = [
-  { clave: "contacto", ancla: "contacto", etiqueta: "contacto" },
   { clave: "manifiesto", ruta: "/manifiesto/", etiqueta: "manifiesto" },
   { clave: "sobre-nosotres", ancla: "sobre-nosotres", etiqueta: "sobre nosotres" },
-  { clave: "portafolio", ruta: "/portafolio/", etiqueta: "portafolio" },
   { clave: "coleccion", ruta: "/coleccion/", etiqueta: "coleccion", compacta: "colección" },
+  { clave: "portafolio", ruta: "/portafolio/", etiqueta: "portafolio" },
   { clave: "dona", ruta: "/dona/", etiqueta: "dona aqui", compacta: "dona aquí" },
+  { clave: "contacto", ancla: "contacto", etiqueta: "contacto" },
 ];
 
-// El menu principal tiene dos variantes: la simple (portada-menu, usada por index.html,
-// coleccion/index.html) y la "propuesta" (agrega propuesta-menu-interruptor/propuesta-menu,
-// que es lo que js/portfolio-proposals.js busca para abrir/cerrar el menu en manifiesto,
-// dona y portafolio).
+// El menu principal tiene dos variantes: la simple (portada-menu, usada por index.html)
+// y la "propuesta" (agrega propuesta-menu-interruptor/propuesta-menu, que es lo que
+// js/portfolio-proposals.js busca para abrir/cerrar el menu en manifiesto, dona y
+// portafolio). coleccion/ usa su propio nav (landing-menu, ver coleccion/generar-html-libros.js).
 function botonYNavPrincipal({ id, activo = null, esInicio = false, propuesta = false }) {
   const claseNav = propuesta ? "portada-menu propuesta-menu" : "portada-menu";
   const claseBoton = propuesta

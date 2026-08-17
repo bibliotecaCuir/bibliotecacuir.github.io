@@ -18,6 +18,8 @@ const catalogosYaml = [
 const container = document.querySelector("#divCatalogo");
 const countEl = document.querySelector("#totalCount");
 const filtrosEl = document.querySelector("#catalogoFiltros");
+const autorxInputEl = document.querySelector("#filtroAutorx");
+const autorxDatalistEl = document.querySelector("#autorxsDatalist");
 
 if (!container) {
   throw new Error("No se encontró el contenedor #divCatalogo.");
@@ -34,6 +36,8 @@ document.body.appendChild(preview);
 
 let totalArticulos = 0;
 let revealObserver;
+let categoriaActual = "todas";
+let autorxTexto = "";
 
 const categorias = [
   {
@@ -144,6 +148,8 @@ function crearArticulo(item, caja, index) {
 
   if (imagenUrl) article.dataset.imagen = imagenUrl;
 
+  article.dataset.autorxs = normalizar(valorLista(item.autorxs));
+
   const autorxs = valorLista(item.autorxs);
   // Los YAML actuales usan "editorial"; se tolera "editoriales" para datos futuros.
   const editorial = valorLista(item.editorial || item.editoriales);
@@ -214,12 +220,16 @@ function actualizarConteo(visibles) {
       : `${visibles} de ${totalArticulos} piezas`;
 }
 
-function filtrarCatalogo(categoria) {
+function aplicarFiltros() {
   let visibles = 0;
   const articulosVisibles = [];
 
   container.querySelectorAll(".item").forEach((article) => {
-    const mostrar = categoria === "todas" || article.dataset.categoria === categoria;
+    const coincideCategoria =
+      categoriaActual === "todas" || article.dataset.categoria === categoriaActual;
+    const coincideAutorx =
+      !autorxTexto || (article.dataset.autorxs || "").includes(autorxTexto);
+    const mostrar = coincideCategoria && coincideAutorx;
     article.hidden = !mostrar;
     if (mostrar) {
       visibles += 1;
@@ -228,7 +238,7 @@ function filtrarCatalogo(categoria) {
   });
 
   filtrosEl?.querySelectorAll(".filtro-boton").forEach((boton) => {
-    const activo = boton.dataset.filtro === categoria;
+    const activo = boton.dataset.filtro === categoriaActual;
     boton.classList.toggle("active", activo);
     boton.setAttribute("aria-pressed", String(activo));
   });
@@ -274,7 +284,43 @@ function crearFiltros() {
   filtrosEl.addEventListener("click", (event) => {
     const boton = event.target.closest(".filtro-boton");
     if (!boton) return;
-    filtrarCatalogo(boton.dataset.filtro);
+    categoriaActual = boton.dataset.filtro;
+    aplicarFiltros();
+  });
+}
+
+function poblarAutorxsDatalist(publicaciones) {
+  if (!autorxDatalistEl) return;
+
+  const nombres = new Map();
+  publicaciones.forEach(({ item }) => {
+    const lista = Array.isArray(item.autorxs) ? item.autorxs : [item.autorxs];
+    lista.forEach((autorRaw) => {
+      const nombre = String(autorRaw || "").trim();
+      if (!nombre) return;
+      const clave = normalizar(nombre);
+      if (!nombres.has(clave)) nombres.set(clave, nombre);
+    });
+  });
+
+  const ordenados = [...nombres.values()].sort((a, b) => normalizar(a).localeCompare(normalizar(b)));
+  autorxDatalistEl.innerHTML = ordenados
+    .map((nombre) => `<option value="${escaparHTML(nombre)}"></option>`)
+    .join("");
+}
+
+function inicializarFiltroAutorx() {
+  if (!autorxInputEl) return;
+
+  const autorxUrl = new URLSearchParams(window.location.search).get("autor");
+  if (autorxUrl) {
+    autorxInputEl.value = autorxUrl;
+    autorxTexto = normalizar(autorxUrl);
+  }
+
+  autorxInputEl.addEventListener("input", (event) => {
+    autorxTexto = normalizar(event.target.value.trim());
+    aplicarFiltros();
   });
 }
 
@@ -315,6 +361,9 @@ Promise.all(
     container.appendChild(fragment);
     actualizarConteo(totalArticulos);
     crearFiltros();
+    poblarAutorxsDatalist(publicaciones);
+    inicializarFiltroAutorx();
+    if (autorxTexto) aplicarFiltros();
     observarRevelado([...container.querySelectorAll(".item")]);
   })
   .catch((error) => {

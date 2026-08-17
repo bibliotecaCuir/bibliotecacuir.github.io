@@ -542,6 +542,34 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   border-color: var(--negro);
 }
 
+.autorx-filtro {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.autorx-input {
+  width: min(220px, 60vw);
+  padding: 0.42rem 0.8rem;
+  color: var(--negro);
+  font: inherit;
+  font-size: 0.68rem;
+  text-transform: lowercase;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.autorx-input::placeholder {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.autorx-input:focus-visible,
+.autorx-input:focus {
+  border-color: var(--negro);
+}
+
 /* Grilla de la colección inspirada en project-gallery del landing. */
 .catalogo-section {
   padding: clamp(2rem, 4vw, 4rem) var(--page-gutter) clamp(6rem, 10vw, 9rem);
@@ -1205,6 +1233,16 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   text-transform: lowercase;
 }
 
+.autor-nombre a {
+  color: var(--negro);
+  text-decoration: none;
+}
+
+.autor-nombre a:hover,
+.autor-nombre a:focus-visible {
+  text-decoration: underline;
+}
+
 @media (max-width: 1000px) {
   #divCatalogo {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1296,6 +1334,17 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
     padding: 0.38rem 0.55rem;
     font-size: 0.6rem;
     line-height: 1;
+  }
+
+  .autorx-filtro {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .autorx-input {
+    width: 100%;
+    padding: 0.38rem 0.65rem;
+    font-size: 0.6rem;
   }
 
   #divCatalogo {

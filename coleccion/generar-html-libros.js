@@ -238,11 +238,11 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
     </button>
 
     <nav class="landing-menu" id="landing-menu" aria-label="Menú principal">
-      <a href="/#contacto">contacto</a>
       <a href="/manifiesto/">manifiesto</a>
       <a href="/#sobre-nosotres">sobre nosotres</a>
-      <a href="/portafolio/">portafolio</a>
       <a href="${rutaColeccion}">coleccion</a>
+      <a href="/portafolio/">portafolio</a>
+      <a href="/#contacto">contacto</a>
     </nav>
   `;
 }
@@ -435,7 +435,8 @@ function agruparPorLetra(autores) {
 }
 
 function autorBloque(autor) {
-  return `<li class="autor-nombre">${escaparHTML(autor.nombre)}</li>`;
+  const href = `./index.html?autor=${encodeURIComponent(autor.nombre)}#divCatalogo`;
+  return `<li class="autor-nombre"><a href="${href}">${escaparHTML(autor.nombre)}</a></li>`;
 }
 
 function seccionLetra([letra, autores]) {

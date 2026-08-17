@@ -33,11 +33,11 @@
   </button>
 
   <nav class="landing-menu" id="landing-menu" aria-label="Menú principal">
-    <a href="/#contacto">contacto</a>
     <a href="/manifiesto/">manifiesto</a>
     <a href="/#sobre-nosotres">sobre nosotres</a>
-    <a href="/portafolio/">portafolio</a>
     <a href="/coleccion/">coleccion</a>
+    <a href="/portafolio/">portafolio</a>
+    <a href="/#contacto">contacto</a>
   </nav>
 
   <main>
@@ -53,6 +53,11 @@
         <div class="catalogo-controls">
           <p class="header-count" id="totalCount" aria-live="polite">Cargando piezas…</p>
           <div class="catalogo-filtros" id="catalogoFiltros" aria-label="Filtrar colección"></div>
+          <div class="autorx-filtro">
+            <label class="sr-only" for="filtroAutorx">Filtrar por autorx</label>
+            <input type="search" id="filtroAutorx" class="autorx-input" list="autorxsDatalist" placeholder="filtrar por autorx…" autocomplete="off">
+            <datalist id="autorxsDatalist"></datalist>
+          </div>
           <a class="autores-link" href="./autorxs.html">ver autorxs →</a>
         </div>
       </div>

@@ -1,8 +1,9 @@
 // Regenera el boton+nav principal y el pie de pagina de las paginas estaticas
-// (index.html, manifiesto/, dona/, portafolio/, coleccion/) a partir de las
+// (index.html, manifiesto/, dona/, portafolio/) a partir de las
 // plantillas compartidas en scripts/lib/plantillas-sitio.js. Buscar los marcadores
 // <!-- nav-principal:... --> / <!-- pie-pagina:... --> en cada archivo y reemplaza
-// lo que hay entre ellos.
+// lo que hay entre ellos. coleccion/ tiene su propio nav (landing-menu) definido en
+// coleccion/generar-html-libros.js, ya que no usa estos marcadores.
 
 const fs = require("fs");
 const path = require("path");
@@ -29,11 +30,6 @@ const PAGINAS = [
   {
     archivo: "portafolio/index.html",
     nav: { id: "portafolio-menu", activo: "portafolio", esInicio: false, propuesta: true },
-    pie: true,
-  },
-  {
-    archivo: "coleccion/index.html",
-    nav: { id: "portada-menu", activo: "coleccion", esInicio: false, propuesta: false },
     pie: true,
   },
 ];
