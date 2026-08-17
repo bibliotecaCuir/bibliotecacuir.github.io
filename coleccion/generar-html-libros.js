@@ -434,23 +434,57 @@ function agruparPorLetra(autores) {
   return [...grupos.entries()];
 }
 
-function obraItem(publicacion) {
-  const item = publicacion.item;
-  return `
-    <li class="autor-obra">
-      <a href="./fichas/${publicacion.slug}.html">${escaparHTML(item.titulo || "Sin título")}</a>
-      ${esDato(item.agno) ? `<span class="autor-obra-agno">${escaparHTML(item.agno)}</span>` : ""}
-    </li>
-  `;
+function imagenAutor(obras) {
+  for (const publicacion of obras) {
+    const url = imageUrlPreview(publicacion.item, publicacion.caja);
+    if (url) return url;
+  }
+  return "";
+}
+
+function rangoAgnos(obras) {
+  const anios = obras
+    .map((publicacion) => String(publicacion.item.agno || "").match(/\d{4}/)?.[0])
+    .filter(Boolean)
+    .sort();
+
+  if (!anios.length) return "s/f";
+  const primero = anios[0];
+  const ultimo = anios[anios.length - 1];
+  return primero === ultimo ? primero : `${primero}–${ultimo}`;
+}
+
+function obrasMeta(obras) {
+  return obras
+    .map((publicacion, index) => `
+      ${index ? '<span class="item-sep" aria-hidden="true">·</span>' : ""}
+      <a href="./fichas/${publicacion.slug}.html">${escaparHTML(publicacion.item.titulo || "Sin título")}</a>
+    `)
+    .join("");
 }
 
 function autorBloque(autor) {
+  const imagen = imagenAutor(autor.obras);
+
   return `
-    <article class="autor-bloque">
-      <h3 class="autor-nombre">${escaparHTML(autor.nombre)} <span class="autor-conteo">${autor.obras.length}</span></h3>
-      <ul class="autor-obras">
-        ${autor.obras.map(obraItem).join("")}
-      </ul>
+    <article class="item autor-card">
+      <figure class="item-imagen-wrap">
+        ${imagen
+          ? `<img class="catalogo-imagen" src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async">`
+          : `<span class="item-sin-imagen" aria-hidden="true">BC</span>`}
+      </figure>
+      <div class="item-body">
+        <h3 class="item-titulo">${escaparHTML(autor.nombre)}</h3>
+        <div class="item-identificacion">
+          <span class="item-codigo">${autor.obras.length} ${autor.obras.length === 1 ? "pieza" : "piezas"}</span>
+          <span class="item-agno">${rangoAgnos(autor.obras)}</span>
+        </div>
+        <div class="item-meta-wrap">
+          <div class="item-meta">
+            ${obrasMeta(autor.obras)}
+          </div>
+        </div>
+      </div>
     </article>
   `;
 }
