@@ -444,6 +444,14 @@
     transform: scale(1.08);
 }
 
+/* El indice real de /portafolio/ reutiliza la grilla de la propuesta 03,
+   pero conserva la cabecera fija del sitio (.sitio-cabecera) en vez de la
+   cabecera propia de las propuestas, asi que necesita su propio espacio
+   arriba para no quedar debajo del logo. */
+.portafolio-pagina .propuesta-03-contenedor {
+    padding-top: clamp(5.8rem, 9vw, 8rem);
+}
+
 .propuesta-03-tarjeta span {
     display: block;
     margin-bottom: 0.16rem;
