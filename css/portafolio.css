@@ -506,10 +506,13 @@
 }
 
 /* Cada "fila" (el texto, y luego cada imagen) ocupa el ancho
-   completo de la pantalla con un color solido propio, rotando
-   entre 5 colores brillantes del sitio (ver base.css) para que
-   cada bloque se lea como una seccion distinta al bajar por la
-   pagina. El contenido interno se centra en .portafolio-fila-interior. */
+   completo de la pantalla con un color solido propio. En vez de
+   rotar entre colores sueltos del sitio, cada bloque se calcula a
+   partir del color base de la seccion activa (--portafolio-color-*,
+   ver base.css) mezclado con blanco o negro, para que los 5 bloques
+   se lean como variantes mas claras/oscuras de un mismo color y no
+   como colores sin relacion entre si. El contenido interno se
+   centra en .portafolio-fila-interior. */
 .portafolio-filas {
     display: block;
     gap: 0;
@@ -517,6 +520,7 @@
 }
 
 .portafolio-fila {
+    box-sizing: border-box;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     padding: clamp(2.6rem, 6vw, 5rem) var(--page-gutter, clamp(1.25rem, 4vw, 5rem));
@@ -527,29 +531,104 @@
     margin: 0 auto;
 }
 
-.portafolio-fila:nth-of-type(5n + 1) {
-    color: #111111;
-    background: var(--color-verde);
+.portafolio-obras .portafolio-fila:nth-of-type(5n + 1) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-obras) 85%, white);
 }
 
-.portafolio-fila:nth-of-type(5n + 2) {
+.portafolio-obras .portafolio-fila:nth-of-type(5n + 2) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-obras) 80%, black);
+}
+
+.portafolio-obras .portafolio-fila:nth-of-type(5n + 3) {
+    color: #f1f1f1;
+    background: var(--portafolio-color-obras);
+}
+
+.portafolio-obras .portafolio-fila:nth-of-type(5n + 4) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-obras) 65%, white);
+}
+
+.portafolio-obras .portafolio-fila:nth-of-type(5n) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-obras) 60%, black);
+}
+
+.portafolio-practicas .portafolio-fila:nth-of-type(5n + 1) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-practicas) 85%, white);
+}
+
+.portafolio-practicas .portafolio-fila:nth-of-type(5n + 2) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-practicas) 80%, black);
+}
+
+.portafolio-practicas .portafolio-fila:nth-of-type(5n + 3) {
     color: #f1f1f1;
     background: var(--portafolio-color-practicas);
 }
 
-.portafolio-fila:nth-of-type(5n + 3) {
-    color: #111111;
-    background: var(--color-rosado);
+.portafolio-practicas .portafolio-fila:nth-of-type(5n + 4) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-practicas) 65%, white);
 }
 
-.portafolio-fila:nth-of-type(5n + 4) {
-    color: #ffffff;
-    background: var(--color-azul);
+.portafolio-practicas .portafolio-fila:nth-of-type(5n) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-practicas) 60%, black);
 }
 
-.portafolio-fila:nth-of-type(5n) {
-    color: #111111;
-    background: var(--color-rosado-claro);
+.portafolio-activaciones .portafolio-fila:nth-of-type(5n + 1) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-activaciones) 85%, white);
+}
+
+.portafolio-activaciones .portafolio-fila:nth-of-type(5n + 2) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-activaciones) 80%, black);
+}
+
+.portafolio-activaciones .portafolio-fila:nth-of-type(5n + 3) {
+    color: #202020;
+    background: var(--portafolio-color-activaciones);
+}
+
+.portafolio-activaciones .portafolio-fila:nth-of-type(5n + 4) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-activaciones) 65%, white);
+}
+
+.portafolio-activaciones .portafolio-fila:nth-of-type(5n) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-activaciones) 60%, black);
+}
+
+.portafolio-otros .portafolio-fila:nth-of-type(5n + 1) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-otros) 85%, white);
+}
+
+.portafolio-otros .portafolio-fila:nth-of-type(5n + 2) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-otros) 80%, black);
+}
+
+.portafolio-otros .portafolio-fila:nth-of-type(5n + 3) {
+    color: #202020;
+    background: var(--portafolio-color-otros);
+}
+
+.portafolio-otros .portafolio-fila:nth-of-type(5n + 4) {
+    color: #202020;
+    background: color-mix(in srgb, var(--portafolio-color-otros) 65%, white);
+}
+
+.portafolio-otros .portafolio-fila:nth-of-type(5n) {
+    color: #f1f1f1;
+    background: color-mix(in srgb, var(--portafolio-color-otros) 60%, black);
 }
 
 .portafolio-fila-texto h2 {
