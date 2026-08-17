@@ -5,6 +5,7 @@ const yaml = require("../lib/js-yaml.min.js");
 const ROOT = __dirname;
 const YAML_DIR = path.join(ROOT, "yaml");
 const FICHAS_DIR = path.join(ROOT, "fichas");
+const AUTORXS_DIR = path.join(ROOT, "autorxs");
 
 const catalogosYaml = [
   "caja-01",
@@ -200,10 +201,10 @@ function obtenerRelacionados(publicacion, publicaciones) {
   return puntuados.slice(0, 5);
 }
 
-function relatedCard(pub) {
+function relatedCard(pub, basePath = "./") {
   const imagen = imageUrlPreview(pub.item, pub.caja);
   return `
-    <a class="related-card" href="./${pub.slug}.html">
+    <a class="related-card" href="${basePath}${pub.slug}.html">
       <figure class="related-cover">
         ${imagen
           ? `<img src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async">`
@@ -376,7 +377,7 @@ function pagina(publicacion, publicaciones) {
         <a href="../index.html">Toda la colección →</a>
       </div>
       <div class="related-grid">
-        ${relacionados.map(relatedCard).join("")}
+        ${relacionados.map((pub) => relatedCard(pub)).join("")}
       </div>
     </section>
 
@@ -388,6 +389,22 @@ function pagina(publicacion, publicaciones) {
 </body>
 </html>
 `;
+}
+
+function crearSlugAutor(nombre, slugsUsados) {
+  const base = normalizar(nombre)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "autor";
+
+  let slug = base;
+  let sufijo = 2;
+  while (slugsUsados.has(slug)) {
+    slug = `${base}-${sufijo}`;
+    sufijo += 1;
+  }
+
+  slugsUsados.add(slug);
+  return slug;
 }
 
 function construirAutores(publicaciones) {
@@ -406,6 +423,8 @@ function construirAutores(publicaciones) {
     });
   });
 
+  const slugsUsados = new Set();
+
   return [...mapa.values()]
     .map((autor) => ({
       ...autor,
@@ -413,7 +432,8 @@ function construirAutores(publicaciones) {
         normalizar(a.item.titulo).localeCompare(normalizar(b.item.titulo))
       ),
     }))
-    .sort((a, b) => normalizar(a.nombre).localeCompare(normalizar(b.nombre)));
+    .sort((a, b) => normalizar(a.nombre).localeCompare(normalizar(b.nombre)))
+    .map((autor) => ({ ...autor, slug: crearSlugAutor(autor.nombre, slugsUsados) }));
 }
 
 function letraDe(nombre) {
@@ -436,7 +456,7 @@ function agruparPorLetra(autores) {
 }
 
 function autorBloque(autor) {
-  const href = `./index.html?autor=${encodeURIComponent(autor.nombre)}#divCatalogo`;
+  const href = `./autorxs/${autor.slug}.html`;
   return `<li class="autor-nombre"><a href="${href}">${escaparHTML(autor.nombre)}</a></li>`;
 }
 
@@ -512,6 +532,69 @@ function paginaAutores(autores) {
 `;
 }
 
+function paginaAutor(autor) {
+  const cantidad = autor.obras.length;
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Obras de ${escaparHTML(autor.nombre)} en la colección de la Biblioteca Cuir.">
+  <title>${escaparHTML(autor.nombre)} — autorxs — colección Biblioteca Cuir</title>
+  <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
+  <link rel="shortcut icon" href="/assets/imagenes/cola.png">
+  <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://bibliotecacuir.github.io">
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  ${headerGlobal()}
+
+  <main>
+    <section class="catalogo-hero" aria-labelledby="autor-title">
+      <div class="catalogo-intro">
+        <div class="catalogo-presentacion">
+          <a class="back-link" href="../autorxs.html">← autorxs</a>
+          <h1 id="autor-title">${escaparHTML(autor.nombre)}</h1>
+          <p class="catalogo-descripcion">
+            <span>${cantidad} ${cantidad === 1 ? "pieza" : "piezas"} en la colección</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-section" aria-labelledby="obras-title" id="contenido">
+      <div class="related-heading">
+        <h2 id="obras-title">Obras</h2>
+        <a href="../index.html">Toda la colección →</a>
+      </div>
+      <div class="related-grid">
+        ${autor.obras.map((pub) => relatedCard(pub, "../fichas/")).join("")}
+      </div>
+    </section>
+  </main>
+
+  ${footer()}
+
+  <script src="../js/menu.js"></script>
+</body>
+</html>
+`;
+}
+
+function limpiarAutorxsGenerado() {
+  if (!fs.existsSync(AUTORXS_DIR)) fs.mkdirSync(AUTORXS_DIR);
+  fs.readdirSync(AUTORXS_DIR)
+    .filter((file) => file.endsWith(".html"))
+    .forEach((file) => fs.unlinkSync(path.join(AUTORXS_DIR, file)));
+}
+
 function limpiarHtmlGenerado() {
   if (!fs.existsSync(FICHAS_DIR)) fs.mkdirSync(FICHAS_DIR);
   fs.readdirSync(FICHAS_DIR)
@@ -535,3 +618,11 @@ const autores = construirAutores(publicaciones);
 fs.writeFileSync(path.join(ROOT, "autorxs.html"), paginaAutores(autores));
 
 console.log(`Generada autorxs.html con ${autores.length} autorxs.`);
+
+limpiarAutorxsGenerado();
+
+autores.forEach((autor) => {
+  fs.writeFileSync(path.join(AUTORXS_DIR, `${autor.slug}.html`), paginaAutor(autor));
+});
+
+console.log(`Generadas ${autores.length} páginas en autorxs/.`);

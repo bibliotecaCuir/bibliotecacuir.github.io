@@ -88,17 +88,24 @@ tocar HTML a mano para agregar, editar o eliminar una pieza.
   desde los YAML en el navegador con `cargar-catalogo.js`, sin generar
   nada — por eso el catálogo siempre refleja el contenido actual de
   `yaml/` con solo recargar la página.
-- `coleccion/fichas/`: las ~140 fichas individuales (`bc-XXXX.html`), una
+- `coleccion/fichas/`: las ~620 fichas individuales (`bc-XXXX.html`), una
   por pieza. A diferencia del catálogo, estas sí son archivos estáticos
   generados — `generar-html-libros.js` los escribe a partir de `yaml/`.
+- `coleccion/autorxs/`: una página estática por autorx (`nombre-autorx.html`),
+  con las obras de esa persona en la colección. También generadas por
+  `generar-html-libros.js`, igual que `fichas/`.
+- `coleccion/autorxs.html`: listado de todxs lxs autorxs agrupados por
+  letra; cada nombre enlaza a su página en `autorxs/`. También se genera
+  con `generar-html-libros.js`.
 - `coleccion/generar-html-libros.js`: lee todos los `yaml/*.yaml`,
   deduplica piezas repetidas entre cajas (misma combinación de
   título/autorxs/editorial/año), arma un slug por pieza (a partir del
   código, o del título si no hay código), calcula "títulos relacionados"
   por categoría/autorxs/editorial, y escribe una página por pieza en
-  `fichas/`. También borra cualquier `.html` viejo en `fichas/` antes de
-  escribir, así que una pieza eliminada del YAML desaparece del sitio al
-  regenerar.
+  `fichas/`. También arma un slug por autorx y escribe una página con sus
+  obras en `autorxs/`, más el listado `autorxs.html`. Antes de escribir,
+  borra cualquier `.html` viejo en `fichas/` y en `autorxs/`, así que una
+  pieza o autorx eliminada del YAML desaparece del sitio al regenerar.
 - El encabezado (nav) y pie de página de cada ficha tienen su propia
   plantilla dentro de `coleccion/generar-html-libros.js` (funciones
   `headerGlobal`/`footer`) — a diferencia de `index.html`, `manifiesto/`,
@@ -122,9 +129,10 @@ tocar HTML a mano para agregar, editar o eliminar una pieza.
 3. Commitear y hacer push del YAML editado a `main`.
 
 Al hacer push, un GitHub Action (`.github/workflows/generar-coleccion.yml`)
-corre `node generar-html-libros.js` y commitea las fichas generadas en
-`coleccion/fichas/` — no hace falta correr el generador a mano ni commitear
-ese directorio vos mismx.
+corre `node generar-html-libros.js` y commitea las fichas y páginas de
+autorxs generadas en `coleccion/fichas/`, `coleccion/autorxs/` y
+`coleccion/autorxs.html` — no hace falta correr el generador a mano ni
+commitear esos archivos vos mismx.
 
 `coleccion/index.html` (el catálogo) no necesita regeneración — carga el
 YAML en vivo.
