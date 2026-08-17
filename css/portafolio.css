@@ -336,30 +336,6 @@
     max-width: 980px;
 }
 
-.portafolio-entrada {
-    display: grid;
-    gap: 0.78rem;
-    scroll-margin-top: clamp(1.5rem, 5vw, 4rem);
-    padding-top: clamp(1.2rem, 2.4vw, 1.8rem);
-    border-top: 1px solid rgba(17, 17, 17, 0.26);
-}
-
-.portafolio-entrada h2 {
-    max-width: 22ch;
-    margin: 0;
-    font-size: clamp(1.35rem, 2.6vw, 2.35rem);
-    font-weight: var(--peso-medio);
-    line-height: 0.98;
-    text-transform: lowercase;
-}
-
-.portafolio-entrada p {
-    max-width: 76ch;
-    margin: 0;
-    font-size: clamp(0.96rem, 1.2vw, 1.08rem);
-    line-height: 1.55;
-}
-
 .portafolio-registro {
     font-size: clamp(0.78rem, 1vw, 0.88rem) !important;
     font-weight: var(--peso-medio);
@@ -529,24 +505,62 @@
     max-width: 1240px;
 }
 
-.portafolio-entrada-unico {
-    border-top: 1px solid var(--portafolio-linea);
-}
-
-.portafolio-seccion .portafolio-entrada {
-    justify-items: center;
-    text-align: left;
-    border-top-color: var(--portafolio-linea);
-}
-
-.portafolio-seccion .portafolio-entrada h2 {
-    width: min(100%, 920px);
+/* Cada "fila" (el texto, y luego cada imagen) ocupa el ancho
+   completo de la pantalla con un color solido propio, rotando
+   entre 5 colores brillantes del sitio (ver base.css) para que
+   cada bloque se lea como una seccion distinta al bajar por la
+   pagina. El contenido interno se centra en .portafolio-fila-interior. */
+.portafolio-filas {
+    display: block;
+    gap: 0;
     max-width: none;
-    color: var(--portafolio-texto);
+}
+
+.portafolio-fila {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: clamp(2.6rem, 6vw, 5rem) var(--page-gutter, clamp(1.25rem, 4vw, 5rem));
+}
+
+.portafolio-fila-interior {
+    width: min(100%, 920px);
+    margin: 0 auto;
+}
+
+.portafolio-fila:nth-of-type(5n + 1) {
+    color: #111111;
+    background: var(--color-verde);
+}
+
+.portafolio-fila:nth-of-type(5n + 2) {
+    color: #f1f1f1;
+    background: var(--portafolio-color-practicas);
+}
+
+.portafolio-fila:nth-of-type(5n + 3) {
+    color: #111111;
+    background: var(--color-rosado);
+}
+
+.portafolio-fila:nth-of-type(5n + 4) {
+    color: #ffffff;
+    background: var(--color-azul);
+}
+
+.portafolio-fila:nth-of-type(5n) {
+    color: #111111;
+    background: var(--color-rosado-claro);
+}
+
+.portafolio-fila-texto h2 {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 0.9rem;
+    color: inherit;
     font-family: var(--font-proyecto);
     font-size: clamp(2.65rem, 4.15vw, 5.35rem);
     font-weight: var(--peso-regular);
-    line-height: 0.82;
+    line-height: 0.86;
     letter-spacing: 0;
     text-align: left;
     text-wrap: balance;
@@ -598,64 +612,41 @@
     display: none;
 }
 
-.portafolio-seccion .portafolio-entrada h2.portafolio-titulo-largo {
-    font-size: clamp(2.65rem, 4.15vw, 5.35rem);
+.portafolio-fila-texto h2.portafolio-titulo-largo {
+    font-size: clamp(2.1rem, 3.5vw, 4.3rem);
 }
 
-.portafolio-seccion .portafolio-entrada h2.portafolio-titulo-extra-largo {
-    font-size: clamp(2.65rem, 4.15vw, 5.35rem);
+.portafolio-fila-texto h2.portafolio-titulo-extra-largo {
+    font-size: clamp(1.75rem, 2.9vw, 3.5rem);
 }
 
-.portafolio-seccion .portafolio-entrada p {
-    width: min(100%, 920px);
-    max-width: none;
-    color: var(--portafolio-texto);
-    margin-right: auto;
-    margin-left: auto;
+.portafolio-fila-texto p {
+    max-width: 76ch;
+    margin: 0;
+    color: inherit;
+    font-size: clamp(0.98rem, 1.25vw, 1.15rem);
+    line-height: 1.6;
     text-align: left;
 }
 
-.portafolio-seccion .portafolio-registro a {
-    color: var(--portafolio-texto);
+.portafolio-fila-texto p + p {
+    margin-top: 0.9rem;
 }
 
-.portafolio-multimedia {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(0.85rem, 1.8vw, 1.45rem);
-    width: min(100%, 920px);
-    margin: clamp(1.2rem, 3vw, 2.5rem) auto 0;
+.portafolio-fila-texto .portafolio-registro,
+.portafolio-fila-texto .portafolio-registro a {
+    color: inherit;
 }
 
-.portafolio-multimedia-unico {
-    grid-template-columns: minmax(0, 1fr);
-    width: min(100%, 680px);
-}
-
-.portafolio-multimedia img {
+.portafolio-fila-imagen img {
     display: block;
     width: 100%;
-    height: clamp(260px, 38vw, 560px);
-    padding: clamp(0.6rem, 1.4vw, 1rem);
+    height: clamp(320px, 48vw, 680px);
     object-fit: contain;
-    background: color-mix(in srgb, var(--portafolio-fondo) 78%, var(--portafolio-texto) 12%);
-    border: 1px solid var(--portafolio-linea);
 }
 
-.portafolio-multimedia img:nth-child(2n) {
-    background: color-mix(in srgb, var(--portafolio-fondo) 88%, #ffffff 12%);
-}
-
-.portafolio-multimedia img:nth-child(3n) {
-    background: color-mix(in srgb, var(--portafolio-fondo) 72%, var(--portafolio-texto) 18%);
-}
-
-.portafolio-multimedia img.portafolio-imagen-retrato {
-    height: clamp(360px, 58vw, 760px);
-}
-
-.portafolio-multimedia-unico img {
-    height: clamp(300px, 44vw, 600px);
+.portafolio-fila-imagen img.portafolio-imagen-retrato {
+    height: clamp(420px, 62vw, 820px);
 }
 
 /* Links de "proyecto anterior / siguiente" al final del detalle,

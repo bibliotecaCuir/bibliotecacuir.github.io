@@ -55,21 +55,23 @@ function pagina(categoria, proyecto, carpetaImagenesCategoria) {
   const claseH2 = claseTitulo(titulo);
 
   const linkHtml = proyecto.link_url
-    ? `                <p class="portafolio-registro">Link: <a href="${escaparHTML(proyecto.link_url)}" target="_blank" rel="noreferrer">${escaparHTML(proyecto.link_texto || proyecto.link_url)}</a></p>\n`
+    ? `                    <p class="portafolio-registro">Link: <a href="${escaparHTML(proyecto.link_url)}" target="_blank" rel="noreferrer">${escaparHTML(proyecto.link_texto || proyecto.link_url)}</a></p>\n`
     : "";
 
   const parrafosHtml = (proyecto.parrafos || [])
-    .map((parrafo) => `                <p>${escaparHTML(parrafo)}</p>`)
+    .map((parrafo) => `                    <p>${escaparHTML(parrafo)}</p>`)
     .join("\n");
 
-  const imagenesHtml = imagenes
+  const filasImagenesHtml = imagenes
     .map(
       (archivo) =>
-        `                    <img src="/assets/portafolio/${categoria}/${proyecto.slug}/${archivo}" alt="" loading="lazy" decoding="async">`
+        `            <div class="portafolio-fila portafolio-fila-imagen">\n` +
+        `                <div class="portafolio-fila-interior">\n` +
+        `                    <img src="/assets/portafolio/${categoria}/${proyecto.slug}/${archivo}" alt="" loading="lazy" decoding="async">\n` +
+        `                </div>\n` +
+        `            </div>`
     )
     .join("\n");
-
-  const claseMedia = imagenes.length === 1 ? "portafolio-multimedia portafolio-multimedia-unico" : "portafolio-multimedia";
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -93,14 +95,14 @@ ${headerGlobal(categoria)}
             <h1 id="page-title">${categoria}</h1>
         </section>
 
-        <section class="portafolio-contenido">
-            <article class="portafolio-entrada portafolio-entrada-unico" id="${escaparHTML(proyecto.slug)}">
-                <h2${claseH2 ? ` class="${claseH2}"` : ""}>${escaparHTML(titulo)}</h2>
+        <section class="portafolio-contenido portafolio-filas" id="${escaparHTML(proyecto.slug)}">
+            <div class="portafolio-fila portafolio-fila-texto">
+                <div class="portafolio-fila-interior">
+                    <h2${claseH2 ? ` class="${claseH2}"` : ""}>${escaparHTML(titulo)}</h2>
 ${linkHtml}${parrafosHtml}
-                <div class="${claseMedia}" aria-label="Registro visual de ${escaparHTML(titulo)}">
-${imagenesHtml}
                 </div>
-            </article>
+            </div>
+${filasImagenesHtml}
         </section>
     </main>
 

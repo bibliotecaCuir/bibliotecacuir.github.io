@@ -126,9 +126,9 @@
     }
 
     .portafolio-seccion .portafolio-contenido,
-    .portafolio-seccion .portafolio-entrada,
-    .portafolio-seccion .portafolio-entrada h2,
-    .portafolio-seccion .portafolio-entrada p {
+    .portafolio-fila-interior,
+    .portafolio-fila-texto h2,
+    .portafolio-fila-texto p {
         width: 100%;
         max-width: 100%;
         min-width: 0;
@@ -147,22 +147,18 @@
         max-width: none;
     }
 
-    .portafolio-seccion .portafolio-entrada {
-        justify-items: stretch;
-    }
-
-    .portafolio-seccion .portafolio-entrada h2 {
+    .portafolio-fila-texto h2 {
         font-size: clamp(2.15rem, 10vw, 3.4rem);
         white-space: normal;
     }
 
-    .portafolio-practicas .portafolio-entrada h2,
-    .portafolio-activaciones .portafolio-entrada h2 {
+    .portafolio-practicas .portafolio-fila-texto h2,
+    .portafolio-activaciones .portafolio-fila-texto h2 {
         font-size: clamp(1.95rem, 8.8vw, 3.15rem);
         white-space: nowrap;
     }
 
-    .portafolio-seccion .portafolio-entrada p {
+    .portafolio-fila-texto p {
         overflow-wrap: break-word;
     }
 
@@ -194,21 +190,12 @@
         min-height: 150px;
     }
 
-    .portafolio-multimedia,
-    .portafolio-multimedia-unico {
-        width: min(100%, 760px);
-    }
-
-    .portafolio-multimedia img {
+    .portafolio-fila-imagen img {
         height: clamp(260px, 78vw, 500px);
     }
 
-    .portafolio-multimedia img.portafolio-imagen-retrato {
+    .portafolio-fila-imagen img.portafolio-imagen-retrato {
         height: clamp(360px, 112vw, 680px);
-    }
-
-    .portafolio-multimedia-unico img {
-        height: clamp(300px, 92vw, 600px);
     }
 
     .proyecto-vecinos {

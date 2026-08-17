@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const portfolioImages = document.querySelectorAll('.portafolio-multimedia img');
+    const portfolioImages = document.querySelectorAll('.portafolio-fila-imagen img');
     const singleLineTitlePages = document.body.classList.contains('portafolio-practicas') ||
         document.body.classList.contains('portafolio-activaciones');
     const singleLineTitles = singleLineTitlePages ?
-        Array.from(document.querySelectorAll('.portafolio-contenido .portafolio-entrada h2')) :
+        Array.from(document.querySelectorAll('.portafolio-contenido .portafolio-fila-texto h2')) :
         [];
     const pageTitle = document.querySelector('.portafolio-seccion .portafolio-detalle-principal h1');
     const fittedTitles = pageTitle ? [...singleLineTitles, pageTitle] : singleLineTitles;
     const isProjectPage = document.body.classList.contains('portafolio-proyecto-pagina');
-    const projectEntry = document.querySelector('.portafolio-entrada-unico[id]');
+    const projectEntry = document.querySelector('.portafolio-filas[id]');
 
     const categoryColorBases = {
         practicas: { hue: 258, saturation: 10, lightness: 18, foreground: '#f1f1f1', lineAlpha: 0.28 },
