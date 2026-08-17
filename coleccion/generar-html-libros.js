@@ -389,6 +389,145 @@ function pagina(publicacion, publicaciones) {
 `;
 }
 
+function construirAutores(publicaciones) {
+  const mapa = new Map();
+
+  publicaciones.forEach((publicacion) => {
+    const autorxs = publicacion.item.autorxs;
+    const lista = Array.isArray(autorxs) ? autorxs : [autorxs];
+
+    lista.forEach((autorRaw) => {
+      const nombre = String(autorRaw || "").trim();
+      if (!nombre) return;
+      const clave = normalizar(nombre);
+      if (!mapa.has(clave)) mapa.set(clave, { nombre, obras: [] });
+      mapa.get(clave).obras.push(publicacion);
+    });
+  });
+
+  return [...mapa.values()]
+    .map((autor) => ({
+      ...autor,
+      obras: [...autor.obras].sort((a, b) =>
+        normalizar(a.item.titulo).localeCompare(normalizar(b.item.titulo))
+      ),
+    }))
+    .sort((a, b) => normalizar(a.nombre).localeCompare(normalizar(b.nombre)));
+}
+
+function letraDe(nombre) {
+  const letra = normalizar(nombre).charAt(0).toUpperCase();
+  return /[A-Z]/.test(letra) ? letra : "#";
+}
+
+function idLetra(letra) {
+  return letra === "#" ? "otros" : `letra-${letra.toLowerCase()}`;
+}
+
+function agruparPorLetra(autores) {
+  const grupos = new Map();
+  autores.forEach((autor) => {
+    const letra = letraDe(autor.nombre);
+    if (!grupos.has(letra)) grupos.set(letra, []);
+    grupos.get(letra).push(autor);
+  });
+  return [...grupos.entries()];
+}
+
+function obraItem(publicacion) {
+  const item = publicacion.item;
+  return `
+    <li class="autor-obra">
+      <a href="./fichas/${publicacion.slug}.html">${escaparHTML(item.titulo || "Sin título")}</a>
+      ${esDato(item.agno) ? `<span class="autor-obra-agno">${escaparHTML(item.agno)}</span>` : ""}
+    </li>
+  `;
+}
+
+function autorBloque(autor) {
+  return `
+    <article class="autor-bloque">
+      <h3 class="autor-nombre">${escaparHTML(autor.nombre)} <span class="autor-conteo">${autor.obras.length}</span></h3>
+      <ul class="autor-obras">
+        ${autor.obras.map(obraItem).join("")}
+      </ul>
+    </article>
+  `;
+}
+
+function seccionLetra([letra, autores]) {
+  const id = idLetra(letra);
+  return `
+    <section class="autores-grupo" id="${id}" aria-labelledby="${id}-titulo">
+      <h2 class="autores-letra-titulo" id="${id}-titulo">${letra}</h2>
+      <div class="autores-lista">
+        ${autores.map(autorBloque).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function navegacionLetras(grupos) {
+  return grupos
+    .map(([letra]) => `<a class="filtro-boton" href="#${idLetra(letra)}">${letra}</a>`)
+    .join("");
+}
+
+function paginaAutores(autores) {
+  const grupos = agruparPorLetra(autores);
+  const totalObras = autores.reduce((acumulado, autor) => acumulado + autor.obras.length, 0);
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Autorxs de la colección de la Biblioteca Cuir.">
+  <title>autorxs — colección Biblioteca Cuir</title>
+  <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
+  <link rel="shortcut icon" href="/assets/imagenes/cola.png">
+  <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar a autorxs</a>
+  ${headerGlobal()}
+
+  <main>
+    <section class="catalogo-hero" aria-labelledby="autores-title">
+      <div class="catalogo-intro">
+        <div class="catalogo-presentacion">
+          <h1 id="autores-title">autorxs</h1>
+          <p class="catalogo-descripcion">
+            <span>Quienes escriben, dibujan y publican</span>
+            <span>en la colección de la Biblioteca Cuir.</span>
+          </p>
+        </div>
+        <div class="catalogo-controls">
+          <p class="header-count">${autores.length} autorxs · ${totalObras} piezas</p>
+          <nav class="catalogo-filtros" aria-label="Ir a letra">
+            ${navegacionLetras(grupos)}
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="autores-section" id="contenido" aria-label="Listado de autorxs">
+      ${grupos.map(seccionLetra).join("")}
+    </section>
+  </main>
+
+  ${footer()}
+
+  <script src="./js/menu.js"></script>
+</body>
+</html>
+`;
+}
+
 function limpiarHtmlGenerado() {
   if (!fs.existsSync(FICHAS_DIR)) fs.mkdirSync(FICHAS_DIR);
   fs.readdirSync(FICHAS_DIR)
@@ -407,3 +546,8 @@ publicaciones.forEach((publicacion) => {
 });
 
 console.log(`Generadas ${publicaciones.length} páginas en fichas/.`);
+
+const autores = construirAutores(publicaciones);
+fs.writeFileSync(path.join(ROOT, "autorxs.html"), paginaAutores(autores));
+
+console.log(`Generada autorxs.html con ${autores.length} autorxs.`);
