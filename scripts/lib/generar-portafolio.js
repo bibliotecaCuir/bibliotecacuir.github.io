@@ -38,7 +38,7 @@ function headerGlobal(categoria) {
   const logo = CATEGORIAS_FONDO_CLARO.has(categoria) ? "logo-biblio-negro.png" : "logo-biblio-blanco.png";
 
   return `    <header class="portafolio-cabecera" aria-label="Biblioteca Cuir">
-        <a class="portafolio-volver" href="/portafolio/${categoria}.html">← ${categoria}</a>
+        <a class="portafolio-volver" href="/portafolio/${categoria}/">← ${categoria}</a>
         <a class="portafolio-logo" href="/">
             <img src="/assets/logos/${logo}" alt="Biblioteca Cuir">
         </a>
@@ -127,7 +127,7 @@ function generarSeccion(categoria) {
 
   const archivosEsperados = new Set(proyectos.map((proyecto) => `${proyecto.slug}.html`));
   fs.readdirSync(HTML_DIR)
-    .filter((archivo) => archivo.endsWith(".html") && !archivosEsperados.has(archivo))
+    .filter((archivo) => archivo.endsWith(".html") && archivo !== "index.html" && !archivosEsperados.has(archivo))
     .forEach((archivo) => fs.unlinkSync(path.join(HTML_DIR, archivo)));
 
   proyectos.forEach((proyecto) => {
