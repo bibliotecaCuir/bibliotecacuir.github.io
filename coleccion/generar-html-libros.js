@@ -141,6 +141,7 @@ function camposFicha(item) {
   return [
     detalle("Código", item.codigo),
     detalle("Autorxs", valorLista(item.autorxs)),
+    detalle("Traducido por", item.traducidoPor),
     detalle("Editorial", valorLista(item.editorial || item.editoriales)),
     detalle("Año", item.agno),
     detalle("Origen", item.origen),

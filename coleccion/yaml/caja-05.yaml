@@ -47,7 +47,8 @@ catalogo:
       codigo: "BC.010503.F"
       titulo: "Kathy Acker"
       tituloConjunto: "No aplica"
-      autorxs: ["Kathy Acker (Traducción JJ Romero)"]
+      autorxs: ["Kathy Acker"]
+      traducidoPor: "JJ Romero"
       editorial: "Ediciones Microcentro"
       agno: "2021"
       origen: "Buenos Aires, Argentina"
@@ -1427,7 +1428,7 @@ catalogo:
       codigo: "BC.010532.L"
       titulo: "Las flores crecerán sobre mi cuerpo"
       tituloConjunto: "No aplica"
-      autorxs: ["TopoPanda"]
+      autorxs: ["Topo Panda"]
       editorial: "Invertido Ediciones"
       agno: "2023"
       origen: "Santiago; Chile"
@@ -1688,7 +1689,7 @@ catalogo:
       codigo: "BC.010544.F"
       titulo: "Los años y el corazón en la ciudad"
       tituloConjunto: "No aplica"
-      autorxs: ["RAIZSOBRERAIZ"]
+      autorxs: ["Raíz Sobre Raíz"]
       editorial: "RAIZSOBRERAIZ"
       agno: "Desconocido"
       origen: "Desconocido"
