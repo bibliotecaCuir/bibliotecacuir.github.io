@@ -28,17 +28,17 @@
     color: #ffffff;
 }
 
-.portafolio-pagina:not(.portafolio-propuesta-pagina) .sitio-cabecera {
+.portafolio-pagina .sitio-cabecera {
     z-index: 30;
 }
 
-.portafolio-pagina:not(.portafolio-propuesta-pagina) .portada-menu-interruptor {
+.portafolio-pagina .portada-menu-interruptor {
     color: #111111;
     background: rgba(255, 255, 255, 0.78);
     border-color: rgba(17, 17, 17, 0.32);
 }
 
-.portafolio-pagina:not(.portafolio-propuesta-pagina).esta-portada-menu-abierto .portada-menu-interruptor {
+.portafolio-pagina.esta-portada-menu-abierto .portada-menu-interruptor {
     color: #ffffff;
     background: rgba(17, 17, 17, 0.36);
     border-color: rgba(255, 255, 255, 0.4);
@@ -123,7 +123,7 @@
     padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
-.portafolio-pagina:not(.portafolio-seccion):not(.portafolio-propuesta-pagina) .portafolio-indice {
+.portafolio-pagina:not(.portafolio-seccion) .portafolio-indice {
     padding-top: clamp(5.8rem, 9vw, 8rem);
 }
 

@@ -1,0 +1,157 @@
+/* ============================================================
+   portafolio-grilla.css — grilla de proyectos de /portafolio/
+   ------------------------------------------------------------
+   Grilla asimetrica de 12 columnas con figuras "organicas"
+   (border-radius irregular) para el indice de /portafolio/.
+   Usa la cabecera fija del sitio (.sitio-cabecera, ver
+   navegacion.css) en vez de una cabecera propia.
+   ============================================================ */
+
+.portafolio-contenedor {
+    width: min(100% - clamp(1.25rem, 4vw, 5rem), 1680px);
+    margin: 0 auto;
+}
+
+/* Necesita su propio espacio arriba para no quedar debajo del
+   logo fijo del sitio. */
+.portafolio-pagina .portafolio-contenedor {
+    padding-top: clamp(5.8rem, 9vw, 8rem);
+}
+
+.portafolio-intro {
+    position: relative;
+    display: grid;
+    gap: 0.35rem;
+    min-height: 0;
+    place-items: start;
+    padding-top: clamp(1.2rem, 3vw, 3rem);
+    padding-bottom: clamp(1.1rem, 2.6vw, 2.4rem);
+    text-align: left;
+}
+
+.portafolio-intro h1 {
+    margin: 0;
+    max-width: none;
+    color: #111111;
+    font-family: var(--font-proyecto);
+    font-size: clamp(4.4rem, 9vw, 10.5rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.78;
+    text-transform: lowercase;
+}
+
+.portafolio-grilla {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    gap: clamp(1rem, 2vw, 2rem);
+    align-items: start;
+    padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.portafolio-tarjeta {
+    grid-column: span 4;
+    display: grid;
+    gap: 0.55rem;
+    color: inherit;
+    text-decoration: none;
+    transform: rotate(var(--inclinacion));
+    transition:
+        transform 0.28s cubic-bezier(0.2, 1, 0.32, 1),
+        color 0.2s ease;
+}
+
+.portafolio-tarjeta:hover,
+.portafolio-tarjeta:focus-visible {
+    color: var(--acento);
+    transform: rotate(0deg) scale(1.025);
+}
+
+.portafolio-tarjeta figure {
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f2f2f2;
+    border: 1px solid rgba(17, 17, 17, 0.24);
+    border-radius: 50% 44% 54% 46% / 44% 54% 46% 56%;
+}
+
+/* Anchos de columna variables segun la posicion de la tarjeta,
+   para que la grilla no se vea uniforme (mosaico irregular). */
+.portafolio-tarjeta:nth-child(8n + 1),
+.portafolio-tarjeta:nth-child(8n + 6) {
+    grid-column: span 5;
+}
+
+.portafolio-tarjeta:nth-child(8n + 3),
+.portafolio-tarjeta:nth-child(8n + 7) {
+    grid-column: span 3;
+}
+
+/* Cada figura tiene una forma "organica" distinta (border-radius
+   irregular + aspect-ratio propio) segun su posicion en la lista. */
+.portafolio-tarjeta:nth-child(6n + 2) figure {
+    aspect-ratio: 1 / 1;
+    border-radius: 58% 42% 48% 52% / 45% 58% 42% 55%;
+}
+
+.portafolio-tarjeta:nth-child(6n + 3) figure {
+    aspect-ratio: 5 / 4;
+    border-radius: 44% 56% 48% 52% / 58% 42% 58% 42%;
+}
+
+.portafolio-tarjeta:nth-child(6n + 4) figure {
+    aspect-ratio: 16 / 10;
+    border-radius: 52% 48% 42% 58% / 46% 50% 50% 54%;
+}
+
+.portafolio-tarjeta:nth-child(6n + 5) figure {
+    aspect-ratio: 3 / 4;
+    border-radius: 48% 52% 58% 42% / 52% 46% 54% 48%;
+}
+
+.portafolio-tarjeta:nth-child(6n) figure {
+    aspect-ratio: 11 / 8;
+    border-radius: 56% 44% 52% 48% / 50% 56% 44% 50%;
+}
+
+.portafolio-tarjeta:nth-last-child(2) {
+    grid-column: 3 / span 4;
+}
+
+.portafolio-tarjeta:last-child {
+    grid-column: 7 / span 4;
+}
+
+.portafolio-tarjeta img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.06);
+    transition:
+        filter 0.2s ease,
+        transform 0.35s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.portafolio-tarjeta:hover img,
+.portafolio-tarjeta:focus-visible img {
+    filter: grayscale(0) contrast(1);
+    transform: scale(1.08);
+}
+
+.portafolio-tarjeta span {
+    display: block;
+    margin-bottom: 0.16rem;
+    color: rgba(17, 17, 17, 0.62);
+    font-size: 0.66rem;
+}
+
+.portafolio-tarjeta h2 {
+    margin: 0;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.6rem, 2.7vw, 3rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.84;
+    text-transform: lowercase;
+}

@@ -14,7 +14,7 @@
      portada.css      portada: fondo, diapositivas, carrusel, libros
      navegacion.css   cabecera, logo, menu, barra inferior
      portafolio.css   indice y detalle del portafolio
-     propuesta.css    las 3 propuestas de layout del portafolio
+     portafolio-grilla.css  grilla de proyectos del indice de /portafolio/
      manifiesto.css   pagina del manifiesto (con la lupa)
      donacion.css     formulario de donaciones
      pie.css          pie de pagina compartido
@@ -34,7 +34,7 @@
 @import url("navegacion.css");
 @import url("pie.css");
 @import url("portafolio.css");
-@import url("propuesta.css");
+@import url("portafolio-grilla.css");
 @import url("manifiesto.css");
 @import url("donacion.css");
 @import url("adaptable.css");
