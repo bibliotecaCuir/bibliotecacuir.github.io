@@ -5,7 +5,7 @@
    demas archivos, para que estos media queries puedan
    sobreescribir los estilos "de escritorio" definidos en
    base.css / portada.css / navegacion.css / portafolio.css /
-   propuesta.css / manifiesto.css / donacion.css / pie.css.
+   portafolio-grilla.css / manifiesto.css / donacion.css / pie.css.
 
    Los breakpoints estan en el mismo orden en que aparecian en
    el archivo original (de mas ancho a mas angosto), agrupados

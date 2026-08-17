@@ -14,22 +14,22 @@ const ROOT = path.join(__dirname, "..");
 const PAGINAS = [
   {
     archivo: "index.html",
-    nav: { id: "portada-menu", activo: null, esInicio: true, propuesta: false },
+    nav: { id: "portada-menu", activo: null, esInicio: true },
     pie: true,
   },
   {
     archivo: "manifiesto/index.html",
-    nav: { id: "manifest-menu", activo: "manifiesto", esInicio: false, propuesta: true },
+    nav: { id: "manifest-menu", activo: "manifiesto", esInicio: false },
     pie: false,
   },
   {
     archivo: "dona/index.html",
-    nav: { id: "donation-menu", activo: "dona", esInicio: false, propuesta: true },
+    nav: { id: "donation-menu", activo: "dona", esInicio: false },
     pie: true,
   },
   {
     archivo: "portafolio/index.html",
-    nav: { id: "portafolio-menu", activo: "portafolio", esInicio: false, propuesta: true },
+    nav: { id: "portafolio-menu", activo: "portafolio", esInicio: false },
     pie: true,
   },
 ];
