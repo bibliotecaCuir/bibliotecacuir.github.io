@@ -126,7 +126,7 @@ function leerCatalogos() {
 function detalle(label, valor) {
   if (!esDato(valor)) return "";
   return `
-    <div class="book-data-row">
+    <div class="ficha-datos-fila">
       <dt>${escaparHTML(label)}</dt>
       <dd>${escaparHTML(valor)}</dd>
     </div>
@@ -163,7 +163,7 @@ function textoSecundario(item) {
   ]
     .filter(([, valor]) => esDato(valor))
     .map(([label, valor]) => `
-      <div class="book-note">
+      <div class="ficha-nota">
         <h3>${escaparHTML(label)}</h3>
         <p>${escaparHTML(valor)}</p>
       </div>
@@ -204,8 +204,8 @@ function obtenerRelacionados(publicacion, publicaciones) {
 function relatedCard(pub, basePath = "./") {
   const imagen = imageUrlPreview(pub.item, pub.caja);
   return `
-    <a class="related-card" href="${basePath}${pub.slug}.html">
-      <figure class="related-cover">
+    <a class="relacionados-tarjeta" href="${basePath}${pub.slug}.html">
+      <figure class="relacionados-portada">
         ${imagen
           ? `<img src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async">`
           : `<span aria-hidden="true">BC</span>`}
@@ -218,28 +218,28 @@ function relatedCard(pub, basePath = "./") {
 
 function claseTitulo(titulo) {
   const largo = String(titulo || "").length;
-  if (largo > 78) return "book-title-xlong";
-  if (largo > 42) return "book-title-long";
+  if (largo > 78) return "titulo-muy-largo";
+  if (largo > 42) return "titulo-largo";
   return "";
 }
 
 function headerGlobal(rutaColeccion = "/coleccion/") {
   return `
-    <header class="site-header" aria-label="Biblioteca Cuir">
-      <a class="site-logo" href="/">
-        <img class="site-logo-white" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-blanco.png" alt="Biblioteca Cuir">
-        <img class="site-logo-black" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-negro.png" alt="">
+    <header class="cabecera-coleccion" aria-label="Biblioteca Cuir">
+      <a class="logo-coleccion" href="/">
+        <img class="logo-coleccion-blanco" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-blanco.png" alt="Biblioteca Cuir">
+        <img class="logo-coleccion-negro" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-negro.png" alt="">
       </a>
     </header>
 
-    <button class="landing-menu-toggle" type="button" aria-expanded="false" aria-controls="landing-menu">
-      <span class="landing-menu-line"></span>
-      <span class="landing-menu-line"></span>
-      <span class="landing-menu-line"></span>
-      <span class="sr-only">Abrir menú</span>
+    <button class="menu-interruptor" type="button" aria-expanded="false" aria-controls="landing-menu">
+      <span class="menu-interruptor-linea"></span>
+      <span class="menu-interruptor-linea"></span>
+      <span class="menu-interruptor-linea"></span>
+      <span class="visualmente-solo">Abrir menú</span>
     </button>
 
-    <nav class="landing-menu" id="landing-menu" aria-label="Menú principal">
+    <nav class="menu-principal" id="landing-menu" aria-label="Menú principal">
       <a href="/manifiesto/">manifiesto</a>
       <a href="/#sobre-nosotres">sobre nosotres</a>
       <a href="${rutaColeccion}">coleccion</a>
@@ -251,47 +251,47 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
 
 function footer() {
   return `
-    <footer class="site-footer" id="contacto" aria-label="Pie de página">
-      <div class="footer-follow">
-        <a class="footer-follow-link" href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">
-          <span class="footer-follow-icon" aria-hidden="true">+</span>
+    <footer class="sitio-pie" id="contacto" aria-label="Pie de página">
+      <div class="pie-seguir">
+        <a class="pie-seguir-enlace" href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">
+          <span class="pie-seguir-icono" aria-hidden="true">+</span>
           <span>síguenos</span>
         </a>
         <a href="https://www.instagram.com/bibliotecacuir/" target="_blank" rel="noreferrer">@bibliotecacuir</a>
       </div>
 
-      <div class="footer-main">
+      <div class="pie-contenedor">
         <h2>
-          <span class="footer-title-line">Refugio micropolitico y promiscuo para</span>
-          <span class="footer-title-line">las memorias y archivos disidentes</span>
+          <span class="pie-titulo-linea">Refugio micropolitico y promiscuo para</span>
+          <span class="pie-titulo-linea">las memorias y archivos disidentes</span>
         </h2>
 
-        <div class="footer-content">
-          <a class="footer-mark" href="/" aria-label="Biblioteca Cuir">
+        <div class="pie-contenido">
+          <a class="pie-marca" href="/" aria-label="Biblioteca Cuir">
             <img src="/assets/logos/logo-biblio-blanco.png" alt="">
           </a>
 
-          <div class="footer-column footer-visit">
+          <div class="pie-columna pie-visita">
             <h3>visítanos</h3>
             <p>archivo cuir en circulación</p>
             <p>Santiago, Chile</p>
           </div>
 
-          <nav class="footer-column footer-links" aria-label="Explorar">
+          <nav class="pie-columna pie-enlaces" aria-label="Explorar">
             <h3>explora</h3>
             <a href="/manifiesto/">manifiesto</a>
             <a href="/coleccion/">publicaciones</a>
             <a href="/portafolio/">portafolio</a>
           </nav>
 
-          <nav class="footer-column footer-links" aria-label="Aprender">
+          <nav class="pie-columna pie-enlaces" aria-label="Aprender">
             <h3>aprende</h3>
             <a href="/dona/">protocola</a>
             <a href="/#sobre-nosotres">sobre nosotres</a>
             <a href="/#contacto">contacto</a>
           </nav>
 
-          <div class="footer-column footer-contact">
+          <div class="pie-columna pie-contacto">
             <h3>hablemos</h3>
             <p>preguntas, comentarios, colaboraciones:</p>
             <a href="mailto:hola@bibliotecacuir.cl">hola@bibliotecacuir.cl</a>
@@ -299,7 +299,7 @@ function footer() {
         </div>
       </div>
 
-      <div class="footer-legal">
+      <div class="pie-legal">
         <span>Biblioteca Cuir</span>
         <nav aria-label="Legal">
           <a href="/">privacidad</a>
@@ -336,34 +336,34 @@ function pagina(publicacion, publicaciones) {
   <link rel="preconnect" href="https://bibliotecacuir.github.io">
   <link rel="preconnect" href="https://raw.githubusercontent.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="stylesheet" href="/css/coleccion.css">
 </head>
-<body class="book-detail-body">
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+<body class="cuerpo-ficha">
+  <a class="enlace-saltar" href="#contenido">Saltar al contenido</a>
   ${headerGlobal()}
 
-  <div class="book-page-shell">
-    <section class="book-hero">
-      <aside class="book-cover-panel" aria-label="Portada">
-        <figure class="book-cover-frame">
+  <div class="contenedor-ficha">
+    <section class="ficha-encabezado">
+      <aside class="ficha-portada-panel" aria-label="Portada">
+        <figure class="ficha-portada-marco">
           ${imagen
             ? `<img src="${escaparHTML(imagen)}" alt="Portada de ${escaparHTML(titulo)}" crossorigin="anonymous" data-remove-white-bg decoding="async">`
-            : `<span class="book-cover-placeholder" aria-hidden="true">BC</span>`}
+            : `<span class="ficha-portada-marcador" aria-hidden="true">BC</span>`}
         </figure>
-        <p class="book-cover-caption">${escaparHTML(item.codigo || caja)}</p>
+        <p class="ficha-portada-leyenda">${escaparHTML(item.codigo || caja)}</p>
       </aside>
 
-      <main class="book-content" id="contenido">
-        <a class="back-link" href="../index.html">← colección</a>
-        <p class="book-eyebrow">${escaparHTML([item.tipologia, item.agno].filter(Boolean).join(" · "))}</p>
+      <main class="ficha-contenido" id="contenido">
+        <a class="enlace-volver" href="../index.html">← colección</a>
+        <p class="ficha-antetitulo">${escaparHTML([item.tipologia, item.agno].filter(Boolean).join(" · "))}</p>
         <h1${titleClass ? ` class="${titleClass}"` : ""}>${escaparHTML(tituloCaos)}</h1>
-        ${autorxs ? `<p class="book-authors">${escaparHTML(autorxs)}</p>` : ""}
+        ${autorxs ? `<p class="ficha-autorxs">${escaparHTML(autorxs)}</p>` : ""}
 
-        <section class="book-description" aria-label="Descripción">
+        <section class="ficha-descripcion" aria-label="Descripción">
           <p>${escaparHTML(descripcion)}</p>
         </section>
 
-        <dl class="book-data">
+        <dl class="ficha-datos">
           ${camposFicha(item)}
         </dl>
 
@@ -371,12 +371,12 @@ function pagina(publicacion, publicaciones) {
       </main>
     </section>
 
-    <section class="related-section" aria-labelledby="related-title">
-      <div class="related-heading">
+    <section class="relacionados-seccion" aria-labelledby="related-title">
+      <div class="relacionados-titulo">
         <h2 id="related-title">Títulos relacionados</h2>
         <a href="../index.html">Toda la colección →</a>
       </div>
-      <div class="related-grid">
+      <div class="relacionados-grilla">
         ${relacionados.map((pub) => relatedCard(pub)).join("")}
       </div>
     </section>
@@ -472,6 +472,7 @@ function seccionLetra([letra, autores]) {
   `;
 }
 
+
 function navegacionLetras(grupos) {
   return grupos
     .map(([letra]) => `<a class="filtro-boton" href="#${idLetra(letra)}">${letra}</a>`)
@@ -494,25 +495,25 @@ function paginaAutores(autores) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/estilo.css">
+  <link rel="stylesheet" href="/css/coleccion.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar a autorxs</a>
+  <a class="enlace-saltar" href="#contenido">Saltar a autorxs</a>
   ${headerGlobal()}
 
   <main>
-    <section class="catalogo-hero" aria-labelledby="autores-title">
-      <div class="catalogo-intro">
+    <section class="catalogo-encabezado" aria-labelledby="autores-title">
+      <div class="catalogo-introduccion">
         <div class="catalogo-presentacion">
-          <a class="back-link back-link-hero" href="./index.html">← colección</a>
+          <a class="enlace-volver enlace-volver-encabezado" href="./index.html">← colección</a>
           <h1 id="autores-title">autorxs</h1>
           <p class="catalogo-descripcion">
             <span>Quienes escriben, dibujan y publican</span>
             <span>en la colección de la Biblioteca Cuir.</span>
           </p>
         </div>
-        <div class="catalogo-controls">
-          <p class="header-count">${autores.length} autorxs</p>
+        <div class="catalogo-controles">
+          <p class="contador-piezas">${autores.length} autorxs</p>
           <nav class="catalogo-filtros" aria-label="Ir a letra">
             ${navegacionLetras(grupos)}
           </nav>
@@ -520,7 +521,7 @@ function paginaAutores(autores) {
       </div>
     </section>
 
-    <section class="autores-section" id="contenido" aria-label="Listado de autorxs">
+    <section class="autores-seccion" id="contenido" aria-label="Listado de autorxs">
       ${grupos.map(seccionLetra).join("")}
     </section>
   </main>
@@ -552,17 +553,17 @@ function paginaAutor(autor) {
   <link rel="preconnect" href="https://bibliotecacuir.github.io">
   <link rel="preconnect" href="https://raw.githubusercontent.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="stylesheet" href="/css/coleccion.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="enlace-saltar" href="#contenido">Saltar al contenido</a>
   ${headerGlobal()}
 
   <main>
-    <section class="catalogo-hero" aria-labelledby="autor-title">
-      <div class="catalogo-intro">
+    <section class="catalogo-encabezado" aria-labelledby="autor-title">
+      <div class="catalogo-introduccion">
         <div class="catalogo-presentacion">
-          <a class="back-link back-link-hero" href="../autorxs.html">← autorxs</a>
+          <a class="enlace-volver enlace-volver-encabezado" href="../autorxs.html">← autorxs</a>
           <h1 id="autor-title"${titleClass ? ` class="${titleClass}"` : ""}>${escaparHTML(autor.nombre)}</h1>
           <p class="catalogo-descripcion">
             <span>${cantidad} ${cantidad === 1 ? "pieza" : "piezas"} en la colección</span>
@@ -571,12 +572,12 @@ function paginaAutor(autor) {
       </div>
     </section>
 
-    <section class="related-section" aria-labelledby="obras-title" id="contenido">
-      <div class="related-heading">
+    <section class="relacionados-seccion" aria-labelledby="obras-title" id="contenido">
+      <div class="relacionados-titulo">
         <h2 id="obras-title">Obras</h2>
         <a href="../index.html">Toda la colección →</a>
       </div>
-      <div class="related-grid">
+      <div class="relacionados-grilla">
         ${autor.obras.map((pub) => relatedCard(pub, "../fichas/")).join("")}
       </div>
     </section>

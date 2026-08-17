@@ -1,0 +1,86 @@
+/* ============================================================
+   coleccion-base.css — fundamentos de las paginas de coleccion
+   ------------------------------------------------------------
+   Variables, tipografia y reset que usan TODAS las paginas de
+   coleccion/ (catalogo, fichas de libro, autorxs). Es un sistema
+   de variables propio, separado del css/base.css del resto del
+   sitio, porque estas paginas se generan con su propia paleta
+   (--negro/--blanco/--gris/--borde) en vez de --color-*.
+   ============================================================ */
+
+:root {
+  --font-texto: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-proyecto: "Caos Marika", var(--font-texto);
+  --negro: #111111;
+  --blanco: #ffffff;
+  --verde: #2aec57;
+  --azul: #6858fd;
+  --rosado: #fe62de;
+  --rosado-claro: #f7a7df;
+  --color-lettering: #e6007e;
+  --gris: #f2f2f2;
+  --borde: rgba(17, 17, 17, 0.28);
+  --page-gutter: clamp(1rem, 4vw, 4rem);
+}
+
+@font-face {
+  font-family: "Caos Marika";
+  src: url("https://bibliotecacuir.github.io/assets/fonts/caosmarika-patched.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  /* The typeface only has drawn glyphs for 0, 1 and 3; excluding all digits
+     here lets every number fall through to var(--font-texto) instead of
+     mixing hand-drawn digits with the browser's default fallback font. */
+  unicode-range: U+0-2F, U+3A-10FFFF;
+}
+
+@font-face {
+  /* Digits still resolve to Montserrat (see unicode-range above), but at a
+     shared font-size Montserrat's numerals read much bigger than Caos
+     Marika's loose hand-drawn letterforms. This second face, restricted to
+     0-9, reuses the same Montserrat outlines shrunk with size-adjust so
+     numbers sit visually level with the rest of a Caos Marika heading. */
+  font-family: "Caos Marika";
+  src: url("https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  size-adjust: 72%;
+  unicode-range: U+30-39;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visualmente-solo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--negro);
+  background: var(--blanco);
+  font-family: var(--font-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+</content>

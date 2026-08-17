@@ -1,0 +1,32 @@
+/* ============================================================
+   coleccion.css — punto de entrada de los estilos de coleccion/
+   ------------------------------------------------------------
+   Igual que estilo.css para el resto del sitio: no contiene
+   reglas propias, solo reune, en orden, los archivos
+   coleccion-*.css. Lo enlazan todas las paginas generadas por
+   coleccion/generar-html-libros.js y coleccion/index.html.
+
+   Organizacion (ver cada archivo para el detalle):
+     coleccion-base.css        variables, tipografia, reset
+     coleccion-navegacion.css  cabecera, logo, menu
+     coleccion-catalogo.css    indice de la coleccion + grilla de relacionados
+     coleccion-ficha.css       ficha de un libro/pieza
+     coleccion-autores.css     indice de autorxs
+     coleccion-pie.css         pie de pagina
+     coleccion-adaptable.css   TODOS los media queries, al final
+
+   Nota sobre el orden: coleccion-adaptable.css se importa al
+   final a proposito, porque sus reglas estan pensadas para
+   sobreescribir los estilos "de escritorio" de los demas
+   archivos. Si agregas una regla nueva con @media, ponla en
+   coleccion-adaptable.css (no en el archivo del componente).
+   ============================================================ */
+
+@import url("coleccion-base.css");
+@import url("coleccion-navegacion.css");
+@import url("coleccion-catalogo.css");
+@import url("coleccion-ficha.css");
+@import url("coleccion-autores.css");
+@import url("coleccion-pie.css");
+@import url("coleccion-adaptable.css");
+</content>

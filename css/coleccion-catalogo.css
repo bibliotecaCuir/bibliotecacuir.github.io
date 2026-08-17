@@ -1,0 +1,391 @@
+/* ============================================================
+   coleccion-catalogo.css — indice de la coleccion
+   ------------------------------------------------------------
+   Encabezado + filtros del catalogo (/coleccion/), la grilla de
+   piezas, y la grilla de "relacionados" que reutilizan tanto la
+   ficha de un libro (titulos relacionados) como la pagina de
+   unx autorx (sus obras).
+   ============================================================ */
+
+/* Introducción compacta, sin elementos decorativos de fondo. */
+.catalogo-encabezado {
+  padding: clamp(8.8rem, 13vw, 12rem) var(--page-gutter) clamp(1.1rem, 2.4vw, 2rem);
+  border-bottom: 1px solid var(--borde);
+}
+
+.catalogo-encabezado h1 {
+  margin: 0;
+  font-family: var(--font-proyecto);
+  font-size: clamp(4.4rem, 9vw, 10.5rem);
+  font-weight: 400;
+  line-height: 0.78;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.catalogo-encabezado h1.titulo-largo {
+  font-size: clamp(3.2rem, 6vw, 7rem);
+  line-height: 0.84;
+}
+
+.catalogo-encabezado h1.titulo-muy-largo {
+  font-size: clamp(2.4rem, 4.6vw, 5rem);
+  line-height: 0.92;
+}
+
+.catalogo-introduccion {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+  justify-content: space-between;
+  gap: clamp(0.75rem, 1.4vw, 1.2rem);
+}
+
+.catalogo-presentacion > p:last-child {
+  max-width: none;
+  margin: clamp(0.3rem, 0.8vw, 0.7rem) 0 0;
+  font-size: clamp(0.82rem, 1.25vw, 1.12rem);
+  line-height: 1.32;
+  white-space: nowrap;
+}
+
+.catalogo-descripcion span {
+  display: inline;
+}
+
+.catalogo-controles {
+  display: grid;
+  flex: 0 1 650px;
+  justify-items: end;
+  gap: 0.75rem;
+  margin-top: clamp(0.2rem, 0.8vw, 0.65rem);
+}
+
+.contador-piezas {
+  flex: none;
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--negro);
+}
+
+.catalogo-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.filtro-boton {
+  padding: 0.42rem 0.65rem;
+  color: var(--negro);
+  font: inherit;
+  font-size: 0.66rem;
+  line-height: 1;
+  text-transform: lowercase;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.filtro-boton span {
+  margin-left: 0.2rem;
+  opacity: 0.55;
+}
+
+.filtro-boton:hover,
+.filtro-boton:focus-visible {
+  border-color: var(--negro);
+  transform: translateY(-1px);
+}
+
+.filtro-boton.activo {
+  background: var(--rosado-claro);
+  border-color: var(--negro);
+}
+
+.autorx-fila {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.autorx-filtro {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.autorx-selector {
+  width: min(220px, 60vw);
+  padding: 0.42rem 0.8rem;
+  color: var(--negro);
+  font: inherit;
+  font-size: 0.68rem;
+  text-transform: lowercase;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.autorx-selector:focus-visible,
+.autorx-selector:focus {
+  border-color: var(--negro);
+}
+
+.autores-enlace {
+  flex-shrink: 0;
+  padding: 0.42rem 0.65rem;
+  color: var(--negro);
+  font-size: 0.66rem;
+  line-height: 1;
+  text-transform: lowercase;
+  text-decoration: none;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.autores-enlace:hover,
+.autores-enlace:focus-visible {
+  border-color: var(--negro);
+  transform: translateY(-1px);
+}
+
+/* Grilla de la colección inspirada en project-gallery del landing. */
+.catalogo-seccion {
+  padding: clamp(2rem, 4vw, 4rem) var(--page-gutter) clamp(6rem, 10vw, 9rem);
+}
+
+#divCatalogo {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem);
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.pieza {
+  min-width: 0;
+}
+
+.pieza-enlace {
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.pieza-revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(0.2, 1, 0.32, 1);
+}
+
+.pieza-revelar.esta-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pieza[hidden] {
+  display: none;
+}
+
+.pieza-imagen-contenedor {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  margin: 0 0 0.85rem;
+  overflow: hidden;
+  background: var(--gris);
+  isolation: isolate;
+}
+
+.catalogo-imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.42s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.pieza-sin-imagen {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: rgba(17, 17, 17, 0.28);
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+.pieza-tinte {
+  display: none;
+}
+
+.pieza-titulo {
+  margin: 0 0 0.55rem;
+  color: var(--negro);
+  font-size: clamp(0.98rem, 1.25vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+  text-transform: lowercase;
+}
+
+.pieza:hover .catalogo-imagen,
+.pieza:focus-within .catalogo-imagen {
+  transform: scale(1.03);
+}
+
+.pieza-cuerpo {
+  min-width: 0;
+}
+
+.pieza-identificacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.45rem;
+}
+
+.pieza-codigo,
+.pieza-agno {
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pieza-meta-contenedor {
+  display: grid;
+}
+
+.pieza-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  color: rgba(17, 17, 17, 0.72);
+  font-size: clamp(0.7rem, 0.9vw, 0.84rem);
+  line-height: 1.35;
+}
+
+/* Clases conservadas por compatibilidad; la grilla ya no usa preview flotante. */
+.previsualizacion-global,
+.previsualizacion-global.activo,
+.previsualizacion-global-imagen {
+  display: none;
+}
+
+.cargando,
+.catalogo-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 2rem 0;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.catalogo-error {
+  padding: 1rem;
+  background: var(--rosado-claro);
+}
+
+/* Grilla de "relacionados": la usa tanto la ficha de un libro
+   (titulos relacionados) como la pagina de unx autorx (sus obras). */
+.relacionados-seccion {
+  padding: clamp(2rem, 4vw, 4rem) var(--page-gutter) clamp(3rem, 6vw, 5rem);
+  border-top: 3px solid var(--negro);
+  background: var(--blanco);
+}
+
+.relacionados-titulo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.relacionados-titulo h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.8vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.relacionados-titulo a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.relacionados-grilla {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.relacionados-tarjeta {
+  display: grid;
+  min-width: 0;
+  gap: 0.55rem;
+  text-decoration: none;
+}
+
+.relacionados-portada {
+  display: grid;
+  aspect-ratio: 3 / 4;
+  margin: 0 0 0.35rem;
+  place-items: center;
+  overflow: hidden;
+  background: var(--gris);
+}
+
+.relacionados-portada img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.relacionados-portada span {
+  color: rgba(17, 17, 17, 0.3);
+  font-family: var(--font-proyecto);
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.relacionados-tarjeta:hover img,
+.relacionados-tarjeta:focus-visible img {
+  transform: scale(1.03);
+}
+
+.relacionados-tarjeta strong {
+  font-size: clamp(0.92rem, 1.2vw, 1.12rem);
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.relacionados-tarjeta span {
+  color: rgba(17, 17, 17, 0.72);
+  font-size: 0.76rem;
+  line-height: 1.25;
+}
+</content>

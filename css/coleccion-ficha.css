@@ -1,0 +1,213 @@
+/* ============================================================
+   coleccion-ficha.css — ficha de un libro/pieza
+   ------------------------------------------------------------
+   La pagina de detalle de una pieza (coleccion/fichas/*.html):
+   portada sticky a la izquierda, datos a la derecha. La grilla
+   de "titulos relacionados" al final vive en coleccion-catalogo.css
+   porque la reutiliza tambien la pagina de unx autorx.
+   ============================================================ */
+
+.cuerpo-ficha {
+  min-height: 100vh;
+}
+
+.cuerpo-ficha .logo-coleccion {
+  width: clamp(52px, 8vw, 88px);
+}
+
+.contenedor-ficha {
+  min-height: 100vh;
+  background: var(--blanco);
+}
+
+.ficha-encabezado {
+  display: grid;
+  grid-template-columns: minmax(320px, 38vw) minmax(0, 1fr);
+  align-items: start;
+  min-height: 100vh;
+  background: var(--blanco);
+  border-bottom: 1px solid var(--borde);
+}
+
+.ficha-portada-panel {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: clamp(1rem, 2vw, 1.8rem);
+  height: 100vh;
+  min-width: 0;
+  padding: clamp(5.8rem, 10vw, 8rem) clamp(1rem, 3vw, 2.6rem) clamp(1rem, 3vw, 2.6rem);
+  background: var(--gris);
+  border-right: 1px solid var(--borde);
+}
+
+.ficha-portada-marco {
+  display: grid;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 440px);
+  max-height: min(70vh, 680px);
+  margin: 0;
+  place-items: center;
+}
+
+.ficha-portada-marco img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: min(70vh, 680px);
+  object-fit: contain;
+  filter: drop-shadow(0 22px 34px rgba(17, 17, 17, 0.18));
+}
+
+.ficha-portada-marco img.esta-fondo-conservado {
+  mix-blend-mode: multiply;
+}
+
+.ficha-portada-marcador {
+  display: grid;
+  width: min(100%, 360px);
+  aspect-ratio: 3 / 4;
+  place-items: center;
+  color: rgba(17, 17, 17, 0.28);
+  font-family: var(--font-proyecto);
+  font-size: clamp(4rem, 10vw, 9rem);
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+}
+
+.ficha-portada-leyenda {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ficha-contenido {
+  max-width: 1180px;
+  padding: clamp(5.4rem, 7vw, 7rem) clamp(1.5rem, 3vw, 4rem) clamp(3rem, 6vw, 5rem);
+}
+
+.enlace-volver {
+  display: inline-flex;
+  margin-bottom: clamp(1.5rem, 3vw, 3.4rem);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* En las páginas de autorxs, el enlace-volver es lo primero dentro de
+   .catalogo-encabezado, justo donde cae el logo fijo (mismo rincón superior
+   izquierdo) — sin este margen extra, un clic ahí termina en el logo. */
+.enlace-volver-encabezado {
+  margin-top: clamp(1rem, 2.4vw, 2.4rem);
+}
+
+.ficha-antetitulo {
+  margin: 0 0 0.9rem;
+  color: rgba(17, 17, 17, 0.68);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ficha-contenido h1 {
+  max-width: 30ch;
+  margin: 0;
+  font-family: var(--font-proyecto);
+  font-size: clamp(2.7rem, 5.1vw, 5.7rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: 0;
+  overflow-wrap: normal;
+  text-wrap: balance;
+  text-transform: lowercase;
+}
+
+.ficha-contenido h1.titulo-largo {
+  max-width: 38ch;
+  font-size: clamp(2.25rem, 4.1vw, 4.6rem);
+  line-height: 0.92;
+}
+
+.ficha-contenido h1.titulo-muy-largo {
+  max-width: 48ch;
+  font-size: clamp(1.8rem, 3.2vw, 3.4rem);
+  line-height: 0.98;
+}
+
+.ficha-autorxs {
+  max-width: 36ch;
+  margin: clamp(1rem, 2vw, 1.5rem) 0 0;
+  font-size: clamp(1.15rem, 2.4vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.06;
+}
+
+.ficha-descripcion {
+  max-width: 760px;
+  margin: clamp(2.4rem, 6vw, 6rem) 0 clamp(1.6rem, 4vw, 3rem);
+  padding-top: clamp(1rem, 2vw, 1.4rem);
+  border-top: 3px solid var(--negro);
+}
+
+.ficha-descripcion p {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.1vw, 1.75rem);
+  line-height: 1.28;
+}
+
+.ficha-datos {
+  display: grid;
+  max-width: 860px;
+  margin: 0;
+  border-top: 1px solid var(--negro);
+}
+
+.ficha-datos-fila {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.34fr) minmax(0, 1fr);
+  gap: clamp(1rem, 2vw, 2rem);
+  padding: 0.78rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.ficha-datos dt,
+.ficha-datos dd {
+  margin: 0;
+  min-width: 0;
+  font-size: clamp(0.78rem, 1vw, 0.94rem);
+  line-height: 1.35;
+}
+
+.ficha-datos dt {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.ficha-datos dd {
+  overflow-wrap: anywhere;
+}
+
+.ficha-nota {
+  max-width: 760px;
+  margin-top: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.ficha-nota h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ficha-nota p {
+  margin: 0;
+  line-height: 1.45;
+}
+</content>

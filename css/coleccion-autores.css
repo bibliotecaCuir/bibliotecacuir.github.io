@@ -1,0 +1,60 @@
+/* ============================================================
+   coleccion-autores.css — indice de autorxs
+   ------------------------------------------------------------
+   El listado de autorxs agrupadas por letra en
+   coleccion/autorxs.html. La pagina individual de cada autorx
+   reutiliza el encabezado de coleccion-catalogo.css y la grilla
+   de "relacionados" para mostrar sus obras.
+   ============================================================ */
+
+.autores-seccion {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 4rem) var(--page-gutter) clamp(6rem, 10vw, 9rem);
+}
+
+.autores-grupo {
+  padding: clamp(1.6rem, 3vw, 2.4rem) 0;
+  border-top: 1px solid var(--borde);
+}
+
+.autores-grupo:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.autores-letra-titulo {
+  margin: 0 0 clamp(1rem, 2vw, 1.6rem);
+  font-family: var(--font-proyecto);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.autores-lista {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem clamp(1rem, 2vw, 2rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.autor-nombre {
+  font-size: clamp(0.88rem, 1.15vw, 1.05rem);
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  text-transform: lowercase;
+}
+
+.autor-nombre a {
+  color: var(--negro);
+  text-decoration: none;
+}
+
+.autor-nombre a:hover,
+.autor-nombre a:focus-visible {
+  text-decoration: underline;
+}
+</content>

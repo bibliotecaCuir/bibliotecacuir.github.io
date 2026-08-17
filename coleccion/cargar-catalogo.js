@@ -26,11 +26,11 @@ if (!container) {
 
 container.innerHTML = "";
 
-// Se conserva el preview global como contrato de clase, pero la imagen vive en cada tarjeta.
+// Se conserva la previsualizacion global como contrato de clase, pero la imagen vive en cada tarjeta.
 const preview = document.createElement("div");
-preview.className = "preview-global";
+preview.className = "previsualizacion-global";
 preview.setAttribute("aria-hidden", "true");
-preview.innerHTML = '<img class="preview-global-img" alt="" />';
+preview.innerHTML = '<img class="previsualizacion-global-imagen" alt="" />';
 document.body.appendChild(preview);
 
 let totalArticulos = 0;
@@ -137,7 +137,7 @@ function valorLista(valor) {
 
 function crearArticulo(item, caja, index) {
   const article = document.createElement("article");
-  article.className = "item reveal-item";
+  article.className = "pieza pieza-revelar";
   article.dataset.categoria = obtenerCategoria(item.tipologia);
 
   const nombreWebp = item.imagen ? item.imagen.replace(/\.[^.]+$/, ".webp") : "";
@@ -156,21 +156,21 @@ function crearArticulo(item, caja, index) {
   const urlDetalle = `./fichas/${crearSlug(item, caja, index)}.html`;
 
   article.innerHTML = `
-    <a class="item-link" href="${urlDetalle}">
-      <figure class="item-imagen-wrap">
+    <a class="pieza-enlace" href="${urlDetalle}">
+      <figure class="pieza-imagen-contenedor">
         ${imagenUrl ? `
           <img class="catalogo-imagen" src="${escaparHTML(imagenUrl)}" alt="" loading="lazy" decoding="async">
-        ` : '<span class="item-sin-imagen" aria-hidden="true">BC</span>'}
-        <span class="item-tinte" aria-hidden="true"></span>
+        ` : '<span class="pieza-sin-imagen" aria-hidden="true">BC</span>'}
+        <span class="pieza-tinte" aria-hidden="true"></span>
       </figure>
-      <div class="item-body">
-        <h2 class="item-titulo">${escaparHTML(item.titulo || "Sin título")}</h2>
-        <div class="item-identificacion">
-          <span class="item-codigo">${escaparHTML(item.codigo || "s/c")}</span>
-          <span class="item-agno">${escaparHTML(item.agno || "s/f")}</span>
+      <div class="pieza-cuerpo">
+        <h2 class="pieza-titulo">${escaparHTML(item.titulo || "Sin título")}</h2>
+        <div class="pieza-identificacion">
+          <span class="pieza-codigo">${escaparHTML(item.codigo || "s/c")}</span>
+          <span class="pieza-agno">${escaparHTML(item.agno || "s/f")}</span>
         </div>
-        <div class="item-meta-wrap">
-          <div class="item-meta">
+        <div class="pieza-meta-contenedor">
+          <div class="pieza-meta">
             ${meta.map((dato) => `<span>${escaparHTML(dato)}</span>`).join("")}
           </div>
         </div>
@@ -183,7 +183,7 @@ function crearArticulo(item, caja, index) {
 
 function observarRevelado(elementos) {
   if (!("IntersectionObserver" in window)) {
-    elementos.forEach((elemento) => elemento.classList.add("is-visible"));
+    elementos.forEach((elemento) => elemento.classList.add("esta-visible"));
     return;
   }
 
@@ -192,7 +192,7 @@ function observarRevelado(elementos) {
       (entradas, observer) => {
         entradas.forEach((entrada) => {
           if (!entrada.isIntersecting) return;
-          entrada.target.classList.add("is-visible");
+          entrada.target.classList.add("esta-visible");
           observer.unobserve(entrada.target);
         });
       },
@@ -201,7 +201,7 @@ function observarRevelado(elementos) {
   }
 
   elementos.forEach((elemento) => {
-    if (!elemento.hidden && !elemento.classList.contains("is-visible")) {
+    if (!elemento.hidden && !elemento.classList.contains("esta-visible")) {
       revealObserver.observe(elemento);
     }
   });
@@ -220,7 +220,7 @@ function aplicarFiltros() {
   let visibles = 0;
   const articulosVisibles = [];
 
-  container.querySelectorAll(".item").forEach((article) => {
+  container.querySelectorAll(".pieza").forEach((article) => {
     const coincideCategoria =
       categoriaActual === "todas" || article.dataset.categoria === categoriaActual;
     const coincideAutorx =
@@ -235,7 +235,7 @@ function aplicarFiltros() {
 
   filtrosEl?.querySelectorAll(".filtro-boton").forEach((boton) => {
     const activo = boton.dataset.filtro === categoriaActual;
-    boton.classList.toggle("active", activo);
+    boton.classList.toggle("activo", activo);
     boton.setAttribute("aria-pressed", String(activo));
   });
 
@@ -247,7 +247,7 @@ function crearFiltros() {
   if (!filtrosEl) return;
 
   const conteos = {};
-  container.querySelectorAll(".item").forEach((article) => {
+  container.querySelectorAll(".pieza").forEach((article) => {
     const categoria = article.dataset.categoria;
     conteos[categoria] = (conteos[categoria] || 0) + 1;
   });
@@ -266,7 +266,7 @@ function crearFiltros() {
     .map(
       ({ id, nombre, cantidad }) => `
         <button
-          class="filtro-boton${id === "todas" ? " active" : ""}"
+          class="filtro-boton${id === "todas" ? " activo" : ""}"
           type="button"
           data-filtro="${id}"
           aria-pressed="${id === "todas"}"
@@ -361,7 +361,7 @@ Promise.all(
     poblarAutorxsSelect(publicaciones);
     inicializarFiltroAutorx();
     if (autorxTexto) aplicarFiltros();
-    observarRevelado([...container.querySelectorAll(".item")]);
+    observarRevelado([...container.querySelectorAll(".pieza")]);
   })
   .catch((error) => {
     console.error("Error al cargar la colección:", error);

@@ -1,0 +1,188 @@
+/* ============================================================
+   coleccion-pie.css — pie de pagina de coleccion
+   ------------------------------------------------------------
+   Mismo pie que el resto del sitio (ver css/pie.css): fila de
+   redes, titulo grande + columnas de links, linea legal. Se
+   nombra igual (pie-seguir, pie-contenido, pie-columna...) para
+   que el patron de nombres sea el mismo en todo el sitio, pero
+   vive en su propio archivo porque las paginas de coleccion
+   usan su propio sistema de variables (ver coleccion-base.css).
+   ============================================================ */
+
+.sitio-pie {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  overflow: hidden;
+  color: var(--blanco);
+  background: var(--color-lettering);
+}
+
+.sitio-pie::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 55%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.pie-seguir,
+.pie-contenedor,
+.pie-legal {
+  position: relative;
+  z-index: 1;
+}
+
+.pie-seguir {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: clamp(84px, 10vw, 130px);
+  padding: 0 clamp(1rem, 5vw, 4.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+  box-sizing: border-box;
+}
+
+.pie-seguir a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: var(--blanco);
+  font-size: clamp(1rem, 2vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.pie-seguir a:hover,
+.pie-seguir a:focus-visible {
+  opacity: 0.62;
+  transform: translateY(-2px);
+}
+
+.pie-seguir-icono {
+  display: grid;
+  place-items: center;
+  width: clamp(34px, 5vw, 52px);
+  aspect-ratio: 1;
+  color: var(--color-lettering);
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  line-height: 1;
+  background: var(--blanco);
+  border-radius: 48% 54% 46% 52%;
+  transform: rotate(-8deg);
+}
+
+.pie-contenedor {
+  padding: clamp(1.4rem, 3vw, 2.4rem) clamp(1rem, 5vw, 4.5rem) clamp(2rem, 4vw, 3.4rem);
+}
+
+.pie-contenedor h2 {
+  max-width: min(100%, 1320px);
+  margin: 0 0 clamp(1.6rem, 3vw, 2.8rem);
+  font-family: var(--font-proyecto);
+  font-size: clamp(2.4rem, 5.35vw, 5.35rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.pie-titulo-linea {
+  display: block;
+}
+
+.pie-contenido {
+  display: grid;
+  grid-template-columns:
+    minmax(82px, 0.62fr)
+    minmax(120px, 0.9fr)
+    minmax(110px, 0.8fr)
+    minmax(110px, 0.8fr)
+    minmax(160px, 1fr);
+  gap: clamp(1.2rem, 3vw, 3rem);
+  align-items: start;
+}
+
+.pie-marca {
+  display: block;
+  width: min(100%, 116px);
+  transform: rotate(-4deg);
+  transform-origin: center;
+}
+
+.pie-marca img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pie-columna {
+  display: grid;
+  gap: 0.34rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.pie-columna h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.pie-columna p {
+  max-width: 28ch;
+  margin: 0;
+  font-size: clamp(0.76rem, 1vw, 0.92rem);
+  line-height: 1.28;
+}
+
+.pie-enlaces a,
+.pie-contacto a,
+.pie-legal a {
+  color: var(--blanco);
+  font-size: clamp(0.76rem, 1vw, 0.92rem);
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.2, 1.2, 0.32, 1);
+}
+
+.pie-enlaces a:hover,
+.pie-enlaces a:focus-visible,
+.pie-contacto a:hover,
+.pie-contacto a:focus-visible,
+.pie-legal a:hover,
+.pie-legal a:focus-visible {
+  opacity: 0.58;
+  transform: translateX(0.35em);
+}
+
+.pie-legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 34px;
+  padding: 0.42rem clamp(1rem, 5vw, 4.5rem);
+  box-sizing: border-box;
+  font-size: 0.68rem;
+  line-height: 1.1;
+  text-transform: lowercase;
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.pie-legal nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+</content>
