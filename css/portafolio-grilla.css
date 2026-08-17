@@ -40,6 +40,70 @@
     text-transform: lowercase;
 }
 
+.portafolio-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: clamp(0.4rem, 1.2vw, 0.9rem);
+}
+
+.portafolio-filtro-boton {
+    padding: 0.48rem 0.9rem;
+    color: #111111;
+    font: inherit;
+    font-size: 0.7rem;
+    line-height: 1;
+    text-transform: lowercase;
+    background: #ffffff;
+    border: 1px solid rgba(17, 17, 17, 0.24);
+    border-radius: 999px;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.portafolio-filtro-boton:hover,
+.portafolio-filtro-boton:focus-visible {
+    border-color: #111111;
+    transform: translateY(-1px);
+}
+
+.portafolio-filtro-boton.activo {
+    border-color: #111111;
+}
+
+.portafolio-filtro-boton[data-filtro="todas"].activo {
+    color: #ffffff;
+    background: #111111;
+}
+
+.portafolio-filtro-boton[data-filtro="activaciones"].activo {
+    color: #202020;
+    background: var(--portafolio-color-activaciones);
+}
+
+.portafolio-filtro-boton[data-filtro="obras"].activo {
+    color: var(--portafolio-color-activaciones);
+    background: var(--portafolio-color-obras);
+}
+
+.portafolio-filtro-boton[data-filtro="practicas"].activo {
+    color: var(--portafolio-color-activaciones);
+    background: var(--portafolio-color-practicas);
+}
+
+.portafolio-filtro-boton[data-filtro="otros"].activo {
+    color: var(--portafolio-color-activaciones);
+    background: var(--portafolio-color-otros);
+}
+
+.portafolio-tarjeta[hidden] {
+    display: none;
+}
+
 .portafolio-grilla {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
