@@ -18,8 +18,7 @@ const catalogosYaml = [
 const container = document.querySelector("#divCatalogo");
 const countEl = document.querySelector("#totalCount");
 const filtrosEl = document.querySelector("#catalogoFiltros");
-const autorxInputEl = document.querySelector("#filtroAutorx");
-const autorxDatalistEl = document.querySelector("#autorxsDatalist");
+const autorxSelectEl = document.querySelector("#filtroAutorx");
 
 if (!container) {
   throw new Error("No se encontró el contenedor #divCatalogo.");
@@ -286,8 +285,8 @@ function crearFiltros() {
   });
 }
 
-function poblarAutorxsDatalist(publicaciones) {
-  if (!autorxDatalistEl) return;
+function poblarAutorxsSelect(publicaciones) {
+  if (!autorxSelectEl) return;
 
   const nombres = new Map();
   publicaciones.forEach(({ item }) => {
@@ -301,21 +300,22 @@ function poblarAutorxsDatalist(publicaciones) {
   });
 
   const ordenados = [...nombres.values()].sort((a, b) => normalizar(a).localeCompare(normalizar(b)));
-  autorxDatalistEl.innerHTML = ordenados
-    .map((nombre) => `<option value="${escaparHTML(nombre)}"></option>`)
+  const opciones = ordenados
+    .map((nombre) => `<option value="${escaparHTML(nombre)}">${escaparHTML(nombre)}</option>`)
     .join("");
+  autorxSelectEl.insertAdjacentHTML("beforeend", opciones);
 }
 
 function inicializarFiltroAutorx() {
-  if (!autorxInputEl) return;
+  if (!autorxSelectEl) return;
 
   const autorxUrl = new URLSearchParams(window.location.search).get("autor");
   if (autorxUrl) {
-    autorxInputEl.value = autorxUrl;
+    autorxSelectEl.value = autorxUrl;
     autorxTexto = normalizar(autorxUrl);
   }
 
-  autorxInputEl.addEventListener("input", (event) => {
+  autorxSelectEl.addEventListener("change", (event) => {
     autorxTexto = normalizar(event.target.value.trim());
     aplicarFiltros();
   });
@@ -358,7 +358,7 @@ Promise.all(
     container.appendChild(fragment);
     actualizarConteo(totalArticulos);
     crearFiltros();
-    poblarAutorxsDatalist(publicaciones);
+    poblarAutorxsSelect(publicaciones);
     inicializarFiltroAutorx();
     if (autorxTexto) aplicarFiltros();
     observarRevelado([...container.querySelectorAll(".item")]);

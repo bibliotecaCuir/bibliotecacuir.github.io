@@ -53,12 +53,15 @@
         <div class="catalogo-controls">
           <p class="header-count" id="totalCount" aria-live="polite">Cargando piezas…</p>
           <div class="catalogo-filtros" id="catalogoFiltros" aria-label="Filtrar colección"></div>
-          <div class="autorx-filtro">
-            <label class="sr-only" for="filtroAutorx">Filtrar por autorx</label>
-            <input type="search" id="filtroAutorx" class="autorx-input" list="autorxsDatalist" placeholder="filtrar por autorx…" autocomplete="off">
-            <datalist id="autorxsDatalist"></datalist>
+          <div class="autorx-row">
+            <div class="autorx-filtro">
+              <label class="sr-only" for="filtroAutorx">Filtrar por autorx</label>
+              <select id="filtroAutorx" class="autorx-select">
+                <option value="">todxs les autorxs</option>
+              </select>
+            </div>
+            <a class="autores-link" href="./autorxs.html">ver autorxs →</a>
           </div>
-          <a class="autores-link" href="./autorxs.html">ver autorxs →</a>
         </div>
       </div>
     </section>
