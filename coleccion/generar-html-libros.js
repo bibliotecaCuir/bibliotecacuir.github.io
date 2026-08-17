@@ -225,8 +225,8 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
   return `
     <header class="site-header" aria-label="Biblioteca Cuir">
       <a class="site-logo" href="/">
-        <img class="site-logo-white" src="https://bibliotecacuir.github.io/assets/logos/logoBiblioBlanco.png" alt="Biblioteca Cuir">
-        <img class="site-logo-black" src="https://bibliotecacuir.github.io/assets/logos/logoBiblioNegro.png" alt="">
+        <img class="site-logo-white" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-blanco.png" alt="Biblioteca Cuir">
+        <img class="site-logo-black" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-negro.png" alt="">
       </a>
     </header>
 
@@ -266,7 +266,7 @@ function footer() {
 
         <div class="footer-content">
           <a class="footer-mark" href="/" aria-label="Biblioteca Cuir">
-            <img src="/assets/logos/logoBiblioBlanco.png" alt="">
+            <img src="/assets/logos/logo-biblio-blanco.png" alt="">
           </a>
 
           <div class="footer-column footer-visit">
@@ -434,59 +434,8 @@ function agruparPorLetra(autores) {
   return [...grupos.entries()];
 }
 
-function imagenAutor(obras) {
-  for (const publicacion of obras) {
-    const url = imageUrlPreview(publicacion.item, publicacion.caja);
-    if (url) return url;
-  }
-  return "";
-}
-
-function rangoAgnos(obras) {
-  const anios = obras
-    .map((publicacion) => String(publicacion.item.agno || "").match(/\d{4}/)?.[0])
-    .filter(Boolean)
-    .sort();
-
-  if (!anios.length) return "s/f";
-  const primero = anios[0];
-  const ultimo = anios[anios.length - 1];
-  return primero === ultimo ? primero : `${primero}–${ultimo}`;
-}
-
-function obrasMeta(obras) {
-  return obras
-    .map((publicacion, index) => `
-      ${index ? '<span class="item-sep" aria-hidden="true">·</span>' : ""}
-      <a href="./fichas/${publicacion.slug}.html">${escaparHTML(publicacion.item.titulo || "Sin título")}</a>
-    `)
-    .join("");
-}
-
 function autorBloque(autor) {
-  const imagen = imagenAutor(autor.obras);
-
-  return `
-    <article class="item autor-card">
-      <figure class="item-imagen-wrap">
-        ${imagen
-          ? `<img class="catalogo-imagen" src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async">`
-          : `<span class="item-sin-imagen" aria-hidden="true">BC</span>`}
-      </figure>
-      <div class="item-body">
-        <h3 class="item-titulo">${escaparHTML(autor.nombre)}</h3>
-        <div class="item-identificacion">
-          <span class="item-codigo">${autor.obras.length} ${autor.obras.length === 1 ? "pieza" : "piezas"}</span>
-          <span class="item-agno">${rangoAgnos(autor.obras)}</span>
-        </div>
-        <div class="item-meta-wrap">
-          <div class="item-meta">
-            ${obrasMeta(autor.obras)}
-          </div>
-        </div>
-      </div>
-    </article>
-  `;
+  return `<li class="autor-nombre">${escaparHTML(autor.nombre)}</li>`;
 }
 
 function seccionLetra([letra, autores]) {
@@ -494,9 +443,9 @@ function seccionLetra([letra, autores]) {
   return `
     <section class="autores-grupo" id="${id}" aria-labelledby="${id}-titulo">
       <h2 class="autores-letra-titulo" id="${id}-titulo">${letra}</h2>
-      <div class="autores-lista">
+      <ul class="autores-lista">
         ${autores.map(autorBloque).join("")}
-      </div>
+      </ul>
     </section>
   `;
 }
@@ -509,7 +458,6 @@ function navegacionLetras(grupos) {
 
 function paginaAutores(autores) {
   const grupos = agruparPorLetra(autores);
-  const totalObras = autores.reduce((acumulado, autor) => acumulado + autor.obras.length, 0);
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -541,7 +489,7 @@ function paginaAutores(autores) {
           </p>
         </div>
         <div class="catalogo-controls">
-          <p class="header-count">${autores.length} autorxs · ${totalObras} piezas</p>
+          <p class="header-count">${autores.length} autorxs</p>
           <nav class="catalogo-filtros" aria-label="Ir a letra">
             ${navegacionLetras(grupos)}
           </nav>

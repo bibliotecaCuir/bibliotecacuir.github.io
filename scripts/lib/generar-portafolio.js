@@ -35,7 +35,7 @@ function leerImagenes(carpetaImagenesCategoria, slug) {
 const CATEGORIAS_FONDO_CLARO = new Set(["activaciones"]);
 
 function headerGlobal(categoria) {
-  const logo = CATEGORIAS_FONDO_CLARO.has(categoria) ? "logoBiblioNegro.png" : "logoBiblioBlanco.png";
+  const logo = CATEGORIAS_FONDO_CLARO.has(categoria) ? "logo-biblio-negro.png" : "logo-biblio-blanco.png";
 
   return `    <header class="portafolio-cabecera" aria-label="Biblioteca Cuir">
         <a class="portafolio-volver" href="/portafolio/${categoria}.html">← ${categoria}</a>

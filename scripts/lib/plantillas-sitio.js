@@ -56,8 +56,8 @@ function piePagina() {
 
             <div class="pie-contenido">
                 <a class="pie-marca" href="/" aria-label="Biblioteca Cuir">
-                    <img class="pie-marca-blanco" src="/assets/logos/logoBiblioBlanco.png" alt="">
-                    <img class="pie-marca-negro" src="/assets/logos/logoBiblioNegro.png" alt="">
+                    <img class="pie-marca-blanco" src="/assets/logos/logo-biblio-blanco.png" alt="">
+                    <img class="pie-marca-negro" src="/assets/logos/logo-biblio-negro.png" alt="">
                 </a>
 
                 <div class="pie-columna pie-visita">
