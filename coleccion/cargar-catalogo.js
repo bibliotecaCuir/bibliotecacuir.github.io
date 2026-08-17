@@ -172,10 +172,7 @@ function crearArticulo(item, caja, index) {
         </div>
         <div class="item-meta-wrap">
           <div class="item-meta">
-            ${meta.map((dato, index) => `
-              ${index ? '<span class="item-sep" aria-hidden="true">·</span>' : ""}
-              <span>${escaparHTML(dato)}</span>
-            `).join("")}
+            ${meta.map((dato) => `<span>${escaparHTML(dato)}</span>`).join("")}
           </div>
         </div>
       </div>

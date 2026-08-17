@@ -456,11 +456,21 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
 .catalogo-hero h1 {
   margin: 0;
   font-family: var(--font-proyecto);
-  font-size: clamp(3.3rem, 6.4vw, 6.8rem);
+  font-size: clamp(4.4rem, 9vw, 10.5rem);
   font-weight: 400;
-  line-height: 0.84;
+  line-height: 0.78;
   letter-spacing: 0;
   text-transform: lowercase;
+}
+
+.catalogo-hero h1.book-title-long {
+  font-size: clamp(3.2rem, 6vw, 7rem);
+  line-height: 0.84;
+}
+
+.catalogo-hero h1.book-title-xlong {
+  font-size: clamp(2.4rem, 4.6vw, 5rem);
+  line-height: 0.92;
 }
 
 .catalogo-intro {
@@ -680,15 +690,11 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
 
 .item-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 0.4rem;
+  flex-direction: column;
+  gap: 0.15rem;
   color: rgba(17, 17, 17, 0.72);
   font-size: clamp(0.7rem, 0.9vw, 0.84rem);
   line-height: 1.35;
-}
-
-.item-sep {
-  opacity: 0.45;
 }
 
 /* Clases conservadas por compatibilidad; la grilla ya no usa preview flotante. */
@@ -984,6 +990,13 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   letter-spacing: 0.06em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+/* En las páginas de autorxs, el back-link es lo primero dentro de
+   .catalogo-hero, justo donde cae el logo fijo (mismo rincón superior
+   izquierdo) — sin este margen extra, un clic ahí termina en el logo. */
+.back-link-hero {
+  margin-top: clamp(1rem, 2.4vw, 2.4rem);
 }
 
 .book-eyebrow {
@@ -1287,7 +1300,12 @@ body.is-landing-menu-open .landing-menu a:nth-child(4) {
   }
 
   .catalogo-hero h1 {
-    font-size: clamp(3.2rem, 17vw, 4.8rem);
+    font-size: clamp(3.6rem, 19vw, 5.6rem);
+  }
+
+  .catalogo-hero h1.book-title-long,
+  .catalogo-hero h1.book-title-xlong {
+    font-size: clamp(2.6rem, 15vw, 4rem);
   }
 
   .catalogo-presentacion > .catalogo-descripcion {

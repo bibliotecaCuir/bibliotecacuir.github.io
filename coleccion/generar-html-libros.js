@@ -504,6 +504,7 @@ function paginaAutores(autores) {
     <section class="catalogo-hero" aria-labelledby="autores-title">
       <div class="catalogo-intro">
         <div class="catalogo-presentacion">
+          <a class="back-link back-link-hero" href="./index.html">← colección</a>
           <h1 id="autores-title">autorxs</h1>
           <p class="catalogo-descripcion">
             <span>Quienes escriben, dibujan y publican</span>
@@ -534,6 +535,7 @@ function paginaAutores(autores) {
 
 function paginaAutor(autor) {
   const cantidad = autor.obras.length;
+  const titleClass = claseTitulo(autor.nombre);
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -560,8 +562,8 @@ function paginaAutor(autor) {
     <section class="catalogo-hero" aria-labelledby="autor-title">
       <div class="catalogo-intro">
         <div class="catalogo-presentacion">
-          <a class="back-link" href="../autorxs.html">← autorxs</a>
-          <h1 id="autor-title">${escaparHTML(autor.nombre)}</h1>
+          <a class="back-link back-link-hero" href="../autorxs.html">← autorxs</a>
+          <h1 id="autor-title"${titleClass ? ` class="${titleClass}"` : ""}>${escaparHTML(autor.nombre)}</h1>
           <p class="catalogo-descripcion">
             <span>${cantidad} ${cantidad === 1 ? "pieza" : "piezas"} en la colección</span>
           </p>
