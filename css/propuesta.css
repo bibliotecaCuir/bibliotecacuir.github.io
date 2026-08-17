@@ -348,7 +348,8 @@
 .propuesta-intro-03 h1 {
     max-width: none;
     color: #111111;
-    font-size: clamp(3.6rem, 9.5vw, 9rem);
+    font-size: clamp(4.4rem, 9vw, 10.5rem);
+    line-height: 0.78;
 }
 
 .propuesta-intro-03 p {
