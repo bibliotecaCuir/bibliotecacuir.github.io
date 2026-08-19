@@ -24,6 +24,13 @@
     animation: cambio-color 9s ease-in-out infinite;
 }
 
+.punto-fotograma,
+.manifiesto-punto .punto-fotograma {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .imagen-horizontal:not(:first-child),
 .punto-fotograma:not(:first-child),
 .manifiesto-punto .punto-fotograma:not(:first-child) {

@@ -483,7 +483,7 @@ main > section,
 .libro-marcador {
     position: absolute;
     display: block;
-    width: clamp(96px, 9.6vw, 162px);
+    width: clamp(115px, 11.5vw, 194px);
     aspect-ratio: auto;
     text-decoration: none;
     cursor: pointer;
@@ -513,19 +513,19 @@ main > section,
 }
 
 .libro-pequeno {
-    width: clamp(82px, 7.4vw, 126px);
+    width: clamp(98px, 8.9vw, 151px);
 }
 
 .libro-alto {
-    width: clamp(104px, 10.2vw, 174px);
+    width: clamp(125px, 12.2vw, 209px);
 }
 
 .libro-ancho {
-    width: clamp(122px, 12vw, 202px);
+    width: clamp(146px, 14.4vw, 242px);
 }
 
 .libro-inclinado {
-    width: clamp(108px, 10.6vw, 178px);
+    width: clamp(130px, 12.7vw, 214px);
 }
 
 .libro-verde {
@@ -566,7 +566,7 @@ main > section,
 }
 
 .libro-marcador:nth-child(4) {
-    top: 31%;
+    top: 28%;
     left: 53%;
     --book-delay: -6s;
 }
@@ -578,8 +578,8 @@ main > section,
 }
 
 .libro-marcador:nth-child(6) {
-    top: 30%;
-    left: 84%;
+    top: 28%;
+    left: 86%;
     --book-delay: -5.4s;
 }
 
@@ -596,8 +596,8 @@ main > section,
 }
 
 .libro-marcador:nth-child(9) {
-    top: 47%;
-    left: 43%;
+    top: 51%;
+    left: 41%;
     --book-delay: -1.8s;
 }
 
@@ -608,8 +608,8 @@ main > section,
 }
 
 .libro-marcador:nth-child(11) {
-    top: 50%;
-    left: 74%;
+    top: 53%;
+    left: 72%;
     --book-delay: -2.9s;
 }
 
@@ -719,14 +719,14 @@ main > section,
     position: relative;
     min-height: clamp(820px, 86vw, 1180px);
     margin-top: clamp(6rem, 12vw, 11rem);
-    margin-bottom: clamp(3.5rem, 7vw, 6rem);
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
     overflow: visible;
     perspective: 1100px;
 }
 
 .imagen-constelacion-escena {
     position: absolute;
-    inset: 0 -1% 12%;
+    inset: 0 -1% 4%;
     transform: translate3d(
         var(--constellation-move-x, 0px),
         var(--constellation-move-y, 0px),
