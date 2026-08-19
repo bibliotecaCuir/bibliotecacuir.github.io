@@ -578,11 +578,6 @@ const constellationItems = [
         href: "/portafolio/otros/articulo-revista-sobre.html",
     },
     {
-        title: "Simbiosis - coloquio",
-        image: "/assets/portafolio/otros/simbiosis-coloquio/01.webp",
-        href: "/portafolio/otros/simbiosis-coloquio.html",
-    },
-    {
         title: "Piensa en mi como soy - seminario visibilidad artística",
         image: "/assets/portafolio/otros/piensa-en-mi-como-soy-seminario-visibilidad-artistica/01.webp",
         href: "/portafolio/otros/piensa-en-mi-como-soy-seminario-visibilidad-artistica.html",
