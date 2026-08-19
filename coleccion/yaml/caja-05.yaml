@@ -946,6 +946,7 @@ catalogo:
       notasRegistro: "Milena Moena"
     - imagen: "bc-010522-f.png"
       codigo: "BC.010522.F"
+      privado: true
       titulo: "Las niñas que se enamoraron de Shakira"
       tituloConjunto: "No aplica"
       autorxs: ["Desobediencia Visual", "Rae del Cerro"]

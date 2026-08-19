@@ -85,6 +85,7 @@ catalogo:
       notasRegistro: "Renata Araus"
     - imagen: "bc-010605-f.jpg"
       codigo: "BC.010605.F"
+      privado: true
       titulo: "Me estoy buscando en las canciones"
       tituloConjunto: "No aplica"
       autorxs: ["Diamela Burboa"]
@@ -345,6 +346,7 @@ catalogo:
       notasRegistro: "Renata Araus"
     - imagen: "bc-010609-f.png"
       codigo: "BC.010609.F"
+      privado: true
       titulo: "Me encanta que me chupes como caramelo"
       tituloConjunto: "No aplica"
       autorxs: ["Desobediencia Visual"]
@@ -665,6 +667,7 @@ catalogo:
       notasRegistro: "Renata Araus"
     - imagen: "bc-010625.png"
       codigo: "BC.010625"
+      privado: true
       titulo: "[kit de costura] \"No olvida el cuerpo\""
       tituloConjunto: "No aplica"
       autorxs: ["Diamela Burboa"]
@@ -1785,6 +1788,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010651-a.png"
       codigo: "BC.010651-A"
+      privado: true
       titulo: "Obras Postales [1]"
       tituloConjunto: "Este cuerpo es un pacto con la imaginación"
       autorxs: ["Diamela Burboa"]
@@ -1805,6 +1809,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010651-b.png"
       codigo: "BC.010651-B"
+      privado: true
       titulo: "Obras Postales [2]"
       tituloConjunto: "Este cuerpo es un pacto con la imaginación"
       autorxs: ["Diamela Burboa"]

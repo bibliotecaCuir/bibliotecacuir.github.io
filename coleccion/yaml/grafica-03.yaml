@@ -166,6 +166,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-0309-g.jpg"
       codigo: "BC.0309.G"
+      privado: true
       titulo: "Sin justicia no habrá paz"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
@@ -186,6 +187,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-0310-g.jpg"
       codigo: "BC.0310.G"
+      privado: true
       titulo: "Soy encantadora (hija de perra)"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
@@ -386,6 +388,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-0320-g.jpg"
       codigo: "BC.0320.G"
+      privado: true
       titulo: "POLOLA VIRTUAL"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]

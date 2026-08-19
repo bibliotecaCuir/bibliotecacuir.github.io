@@ -1605,6 +1605,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010366-g.jpg"
       codigo: "BC.010366.G"
+      privado: true
       titulo: "DESOBEDIENCIA VISUAL"
       tituloConjunto: "No aplica"
       autorxs: ["Desobediencia Visual"]

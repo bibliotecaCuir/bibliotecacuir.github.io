@@ -86,6 +86,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010105-f.png"
       codigo: "BC.010105.F"
+      privado: true
       titulo: "A la luz de mi secreto"
       tituloConjunto: "No aplica"
       autorxs: ["Diamela Burboa"]
@@ -766,6 +767,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010132-1.jpg"
       codigo: "BC.010132-1"
+      privado: true
       titulo: "ARDIENTE DISIDENTE. Feria de gráfica e historietas LGBTQA+"
       tituloConjunto: "No aplica"
       autorxs: ["Desobediencia Visual"]
@@ -786,6 +788,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010132-2.jpg"
       codigo: "BC.010132-2"
+      privado: true
       titulo: "ARDIENTE DISIDENTE. Feria de gráfica e historietas LGBTQA+"
       tituloConjunto: "No aplica"
       autorxs: ["Desobediencia Visual"]
@@ -1386,6 +1389,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010150.png"
       codigo: "BC.010150"
+      privado: true
       titulo: "ALEGRIA ESTE NIÑO ES UNA TRAVESTI"
       tituloConjunto: "No aplica"
       autorxs: ["Diamela Burboa"]

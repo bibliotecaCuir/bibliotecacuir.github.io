@@ -25,6 +25,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010702.png"
       codigo: "BC.010702"
+      privado: true
       titulo: "Piensa en mí"
       tituloConjunto: "No aplica"
       autorxs: ["Matías Fuentes"]
@@ -1946,6 +1947,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010750-1.jpg"
       codigo: "BC.010750-1"
+      privado: true
       titulo: "Princesa Conejo. Hacer del cuerpo un pacto con la imaginacion"
       tituloConjunto: "Princesa Conejo. Hacer del cuerpo un pacto con la imaginacion"
       autorxs: ["Diamela Burboa"]
@@ -1966,6 +1968,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010750-2.jpg"
       codigo: "BC.010750-2"
+      privado: true
       titulo: "Princesa Conejo. Hacer del cuerpo un pacto con la imaginacion"
       tituloConjunto: "Princesa Conejo. Hacer del cuerpo un pacto con la imaginacion"
       autorxs: ["Diamela Burboa"]
@@ -1986,6 +1989,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-010750-3.jpg"
       codigo: "BC.010750-3"
+      privado: true
       titulo: "Princesa Conejo. Hacer del cuerpo un pacto con la imaginacion"
       tituloConjunto: "Princesa Conejo. Hacer del cuerpo un pacto con la imaginacion"
       autorxs: ["Diamela Burboa"]

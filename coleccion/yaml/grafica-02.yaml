@@ -125,6 +125,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-0207-g.jpg"
       codigo: "BC.0207.G"
+      privado: true
       titulo: "Lesbianas visibles"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
@@ -145,6 +146,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-0208-g.jpg"
       codigo: "BC.0208.G"
+      privado: true
       titulo: "Las niñas que se enamoraron de Shakira"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
@@ -205,6 +207,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-0211-g.jpg"
       codigo: "BC.0211.G"
+      privado: true
       titulo: "Literal Front Bottoms"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]

@@ -145,6 +145,7 @@ catalogo:
       notasRegistro: "Cam Castro"
     - imagen: "bc-0408-g.jpg"
       codigo: "BC.0408.G"
+      privado: true
       titulo: "Sin titulo"
       tituloConjunto: ""
       autorxs: ["Desobediencia Visual"]
