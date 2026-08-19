@@ -679,6 +679,42 @@ main > section,
     transform: rotate(4deg) scale(1.04);
 }
 
+.portafolio-vitrina-adhesivo {
+    position: absolute;
+    bottom: 4%;
+    left: clamp(1rem, 5vw, 4rem);
+    right: auto;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: clamp(138px, 11.6vw, 188px);
+    min-height: clamp(62px, 5.9vw, 86px);
+    padding: 0.58rem 0.82rem;
+    box-sizing: border-box;
+    color: #111111;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.38rem, 1.9vw, 2.18rem);
+    line-height: 0.82;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    background: var(--color-verde);
+    border: 0;
+    border-radius: 54% 46% 48% 52% / 44% 52% 48% 56%;
+    box-shadow: 0 8px 16px rgba(17, 17, 17, 0.16);
+    transform: rotate(-6deg);
+    transition:
+        box-shadow 0.22s ease,
+        transform 0.28s cubic-bezier(0.2, 1.4, 0.32, 1);
+}
+
+.portafolio-vitrina-adhesivo:hover,
+.portafolio-vitrina-adhesivo:focus-visible {
+    box-shadow:
+        0 5px 10px rgba(17, 17, 17, 0.2);
+    transform: rotate(-3deg) scale(1.04);
+}
+
 .imagen-constelacion {
     position: relative;
     min-height: clamp(820px, 86vw, 1180px);
