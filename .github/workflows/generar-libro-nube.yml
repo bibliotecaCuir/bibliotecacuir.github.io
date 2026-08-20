@@ -1,13 +1,6 @@
 name: Renovar nube de libros de la portada
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "coleccion/yaml/**"
-      - "coleccion/generar-libro-nube.js"
-      - "coleccion/lib-catalogo.js"
-      - "coleccion/nube-elegibles.json"
   schedule:
     - cron: "0 12 * * *"
   workflow_dispatch:

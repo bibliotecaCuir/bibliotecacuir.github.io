@@ -129,10 +129,12 @@ tocar HTML a mano para agregar, editar o eliminar una pieza.
 3. Commitear y hacer push del YAML editado a `main`.
 
 Al hacer push, un GitHub Action (`.github/workflows/generar-coleccion.yml`)
-corre `node generar-html-libros.js` y commitea las fichas y páginas de
-autorxs generadas en `coleccion/fichas/`, `coleccion/autorxs/` y
-`coleccion/autorxs.html` — no hace falta correr el generador a mano ni
-commitear esos archivos vos mismx.
+corre `node generar-html-libros.js` y `node generar-libro-nube.js`, y
+commitea en un solo commit las fichas y páginas de autorxs generadas en
+`coleccion/fichas/`, `coleccion/autorxs/`, `coleccion/autorxs.html` y la
+nube de libros de `index.html` — no hace falta correr el generador a mano
+ni commitear esos archivos vos mismx. (`generar-libro-nube.yml` corre
+además una vez al día por cron, para renovar la nube aunque no haya push.)
 
 `coleccion/index.html` (el catálogo) no necesita regeneración — carga el
 YAML en vivo.
