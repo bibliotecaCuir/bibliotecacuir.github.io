@@ -7,10 +7,15 @@ const ROOT = path.join(__dirname, "..", "..");
 
 // Los originales y las previews .webp viven en el repo hermano portafolio-imagenes
 // (github.com/bibliotecaCuir/portafolio-imagenes), no en este repo, para que este
-// repo no acumule binarios. leerImagenes() necesita un checkout local de ese repo,
-// como hermano de este ("../portafolio-imagenes"), para poder listar los archivos.
+// repo no acumule binarios. leerImagenes() necesita un checkout local de ese repo
+// para poder listar los archivos: por defecto un hermano de este repo
+// ("../portafolio-imagenes", como lo tiene clonado el usuario), o la ruta que
+// indique PORTAFOLIO_IMAGENES_DIR (asi lo usa CI, que no puede checkoutear fuera
+// del workspace del repo).
 const IMAGENES_REPO_URL = "https://raw.githubusercontent.com/bibliotecaCuir/portafolio-imagenes/main";
-const IMAGENES_REPO_LOCAL = path.join(ROOT, "..", "portafolio-imagenes");
+const IMAGENES_REPO_LOCAL = process.env.PORTAFOLIO_IMAGENES_DIR
+  ? path.resolve(process.env.PORTAFOLIO_IMAGENES_DIR)
+  : path.join(ROOT, "..", "portafolio-imagenes");
 
 function escaparHTML(valor) {
   return String(valor || "")

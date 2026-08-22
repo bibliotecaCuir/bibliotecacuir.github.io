@@ -12,6 +12,8 @@ jobs:
   procesar:
     if: contains(github.event.issue.labels.*.name, 'nueva-obra')
     runs-on: ubuntu-latest
+    env:
+      PORTAFOLIO_IMAGENES_DIR: portafolio-imagenes
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: bibliotecaCuir/portafolio-imagenes
-          path: ../portafolio-imagenes
+          path: portafolio-imagenes
 
       - uses: actions/setup-node@v4
         with:
