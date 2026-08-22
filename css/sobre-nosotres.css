@@ -77,13 +77,13 @@
     margin-top: clamp(2rem, 4vw, 3rem);
 }
 
-/* Alto a ojo, el doble de lo que calzaba estrictamente con las 5 lineas
+/* Alto a ojo, 1.8x lo que calzaba estrictamente con las 5 lineas
    de .sobre-nosotres-financiamiento-texto (era clamp(3.85rem, 7vw, 5.25rem));
    el ancho queda automatico para no deformar el logo. */
 .sobre-nosotres-financiamiento-logo {
     display: block;
     width: auto;
-    height: clamp(7.7rem, 14vw, 10.5rem);
+    height: clamp(6.93rem, 12.6vw, 9.45rem);
     flex-shrink: 0;
 }
 
