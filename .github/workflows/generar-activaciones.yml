@@ -1,6 +1,7 @@
 name: Generar páginas de activaciones
 
 on:
+  workflow_dispatch: {}
   push:
     branches: [main]
     paths:

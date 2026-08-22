@@ -1,6 +1,7 @@
 name: Generar páginas de prácticas
 
 on:
+  workflow_dispatch: {}
   push:
     branches: [main]
     paths:
