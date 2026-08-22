@@ -8,7 +8,7 @@ on:
       - "coleccion/generar-html-libros.js"
       - "coleccion/generar-libro-nube.js"
       - "coleccion/lib-catalogo.js"
-      - "coleccion/nube-elegibles.json"
+      - "coleccion/nube-elegibles.yaml"
 
 permissions:
   contents: write

@@ -1,8 +1,8 @@
 # bibliotecacuir.github.io
 
-## Portafolio (prácticas, activaciones, obras, ...)
+## Portafolio (prácticas, activaciones, obras, otros)
 
-Cada sección del portafolio (por ahora `practicas`, `activaciones` y `obras`)
+Cada sección del portafolio (`practicas`, `activaciones`, `obras` y `otros`)
 tiene su propio archivo en `datos/<sección>.yaml`, que es la única fuente de
 verdad: las páginas de `/portafolio/<sección>/` y las tarjetas del listado
 (`<sección>.html`) se generan automáticamente a partir de ahí. No hace falta
@@ -12,8 +12,10 @@ Hay dos formas de hacerlo:
 
 ### Opción 1: por GitHub, con un formulario (recomendado para no programadorxs)
 
-En la pestaña "Issues" del repositorio, click en "New issue" y elegí
-"Nueva práctica", "Nueva activación" o "Nueva obra". Completá el título, los
+Disponible para `practicas`, `activaciones` y `obras` (`otros` todavía no
+tiene formulario — usá la Opción 2 para esa sección). En la pestaña "Issues"
+del repositorio, click en "New issue" y elegí "Nueva práctica", "Nueva
+activación" o "Nueva obra". Completá el título, los
 párrafos (uno por línea en blanco) y arrastrá las fotos al campo de
 imágenes. En "obras" hay además dos campos opcionales, "Link" y "Texto del
 link", para obras que enlazan a un video o podcast externo (ej. YouTube,
@@ -50,15 +52,21 @@ el link se borra.
 - `scripts/lib/generar-portafolio.js`: generador compartido de las fichas
   `portafolio/<sección>/<slug>.html` (incluye el link opcional y el
   achicado automático de letra para títulos largos). `scripts/generar-practicas.js`,
-  `scripts/generar-activaciones.js` y `scripts/generar-obras.js` son los
-  que se invocan por sección.
+  `scripts/generar-activaciones.js`, `scripts/generar-obras.js` y
+  `scripts/generar-otros.js` son los que se invocan por sección.
 - `scripts/lib/procesar-formulario.js`: procesa lo que llega por el
   formulario de GitHub Issues (título, párrafos, slug, link, imágenes) y
   llama al generador. `scripts/procesar-nueva-practica.js`,
   `scripts/procesar-nueva-activacion.js` y `scripts/procesar-nueva-obra.js`
-  son los que se invocan por sección.
+  son los que se invocan por sección (no hay uno para `otros`, ver arriba).
 - `.github/ISSUE_TEMPLATE/nueva-*.yml` y `.github/workflows/*.yml`: el
   formulario y la automatización de GitHub.
+- `assets/portafolio/drive-manifest.json`: **generado**, no se edita a
+  mano. `scripts/generar-drive-manifest.js` lo arma leyendo los cuatro
+  `datos/<sección>.yaml` (título y slug de cada entrada); lo usa
+  `js/portfolio.js` en el navegador para armar los links de "proyecto
+  anterior/siguiente" en cada ficha. Cada workflow de portafolio lo
+  regenera y commitea junto con las páginas de su sección.
 
 Para regenerar las fichas a mano:
 
@@ -66,6 +74,8 @@ Para regenerar las fichas a mano:
 node scripts/generar-practicas.js
 node scripts/generar-activaciones.js
 node scripts/generar-obras.js
+node scripts/generar-otros.js
+node scripts/generar-drive-manifest.js
 ```
 
 ## Colección

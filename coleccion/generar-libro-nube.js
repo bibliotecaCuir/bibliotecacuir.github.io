@@ -1,10 +1,11 @@
 const fs = require("fs");
 const path = require("path");
+const yaml = require("../lib/js-yaml.min.js");
 const { escaparHTML, imageUrl, leerCatalogos, normalizar } = require("./lib-catalogo.js");
 
 const SITIO_ROOT = path.join(__dirname, "..");
 const INDEX_PATH = path.join(SITIO_ROOT, "index.html");
-const ELEGIBLES_PATH = path.join(__dirname, "nube-elegibles.json");
+const ELEGIBLES_PATH = path.join(__dirname, "nube-elegibles.yaml");
 const CANTIDAD_LIBROS = 14;
 
 const COLORES = ["libro-azul", "libro-rosado", "libro-amarillo", "libro-verde"];
@@ -15,7 +16,7 @@ function elegirAlAzar(lista) {
 }
 
 function leerCodigosElegibles() {
-  const codigos = JSON.parse(fs.readFileSync(ELEGIBLES_PATH, "utf8"));
+  const codigos = yaml.load(fs.readFileSync(ELEGIBLES_PATH, "utf8"));
   return new Set(codigos.map(normalizar));
 }
 
