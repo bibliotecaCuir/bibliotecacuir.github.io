@@ -33,7 +33,9 @@ el link se borra.
 
 1. Editá `datos/<sección>.yaml` (agregá, cambiá o borrá una entrada con
    `slug`, `titulo` y `parrafos`; en `obras` también podés agregar `link_url`
-   y, opcionalmente, `link_texto`).
+   y, opcionalmente, `link_texto`). Cualquier entrada puede además llevar un
+   `anio` opcional (ej. `"2025"` o `"2024/2025"`) — se muestra en su tarjeta
+   de `/portafolio/`; si no se completa, se muestra "s/f".
 2. Si es una entrada nueva y tiene fotos propias, creá la carpeta
    `assets/portafolio/<sección>/<slug>/` y subí ahí las fotos (`.webp`,
    `.jpg` o `.png`); se muestran todas, en orden alfabético, sin necesidad de
@@ -67,6 +69,13 @@ el link se borra.
   `js/portfolio.js` en el navegador para armar los links de "proyecto
   anterior/siguiente" en cada ficha. Cada workflow de portafolio lo
   regenera y commitea junto con las páginas de su sección.
+- `portafolio/index.html` (la grilla general con las tarjetas de las cuatro
+  secciones mezcladas): la sección `<section class="portafolio-grilla">`
+  también es **generada**, no se edita a mano. `scripts/generar-portafolio-index.js`
+  la arma leyendo los cuatro `datos/<sección>.yaml`, en ese orden y en el
+  orden en que aparece cada entrada dentro de su YAML (para reordenar las
+  tarjetas, reordená las entradas en el YAML). Cada workflow de portafolio
+  la regenera y commitea junto con las páginas de su sección.
 
 Para regenerar las fichas a mano:
 
@@ -75,6 +84,7 @@ node scripts/generar-practicas.js
 node scripts/generar-activaciones.js
 node scripts/generar-obras.js
 node scripts/generar-otros.js
+node scripts/generar-portafolio-index.js
 node scripts/generar-drive-manifest.js
 ```
 
