@@ -5,6 +5,13 @@ const { piePagina } = require("./plantillas-sitio.js");
 
 const ROOT = path.join(__dirname, "..", "..");
 
+// Los originales y las previews .webp viven en el repo hermano portafolio-imagenes
+// (github.com/bibliotecaCuir/portafolio-imagenes), no en este repo, para que este
+// repo no acumule binarios. leerImagenes() necesita un checkout local de ese repo,
+// como hermano de este ("../portafolio-imagenes"), para poder listar los archivos.
+const IMAGENES_REPO_URL = "https://raw.githubusercontent.com/bibliotecaCuir/portafolio-imagenes/main";
+const IMAGENES_REPO_LOCAL = path.join(ROOT, "..", "portafolio-imagenes");
+
 function escaparHTML(valor) {
   return String(valor || "")
     .replace(/&/g, "&amp;")
@@ -67,7 +74,7 @@ function pagina(categoria, proyecto, carpetaImagenesCategoria) {
       (archivo) =>
         `            <div class="portafolio-fila portafolio-fila-imagen">\n` +
         `                <div class="portafolio-fila-interior">\n` +
-        `                    <img src="/assets/portafolio/${categoria}/${proyecto.slug}/${archivo}" alt="" loading="lazy" decoding="async">\n` +
+        `                    <img src="${IMAGENES_REPO_URL}/${categoria}/${proyecto.slug}/${archivo}" alt="" loading="lazy" decoding="async">\n` +
         `                </div>\n` +
         `            </div>`
     )
@@ -116,8 +123,15 @@ ${footer()}
 
 function generarSeccion(categoria) {
   const YAML_PATH = path.join(ROOT, "datos", `${categoria}.yaml`);
-  const IMAGENES_DIR = path.join(ROOT, "assets", "portafolio", categoria);
+  const IMAGENES_DIR = path.join(IMAGENES_REPO_LOCAL, categoria);
   const HTML_DIR = path.join(ROOT, "portafolio", categoria);
+
+  if (!fs.existsSync(IMAGENES_REPO_LOCAL)) {
+    throw new Error(
+      `No se encontro el repo portafolio-imagenes en ${IMAGENES_REPO_LOCAL}. ` +
+        "Cloná github.com/bibliotecaCuir/portafolio-imagenes como hermano de este repo para poder generar las paginas."
+    );
+  }
 
   const proyectos = yaml.load(fs.readFileSync(YAML_PATH, "utf8"));
 
