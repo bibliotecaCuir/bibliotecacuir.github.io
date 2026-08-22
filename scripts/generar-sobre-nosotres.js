@@ -36,6 +36,13 @@ function quitarTildes(texto) {
     .replace(/[úÚüÜ]/g, "u");
 }
 
+// Los numeros tampoco se ven bien en Caos Marika, asi que van en la
+// tipografia comun (var(--font-texto)) — mismo criterio que coleccion,
+// donde el año de cada ficha va fuera del titulo en Caos Marika.
+function resaltarNumeros(html) {
+  return html.replace(/\d+/g, (numero) => `<span class="sobre-nosotres-financiamiento-numero">${numero}</span>`);
+}
+
 function leerImagenes() {
   if (!fs.existsSync(IMAGENES_DIR)) return [];
 
@@ -67,14 +74,26 @@ ${imagenes
 
   const logoFinanciamientoExiste = fs.existsSync(path.join(IMAGENES_DIR, LOGO_FINANCIAMIENTO));
 
-  const financiamientoHtml = datos.financiamiento
+  // financiamiento puede ser una lista de lineas (para controlar los saltos
+  // de linea a mano, como quedan mejor al lado del logo chico) o un string.
+  const lineasFinanciamiento = Array.isArray(datos.financiamiento)
+    ? datos.financiamiento
+    : datos.financiamiento
+      ? [datos.financiamiento]
+      : [];
+
+  const textoFinanciamientoHtml = lineasFinanciamiento
+    .map((linea) => resaltarNumeros(escaparHTML(quitarTildes(linea))))
+    .join("<br>");
+
+  const financiamientoHtml = lineasFinanciamiento.length
     ? `
         <div class="sobre-nosotres-financiamiento">
 ${
   logoFinanciamientoExiste
     ? `            <img class="sobre-nosotres-financiamiento-logo" src="/assets/sobre-nosotres/${LOGO_FINANCIAMIENTO}" alt="" loading="lazy" decoding="async">\n`
     : ""
-}            <p class="sobre-nosotres-financiamiento-texto">${escaparHTML(quitarTildes(datos.financiamiento))}</p>
+}            <p class="sobre-nosotres-financiamiento-texto">${textoFinanciamientoHtml}</p>
         </div>`
     : "";
 

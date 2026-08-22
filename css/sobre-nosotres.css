@@ -79,7 +79,7 @@
 
 .sobre-nosotres-financiamiento-logo {
     display: block;
-    width: clamp(40px, 5vw, 56px);
+    width: clamp(72px, 9vw, 108px);
     height: auto;
     flex-shrink: 0;
 }
@@ -93,4 +93,11 @@
     line-height: 1.1;
     letter-spacing: 0;
     text-transform: lowercase;
+}
+
+/* Los numeros (ej. el año) no se ven bien dibujados en Caos Marika,
+   asi que van en la tipografia comun del sitio en vez de heredarla. */
+.sobre-nosotres-financiamiento-numero {
+    font-family: var(--font-texto);
+    font-weight: var(--peso-medio);
 }
