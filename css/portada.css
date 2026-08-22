@@ -681,7 +681,8 @@ main > section,
 
 .portafolio-vitrina-adhesivo {
     position: absolute;
-    bottom: 4%;
+    top: 7%;
+    bottom: auto;
     left: clamp(1rem, 5vw, 4rem);
     right: auto;
     z-index: 3;

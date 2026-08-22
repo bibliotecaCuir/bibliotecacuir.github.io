@@ -811,8 +811,10 @@
     }
 
     .portafolio-vitrina-adhesivo {
-        bottom: 1.5rem;
-        left: 1.25rem;
+        top: auto;
+        bottom: 3rem;
+        left: 2rem;
+        right: auto;
         width: clamp(118px, 32vw, 150px);
         min-height: 62px;
         padding: 0.68rem 0.58rem;
