@@ -1,3 +1,9 @@
+- slug: "todo-lo-que-cabe-aqui"
+  titulo: "Todo lo que cabe aquí (2026)"
+  carpeta_imagenes: "/assets/portafolio/obras/todo-lo-que-cabe-aqui"
+  parrafos:
+    - "«Todo lo que cabe aquí» es una publicación que reúne metodologías y prácticas que desarrollamos en los primeros tres años del colectivo Biblioteca Cuir. Esta publicación remite a la idea de aquello que en su más amplio espectro, podría cuidar o activar una biblioteca no convencional. Fue hecha a mano impresa y encuadernada en nuestro taller."
+
 - slug: "protocola"
   titulo: "ProtoCola (2026)"
   carpeta_imagenes: "/assets/portafolio/obras/protocola"
