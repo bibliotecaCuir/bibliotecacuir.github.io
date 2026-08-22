@@ -72,18 +72,19 @@
 .sobre-nosotres-financiamiento {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
+    align-items: center;
     gap: clamp(0.75rem, 1.5vw, 1.25rem);
     margin-top: clamp(2rem, 4vw, 3rem);
 }
 
+/* Alto calculado para calzar con las 5 lineas de .sobre-nosotres-financiamiento-texto
+   (font-size clamp(1.1rem, 2vw, 1.5rem) x line-height 1.1 x 5 lineas = 5.5x el font-size);
+   el ancho queda automatico para no deformar el logo. */
 .sobre-nosotres-financiamiento-logo {
     display: block;
     width: auto;
-    height: auto;
-    align-self: stretch;
+    height: clamp(6rem, 11vw, 8.25rem);
     flex-shrink: 0;
-    object-fit: contain;
 }
 
 .sobre-nosotres-financiamiento-texto {
