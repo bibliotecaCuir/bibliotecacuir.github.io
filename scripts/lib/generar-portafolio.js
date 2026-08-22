@@ -32,6 +32,13 @@ function claseTitulo(titulo) {
   return String(titulo || "").length > 50 ? "portafolio-titulo-largo" : "";
 }
 
+// A los títulos (renderizados en Caos Marika, var(--font-proyecto)) les puede
+// faltar algún dígito en la fuente (ej. "ProtoCola (2026)"); .portafolio-titulo-numero
+// en css/portafolio.css compensa la diferencia de altura contra el fallback.
+function formatearTitulo(titulo) {
+  return escaparHTML(titulo).replace(/\d+/g, (numero) => `<span class="portafolio-titulo-numero">${numero}</span>`);
+}
+
 function leerImagenes(carpetaImagenesCategoria, slug) {
   const carpeta = path.join(carpetaImagenesCategoria, slug);
   if (!fs.existsSync(carpeta)) return [];
@@ -110,7 +117,7 @@ ${headerGlobal(categoria)}
         <section class="portafolio-contenido portafolio-filas" id="${escaparHTML(proyecto.slug)}">
             <div class="portafolio-fila portafolio-fila-texto">
                 <div class="portafolio-fila-interior">
-                    <h2${claseH2 ? ` class="${claseH2}"` : ""}>${escaparHTML(titulo)}</h2>
+                    <h2${claseH2 ? ` class="${claseH2}"` : ""}>${formatearTitulo(titulo)}</h2>
 ${linkHtml}${parrafosHtml}
                 </div>
             </div>

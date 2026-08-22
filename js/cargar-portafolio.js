@@ -32,6 +32,12 @@ function claseTitulo(titulo) {
   return String(titulo || "").length > 50 ? " class=\"portafolio-titulo-largo\"" : "";
 }
 
+// Mismo compensador de digitos que scripts/lib/generar-portafolio.js (ver
+// .portafolio-titulo-numero en css/portafolio.css para el porque).
+function formatearTitulo(titulo) {
+  return escaparHTML(titulo).replace(/\d+/g, (numero) => `<span class="portafolio-titulo-numero">${numero}</span>`);
+}
+
 function crearTarjeta(proyecto) {
   const resumen = truncar(proyecto.parrafos?.[0]);
   const imagen = `${IMAGENES_REPO_URL}/${categoria}/${proyecto.slug}/01.webp`;
@@ -42,7 +48,7 @@ function crearTarjeta(proyecto) {
   enlace.innerHTML = `
     <figure><img src="${escaparHTML(imagen)}" alt="" loading="lazy" decoding="async"></figure>
     <div>
-      <h2${claseTitulo(proyecto.titulo)}>${escaparHTML(proyecto.titulo)}</h2>
+      <h2${claseTitulo(proyecto.titulo)}>${formatearTitulo(proyecto.titulo)}</h2>
       <p>${escaparHTML(resumen)}</p>
     </div>
   `;

@@ -691,6 +691,18 @@
     display: none;
 }
 
+/* A "Caos Marika" (var(--font-proyecto)) le faltan la mayoria de los
+   digitos (queda "0", "1" y "3", ver assets/fonts/caosmarika-patched.otf);
+   el resto cae al fallback (Montserrat), que tiene una altura de cifra
+   casi el doble de alta que las letras dibujadas a mano de Caos Marika, asi
+   que un mismo numero como "2026" salia con digitos de tamanos dispares.
+   Se fuerza todo digito a Montserrat a una escala que iguala su altura
+   visual a la de las letras de Caos Marika (400/1000 em vs. 700/1000 em). */
+.portafolio-titulo-numero {
+    font-family: var(--font-texto);
+    font-size: 0.57em;
+}
+
 .portafolio-fila-texto h2.portafolio-titulo-largo {
     font-size: clamp(2.1rem, 3.5vw, 4.3rem);
 }
