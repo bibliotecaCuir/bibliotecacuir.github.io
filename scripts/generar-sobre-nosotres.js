@@ -1,6 +1,9 @@
 // Genera sobre-nosotres/index.html a partir de datos/sobre-nosotres.yaml
-// (titulo + parrafos) y las imagenes que haya en assets/sobre-nosotres/
-// (se muestran todas, en orden alfabetico, sin listarlas en el YAML).
+// (titulo, parrafos y financiamiento) y las imagenes que haya en
+// assets/sobre-nosotres/ (se muestran todas, en orden alfabetico, sin
+// listarlas en el YAML). LOGO_FINANCIAMIENTO es un nombre de archivo fijo
+// dentro de esa carpeta: si existe, se muestra junto al texto de
+// financiamiento (no como una foto mas de la galeria).
 
 const fs = require("fs");
 const path = require("path");
@@ -11,6 +14,7 @@ const ROOT = path.join(__dirname, "..");
 const YAML_PATH = path.join(ROOT, "datos", "sobre-nosotres.yaml");
 const IMAGENES_DIR = path.join(ROOT, "assets", "sobre-nosotres");
 const HTML_PATH = path.join(ROOT, "sobre-nosotres", "index.html");
+const LOGO_FINANCIAMIENTO = "logo-ministerio.png";
 
 function escaparHTML(valor) {
   return String(valor || "")
@@ -21,12 +25,24 @@ function escaparHTML(valor) {
     .replace(/'/g, "&#039;");
 }
 
+// La fuente Caos Marika (var(--font-proyecto)) no tiene vocales acentuadas,
+// asi que todo texto que se muestre con ella tiene que ir sin tildes.
+function quitarTildes(texto) {
+  return String(texto || "")
+    .replace(/[áÁ]/g, "a")
+    .replace(/[éÉ]/g, "e")
+    .replace(/[íÍ]/g, "i")
+    .replace(/[óÓ]/g, "o")
+    .replace(/[úÚüÜ]/g, "u");
+}
+
 function leerImagenes() {
   if (!fs.existsSync(IMAGENES_DIR)) return [];
 
   return fs
     .readdirSync(IMAGENES_DIR)
     .filter((archivo) => /\.(webp|jpg|jpeg|png)$/i.test(archivo))
+    .filter((archivo) => archivo !== LOGO_FINANCIAMIENTO)
     .sort((a, b) => a.localeCompare(b, "es", { numeric: true }));
 }
 
@@ -46,6 +62,19 @@ ${imagenes
       `            <img src="/assets/sobre-nosotres/${archivo}" alt="" loading="lazy" decoding="async">`
   )
   .join("\n")}
+        </div>`
+    : "";
+
+  const logoFinanciamientoExiste = fs.existsSync(path.join(IMAGENES_DIR, LOGO_FINANCIAMIENTO));
+
+  const financiamientoHtml = datos.financiamiento
+    ? `
+        <div class="sobre-nosotres-financiamiento">
+${
+  logoFinanciamientoExiste
+    ? `            <img class="sobre-nosotres-financiamiento-logo" src="/assets/sobre-nosotres/${LOGO_FINANCIAMIENTO}" alt="" loading="lazy" decoding="async">\n`
+    : ""
+}            <p class="sobre-nosotres-financiamiento-texto">${escaparHTML(quitarTildes(datos.financiamiento))}</p>
         </div>`
     : "";
 
@@ -76,7 +105,7 @@ ${botonYNavPrincipal({ id: "sobre-nosotres-menu", activo: "sobre-nosotres", esIn
     <main class="sobre-nosotres-contenedor">
         <section class="sobre-nosotres-principal" aria-labelledby="page-title">
             <h1 id="page-title">${escaparHTML(titulo)}</h1>
-${parrafosHtml}${galeriaHtml}
+${parrafosHtml}${galeriaHtml}${financiamientoHtml}
         </section>
     </main>
 

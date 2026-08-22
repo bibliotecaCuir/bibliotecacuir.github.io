@@ -68,3 +68,29 @@
     height: 100%;
     object-fit: cover;
 }
+
+.sobre-nosotres-financiamiento {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.sobre-nosotres-financiamiento-logo {
+    display: block;
+    width: clamp(40px, 5vw, 56px);
+    height: auto;
+    flex-shrink: 0;
+}
+
+.sobre-nosotres-financiamiento-texto {
+    margin: 0;
+    max-width: none;
+    font-family: var(--font-proyecto);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: var(--peso-regular);
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-transform: lowercase;
+}
