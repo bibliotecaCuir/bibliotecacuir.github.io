@@ -72,16 +72,18 @@
 .sobre-nosotres-financiamiento {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     gap: clamp(0.75rem, 1.5vw, 1.25rem);
     margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 .sobre-nosotres-financiamiento-logo {
     display: block;
-    width: clamp(72px, 9vw, 108px);
+    width: auto;
     height: auto;
+    align-self: stretch;
     flex-shrink: 0;
+    object-fit: contain;
 }
 
 .sobre-nosotres-financiamiento-texto {
@@ -99,5 +101,6 @@
    asi que van en la tipografia comun del sitio en vez de heredarla. */
 .sobre-nosotres-financiamiento-numero {
     font-family: var(--font-texto);
+    font-size: 0.85em;
     font-weight: var(--peso-medio);
 }
