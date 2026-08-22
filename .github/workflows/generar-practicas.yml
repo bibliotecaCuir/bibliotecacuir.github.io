@@ -21,6 +21,12 @@ jobs:
         with:
           ref: main
 
+      - name: Clonar portafolio-imagenes (para leer el listado de imagenes)
+        uses: actions/checkout@v4
+        with:
+          repository: bibliotecaCuir/portafolio-imagenes
+          path: ../portafolio-imagenes
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
