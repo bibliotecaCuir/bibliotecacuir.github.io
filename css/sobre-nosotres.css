@@ -77,9 +77,8 @@
     margin-top: clamp(2rem, 4vw, 3rem);
 }
 
-/* Alto calculado para calzar con las 5 lineas de .sobre-nosotres-financiamiento-texto
-   (font-size clamp(1.1rem, 2vw, 1.5rem) x line-height 1.1 x 5 lineas = 5.5x el font-size);
-   el ancho queda automatico para no deformar el logo. */
+/* Alto fijo para calzar con las 5 lineas de .sobre-nosotres-financiamiento-texto
+   (ver line-height ahi); el ancho queda automatico para no deformar el logo. */
 .sobre-nosotres-financiamiento-logo {
     display: block;
     width: auto;
@@ -93,7 +92,7 @@
     font-family: var(--font-proyecto);
     font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: var(--peso-regular);
-    line-height: 1.1;
+    line-height: 0.85;
     letter-spacing: 0;
     text-transform: lowercase;
 }
