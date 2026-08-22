@@ -69,6 +69,25 @@
     }
 }
 
+/* En dispositivos tactiles en vertical, el arte (horizontal) se
+   rota 90 grados para llenar la pantalla en vez de achicarse a
+   una franja apaisada dentro del ancho angosto del retrato. La
+   letra manuscrita ya esta escrita en todas direcciones, asi que
+   rotar no la vuelve menos legible. No aplica a ventanas de
+   escritorio angostas (solo hover:none + pointer:coarse). */
+@media (max-width: 680px) and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+    .manifiesto-fragmentado-cuerpo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: min(92svh, calc(92vw * 1.691558));
+        height: min(92vw, calc(92svh / 1.691558));
+        margin-top: 0;
+        transform: translate(-50%, -50%) rotate(90deg);
+        transform-origin: center center;
+    }
+}
+
 
 /* --- Portafolio en tablet -------------------------------------- */
 
