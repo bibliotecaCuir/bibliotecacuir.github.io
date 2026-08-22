@@ -144,7 +144,7 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
 
     <nav class="menu-principal" id="landing-menu" aria-label="Menú principal">
       <a href="/manifiesto/">manifiesto</a>
-      <a href="/#sobre-nosotres">sobre nosotres</a>
+      <a href="/sobre-nosotres/">sobre nosotres</a>
       <a href="${rutaColeccion}">coleccion</a>
       <a href="/portafolio/">portafolio</a>
       <a href="/#contacto">contacto</a>
@@ -190,7 +190,7 @@ function footer() {
           <nav class="pie-columna pie-enlaces" aria-label="Aprender">
             <h3>aprende</h3>
             <a href="/dona/">protocola</a>
-            <a href="/#sobre-nosotres">sobre nosotres</a>
+            <a href="/sobre-nosotres/">sobre nosotres</a>
             <a href="/#contacto">contacto</a>
           </nav>
 

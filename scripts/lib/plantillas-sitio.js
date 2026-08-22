@@ -1,6 +1,6 @@
 const ENLACES_NAV_PRINCIPAL = [
   { clave: "manifiesto", ruta: "/manifiesto/", etiqueta: "manifiesto" },
-  { clave: "sobre-nosotres", ancla: "sobre-nosotres", etiqueta: "sobre nosotres" },
+  { clave: "sobre-nosotres", ruta: "/sobre-nosotres/", etiqueta: "sobre nosotres" },
   { clave: "coleccion", ruta: "/coleccion/", etiqueta: "coleccion", compacta: "colección" },
   { clave: "portafolio", ruta: "/portafolio/", etiqueta: "portafolio" },
   { clave: "dona", ruta: "/dona/", etiqueta: "dona aqui", compacta: "dona aquí" },
@@ -76,7 +76,7 @@ function piePagina() {
                                 <nav class="pie-columna pie-enlaces" aria-label="Aprender">
                     <h3>aprende</h3>
                     <a href="/dona/">protocola</a>
-                    <a href="/#sobre-nosotres">sobre nosotres</a>
+                    <a href="/sobre-nosotres/">sobre nosotres</a>
                     <a href="/#contacto">contacto</a>
                 </nav>
 

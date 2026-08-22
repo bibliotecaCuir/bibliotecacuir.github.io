@@ -17,6 +17,7 @@
      portafolio-grilla.css  grilla de proyectos del indice de /portafolio/
      manifiesto.css   pagina del manifiesto (con la lupa)
      donacion.css     formulario de donaciones
+     sobre-nosotres.css  pagina "sobre nosotres"
      pie.css          pie de pagina compartido
      adaptable.css    TODOS los media queries, al final para que
                        puedan sobreescribir el resto
@@ -37,4 +38,5 @@
 @import url("portafolio-grilla.css");
 @import url("manifiesto.css");
 @import url("donacion.css");
+@import url("sobre-nosotres.css");
 @import url("adaptable.css");

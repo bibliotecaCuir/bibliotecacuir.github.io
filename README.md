@@ -88,6 +88,20 @@ node scripts/generar-portafolio-index.js
 node scripts/generar-drive-manifest.js
 ```
 
+## Sobre nosotres
+
+Página `/sobre-nosotres/`, generada a partir de `datos/sobre-nosotres.yaml`
+(`titulo` y `parrafos`) y de las imágenes que haya en `assets/sobre-nosotres/`
+(se muestran todas, en orden alfabético, sin listarlas en el YAML — igual que
+las fotos del portafolio). `scripts/generar-sobre-nosotres.js` escribe
+`sobre-nosotres/index.html` completo (nav y pie incluidos, desde
+`scripts/lib/plantillas-sitio.js`) cada vez que corre, así que no hace falta
+tocar HTML para editar el texto o agregar fotos:
+
+```sh
+node scripts/generar-sobre-nosotres.js
+```
+
 ## Colección
 
 Catálogo en línea de la colección de Biblioteca Cuir, en `coleccion/`. Los

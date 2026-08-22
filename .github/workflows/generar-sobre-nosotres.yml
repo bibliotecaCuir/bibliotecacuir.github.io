@@ -1,0 +1,41 @@
+name: Generar página de sobre nosotres
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "datos/sobre-nosotres.yaml"
+      - "assets/sobre-nosotres/**"
+      - "scripts/generar-sobre-nosotres.js"
+      - "scripts/lib/plantillas-sitio.js"
+
+permissions:
+  contents: write
+
+jobs:
+  generar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generar sobre-nosotres/index.html desde datos/sobre-nosotres.yaml
+        run: node scripts/generar-sobre-nosotres.js
+
+      - name: Commitear página generada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sobre-nosotres/index.html
+          if git diff --cached --quiet; then
+            echo "Sin cambios que commitear."
+          else
+            git commit -m "Generar página de sobre nosotres automáticamente"
+            git push
+          fi

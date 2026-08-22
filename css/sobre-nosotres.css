@@ -1,0 +1,70 @@
+/* ============================================================
+   sobre-nosotres.css — pagina "sobre nosotres"
+   ------------------------------------------------------------
+   Pagina de texto simple (titulo + parrafos, mas una galeria
+   opcional de imagenes) generada por scripts/generar-sobre-nosotres.js
+   a partir de datos/sobre-nosotres.yaml. Sigue el mismo patron
+   de fondo claro que donacion.css.
+   ============================================================ */
+
+.sobre-nosotres-pagina {
+    color: #111111;
+    background:
+        linear-gradient(180deg, rgba(247, 167, 223, 0.18), rgba(255, 255, 255, 0) 30rem),
+        #ffffff;
+}
+
+.sobre-nosotres-pagina .sitio-logo-blanco {
+    opacity: 0;
+}
+
+.sobre-nosotres-pagina .sitio-logo-negro {
+    opacity: 1;
+}
+
+.sobre-nosotres-contenedor {
+    position: relative;
+    z-index: 1;
+    padding: clamp(8.5rem, 12vw, 11rem) clamp(1rem, 5vw, 4.5rem) clamp(5rem, 8vw, 7rem);
+}
+
+.sobre-nosotres-principal {
+    width: min(100%, 860px);
+    margin: 0 auto;
+}
+
+.sobre-nosotres-principal h1 {
+    max-width: none;
+    margin: 0 0 clamp(1.5rem, 3vw, 2.5rem);
+    font-family: var(--font-proyecto);
+    font-size: clamp(3.8rem, 8vw, 7.6rem);
+    font-weight: var(--peso-regular);
+    line-height: 0.78;
+    letter-spacing: 0;
+    text-transform: lowercase;
+}
+
+.sobre-nosotres-principal p {
+    max-width: 58rem;
+    margin: 0;
+    font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+    line-height: 1.55;
+}
+
+.sobre-nosotres-principal p + p {
+    margin-top: 1.1rem;
+}
+
+.sobre-nosotres-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.sobre-nosotres-galeria img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
