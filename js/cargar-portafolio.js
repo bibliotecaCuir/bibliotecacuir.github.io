@@ -6,6 +6,11 @@ if (!container) {
 
 const categoria = container.dataset.categoria;
 
+// Los originales y las previews .webp viven en el repo hermano portafolio-imagenes
+// (github.com/bibliotecaCuir/portafolio-imagenes), no en este repo. Mismo patron
+// que IMAGENES_REPO_URL en scripts/lib/generar-portafolio.js.
+const IMAGENES_REPO_URL = "https://raw.githubusercontent.com/bibliotecaCuir/portafolio-imagenes/main";
+
 function escaparHTML(valor) {
   return String(valor || "")
     .replace(/&/g, "&amp;")
@@ -29,7 +34,7 @@ function claseTitulo(titulo) {
 
 function crearTarjeta(proyecto) {
   const resumen = truncar(proyecto.parrafos?.[0]);
-  const imagen = `${proyecto.carpeta_imagenes}/01.webp`;
+  const imagen = `${IMAGENES_REPO_URL}/${categoria}/${proyecto.slug}/01.webp`;
 
   const enlace = document.createElement("a");
   enlace.className = "portafolio-proyecto-tarjeta";
