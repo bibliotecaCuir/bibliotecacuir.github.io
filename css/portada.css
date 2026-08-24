@@ -676,11 +676,11 @@ main > section,
 
 .portafolio-vitrina-adhesivo {
     position: absolute;
-    top: 7%;
-    bottom: auto;
+    top: auto;
+    bottom: clamp(1rem, 5vw, 4rem);
     left: clamp(1rem, 5vw, 4rem);
     right: auto;
-    z-index: 3;
+    z-index: 500;
     display: grid;
     place-items: center;
     width: clamp(138px, 11.6vw, 188px);
