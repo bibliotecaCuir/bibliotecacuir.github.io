@@ -102,9 +102,9 @@ ${
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
-    <link rel="shortcut icon" href="/assets/imagenes/cola.png">
-    <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
+    <link rel="icon" type="image/png" href="/assets/imagenes/cola-icon.png">
+    <link rel="shortcut icon" href="/assets/imagenes/cola-icon.png">
+    <link rel="apple-touch-icon" href="/assets/imagenes/cola-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
@@ -114,8 +114,8 @@ ${
 <body class="portafolio-pagina sobre-nosotres-pagina">
     <header class="sitio-cabecera" aria-label="Biblioteca Cuir">
         <a class="sitio-logo" href="/">
-            <img class="sitio-logo-blanco" src="/assets/logos/logo-biblio-blanco.png" alt="Biblioteca Cuir">
-            <img class="sitio-logo-negro" src="/assets/logos/logo-biblio-negro.png" alt="">
+            <img class="sitio-logo-blanco" src="/assets/logos/logo-biblio-blanco.webp" alt="Biblioteca Cuir">
+            <img class="sitio-logo-negro" src="/assets/logos/logo-biblio-negro.webp" alt="">
         </a>
     </header>
 

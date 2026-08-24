@@ -54,7 +54,7 @@ function leerImagenes(carpetaImagenesCategoria, slug) {
 const CATEGORIAS_FONDO_CLARO = new Set(["activaciones"]);
 
 function headerGlobal(categoria) {
-  const logo = CATEGORIAS_FONDO_CLARO.has(categoria) ? "logo-biblio-negro.png" : "logo-biblio-blanco.png";
+  const logo = CATEGORIAS_FONDO_CLARO.has(categoria) ? "logo-biblio-negro.webp" : "logo-biblio-blanco.webp";
 
   return `    <header class="portafolio-cabecera" aria-label="Biblioteca Cuir">
         <a class="portafolio-volver" href="/portafolio/${categoria}/">← ${categoria}</a>
@@ -97,9 +97,9 @@ function pagina(categoria, proyecto, carpetaImagenesCategoria) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
-    <link rel="shortcut icon" href="/assets/imagenes/cola.png">
-    <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
+    <link rel="icon" type="image/png" href="/assets/imagenes/cola-icon.png">
+    <link rel="shortcut icon" href="/assets/imagenes/cola-icon.png">
+    <link rel="apple-touch-icon" href="/assets/imagenes/cola-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">

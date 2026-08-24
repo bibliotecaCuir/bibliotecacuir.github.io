@@ -130,8 +130,8 @@ function headerGlobal(rutaColeccion = "/coleccion/") {
   return `
     <header class="cabecera-coleccion" aria-label="Biblioteca Cuir">
       <a class="logo-coleccion" href="/">
-        <img class="logo-coleccion-blanco" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-blanco.png" alt="Biblioteca Cuir">
-        <img class="logo-coleccion-negro" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-negro.png" alt="">
+        <img class="logo-coleccion-blanco" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-blanco.webp" alt="Biblioteca Cuir">
+        <img class="logo-coleccion-negro" src="https://bibliotecacuir.github.io/assets/logos/logo-biblio-negro.webp" alt="">
       </a>
     </header>
 
@@ -171,7 +171,7 @@ function footer() {
 
         <div class="pie-contenido">
           <a class="pie-marca" href="/" aria-label="Biblioteca Cuir">
-            <img src="/assets/logos/logo-biblio-blanco.png" alt="">
+            <img src="/assets/logos/logo-biblio-blanco.webp" alt="">
           </a>
 
           <div class="pie-columna pie-visita">
@@ -231,9 +231,9 @@ function pagina(publicacion, publicaciones) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="${escaparHTML(descripcion)}">
   <title>${escaparHTML(titulo)} — colección Biblioteca Cuir</title>
-  <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
-  <link rel="shortcut icon" href="/assets/imagenes/cola.png">
-  <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
+  <link rel="icon" type="image/png" href="/assets/imagenes/cola-icon.png">
+  <link rel="shortcut icon" href="/assets/imagenes/cola-icon.png">
+  <link rel="apple-touch-icon" href="/assets/imagenes/cola-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://bibliotecacuir.github.io">
@@ -392,9 +392,9 @@ function paginaAutores(autores) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Autorxs de la colección de la Biblioteca Cuir.">
   <title>autorxs — colección Biblioteca Cuir</title>
-  <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
-  <link rel="shortcut icon" href="/assets/imagenes/cola.png">
-  <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
+  <link rel="icon" type="image/png" href="/assets/imagenes/cola-icon.png">
+  <link rel="shortcut icon" href="/assets/imagenes/cola-icon.png">
+  <link rel="apple-touch-icon" href="/assets/imagenes/cola-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -448,9 +448,9 @@ function paginaAutor(autor) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Obras de ${escaparHTML(autor.nombre)} en la colección de la Biblioteca Cuir.">
   <title>${escaparHTML(autor.nombre)} — autorxs — colección Biblioteca Cuir</title>
-  <link rel="icon" type="image/png" href="/assets/imagenes/cola.png">
-  <link rel="shortcut icon" href="/assets/imagenes/cola.png">
-  <link rel="apple-touch-icon" href="/assets/imagenes/cola.png">
+  <link rel="icon" type="image/png" href="/assets/imagenes/cola-icon.png">
+  <link rel="shortcut icon" href="/assets/imagenes/cola-icon.png">
+  <link rel="apple-touch-icon" href="/assets/imagenes/cola-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://bibliotecacuir.github.io">
