@@ -68,54 +68,6 @@
         transform 0.4s ease;
 }
 
-/* Boton para mostrar/ocultar el fondo decorativo de la portada
-   (ver .portada-fondo en portada.css). Oculto por defecto,
-   solo se activa desde JS en las paginas que lo necesitan. */
-.fondo-interruptor {
-    display: none;
-    position: fixed;
-    top: calc(clamp(0.85rem, 1.5vw, 1.4rem) + 58px);
-    right: clamp(0.85rem, 1.5vw, 1.4rem);
-    z-index: 32;
-    min-width: 116px;
-    min-height: 34px;
-    padding: 0.45rem 0.7rem;
-    color: #ffffff;
-    font-family: var(--font-texto);
-    font-size: 0.68rem;
-    font-weight: var(--peso-medio);
-    line-height: 1;
-    text-transform: lowercase;
-    cursor: pointer;
-    background: rgba(17, 17, 17, 0.28);
-    border: 1px solid rgba(255, 255, 255, 0.42);
-    border-radius: 999px;
-    backdrop-filter: blur(8px);
-    transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        opacity 0.3s ease,
-        transform 0.4s ease;
-}
-
-.fondo-interruptor:hover,
-.fondo-interruptor:focus-visible {
-    background: rgba(17, 17, 17, 0.5);
-}
-
-body.esta-fondo-oculto .fondo-interruptor {
-    color: #111111;
-    background: rgba(255, 255, 255, 0.86);
-    border-color: rgba(17, 17, 17, 0.25);
-}
-
-body.esta-portada-menu-abierto .fondo-interruptor {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-8px);
-}
-
-
 /* --- Menu de pantalla completa ---------------------------------
    Las 3 lineas del icono "hamburguesa" se transforman en una X,
    y el panel de menu entra deslizandose desde la derecha con

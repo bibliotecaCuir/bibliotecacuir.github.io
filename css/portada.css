@@ -51,11 +51,6 @@ body.esta-lettering-oculto .portada-lettering-imagen {
     transform: translate(-50%, var(--background-offset, 0px)) scale(0.96);
 }
 
-body.esta-fondo-oculto .portada-fondo::after,
-body.esta-fondo-oculto .portada-fondo-imagen {
-    opacity: 0;
-}
-
 .cola-animacion {
     position: fixed;
     top: 100px;

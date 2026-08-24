@@ -298,13 +298,6 @@
         transform: scale(0.75);
     }
 
-    body.tiene-compacta-navegacion .fondo-interruptor {
-        top: 96px;
-        color: #111111;
-        background: rgba(255, 255, 255, 0.86);
-        border-color: rgba(17, 17, 17, 0.2);
-    }
-
     body.tiene-compacta-navegacion .portada-menu {
         top: 0;
         right: 0;
@@ -468,15 +461,6 @@
     }
 
     .portada-menu-linea {
-        transition: none;
-    }
-
-    .fondo-interruptor {
-        top: 3.9rem;
-        right: 0.75rem;
-        min-width: 106px;
-        min-height: 32px;
-        font-size: 0.62rem;
         transition: none;
     }
 

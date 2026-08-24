@@ -1,6 +1,5 @@
 const landingBackground = document.querySelector(".portada-fondo");
 const landingBackgroundImage = document.querySelector(".portada-fondo-imagen");
-const backgroundToggle = document.querySelector(".fondo-interruptor");
 const reduceBackgroundMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function isTypingTarget(target) {
@@ -9,21 +8,6 @@ function isTypingTarget(target) {
 
 function toggleLandingLettering() {
     document.body.classList.toggle("esta-lettering-oculto");
-}
-
-function updateBackgroundToggle(isHidden) {
-    if (!backgroundToggle) {
-        return;
-    }
-
-    backgroundToggle.setAttribute("aria-pressed", String(isHidden));
-    backgroundToggle.textContent = isHidden ? "mostrar maqueta" : "ocultar maqueta";
-}
-
-function toggleLandingBackgroundVisibility() {
-    const isHidden = document.body.classList.toggle("esta-fondo-oculto");
-
-    updateBackgroundToggle(isHidden);
 }
 
 function updateLandingBackground() {
@@ -61,8 +45,6 @@ updateLandingBackground();
 window.addEventListener("scroll", requestBackgroundUpdate, { passive: true });
 window.addEventListener("resize", requestBackgroundUpdate);
 reduceBackgroundMotion.addEventListener("change", requestBackgroundUpdate);
-backgroundToggle?.addEventListener("click", toggleLandingBackgroundVisibility);
-updateBackgroundToggle(document.body.classList.contains("esta-fondo-oculto"));
 
 const presentationSlides = [...document.querySelectorAll(".presentacion-diapositiva")];
 let presentationIndex = Math.max(0, presentationSlides.findIndex((slide) => slide.classList.contains("esta-activo")));
