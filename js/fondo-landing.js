@@ -540,11 +540,6 @@ const constellationItems = [
         href: "/portafolio/obras/re-vueltas-graficas-multitudes-para-cambiar-la-vida-cclm.html",
     },
     {
-        title: "Bachillerato marika para no olvidar",
-        image: "https://raw.githubusercontent.com/bibliotecaCuir/portafolio-imagenes/main/obras/bachillerato-marika-para-no-olvidar/01.webp",
-        href: "/portafolio/obras/bachillerato-marika-para-no-olvidar.html",
-    },
-    {
         title: "Archivar para encontrarnos, ¿como construir archivos comunitarios? - encuentro",
         image: "https://raw.githubusercontent.com/bibliotecaCuir/portafolio-imagenes/main/otros/archivar-para-encontrarnos-como-construir-archivos-comunitarios/01.webp",
         href: "/portafolio/otros/archivar-para-encontrarnos-como-construir-archivos-comunitarios.html",
