@@ -83,7 +83,7 @@ function piePagina() {
                 <div class="pie-columna pie-contacto">
                     <h3>hablemos</h3>
                     <p>preguntas, comentarios, colaboraciones:</p>
-                    <a href="mailto:hola@bibliotecacuir.cl">hola@bibliotecacuir.cl</a>
+                    <a href="mailto:bibliotecacuir@gmail.com">bibliotecacuir@gmail.com</a>
                 </div>
             </div>
         </div>

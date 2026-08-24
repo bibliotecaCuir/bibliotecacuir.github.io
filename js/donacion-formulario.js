@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             queDonar
         ].join('\n');
 
-        window.location.href = 'mailto:hola@bibliotecacuir.cl'
+        window.location.href = 'mailto:bibliotecacuir@gmail.com'
             + '?subject=' + encodeURIComponent(asunto)
             + '&body=' + encodeURIComponent(cuerpo);
     });
