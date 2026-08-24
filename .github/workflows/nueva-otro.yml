@@ -1,0 +1,48 @@
+name: Procesar formulario de nuevo otro
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  procesar:
+    if: contains(github.event.issue.labels.*.name, 'nueva-otro')
+    runs-on: ubuntu-latest
+    env:
+      PORTAFOLIO_IMAGENES_DIR: portafolio-imagenes
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Clonar portafolio-imagenes (para leer el listado de imagenes)
+        uses: actions/checkout@v4
+        with:
+          repository: bibliotecaCuir/portafolio-imagenes
+          path: portafolio-imagenes
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Procesar issue y generar archivos
+        id: procesar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_AUTHOR_ASSOCIATION: ${{ github.event.issue.author_association }}
+        run: node scripts/procesar-nueva-otro.js
+
+      - name: Commitear cambios
+        if: steps.procesar.outputs.debe_commitear == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add datos/otros.yaml assets/portafolio/otros portafolio/otros
+          git commit -m "Agregar/editar otro vía formulario (issue #${{ github.event.issue.number }})"
+          git push

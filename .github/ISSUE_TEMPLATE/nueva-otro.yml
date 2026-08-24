@@ -1,0 +1,79 @@
+name: Nuevo otro (o edición de uno existente)
+description: Agregá o editá una entrada de "otros" (participaciones, encuentros, publicaciones, etc.) de la Biblioteca Cuir sin tocar código.
+title: "[otro] "
+labels: ["nueva-otro"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completá este formulario para agregar una entrada nueva a
+        [bibliotecacuir.github.io/portafolio/](https://bibliotecacuir.github.io/portafolio/) (sección "otros"),
+        o para editar una que ya existe (usá el mismo "Slug" que tiene esa entrada).
+        Un robot va a procesar este formulario automáticamente y te va a avisar acá mismo cuando esté listo.
+
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      description: El nombre de la entrada, tal como se va a mostrar en el sitio.
+      placeholder: "Armarios Abiertos - CCE"
+    validations:
+      required: true
+
+  - type: textarea
+    id: parrafos
+    attributes:
+      label: Párrafos
+      description: >
+        El texto que describe la entrada. Escribí cada párrafo separado por una
+        línea en blanco (como en un documento normal).
+      placeholder: |
+        Primer párrafo...
+
+        Segundo párrafo...
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: Slug (opcional)
+      description: >
+        Es la parte del link (ejemplo: "armarios-abiertos-cce" en /portafolio/otros/armarios-abiertos-cce.html).
+        Dejalo vacío si es una entrada nueva y queremos generarlo automáticamente a partir del título.
+        Completalo con el slug existente si querés editar una entrada que ya está publicada.
+      placeholder: "armarios-abiertos-cce"
+    validations:
+      required: false
+
+  - type: input
+    id: link
+    attributes:
+      label: Link (opcional)
+      description: >
+        Si la entrada tiene un artículo, video u otro link externo (ej. una publicación, una nota de prensa),
+        pegalo acá. Se va a mostrar como "Link: ..." arriba del texto.
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: input
+    id: link_texto
+    attributes:
+      label: Texto del link (opcional)
+      description: >
+        Cómo se llama el link (ej. "leer el artículo", "ver la nota").
+        Si lo dejás vacío, se muestra el link tal cual.
+      placeholder: "leer el artículo"
+    validations:
+      required: false
+
+  - type: textarea
+    id: imagenes
+    attributes:
+      label: Imágenes
+      description: >
+        Arrastrá o pegá acá las fotos de la entrada (podés soltar varios archivos a la vez).
+        Se van a agregar en el orden en que las sueltes.
+    validations:
+      required: false

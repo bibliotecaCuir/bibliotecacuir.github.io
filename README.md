@@ -12,16 +12,16 @@ Hay dos formas de hacerlo:
 
 ### Opción 1: por GitHub, con un formulario (recomendado para no programadorxs)
 
-Disponible para `practicas`, `activaciones` y `obras` (`otros` todavía no
-tiene formulario — usá la Opción 2 para esa sección). En la pestaña "Issues"
-del repositorio, click en "New issue" y elegí "Nueva práctica", "Nueva
-activación" o "Nueva obra". Completá el título, los
-párrafos (uno por línea en blanco) y arrastrá las fotos al campo de
-imágenes. En "obras" hay además dos campos opcionales, "Link" y "Texto del
-link", para obras que enlazan a un video o podcast externo (ej. YouTube,
-Spotify) en vez de (o además de) tener fotos propias. Al enviar el
-formulario, un GitHub Action lo procesa, publica la página y avisa en el
-mismo issue cuando está lista (o qué faltó, si algo salió mal).
+Disponible para las cuatro secciones: `practicas`, `activaciones`, `obras` y
+`otros`. En la pestaña "Issues" del repositorio, click en "New issue" y elegí
+"Nueva práctica", "Nueva activación", "Nueva obra" o "Nuevo otro". Completá
+el título, los párrafos (uno por línea en blanco) y arrastrá las fotos al
+campo de imágenes. En "obras" y "otros" hay además dos campos opcionales,
+"Link" y "Texto del link", para entradas que enlazan a un video, podcast,
+artículo u otro link externo (ej. YouTube, Spotify) en vez de (o además de)
+tener fotos propias. Al enviar el formulario, un GitHub Action lo procesa,
+publica la página y avisa en el mismo issue cuando está lista (o qué faltó,
+si algo salió mal).
 
 Para editar algo que ya existe, usá el mismo formulario poniendo el "Slug"
 de esa entrada (la parte del link, ej. `asambleas`) — actualiza esa entrada
@@ -32,9 +32,9 @@ el link se borra.
 ### Opción 2: editando el YAML directamente
 
 1. Editá `datos/<sección>.yaml` (agregá, cambiá o borrá una entrada con
-   `slug`, `titulo` y `parrafos`; en `obras` también podés agregar `link_url`
-   y, opcionalmente, `link_texto`). Cualquier entrada puede además llevar un
-   `anio` opcional (ej. `"2025"` o `"2024/2025"`) — se muestra en su tarjeta
+   `slug`, `titulo` y `parrafos`; en `obras` y `otros` también podés agregar
+   `link_url` y, opcionalmente, `link_texto`). Cualquier entrada puede
+   además llevar un `anio` opcional (ej. `"2025"` o `"2024/2025"`) — se muestra en su tarjeta
    de `/portafolio/`; si no se completa, se muestra "s/f".
 2. Si es una entrada nueva y tiene fotos propias, creá la carpeta
    `assets/portafolio/<sección>/<slug>/` y subí ahí las fotos (`.webp`,
@@ -59,8 +59,8 @@ el link se borra.
 - `scripts/lib/procesar-formulario.js`: procesa lo que llega por el
   formulario de GitHub Issues (título, párrafos, slug, link, imágenes) y
   llama al generador. `scripts/procesar-nueva-practica.js`,
-  `scripts/procesar-nueva-activacion.js` y `scripts/procesar-nueva-obra.js`
-  son los que se invocan por sección (no hay uno para `otros`, ver arriba).
+  `scripts/procesar-nueva-activacion.js`, `scripts/procesar-nueva-obra.js` y
+  `scripts/procesar-nueva-otro.js` son los que se invocan por sección.
 - `.github/ISSUE_TEMPLATE/nueva-*.yml` y `.github/workflows/*.yml`: el
   formulario y la automatización de GitHub.
 - `assets/portafolio/drive-manifest.json`: **generado**, no se edita a
