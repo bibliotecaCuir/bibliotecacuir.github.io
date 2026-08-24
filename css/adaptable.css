@@ -690,100 +690,100 @@
        (portada.css) pero con posiciones y rotaciones propias
        para el formato vertical. */
     .libro-nube {
-        min-height: 740px;
+        min-height: 920px;
         margin-top: 5rem;
         overflow: visible;
     }
 
     .libro-marcador {
-        width: clamp(54px, 17vw, 82px);
+        width: clamp(76px, 23.8vw, 115px);
     }
 
     .libro-pequeno {
-        width: clamp(46px, 14vw, 68px);
+        width: clamp(64px, 19.6vw, 95px);
     }
 
     .libro-alto {
-        width: clamp(58px, 18vw, 88px);
+        width: clamp(81px, 25.2vw, 123px);
     }
 
     .libro-ancho {
-        width: clamp(62px, 20vw, 96px);
+        width: clamp(87px, 28vw, 134px);
     }
 
     .libro-inclinado {
-        width: clamp(58px, 18vw, 86px);
+        width: clamp(81px, 25.2vw, 120px);
     }
 
     .libro-marcador:nth-child(1) {
-        top: 10%;
-        left: 18%;
+        top: 6%;
+        left: 16%;
         --book-rotation: -11deg;
     }
 
     .libro-marcador:nth-child(2) {
-        top: 17%;
-        left: 48%;
+        top: 8%;
+        left: 44%;
         --book-rotation: 7deg;
     }
 
     .libro-marcador:nth-child(3) {
-        top: 9%;
-        left: 80%;
+        top: 3%;
+        left: 77%;
         --book-rotation: -5deg;
     }
 
     .libro-marcador:nth-child(4) {
         top: 28%;
-        left: 28%;
+        left: 25%;
         --book-rotation: 12deg;
     }
 
     .libro-marcador:nth-child(5) {
         top: 34%;
-        left: 68%;
+        left: 62%;
         --book-rotation: -9deg;
     }
 
     .libro-marcador:nth-child(6) {
-        top: 24%;
-        left: 91%;
+        top: 21%;
+        left: 93%;
         --book-rotation: 6deg;
     }
 
     .libro-marcador:nth-child(7) {
-        top: 46%;
-        left: 12%;
+        top: 49%;
+        left: 9%;
         --book-rotation: 9deg;
     }
 
     .libro-marcador:nth-child(8) {
-        top: 51%;
-        left: 42%;
+        top: 48%;
+        left: 45%;
         --book-rotation: -13deg;
     }
 
     .libro-marcador:nth-child(9) {
-        top: 49%;
-        left: 78%;
+        top: 52%;
+        left: 81%;
         --book-rotation: 4deg;
     }
 
     .libro-marcador:nth-child(10) {
-        top: 63%;
-        left: 24%;
+        top: 66%;
+        left: 21%;
         --book-rotation: -7deg;
     }
 
     .libro-marcador:nth-child(11) {
-        top: 68%;
-        left: 58%;
+        top: 71%;
+        left: 55%;
         --book-rotation: 11deg;
     }
 
     .libro-marcador:nth-child(12) {
-        top: 61%;
-        left: 92%;
+        top: 69%;
+        left: 97%;
         --book-rotation: -4deg;
     }
 
@@ -850,11 +850,11 @@
     .imagen-constelacion {
         min-height: 760px;
         margin-top: 5.5rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     .imagen-constelacion-escena {
-        inset: 0 -3% 14%;
+        inset: 0 -3% 4%;
     }
 
     /* En mobile solo se muestran 8 de las imagenes de la
@@ -913,11 +913,11 @@
 
     .pie-contenedor h2 {
         max-width: 100%;
-        font-size: clamp(1.55rem, 9.2vw, 4.2rem);
+        font-size: clamp(1.4rem, 6.8vw, 3.6rem);
     }
 
     .pie-titulo-linea {
-        white-space: nowrap;
+        white-space: normal;
     }
 
     .pie-visita p:first-of-type {
