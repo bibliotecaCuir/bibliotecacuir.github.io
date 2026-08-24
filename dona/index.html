@@ -43,7 +43,7 @@
         <section class="donacion-principal" aria-labelledby="donation-title">
             <div>
                 <h1 id="donation-title">dona aqui</h1>
-                <p>Este formulario reúne la información necesaria para recibir, cuidar, catalogar y activar donaciones. Completa los datos de la pieza, sus condiciones de acceso y las imágenes de referencia.</p>
+                <p>Cuéntanos qué quieres donar y cómo contactarte. Te escribiremos para coordinar los detalles: fotos, estado del material y condiciones de acceso.</p>
             </div>
 
             <aside class="donacion-protocolo-nota" aria-label="Nota ProtoCola">
@@ -52,7 +52,7 @@
             </aside>
         </section>
 
-        <form class="donacion-formulario" action="mailto:hola@bibliotecacuir.cl" method="post" enctype="multipart/form-data">
+        <form class="donacion-formulario" id="donacion-formulario">
             <fieldset class="donacion-campos">
                 <legend>tipo de donacion</legend>
                 <div class="donacion-opcion-grilla">
@@ -78,203 +78,19 @@
                         <label for="donante-email">Correo</label>
                         <input id="donante-email" type="email" name="donante_email" autocomplete="email" required>
                     </div>
-                    <div class="donacion-campo">
-                        <label for="donante-telefono">Teléfono o contacto</label>
-                        <input id="donante-telefono" name="donante_telefono" autocomplete="tel">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="donante-relacion">Relación con la pieza</label>
-                        <input id="donante-relacion" name="donante_relacion" placeholder="autoría, editorial, compra, regalo, archivo personal">
-                    </div>
                     <div class="donacion-campo donacion-campo-completo">
-                        <label for="donante-comentarios">Comentarios afectivos o historia de la donación</label>
-                        <textarea id="donante-comentarios" name="donante_comentarios"></textarea>
+                        <label for="donante-que">¿Qué quieres donar?</label>
+                        <textarea id="donante-que" name="que_donar" placeholder="título, tipo de material (fanzine, libro, objeto...), cantidad" required></textarea>
                     </div>
                 </div>
             </fieldset>
 
-            <fieldset class="donacion-campos">
-                <legend>autoria y edicion</legend>
-                <div class="donacion-grilla">
-                    <div class="donacion-campo">
-                        <label for="autorx">Autorx / creadorx</label>
-                        <input id="autorx" name="autorx_creadorx" placeholder="VVAA si son varias autorías">
-                        <small>Si se desconoce, puede quedar vacío.</small>
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="editorial">Editorial / colectividad</label>
-                        <input id="editorial" name="editorial" placeholder="Autopublicación independiente si no tiene editorial">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="contacto-creadorx">Contacto de creadorx o editorial</label>
-                        <input id="contacto-creadorx" name="contacto_creadorx" placeholder="correo, Instagram, web">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="origen">Origen geográfico</label>
-                        <input id="origen" name="origen_geografico" placeholder="ciudad; país">
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="donacion-campos">
-                <legend>datos de la pieza</legend>
-                <div class="donacion-grilla">
-                    <div class="donacion-campo">
-                        <label for="titulo">Título</label>
-                        <input id="titulo" name="titulo" required>
-                        <small>Si no tiene título explícito, puedes proponer uno entre corchetes.</small>
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="titulo-conjunto">Título del conjunto</label>
-                        <input id="titulo-conjunto" name="titulo_conjunto">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="agno">Año de creación</label>
-                        <input id="agno" name="agno_creacion" inputmode="numeric" pattern="[0-9]{4}" placeholder="2019">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="tipologia">Tipología</label>
-                        <select id="tipologia" name="tipologia" required>
-                            <option value="">Seleccionar</option>
-                            <option>Libro</option>
-                            <option>Librillo</option>
-                            <option>Fanzine</option>
-                            <option>Revista</option>
-                            <option>Periódico</option>
-                            <option>Gráfica</option>
-                            <option>Afiche</option>
-                            <option>Calendario</option>
-                            <option>Agenda</option>
-                            <option>Gincana</option>
-                            <option>Fotolibro</option>
-                            <option>Postales</option>
-                            <option>Objeto</option>
-                            <option>Dispositivo / instalación</option>
-                            <option>Otro</option>
-                        </select>
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="copias">Cantidad de copias</label>
-                        <input id="copias" name="cantidad_copias" placeholder="1, 4 (1 de 4), etc.">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="material">Material</label>
-                        <input id="material" name="material" placeholder="papel, plástico, papel couché, cartón">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="alto">Altura (cm)</label>
-                        <input id="alto" name="altura_cm" inputmode="decimal" placeholder="máximo un decimal">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="ancho">Ancho (cm)</label>
-                        <input id="ancho" name="ancho_cm" inputmode="decimal" placeholder="máximo un decimal">
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="profundidad">Profundidad (cm)</label>
-                        <input id="profundidad" name="profundidad_cm" inputmode="decimal" placeholder="no aplica si no es tridimensional">
-                    </div>
-                    <div class="donacion-campo donacion-campo-completo">
-                        <label for="descripcion-fisica">Descripción física y estado de conservación</label>
-                        <textarea id="descripcion-fisica" name="descripcion_fisica" placeholder="dimensiones, técnica, material de impresión, manchas, desgaste, protuberancias, cuidados especiales"></textarea>
-                    </div>
-                    <div class="donacion-campo donacion-campo-completo">
-                        <label for="otros">Otros comentarios o instrucciones de manipulación</label>
-                        <textarea id="otros" name="otros"></textarea>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="donacion-campos">
-                <legend>acceso y activacion</legend>
-                <div class="donacion-opcion-grilla">
-                    <div class="donacion-opcion-grupo">
-                        <span>Digitalización</span>
-                        <label class="donacion-opcion">
-                            <input type="checkbox" name="digitalizacion_parcial" value="acepto" required>
-                            <span><strong>Digitalización parcial</strong><span>Portada o registro de referencia disponible en plataformas de acceso libre.</span></span>
-                        </label>
-                        <label class="donacion-opcion">
-                            <input type="checkbox" name="digitalizacion_total" value="acepto">
-                            <span><strong>Digitalización total</strong><span>Disponible para donación directa o con consentimiento de les creadorxs.</span></span>
-                        </label>
-                    </div>
-                    <div class="donacion-opcion-grupo">
-                        <span>Activación</span>
-                        <label class="donacion-opcion">
-                            <input type="radio" name="activacion" value="solo_archivo" required>
-                            <span><strong>Solo archivo Biblioteca Cuir</strong><span>La pieza se mantiene en el espacio físico donde esté alojada la colección.</span></span>
-                        </label>
-                        <label class="donacion-opcion">
-                            <input type="radio" name="activacion" value="fuera_archivo" required>
-                            <span><strong>Activaciones fuera del archivo</strong><span>Puede participar en exhibiciones, ferias, talleres, laboratorios, charlas u otras mediaciones.</span></span>
-                        </label>
-                    </div>
-                </div>
-                <label class="donacion-opcion">
-                    <input type="checkbox" name="condiciones_generales" value="acepto" required>
-                    <span><strong>Confirmo las condiciones generales</strong><span>La Biblioteca Cuir utiliza los materiales sin fines de lucro y resguardando la atribución de sus creadorxs.</span></span>
-                </label>
-            </fieldset>
-
-            <fieldset class="donacion-campos">
-                <legend>imagenes y archivos</legend>
-                <p class="donacion-formulario-nota">Para publicaciones: portada y contraportada. Para objetos tridimensionales: una buena foto del objeto. Para gráficas: anverso. Si tienes una versión recortada en PNG sin fondo, también puedes adjuntarla.</p>
-                <div class="donacion-subida-grilla">
-                    <label class="donacion-subida">
-                        <span>Portada / anverso</span>
-                        <input type="file" name="imagen_portada" accept="image/png,image/jpeg,image/webp" required>
-                        <small>PNG, JPG o WEBP en buena calidad.</small>
-                    </label>
-                    <label class="donacion-subida">
-                        <span>Contraportada</span>
-                        <input type="file" name="imagen_contraportada" accept="image/png,image/jpeg,image/webp">
-                        <small>Requerida para publicaciones si existe.</small>
-                    </label>
-                    <label class="donacion-subida">
-                        <span>Foto de objeto</span>
-                        <input type="file" name="foto_objeto" accept="image/png,image/jpeg,image/webp">
-                        <small>Para objetos o piezas tridimensionales.</small>
-                    </label>
-                    <label class="donacion-subida">
-                        <span>PNG sin fondo</span>
-                        <input type="file" name="png_sin_fondo" accept="image/png">
-                        <small>Opcional, útil para catálogo web.</small>
-                    </label>
-                    <label class="donacion-subida">
-                        <span>Archivo digital</span>
-                        <input type="file" name="archivo_digital" accept="application/pdf,image/png,image/jpeg,image/webp,.zip">
-                        <small>PDF, imagen o ZIP si existe versión digital.</small>
-                    </label>
-                    <label class="donacion-subida">
-                        <span>Material extra</span>
-                        <input type="file" name="material_extra" accept="application/pdf,image/png,image/jpeg,image/webp,.zip">
-                        <small>Registro, ficha, contexto o referencias.</small>
-                    </label>
-                </div>
-            </fieldset>
-
-            <fieldset class="donacion-campos">
-                <legend>cierre</legend>
-                <div class="donacion-grilla">
-                    <div class="donacion-campo">
-                        <label for="firma">Nombre para firma</label>
-                        <input id="firma" name="firma_nombre" required>
-                    </div>
-                    <div class="donacion-campo">
-                        <label for="fecha">Fecha</label>
-                        <input id="fecha" type="date" name="fecha" required>
-                    </div>
-                    <div class="donacion-campo donacion-campo-completo">
-                        <label for="dudas">Dudas o acuerdos específicos</label>
-                        <textarea id="dudas" name="dudas_acuerdos"></textarea>
-                    </div>
-                </div>
-                <div class="donacion-enviar-fila">
-                    <p class="donacion-formulario-nota">Al enviar, se abrirá un correo para continuar el proceso con el equipo de Biblioteca Cuir.</p>
-                    <button type="submit">enviar donación</button>
-                </div>
-            </fieldset>
+            <div class="donacion-enviar-fila">
+                <p class="donacion-formulario-nota">Al enviar, se abrirá tu programa de correo con un mensaje redactado para nuestro equipo. Te contactaremos para coordinar fotos y detalles.</p>
+                <button type="submit">enviar donación</button>
+            </div>
         </form>
+        <p class="donacion-formulario-nota">Si no se abre tu programa de correo, escríbenos directo a <a href="mailto:hola@bibliotecacuir.cl">hola@bibliotecacuir.cl</a> con estos datos.</p>
     </main>
 
     <!-- pie-pagina:inicio -->
@@ -331,5 +147,6 @@
 
     <script src="/js/menu-subpaginas.js"></script>
     <script src="/js/site-motion.js" defer></script>
+    <script src="/js/donacion-formulario.js" defer></script>
 </body>
 </html>
