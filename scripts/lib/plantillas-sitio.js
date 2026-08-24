@@ -87,15 +87,6 @@ function piePagina() {
                 </div>
             </div>
         </div>
-
-        <div class="pie-legal">
-            <span>Biblioteca Cuir</span>
-            <nav aria-label="Legal">
-                <a href="/">privacidad</a>
-                <a href="/">términos</a>
-            </nav>
-            <span>instagram · correo</span>
-        </div>
     </footer>`;
 }
 
