@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const yaml = require("../lib/js-yaml.min.js");
-const { escaparHTML, imageUrl, leerCatalogos, normalizar } = require("./lib-catalogo.js");
+const { escaparHTML, imageUrlPreview, leerCatalogos, normalizar } = require("./lib-catalogo.js");
 
 const SITIO_ROOT = path.join(__dirname, "..");
 const INDEX_PATH = path.join(SITIO_ROOT, "index.html");
@@ -30,7 +30,7 @@ function marcador(pub) {
   const clases = ["libro-marcador", elegirAlAzar(COLORES), elegirAlAzar(FORMAS)]
     .filter(Boolean)
     .join(" ");
-  const imagen = escaparHTML(imageUrl(pub.item, pub.caja));
+  const imagen = escaparHTML(imageUrlPreview(pub.item, pub.caja));
   const titulo = escaparHTML(pub.item.titulo || "Sin título");
 
   return `            <a class="${clases}" href="/coleccion/fichas/${pub.slug}.html"><img src="${imagen}" alt="${titulo}"></a>`;
